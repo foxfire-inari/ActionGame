@@ -23,13 +23,13 @@ public:
 	/// oneObjectListにemplace_backする
 	/// </summary>
 	/// <param name="obj">emplace_backするBaseObject型のポインタ</param>
-	void SetOneObjectList(BaseObject* _obj) { oneObjectList.emplace_back(_obj); }
+	void SetOneObjectList(BaseObject* _obj);
 
 	/// <summary>
 	/// allManagerListにemplace_backする
 	/// </summary>
 	/// <param name="manager">emplace_backするBaseManager型のポインタ</param>
-	void SetAllManagerList(BaseManager* _manager) { allManagerList.emplace_back(_manager); }
+	void SetAllManagerList(BaseManager* _manager);
 
 	/// <summary>
 	/// oneObjectListから型とタグが同じオブジェクトのポインターを返す

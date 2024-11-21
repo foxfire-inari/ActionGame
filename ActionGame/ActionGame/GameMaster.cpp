@@ -1,11 +1,12 @@
 #include "GameMaster.h"
 #include "KeyControlle.h"
+#include"GameScene.h"
 
 GameMaster::GameMaster()
 {
-	BaseScene* baseScene = new BaseScene{ this };
+	GameScene* gameScene = new GameScene{ this,"GameScene"};
 	KeyControlle::Create();
-	player = new Player{ baseScene };
+	player = new Player{ gameScene };
 }
 
 GameMaster::~GameMaster()

@@ -7,7 +7,7 @@ Player::Player(BaseScene* baseScene)
 	, isGameOver{ false }
 {
 	GetBaseScene()->SetOneObjectList(this);
-	GetNowSceneManager();
+	//GetNowSceneManager();
 }
 
 Player::~Player()

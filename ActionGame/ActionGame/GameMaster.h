@@ -1,7 +1,7 @@
 #pragma once
 #include "Common.h"
 #include"SceneChange.h"
-class BaseScene;
+class GameScene;
 
 //ーーーーーーテスト用
 #include "Player.h"

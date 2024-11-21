@@ -44,3 +44,12 @@ T* BaseScene::GetManagerPtr(int _tag)
 	return nullptr;
 }
 
+void BaseScene::SetOneObjectList(BaseObject* _obj)
+{
+	oneObjectList.emplace_back(_obj);
+}
+
+void BaseScene::SetAllManagerList(BaseManager* _manager)
+{
+	allManagerList.emplace_back(_manager);
+}
