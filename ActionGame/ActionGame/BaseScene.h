@@ -1,6 +1,7 @@
 #pragma once
 #include"Common.h"
 #include"SceneChange.h"
+#include"CommonObjectAndManager.h"
 
 class BaseObject;	// 前方宣言
 class BaseManager;	// 前方宣言
@@ -12,7 +13,7 @@ class BaseScene
 {
 public:
 	BaseScene(SceneChange* _scenechange)
-		:sceneChange{ _scenechange }, nextMapName{ "" } {}
+		:sceneChange{ _scenechange }, common{ nullptr }, nextMapName{ "" } {}
 
 	virtual ~BaseScene() {};
 	virtual void Start() {};
@@ -50,6 +51,15 @@ public:
 	template<class T>
 	T* GetManagerPtr(int _tag);
 
+	/// <summary>
+	/// 自身が管理するオブジェクトやマネージャーをまとめた
+	/// クラスを返す
+	/// </summary>
+	/// <returns></returns>
+	CommonObjectAndManager* GetCommonObjectAndManager()&
+	{
+		return common;
+	}
 
 protected:
 
@@ -58,6 +68,12 @@ protected:
 	/// </summary>
 	/// <returns>sceneChangeのポインター</returns>
 	SceneChange* GetSceneChange() const { return sceneChange; }
+
+	/// <summary>
+	/// 共通するオブジェクトやマネージャー
+	/// </summary>
+	CommonObjectAndManager* common;
+
 
 	/// <summary>
 	/// 次のマップの名前

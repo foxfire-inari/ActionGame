@@ -150,6 +150,7 @@
     <ClCompile Include="Chara.cpp" />
     <ClCompile Include="CollisionData.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
+    <ClCompile Include="CommonObjectAndManager.cpp" />
     <ClCompile Include="GameMaster.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Gravity.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="CollisionData.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="CommonObjectAndManager.h" />
     <ClInclude Include="GameMaster.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Gravity.h" />

@@ -1,16 +1,11 @@
 #pragma once
 #include "Common.h"
 #include"SceneChange.h"
-class GameScene;
-
-//ーーーーーーテスト用
-#include "Player.h"
-class Player;
-//ーーーーーーテスト用
+class BaseScene;
 
 class GameMaster : public SceneChange
 {
-	Player* player;
+
 public:
 	GameMaster();
 	~GameMaster();

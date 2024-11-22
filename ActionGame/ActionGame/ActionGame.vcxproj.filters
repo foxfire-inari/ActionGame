@@ -51,9 +51,6 @@
     <ClCompile Include="BaseObject.cpp">
       <Filter>Object</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionData.cpp">
-      <Filter>Object</Filter>
-    </ClCompile>
     <ClCompile Include="CollisionObject.cpp">
       <Filter>Object</Filter>
     </ClCompile>
@@ -75,8 +72,14 @@
     <ClCompile Include="State.cpp">
       <Filter>Object\Character\Parts</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionData.cpp">
+      <Filter>Object\Character\Parts</Filter>
+    </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonObjectAndManager.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,9 +104,6 @@
     <ClInclude Include="BaseObject.h">
       <Filter>Object</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionData.h">
-      <Filter>Object</Filter>
-    </ClInclude>
     <ClInclude Include="CollisionObject.h">
       <Filter>Object</Filter>
     </ClInclude>
@@ -125,8 +125,14 @@
     <ClInclude Include="State.h">
       <Filter>Object\Character\Parts</Filter>
     </ClInclude>
+    <ClInclude Include="CollisionData.h">
+      <Filter>Object\Character\Parts</Filter>
+    </ClInclude>
     <ClInclude Include="CollisionManager.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonObjectAndManager.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
