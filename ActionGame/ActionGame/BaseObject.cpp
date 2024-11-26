@@ -5,6 +5,7 @@ BaseObject::BaseObject(BaseScene* _baseScene, F_Vec2 _pos, F_Vec2 _vel,
 	int _top, int _under, int _left, int _right,
 	int _tag)
 	:position{ _pos }
+	, baseScene{ _baseScene }
 	, velocity{ _vel }
 	, tag{ _tag }
 {
