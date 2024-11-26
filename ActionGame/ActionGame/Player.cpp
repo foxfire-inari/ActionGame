@@ -7,7 +7,8 @@ Player::Player(BaseScene* baseScene)
 	, isGameOver{ false }
 {
 	GetBaseScene()->SetOneObjectList(this);
-	//GetNowSceneManager();
+
+	state->SetAllStateMember("Idle");
 }
 
 Player::~Player()
@@ -114,3 +115,31 @@ void Player::SetStatus()
 void Player::GetNowSceneManager()
 {
 }
+
+
+/// <summary>
+/// -------------------------------ƒeƒXƒg
+/// </summary>
+void Player::TestUpdate()
+{
+	state->ChangeState();
+	gravity->AddGravity(velocity.y);
+
+	positionSetter->UpdatePos(this);
+
+	F_Vec2 drawpos = GetPosition();
+	DrawBox
+	(
+		drawpos.x + CollData->GetLeft(),
+		drawpos.y + CollData->GetTop(),
+		drawpos.x + CollData->GetRight(),
+		drawpos.y + CollData->GetUnder(),
+		GetColor(255, 255, 255),
+		true
+	);
+	DrawFormatString(50, 50, GetColor(255, 255, 255),
+		"velocity:%f,%f", GetVelocity().x, GetVelocity().y);
+}
+
+
+

@@ -4,8 +4,6 @@
 
 #include"CollisionData.h"
 
-class BaseScene; // 前方宣言
-
 /// <summary>
 /// 全てのオブジェクトの継承元
 /// </summary>
@@ -28,6 +26,7 @@ public:
 
 	/// <summary>
 	/// 自分の座標をセット
+	/// 座標の初期化やめり込みを直すのに使う
 	/// </summary>
 	/// <param name="_pos"></param>
 	void SetPosition(F_Vec2 _pos) { position = _pos; }
@@ -105,5 +104,8 @@ protected:
 	/// </summary>
 	int tag;
 private:
+	/// <summary>
+	/// シーンのリストに自身を登録するときに必要
+	/// </summary>
 	BaseScene* baseScene;
 };

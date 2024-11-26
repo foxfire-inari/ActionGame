@@ -160,4 +160,15 @@ private:
 	/// </summary>
 	void GetNowSceneManager();
 
+
+
+
+	//---------------------------------------テスト
+public:
+	/// <summary>
+	/// 実装した機能のテスト用
+	/// </summary>
+	void TestUpdate();
+
+
 };

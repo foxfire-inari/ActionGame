@@ -19,14 +19,14 @@
     <Filter Include="Object\Character">
       <UniqueIdentifier>{f98a4a46-13d6-4c16-a3fd-af5e508bcb15}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\Character\Parts">
-      <UniqueIdentifier>{14c73806-5f57-4fa3-8edf-d385e3ffbdfb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{02c4e2ba-33dc-4074-9212-724a4aaa627e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Manager">
       <UniqueIdentifier>{14f53cae-e7ce-4d37-8e8e-790064bbe831}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Parts">
+      <UniqueIdentifier>{14c73806-5f57-4fa3-8edf-d385e3ffbdfb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -40,10 +40,10 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="PositionSetter.cpp">
-      <Filter>Object\Character\Parts</Filter>
+      <Filter>Object\Parts</Filter>
     </ClCompile>
     <ClCompile Include="Gravity.cpp">
-      <Filter>Object\Character\Parts</Filter>
+      <Filter>Object\Parts</Filter>
     </ClCompile>
     <ClCompile Include="Chara.cpp">
       <Filter>Object\Character</Filter>
@@ -67,10 +67,10 @@
       <Filter>Object\Character</Filter>
     </ClCompile>
     <ClCompile Include="State.cpp">
-      <Filter>Object\Character\Parts</Filter>
+      <Filter>Object\Parts</Filter>
     </ClCompile>
     <ClCompile Include="CollisionData.cpp">
-      <Filter>Object\Character\Parts</Filter>
+      <Filter>Object\Parts</Filter>
     </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
       <Filter>Manager</Filter>
@@ -80,6 +80,12 @@
     </ClCompile>
     <ClCompile Include="BaseScene.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionProcessing.cpp">
+      <Filter>Object\Parts</Filter>
+    </ClCompile>
+    <ClCompile Include="Fall.cpp">
+      <Filter>Object\Parts</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -93,10 +99,10 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="PositionSetter.h">
-      <Filter>Object\Character\Parts</Filter>
+      <Filter>Object\Parts</Filter>
     </ClInclude>
     <ClInclude Include="Gravity.h">
-      <Filter>Object\Character\Parts</Filter>
+      <Filter>Object\Parts</Filter>
     </ClInclude>
     <ClInclude Include="Chara.h">
       <Filter>Object\Character</Filter>
@@ -120,10 +126,10 @@
       <Filter>Object\Character</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
-      <Filter>Object\Character\Parts</Filter>
+      <Filter>Object\Parts</Filter>
     </ClInclude>
     <ClInclude Include="CollisionData.h">
-      <Filter>Object\Character\Parts</Filter>
+      <Filter>Object\Parts</Filter>
     </ClInclude>
     <ClInclude Include="CollisionManager.h">
       <Filter>Manager</Filter>
@@ -133,6 +139,12 @@
     </ClInclude>
     <ClInclude Include="BaseScene.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionProcessing.h">
+      <Filter>Object\Parts</Filter>
+    </ClInclude>
+    <ClInclude Include="Fall.h">
+      <Filter>Object\Parts</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

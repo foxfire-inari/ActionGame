@@ -1,8 +1,10 @@
 #pragma once
 #include"BaseObject.h"
-#include"State.h"
+
+#include"Fall.h"
 #include"Gravity.h"
 #include"PositionSetter.h"
+#include"State.h"
 
 /// <summary>
 /// 全てのキャラの継承元
@@ -17,24 +19,27 @@ public:
 	virtual void Update()override {}
 	virtual void Draw()override {}
 
-	/// <summary>
-	/// 実装した機能のテスト用
-	/// </summary>
-	void TestUpdate();
 protected:
 
 	/// <summary>
-	/// ステート
+	/// 地面に乗ってるか
 	/// </summary>
-	State* state;
+	Fall* fall;
+
 	/// <summary>
 	/// 重力
 	/// </summary>
 	Gravity* gravity;
 
+	/// <summary>
+	/// キャラ移動に関するクラス
+	/// </summary>
 	PositionSetter* positionSetter;
 
-
+	/// <summary>
+	/// ステート
+	/// </summary>
+	State* state;
 };
 
 /// ＜必要な要素＞
