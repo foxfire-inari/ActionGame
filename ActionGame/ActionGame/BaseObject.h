@@ -4,7 +4,7 @@
 
 #include"CollisionData.h"
 
-class BaseScene; // 前方宣言のみ
+class BaseScene; // 前方宣言
 
 /// <summary>
 /// 全てのオブジェクトの継承元

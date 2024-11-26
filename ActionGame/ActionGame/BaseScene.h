@@ -79,7 +79,7 @@ protected:
 	/// 次のマップの名前
 	/// </summary>
 	std::string nextMapName;
-	
+
 
 
 private:
@@ -97,7 +97,6 @@ private:
 	/// シーンにある全てのManagerを格納する
 	/// </summary>
 	std::list<BaseManager*> allManagerList;
-
 
 };
 

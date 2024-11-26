@@ -21,6 +21,7 @@ void BaseObject::SetNewScene(BaseScene* _baseScene, bool isOneObject)
 
 	if (isOneObject)
 	{
+		//Ž©g‚ðˆø‚«Œp‚ª‚¹‚é‚±‚Æ‚Åî•ñ‚ð•ÛŽ‚µ‚½‚Ü‚ÜƒV[ƒ“‚ðØ‚è‘Ö‚¦‚ç‚ê‚é
 		baseScene->SetOneObjectList(this);
 	}
 }

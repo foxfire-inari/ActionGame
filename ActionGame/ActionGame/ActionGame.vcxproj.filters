@@ -57,9 +57,6 @@
     <ClCompile Include="SceneChange.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="BaseScene.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
     <ClCompile Include="BaseManager.cpp">
       <Filter>Manager</Filter>
     </ClCompile>
@@ -79,6 +76,9 @@
       <Filter>Manager</Filter>
     </ClCompile>
     <ClCompile Include="CommonObjectAndManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
@@ -110,9 +110,6 @@
     <ClInclude Include="SceneChange.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="BaseScene.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
     <ClInclude Include="BaseManager.h">
       <Filter>Manager</Filter>
     </ClInclude>
@@ -132,6 +129,9 @@
       <Filter>Manager</Filter>
     </ClInclude>
     <ClInclude Include="CommonObjectAndManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
