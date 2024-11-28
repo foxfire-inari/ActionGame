@@ -9,7 +9,7 @@ BaseObject::BaseObject(BaseScene* _baseScene, F_Vec2 _pos, F_Vec2 _vel,
 	, velocity{ _vel }
 	, tag{ _tag }
 {
-	CollData = new CollisionData{ _top,_under,_left,_right };
+	ColData = new CollisionData{ _top,_under,_left,_right };
 }
 
 BaseObject::~BaseObject()

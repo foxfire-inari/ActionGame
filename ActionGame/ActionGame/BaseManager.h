@@ -57,7 +57,7 @@ protected:
 	/// objとplayerの距離がdifより小さかったらtrue
 	/// </summary>
 	/// <param name="obj">確認するオブジェクト</param>
-	/// <param name="dif">画面の範囲</param>
+	/// <param name="dif">距離</param>
 	/// <returns></returns>
 	bool IsNearDistance(BaseObject* obj, float dif = DRAW_DIF);
 

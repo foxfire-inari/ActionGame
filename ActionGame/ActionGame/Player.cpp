@@ -130,10 +130,10 @@ void Player::TestUpdate()
 	F_Vec2 drawpos = GetPosition();
 	DrawBox
 	(
-		drawpos.x + CollData->GetLeft(),
-		drawpos.y + CollData->GetTop(),
-		drawpos.x + CollData->GetRight(),
-		drawpos.y + CollData->GetUnder(),
+		drawpos.x + ColData->GetLeft(),
+		drawpos.y + ColData->GetTop(),
+		drawpos.x + ColData->GetRight(),
+		drawpos.y + ColData->GetUnder(),
 		GetColor(255, 255, 255),
 		true
 	);

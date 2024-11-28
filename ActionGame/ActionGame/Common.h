@@ -119,11 +119,13 @@ struct Vector2//Vector2型を作成
 
 	/// <summary>
 	/// ベクトルのサイズをfloat型で返す
+	/// float型以外で使ったら止まる
 	/// </summary>
 	/// <param name="_vec">ベクトル</param>
 	/// <returns>ベクトルの大きさ</returns>
 	static float VSize(Vector2 _vec)
 	{
+		assert(typeid(_vec.x) == typeid(float));
 		float abs_val = std::pow(_vec.x, 2) + std::pow(_vec.y, 2);
 
 		return sqrt(abs_val);

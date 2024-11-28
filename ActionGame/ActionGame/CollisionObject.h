@@ -4,7 +4,7 @@
 /// <summary>
 /// 当たり判定を持つキャラクター以外のクラス
 /// </summary>
-class CollisionObject : BaseObject
+class CollisionObject :public BaseObject
 {
 public:
 	/// <summary>

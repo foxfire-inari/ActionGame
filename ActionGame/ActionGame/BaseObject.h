@@ -55,6 +55,8 @@ public:
 	/// <returns></returns>
 	int GetTag()const { return tag; }
 
+	CollisionData* GetCollisionData() { return ColData; }
+
 	/// <summary>
 	/// ゲーム内に1つだけのオブジェクトを
 	/// 次のシーンに引き継がせる
@@ -97,7 +99,7 @@ protected:
 	/// <summary>
 	/// 当たり判定の情報
 	/// </summary>
-	CollisionData* CollData;
+	CollisionData* ColData;
 
 	/// <summary>
 	/// オブジェクト判別用のタグ
