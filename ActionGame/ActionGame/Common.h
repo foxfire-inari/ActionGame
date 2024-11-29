@@ -45,7 +45,6 @@ struct Vector2//Vector2Œ^‚ðì¬
 		else if(typeid(this.x) == typeid(float))
 		{
 			//fabsf‚Åâ‘Î’l‚ðŽæ“¾AFLT_EPSILON‚æ‚è¬‚³‚¯‚ê‚Î“™‚µ‚¢
-			//
 			if (fabsf(this->x - vec.x) <= FLT_EPSILON &&
 				fabsf(this->y - vec.y) <= FLT_EPSILON)
 			{

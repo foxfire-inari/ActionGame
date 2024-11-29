@@ -28,10 +28,10 @@ private:
 	/// 近くにあるかの判定
 	/// </summary>
 	/// <param name="obj">対象のオブジェクト</param>
-	/// <param name="player">プレイヤー</param>
+	/// <param name="chara">キャラ</param>
 	/// <param name="dif">距離</param>
 	/// <returns></returns>
-	bool IsNewrDistance(BaseObject* obj, BaseObject* player, float dif);
+	bool IsNewrDistance(BaseObject* obj, BaseObject* chara, float dif);
 
 };
 

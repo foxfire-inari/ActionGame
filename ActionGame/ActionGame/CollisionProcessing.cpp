@@ -9,6 +9,8 @@ namespace
 	/// 判定する距離
 	/// </summary>
 	static const float HIT_CHECK_DIF = 1000.0f;
+
+	static const float 
 }
 
 CollisionProcessing::CollisionProcessing(std::list<CollisionObject*>& _collisionObjectList)
@@ -23,21 +25,31 @@ CollisionProcessing::~CollisionProcessing()
 
 F_Vec2 CollisionProcessing::GetOnGroundPosition(BaseObject* obj, Fall* fall)
 {
-	F_Vec2 pos = obj->GetPosition();
-
-	float top	= obj->GetCollisionData()->GetTop();
-	float under	= obj->GetCollisionData()->GetUnder();
-	float Left	= obj->GetCollisionData()->GetLeft();
-	float Right	= obj->GetCollisionData()->GetRight();
+	//キャラクターのコリジョン
+	CollisionData* objCol = obj->GetNowCollisionPos();
+	//リスト内のオブジェクトのコリジョン
+	CollisionData* listCol;
 
 	bool isOnGround = false;
 
 	for (auto it = collisionObjectList.begin(); it != collisionObjectList.end(); it++)
 	{
+		//キャラの近くないなら判定しない
 		if (!IsNewrDistance(*it, obj, HIT_CHECK_DIF))continue;
 
-		//当たり判定の詳細な処理を記述
+		//近くならコリジョンを代入
+		listCol = (*it)->GetNowCollisionPos();
 
+		//キャラがブロックの上下にいる
+		bool isInBlock_X =
+			//キャラの右側がオブジェクトの範囲内か
+			(listCol->GetLeft() + 5 < objCol->GetRight()		&& fabsf(objCol->GetRight() - listCol->GetLeft() + 5)	<= FLT_EPSILON &&
+			 objCol->GetRight()		< listCol->GetRight() - 5	&& fabsf(objCol->GetRight() - listCol->GetRight() - 5)	<= FLT_EPSILON) ||
+			//キャラの左側がオブジェクトの範囲内か
+			(listCol->GetLeft() + 5 < objCol->GetLeft() &&  objCol->GetLeft() <=  listCol->GetRight() - 5);
+
+		//fabsf(this->x - vec.x) <= FLT_EPSILON
+		//を使うべきか否か
 	}
 
 	return F_Vec2();
@@ -45,9 +57,9 @@ F_Vec2 CollisionProcessing::GetOnGroundPosition(BaseObject* obj, Fall* fall)
 
 
 
-bool CollisionProcessing::IsNewrDistance(BaseObject* obj, BaseObject* player, float dif)
+bool CollisionProcessing::IsNewrDistance(BaseObject* obj, BaseObject* chara, float dif)
 {
-	if (F_Vec2::VSize(obj->GetPosition() - player->GetPosition()) < dif)
+	if (F_Vec2::VSize(obj->GetPosition() - chara->GetPosition()) < dif)
 		return true;
 	return false;
 }

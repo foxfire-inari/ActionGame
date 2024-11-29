@@ -16,6 +16,18 @@ BaseObject::~BaseObject()
 {
 }
 
+CollisionData* BaseObject::GetNowCollisionPos()
+{
+	CollisionData* nowColPos = new CollisionData
+	{
+		ColData->GetTop()	+ position.y,
+		ColData->GetUnder() + position.y,
+		ColData->GetLeft()	+ position.x,
+		ColData->GetRight()	+ position.x
+	};
+	return nowColPos;
+}
+
 void BaseObject::SetNewScene(BaseScene* _baseScene, bool isOneObject)
 {
 	baseScene = _baseScene;
