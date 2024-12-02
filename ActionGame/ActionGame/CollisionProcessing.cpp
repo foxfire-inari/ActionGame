@@ -9,8 +9,6 @@ namespace
 	/// 判定する距離
 	/// </summary>
 	static const float HIT_CHECK_DIF = 1000.0f;
-
-	static const float 
 }
 
 CollisionProcessing::CollisionProcessing(std::list<CollisionObject*>& _collisionObjectList)
@@ -42,14 +40,22 @@ F_Vec2 CollisionProcessing::GetOnGroundPosition(BaseObject* obj, Fall* fall)
 
 		//キャラがブロックの上下にいる
 		bool isInBlock_X =
-			//キャラの右側がオブジェクトの範囲内か
-			(listCol->GetLeft() + 5 < objCol->GetRight()		&& fabsf(objCol->GetRight() - listCol->GetLeft() + 5)	<= FLT_EPSILON &&
-			 objCol->GetRight()		< listCol->GetRight() - 5	&& fabsf(objCol->GetRight() - listCol->GetRight() - 5)	<= FLT_EPSILON) ||
-			//キャラの左側がオブジェクトの範囲内か
-			(listCol->GetLeft() + 5 < objCol->GetLeft() &&  objCol->GetLeft() <=  listCol->GetRight() - 5);
+			(
+				//キャラの右側がオブジェクトの範囲内か
+				listCol->GetLeft() + 5 <= objCol->GetRight() && objCol->GetRight() <= listCol->GetRight() - 5 ||
+				//キャラの左側がオブジェクトの範囲内か
+				listCol->GetLeft() + 5 <= objCol->GetLeft()  && objCol->GetLeft()  <= listCol->GetRight() - 5
+			);
 
 		//fabsf(this->x - vec.x) <= FLT_EPSILON
 		//を使うべきか否か
+
+		//キャラがブロックに重なっている
+		bool isOnBlock = isInBlock_X &&
+			listCol->GetTop() <= objCol->GetUnder() && objCol->GetUnder() <= listCol->GetUnder();
+
+
+
 	}
 
 	return F_Vec2();
