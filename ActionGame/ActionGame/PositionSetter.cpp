@@ -13,5 +13,9 @@ PositionSetter::~PositionSetter()
 
 void PositionSetter::UpdatePos(BaseObject* me)
 {	
-	me->AddPosition(me->GetVelocity());
+	//‚±‚ê‚Ì‘ã‚í‚è‚É
+	//me->AddPosition(me->GetVelocity());
+
+	me->SetPosition()
+	
 }

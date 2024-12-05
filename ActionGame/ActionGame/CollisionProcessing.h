@@ -12,6 +12,7 @@ public:
 	~CollisionProcessing();
 
 	/// <summary>
+	/// 横方向の移動処理と
 	/// オブジェクトとブロックの横方向のめり込み補正
 	/// </summary>
 	/// <param name="obj">判定するオブジェクト</param>
@@ -19,6 +20,7 @@ public:
 	F_Vec2 GetSideBlockPosition(BaseObject* obj);
 
 	/// <summary>
+	/// 縦方向の移動処理と
 	/// オブジェクトがブロックの上にいるかとめり込み補正
 	/// </summary>
 	/// <param name="obj">判定するオブジェクト</param>
@@ -37,6 +39,14 @@ private:
 	/// <param name="dif">距離</param>
 	/// <returns></returns>
 	bool IsNewrDistance(F_Vec2 colpos, F_Vec2 objpos, float dif);
+
+	/// <summary>
+	/// ブロックと重なっているか
+	/// </summary>
+	/// <param name="objcol">判定するオブジェクトのデータ</param>
+	/// <param name="listcol">リスト内のデータ</param>
+	/// <returns></returns>
+	bool IsInBlock(CollisionData* objcol,CollisionData* listcol);
 
 };
 
