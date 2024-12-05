@@ -21,7 +21,41 @@ CollisionProcessing::~CollisionProcessing()
 	collisionObjectList.clear();
 }
 
-F_Vec2 CollisionProcessing::GetOnGroundPosition(BaseObject* obj, Fall* fall)
+F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj)
+{
+	//キャラクターのポジション
+	F_Vec2 objPos = obj->GetPosition();
+	//キャラクターのコリジョン
+	CollisionData* objCol = obj->GetNowCollisionPos();
+
+	//リスト内のオブジェクトのポジション
+	F_Vec2 listPos;
+	//リスト内のオブジェクトのコリジョン
+	CollisionData* listCol;
+
+	bool isOnGround = false;
+
+	for (auto it = collisionObjectList.begin(); it != collisionObjectList.end(); it++)
+	{
+		listPos = (*it)->GetPosition();
+
+		//キャラの近くないなら判定しない
+		if (!IsNewrDistance(listPos, objPos, HIT_CHECK_DIF))continue;
+
+		//近くならコリジョンを代入
+		listCol = (*it)->GetNowCollisionPos();
+
+
+
+
+
+
+	}
+
+	return F_Vec2();
+}
+
+F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
 {
 	//キャラクターのコリジョン
 	CollisionData* objCol = obj->GetNowCollisionPos();
@@ -33,26 +67,13 @@ F_Vec2 CollisionProcessing::GetOnGroundPosition(BaseObject* obj, Fall* fall)
 	for (auto it = collisionObjectList.begin(); it != collisionObjectList.end(); it++)
 	{
 		//キャラの近くないなら判定しない
-		if (!IsNewrDistance(*it, obj, HIT_CHECK_DIF))continue;
+		//if (!IsNewrDistance(*it, obj, HIT_CHECK_DIF))continue;
 
 		//近くならコリジョンを代入
 		listCol = (*it)->GetNowCollisionPos();
 
-		//キャラがブロックの上下にいる
-		bool isInBlock_X =
-			(
-				//キャラの右側がオブジェクトの範囲内か
-				listCol->GetLeft() + 5 <= objCol->GetRight() && objCol->GetRight() <= listCol->GetRight() - 5 ||
-				//キャラの左側がオブジェクトの範囲内か
-				listCol->GetLeft() + 5 <= objCol->GetLeft()  && objCol->GetLeft()  <= listCol->GetRight() - 5
-			);
+		
 
-		//fabsf(this->x - vec.x) <= FLT_EPSILON
-		//を使うべきか否か
-
-		//キャラがブロックに重なっている
-		bool isOnBlock = isInBlock_X &&
-			listCol->GetTop() <= objCol->GetUnder() && objCol->GetUnder() <= listCol->GetUnder();
 
 
 
@@ -63,9 +84,9 @@ F_Vec2 CollisionProcessing::GetOnGroundPosition(BaseObject* obj, Fall* fall)
 
 
 
-bool CollisionProcessing::IsNewrDistance(BaseObject* obj, BaseObject* chara, float dif)
+bool CollisionProcessing::IsNewrDistance(F_Vec2 colpos,F_Vec2 objpos, float dif)
 {
-	if (F_Vec2::VSize(obj->GetPosition() - chara->GetPosition()) < dif)
+	if (F_Vec2::VSize(colpos - objpos) < dif)
 		return true;
 	return false;
 }

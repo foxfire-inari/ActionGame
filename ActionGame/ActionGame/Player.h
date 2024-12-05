@@ -41,11 +41,6 @@ public:
 private:
 
 	/// <summary>
-	/// ˆÚ“®‘¬“x
-	/// </summary>
-	float moveSpeed;
-
-	/// <summary>
 	/// –³“G‚©
 	/// </summary>
 	bool isInvincible;

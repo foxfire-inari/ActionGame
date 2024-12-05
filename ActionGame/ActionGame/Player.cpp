@@ -2,7 +2,6 @@
 
 Player::Player(BaseScene* baseScene)
 	:Chara{baseScene,-32,32,-32,32,BaseObject::E_TAG::PLAYER}
-	, moveSpeed{ 0 }
 	, isInvincible{ false }
 	, isGameOver{ false }
 {
