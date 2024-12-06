@@ -1,29 +1,39 @@
 ﻿  BaseManager.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(129,17): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(126,15): message : クラス テンプレート メンバー関数 'float Vector2<float>::VSize(Vector2<float>)' のコンパイル中
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(128,17): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(125,15): message : クラス テンプレート メンバー関数 'float Vector2<float>::VSize(Vector2<float>)' のコンパイル中
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseManager.cpp(35,2): message : 'BaseManager::IsNearDistance' の 'Vector2<float>::VSize' への最初の参照を参照してください
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseObject.h(92,9): message : コンパイル対象の クラス テンプレート インスタンス化 'Vector2<float>' のリファレンスを確認してください
   BaseObject.cpp
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseObject.cpp(23,21): error C2398: 要素 '1': 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseObject.cpp(24,23): error C2398: 要素 '2': 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseObject.cpp(25,22): error C2398: 要素 '3': 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseObject.cpp(26,23): error C2398: 要素 '4': 'float' から 'int' への変換には縮小変換が必要です
   BaseScene.cpp
   Chara.cpp
+  CollisionManager.cpp
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\CollisionManager.cpp(10,37): warning C4150: 'CollisionProcessing' 型を削除するため delete 演算子が呼び出されましたが、定義がありません。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\CollisionManager.h(4,7): message : 'CollisionProcessing' の宣言を確認してください
   CollisionObject.cpp
   CollisionProcessing.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\CollisionProcessing.cpp(28,12): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\CollisionProcessing.cpp(29,14): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\CollisionProcessing.cpp(30,13): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\CollisionProcessing.cpp(31,14): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(129,17): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(126,15): message : クラス テンプレート メンバー関数 'float Vector2<float>::VSize(Vector2<float>)' のコンパイル中
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\CollisionProcessing.cpp(53,2): message : 'CollisionProcessing::IsNewrDistance' の 'Vector2<float>::VSize' への最初の参照を参照してください
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(128,17): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(125,15): message : クラス テンプレート メンバー関数 'float Vector2<float>::VSize(Vector2<float>)' のコンパイル中
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\CollisionProcessing.cpp(126,2): message : 'CollisionProcessing::IsNewrDistance' の 'Vector2<float>::VSize' への最初の参照を参照してください
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseObject.h(92,9): message : コンパイル対象の クラス テンプレート インスタンス化 'Vector2<float>' のリファレンスを確認してください
   CommonObjectAndManager.cpp
+  Fall.cpp
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Fall.cpp(24,29): warning C4305: '初期化中': 'double' から 'float' へ切り詰めます。
+  GameMaster.cpp
   GameScene.cpp
+  Gravity.cpp
+  KeyControlle.cpp
   Player.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp(136,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp(127,16): error C2660: 'PositionSetter::UpdatePos': 関数に 1 個の引数を指定できません。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\PositionSetter.h(16,7): message : 'PositionSetter::UpdatePos' の宣言を確認してください
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp(127,16): message : 引数リスト '(Player *)' を一致させようとしているとき
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp(135,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp(134,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp(133,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp(132,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
   PositionSetter.cpp
+  ソース.cpp
   コードを生成中...
-  LINK : 前回のインクリメンタル リンクで C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\x64\Debug\ActionGame.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
-  ActionGame.vcxproj -> C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\x64\Debug\ActionGame.exe

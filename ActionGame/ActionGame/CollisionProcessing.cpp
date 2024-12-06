@@ -39,6 +39,7 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj)
 
 	for (auto it = collisionObjectList.begin(); it != collisionObjectList.end(); it++)
 	{
+		//リストのオブジェクトの座標を代入
 		listPos = (*it)->GetPosition();
 
 		//キャラの近くないなら判定しない
@@ -48,28 +49,38 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj)
 		listCol = (*it)->GetNowCollisionPos();
 
 
-		//x方向だけ仮で移動
+		//x方向だけ移動
 		objPos.x += objVel_X;
 
-		//仮で移動したオブジェクトがブロックに重なっているか
-		bool isSideBlock = 
-			(
-
-				listCol->GetTop()  <= objCol->GetUnder() && objCol->GetUnder() <= listCol->GetUnder() ||
-				listCol->GetTop()  <= objCol->GetTop()   && objCol->GetTop()   <= listCol->GetUnder() &&
-
-				listCol->GetLeft() <= objCol->GetLeft()  && objCol->GetLeft()  <= listCol->GetRight() ||
-				listCol->GetLeft() <= objCol->GetRight() && objCol->GetRight() <= listCol->GetRight()
-			);
+		//ブロックと重なっているかを確認
+		if (IsInBlock(objCol, listCol))
+		{
+			//進行方向で押し出す向きを固定
+			if (objVel_X < 0)					//左向きに動いていた場合
+			{
+				objPos.x = listCol->GetRight() + listPos.x;
+			}
+			else								//右向きに動いていた場合
+			{
+				objPos.x = listCol->GetLeft() + listPos.x;
+			}
+		}
 	}
 
-	return F_Vec2();
+	return objPos;
 }
 
 F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
 {
+	//キャラクターのポジション
+	F_Vec2 objPos = obj->GetPosition();
 	//キャラクターのコリジョン
 	CollisionData* objCol = obj->GetNowCollisionPos();
+	//キャラクターのX方向の速度
+	float objVel_Y = obj->GetVelocity().y;
+
+	//リスト内のオブジェクトのポジション
+	F_Vec2 listPos;
 	//リスト内のオブジェクトのコリジョン
 	CollisionData* listCol;
 
@@ -77,20 +88,35 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
 
 	for (auto it = collisionObjectList.begin(); it != collisionObjectList.end(); it++)
 	{
+		//リストのオブジェクトの座標を代入
+		listPos = (*it)->GetPosition();
+
 		//キャラの近くないなら判定しない
-		//if (!IsNewrDistance(*it, obj, HIT_CHECK_DIF))continue;
+		if (!IsNewrDistance(listPos, objPos, HIT_CHECK_DIF))continue;
 
 		//近くならコリジョンを代入
 		listCol = (*it)->GetNowCollisionPos();
 
-		
 
+		//y方向だけ移動
+		objPos.y += objVel_Y;
 
-
-
+		//ブロックと重なっているかを確認
+		if (IsInBlock(objCol, listCol))
+		{
+			//進行方向で押し出す向きを固定
+			if (objVel_Y < 0)					//下向きに動いていた場合
+			{
+				objPos.y = listCol->GetTop() + listPos.y;
+			}
+			else								//上向きに動いていた場合
+			{
+				objPos.y = listCol->GetUnder() + listPos.y;
+			}
+		}
 	}
 
-	return F_Vec2();
+	return objPos;
 }
 
 

@@ -1,5 +1,8 @@
 #include "PositionSetter.h"
 #include "BaseObject.h"
+#include "CollisionManager.h"
+#include "CollisionProcessing.h"
+#include "Fall.h"
 
 PositionSetter::PositionSetter()
 {
@@ -11,11 +14,15 @@ PositionSetter::~PositionSetter()
 	//PositionSetterのデストラクタ
 }
 
-void PositionSetter::UpdatePos(BaseObject* me)
+void PositionSetter::UpdatePos(BaseObject* me, CollisionManager* collisionManager,Fall* fall)
 {	
 	//これの代わりに
 	//me->AddPosition(me->GetVelocity());
 
-	me->SetPosition()
+	//X移動
+	me->SetPosition(collisionManager->GetCollisionProcessing()->GetSideBlockPosition(me));
+
+	//Y移動
+	me->SetPosition(collisionManager->GetCollisionProcessing()->GetOnBlockPosition(me, fall));
 	
 }
