@@ -15,6 +15,8 @@ Chara::Chara(BaseScene* baseScene,
 
 	SetPosition(F_Vec2{ 100,100 });
 
+	collisionManager = GetBaseScene()->GetManagerPtr<CollisionManager>(BaseManager::E_MANAGER_TAG::COLLISION);
+
 }
 
 Chara::~Chara()

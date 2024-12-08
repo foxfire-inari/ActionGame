@@ -1,39 +1,40 @@
 ﻿  BaseManager.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(128,17): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(125,15): message : クラス テンプレート メンバー関数 'float Vector2<float>::VSize(Vector2<float>)' のコンパイル中
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseManager.cpp(35,2): message : 'BaseManager::IsNearDistance' の 'Vector2<float>::VSize' への最初の参照を参照してください
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseObject.h(92,9): message : コンパイル対象の クラス テンプレート インスタンス化 'Vector2<float>' のリファレンスを確認してください
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(128,17): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'BaseManager.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(128,17):
+  テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
+  	C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseObject.h(92,9):
+  	コンパイル対象の クラス テンプレート インスタンス化 'Vector2<float>' のリファレンスを確認してください
+  	C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(125,15):
+  	クラス テンプレート メンバー関数 'float Vector2<float>::VSize(Vector2<float>)' のコンパイル中
+  		C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.cpp(35,2):
+  		'BaseManager::IsNearDistance' の 'Vector2<float>::VSize' への最初の参照を参照してください
+  
   BaseObject.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseObject.cpp(23,21): error C2398: 要素 '1': 'float' から 'int' への変換には縮小変換が必要です
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseObject.cpp(24,23): error C2398: 要素 '2': 'float' から 'int' への変換には縮小変換が必要です
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseObject.cpp(25,22): error C2398: 要素 '3': 'float' から 'int' への変換には縮小変換が必要です
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseObject.cpp(26,23): error C2398: 要素 '4': 'float' から 'int' への変換には縮小変換が必要です
   BaseScene.cpp
   Chara.cpp
-  CollisionManager.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\CollisionManager.cpp(10,37): warning C4150: 'CollisionProcessing' 型を削除するため delete 演算子が呼び出されましたが、定義がありません。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\CollisionManager.h(4,7): message : 'CollisionProcessing' の宣言を確認してください
   CollisionObject.cpp
   CollisionProcessing.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(128,17): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(125,15): message : クラス テンプレート メンバー関数 'float Vector2<float>::VSize(Vector2<float>)' のコンパイル中
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\CollisionProcessing.cpp(126,2): message : 'CollisionProcessing::IsNewrDistance' の 'Vector2<float>::VSize' への最初の参照を参照してください
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseObject.h(92,9): message : コンパイル対象の クラス テンプレート インスタンス化 'Vector2<float>' のリファレンスを確認してください
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(128,17): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'CollisionProcessing.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(128,17):
+  テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
+  	C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseObject.h(92,9):
+  	コンパイル対象の クラス テンプレート インスタンス化 'Vector2<float>' のリファレンスを確認してください
+  	C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(125,15):
+  	クラス テンプレート メンバー関数 'float Vector2<float>::VSize(Vector2<float>)' のコンパイル中
+  		C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\CollisionProcessing.cpp(126,2):
+  		'CollisionProcessing::IsNewrDistance' の 'Vector2<float>::VSize' への最初の参照を参照してください
+  
   CommonObjectAndManager.cpp
-  Fall.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Fall.cpp(24,29): warning C4305: '初期化中': 'double' から 'float' へ切り詰めます。
   GameMaster.cpp
   GameScene.cpp
-  Gravity.cpp
-  KeyControlle.cpp
   Player.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp(127,16): error C2660: 'PositionSetter::UpdatePos': 関数に 1 個の引数を指定できません。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\PositionSetter.h(16,7): message : 'PositionSetter::UpdatePos' の宣言を確認してください
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp(127,16): message : 引数リスト '(Player *)' を一致させようとしているとき
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp(135,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp(134,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp(133,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp(132,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(135,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(134,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(133,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(132,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
   PositionSetter.cpp
-  ソース.cpp
   コードを生成中...
+Chara.obj : error LNK2019: 未解決の外部シンボル "public: class CollisionManager * __cdecl BaseScene::GetManagerPtr<class CollisionManager>(int)" (??$GetManagerPtr@VCollisionManager@@@BaseScene@@QEAAPEAVCollisionManager@@H@Z) が関数 "public: __cdecl Chara::Chara(class BaseScene *,int,int,int,int,int)" (??0Chara@@QEAA@PEAVBaseScene@@HHHHH@Z) で参照されました
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\x64\Debug\ActionGame.exe : fatal error LNK1120: 1 件の未解決の外部参照

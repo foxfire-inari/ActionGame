@@ -5,6 +5,7 @@
 #include"Gravity.h"
 #include"PositionSetter.h"
 #include"State.h"
+#include"CollisionManager.h"
 
 /// <summary>
 /// 全てのキャラの継承元
@@ -40,6 +41,9 @@ protected:
 	/// ステート
 	/// </summary>
 	State* state;
+
+	CollisionManager* collisionManager;
+
 };
 
 /// ＜必要な要素＞
