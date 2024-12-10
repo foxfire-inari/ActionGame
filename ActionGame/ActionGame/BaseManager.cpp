@@ -1,5 +1,4 @@
 #include "BaseManager.h"
-#include "BaseScene.h"  
 #include "BaseObject.h"
 
 
@@ -40,7 +39,6 @@ bool BaseManager::IsNearDistance(BaseObject* obj, float dif)
 
 void BaseManager::Init()
 {
-	//playerBase = GetBaseScene()->GetOneObjectPtr<BaseObject>(BaseObject::E_TAG::PLAYER);
-	//assert(playerBase != nullptr);
-
+	playerBase = GetBaseScene()->GetOneObjectPtr<BaseObject>(BaseObject::E_TAG::PLAYER);
+	assert(playerBase != nullptr);
 }

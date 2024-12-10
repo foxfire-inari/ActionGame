@@ -1,40 +1,170 @@
 ﻿  BaseManager.cpp
-C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(128,17): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'BaseManager.cpp' をコンパイルしています)
-  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(128,17):
-  テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
-  	C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseObject.h(92,9):
-  	コンパイル対象の クラス テンプレート インスタンス化 'Vector2<float>' のリファレンスを確認してください
-  	C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(125,15):
-  	クラス テンプレート メンバー関数 'float Vector2<float>::VSize(Vector2<float>)' のコンパイル中
-  		C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.cpp(35,2):
-  		'BaseManager::IsNearDistance' の 'Vector2<float>::VSize' への最初の参照を参照してください
-  
   BaseObject.cpp
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,9): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'BaseManager.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,15): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'BaseManager.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,9): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'BaseObject.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,15): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'BaseObject.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
   BaseScene.cpp
-  Chara.cpp
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,9): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'BaseScene.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,15): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'BaseScene.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
   CollisionObject.cpp
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,9): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'CollisionObject.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,15): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'CollisionObject.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
+  Chara.cpp
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,9): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'Chara.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,15): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'Chara.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
   CollisionProcessing.cpp
-C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(128,17): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,9): error C2027: 認識できない型 'BaseObject' が使われています。
   (ソース ファイル 'CollisionProcessing.cpp' をコンパイルしています)
-  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(128,17):
-  テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
-  	C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseObject.h(92,9):
-  	コンパイル対象の クラス テンプレート インスタンス化 'Vector2<float>' のリファレンスを確認してください
-  	C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(125,15):
-  	クラス テンプレート メンバー関数 'float Vector2<float>::VSize(Vector2<float>)' のコンパイル中
-  		C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\CollisionProcessing.cpp(126,2):
-  		'CollisionProcessing::IsNewrDistance' の 'Vector2<float>::VSize' への最初の参照を参照してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\CollisionProcessing.h(3,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,15): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'CollisionProcessing.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\CollisionProcessing.h(3,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
   
   CommonObjectAndManager.cpp
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,9): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'CommonObjectAndManager.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,15): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'CommonObjectAndManager.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
   GameMaster.cpp
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,9): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'GameMaster.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,15): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'GameMaster.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
   GameScene.cpp
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,9): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'GameScene.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,15): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'GameScene.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
   Player.cpp
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,9): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'Player.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,15): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'Player.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseManager.h(5,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
 C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(135,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(134,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(133,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(132,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
   PositionSetter.cpp
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,9): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'PositionSetter.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\PositionSetter.h(3,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(52,15): error C2027: 認識できない型 'BaseObject' が使われています。
+  (ソース ファイル 'PositionSetter.cpp' をコンパイルしています)
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\PositionSetter.h(3,7):
+  'BaseObject' の宣言を確認してください
+  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseScene.h(42,5):
+  コンパイラでのこの診断により関数 'T *BaseScene::GetOneObjectPtr(int)' が生成されました。
+  
   コードを生成中...
-Chara.obj : error LNK2019: 未解決の外部シンボル "public: class CollisionManager * __cdecl BaseScene::GetManagerPtr<class CollisionManager>(int)" (??$GetManagerPtr@VCollisionManager@@@BaseScene@@QEAAPEAVCollisionManager@@H@Z) が関数 "public: __cdecl Chara::Chara(class BaseScene *,int,int,int,int,int)" (??0Chara@@QEAA@PEAVBaseScene@@HHHHH@Z) で参照されました
-C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\x64\Debug\ActionGame.exe : fatal error LNK1120: 1 件の未解決の外部参照

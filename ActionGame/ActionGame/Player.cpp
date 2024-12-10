@@ -124,7 +124,7 @@ void Player::TestUpdate()
 	state->ChangeState();
 	gravity->AddGravity(velocity.y);
 
-	positionSetter->UpdatePos(this,collisionManager,fall);
+	//positionSetter->UpdatePos(this,collisionManager,fall);
 
 	F_Vec2 drawpos = GetPosition();
 	DrawBox

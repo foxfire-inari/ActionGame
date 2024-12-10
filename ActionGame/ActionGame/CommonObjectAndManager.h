@@ -3,9 +3,10 @@
 #include<string>
 class BaseScene;
 
-class Player;
-
 class CollisionManager;
+
+
+class Player;
 
 //使うクラスはここで前方宣言しとく
 
