@@ -37,6 +37,9 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj)
 
 	bool isOnGround = false;
 
+	//x方向だけ移動
+	objPos.x += objVel_X;
+
 	for (auto it = collisionObjectList.begin(); it != collisionObjectList.end(); it++)
 	{
 		//リストのオブジェクトの座標を代入
@@ -47,10 +50,6 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj)
 
 		//近くならコリジョンを代入
 		listCol = (*it)->GetNowCollisionPos();
-
-
-		//x方向だけ移動
-		objPos.x += objVel_X;
 
 		//ブロックと重なっているかを確認
 		if (IsInBlock(objCol, listCol))
@@ -86,6 +85,9 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
 
 	bool isOnGround = false;
 
+	//y方向だけ移動
+	objPos.y += objVel_Y;
+
 	for (auto it = collisionObjectList.begin(); it != collisionObjectList.end(); it++)
 	{
 		//リストのオブジェクトの座標を代入
@@ -96,10 +98,6 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
 
 		//近くならコリジョンを代入
 		listCol = (*it)->GetNowCollisionPos();
-
-
-		//y方向だけ移動
-		objPos.y += objVel_Y;
 
 		//ブロックと重なっているかを確認
 		if (IsInBlock(objCol, listCol))

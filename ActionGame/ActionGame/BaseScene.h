@@ -39,28 +39,8 @@ public:
 	/// <param name="_tag">その型が持つタグ</param>
 	/// <returns>型とタグが同じならそれのポインターを返す</returns>
 	template<class T>
-	T* GetOneObjectPtr(int _tag)
-	{
-		//渡すポインターを入れる変数
-		T* reObj = nullptr;
-		//リストのnullチェック
-		if (oneObjectList.empty())return nullptr;
-		//リストの中を全部探す
-		for (auto it = oneObjectList.begin(); it != oneObjectList.end();)
-		{
-			//タグが一致するかを確認
-			if ((*it)->GetTag() != _tag)
-			{
-				it++;
-				continue;
-			}
-			//キャストを行っている
-			//dynamic_castなのはstatic_castだとダウンキャストだった場合危険だから
-			reObj = dynamic_cast<T*>(*it);
-			if (reObj != nullptr)return reObj;
-		}
-		return nullptr;
-	}
+	T* GetOneObjectPtr(int _tag);
+
 
 	/// <summary>
 	/// allManagerListから型とタグが同じオブジェクトのポインターを返す
@@ -134,5 +114,4 @@ private:
 	std::list<BaseManager*> allManagerList;
 
 };
-
 
