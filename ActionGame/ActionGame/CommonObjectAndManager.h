@@ -4,7 +4,7 @@
 class BaseScene;
 
 class CollisionManager;
-
+class BlockManager;
 
 class Player;
 
@@ -28,6 +28,7 @@ private:
 	Player* player;
 
 	CollisionManager* collisionManager;
+	BlockManager* blockManager;
 
 
 };

@@ -87,6 +87,9 @@
     <ClCompile Include="Fall.cpp">
       <Filter>Object\Parts</Filter>
     </ClCompile>
+    <ClCompile Include="BlockManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMaster.h">
@@ -145,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="Fall.h">
       <Filter>Object\Parts</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockManager.h">
+      <Filter>Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

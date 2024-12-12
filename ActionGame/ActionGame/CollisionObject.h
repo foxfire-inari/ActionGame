@@ -8,9 +8,29 @@ class CollisionObject :public BaseObject
 {
 public:
 	/// <summary>
-	/// オブジェクトのの基本サイズ（1ｘ1）で生成
+	/// オブジェクトを
+	/// 基本サイズ（1ｘ1）かつ
+	/// 座標を(0,0)かつ
+	/// 速度を(0,0)で生成
 	/// </summary>
-	CollisionObject(BaseScene* _baseScene, bool _isThrough, int _tag);
+	CollisionObject(BaseScene* baseScene, bool _isThrough, int tag);
+
+
+	/// <summary>
+	/// オブジェクトのステータスをセットしながら生成
+	/// </summary>
+	/// <param name="baseScene">ベースシーン</param>
+	/// <param name="pos">座標</param>
+	/// <param name="vel">速度</param>
+	/// <param name="top">	当たり判定＿上</param>
+	/// <param name="under">当たり判定＿下</param>
+	/// <param name="left">	当たり判定＿左</param>
+	/// <param name="right">当たり判定＿右</param>
+	/// <param name="_isThrough">すり抜け床かどうか</param>
+	/// <param name="tag">タグ</param>
+	CollisionObject(BaseScene* baseScene, F_Vec2 pos, F_Vec2 vel,
+		int top, int under, int left, int right, bool _isThrough,int tag);
+
 	~CollisionObject();
 
 	/// <summary>
@@ -25,6 +45,7 @@ private:
 	一応すり抜け床の定義
 	・オブジェクトの当たり判定は上のみ
 	・左右と下からの判定はしない
+	・オブジェクトの下から上に乗ることができる
 	*/
 
 	/// <summary>

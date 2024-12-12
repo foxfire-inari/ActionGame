@@ -1,5 +1,6 @@
 #include "CommonObjectAndManager.h"
 #include "CollisionManager.h"
+#include"BlockManager.h"
 
 #include "Player.h"
 
@@ -9,12 +10,15 @@
 CommonObjectAndManager::CommonObjectAndManager(BaseScene* nowScene)
 {
 	collisionManager = new CollisionManager{ nowScene };
+	blockManager = new BlockManager{ nowScene };
 
 	player = new Player{ nowScene };
 
 
 
 	collisionManager->Start();
+	blockManager->Start();
+
 	player->Start();
 
 }

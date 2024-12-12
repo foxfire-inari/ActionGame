@@ -34,7 +34,7 @@ public:
 	/// </summary>
 	enum E_MANAGER_TAG
 	{
-		Ground,				//地面（ブロック）
+		BLOCK,				//地面（ブロック）
 		ENEMY,				//敵
 		EFFECT,				//エフェクト
 		ITEM,				//アイテム
