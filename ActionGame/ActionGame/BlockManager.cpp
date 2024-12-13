@@ -5,7 +5,7 @@
 BlockManager::BlockManager(BaseScene* baseScene)
 	:BaseManager{baseScene,BaseManager::E_MANAGER_TAG::BLOCK}
 {
-	CollisionObject* block = new CollisionObject{ GetBaseScene(),F_Vec2{100,400},F_Vec2{0,0},
+	CollisionObject* block = new CollisionObject{ GetBaseScene(),F_Vec2{150,400},F_Vec2{0,0},
 												-32,32,-32,32,false,BaseObject::E_TAG::BLOCK};
 	BlockList.emplace_back(block);
 }
@@ -38,6 +38,26 @@ void BlockManager::Update()
 	{
 		(*it)->Update();
 	}
+}
+
+void BlockManager::Draw()
+{
+	for (auto it = BlockList.begin(); it != BlockList.end(); it++)
+	{
+		(*it)->Draw();
+	}
+}
+
+const std::list<CollisionObject*> BlockManager::GetCollisionObjList() const
+{
+	std::list<CollisionObject*> collObjList;
+
+	for (auto it = BlockList.begin(); it != BlockList.end(); it++)
+	{
+		collObjList.emplace_back(*it);
+	}
+
+	return collObjList;
 }
 
 void BlockManager::SetObjectNewScene(BaseScene* _baseScene)

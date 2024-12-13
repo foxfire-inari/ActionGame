@@ -22,6 +22,16 @@ public:
 	/// <returns></returns>
 	Player* GetPlayer()& { return player; }
 
+	/// <summary>
+	/// ブロックマネージャーを返す
+	/// </summary>
+	/// <returns></returns>
+	BlockManager* GetBlockManager()& { return blockManager; }
+
+	/// <summary>
+	/// コリジョンマネージャーを返す
+	/// </summary>
+	/// <returns></returns>
 	CollisionManager* GetCollisoinManager()& { return collisionManager; }
 
 private:

@@ -55,7 +55,7 @@ public:
 	/// <returns></returns>
 	int GetTag()const { return tag; }
 
-	CollisionData* GetNowCollisionPos();
+	CollisionData* GetCollisionPos() { return ColData; }
 
 	/// <summary>
 	/// ゲーム内に1つだけのオブジェクトを

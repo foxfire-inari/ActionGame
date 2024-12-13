@@ -13,6 +13,9 @@ public:
 	~BlockManager();
 	void Start()override;
 	void Update()override;
+	void Draw()override;
+
+	const std::list<CollisionObject*> GetCollisionObjList() const;
 
 private:
 	std::list<CollisionObject*> BlockList;

@@ -48,5 +48,13 @@ private:
 	/// <returns></returns>
 	bool IsInBlock(CollisionData* objcol,CollisionData* listcol);
 
+	/// <summary>
+	/// コリジョンの現在の座標を取得
+	/// </summary>
+	/// <param name="colldata">コリジョンの大きさ</param>
+	/// <param name="pos">持ち主の座標</param>
+	/// <returns></returns>
+	CollisionData* GetNowPositionColl(CollisionData* colldata, F_Vec2 pos);
+
 };
 

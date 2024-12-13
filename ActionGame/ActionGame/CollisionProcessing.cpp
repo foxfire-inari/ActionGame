@@ -25,10 +25,17 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj)
 {
 	//キャラクターのポジション
 	F_Vec2 objPos = obj->GetPosition();
-	//キャラクターのコリジョン
-	CollisionData* objCol = obj->GetNowCollisionPos();
 	//キャラクターのX方向の速度
 	float objVel_X = obj->GetVelocity().x;
+
+	//x方向だけ移動
+	objPos.x += objVel_X;
+
+	//キャラクターのコリジョン
+	CollisionData* objCol = obj->GetCollisionPos();
+
+	//念のため小数点を切り捨ててからint型に変更
+	CollisionData* nowobjCol = GetNowPositionColl(objCol, objPos);
 
 	//リスト内のオブジェクトのポジション
 	F_Vec2 listPos;
@@ -37,8 +44,6 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj)
 
 	bool isOnGround = false;
 
-	//x方向だけ移動
-	objPos.x += objVel_X;
 
 	for (auto it = collisionObjectList.begin(); it != collisionObjectList.end(); it++)
 	{
@@ -49,20 +54,27 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj)
 		if (!IsNewrDistance(listPos, objPos, HIT_CHECK_DIF))continue;
 
 		//近くならコリジョンを代入
-		listCol = (*it)->GetNowCollisionPos();
+		listCol = (*it)->GetCollisionPos();
+		
+		//念のため小数点を切り捨ててからint型に変更
+		CollisionData* nowlistCol = GetNowPositionColl(listCol, listPos);
 
 		//ブロックと重なっているかを確認
-		if (IsInBlock(objCol, listCol))
+		if (IsInBlock(nowobjCol, nowlistCol))
 		{
+
+			//assert(objVel_X != 0);
+
 			//進行方向で押し出す向きを固定
 			if (objVel_X < 0)					//左向きに動いていた場合
 			{
-				objPos.x = listCol->GetRight() + listPos.x;
+				objPos.x = nowlistCol->GetRight() - objCol->GetLeft();
 			}
-			else								//右向きに動いていた場合
+			else if (objVel_X > 0)				//右向きに動いていた場合
 			{
-				objPos.x = listCol->GetLeft() + listPos.x;
+				objPos.x = nowlistCol->GetLeft() - objCol->GetRight();
 			}
+
 		}
 	}
 
@@ -73,10 +85,16 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
 {
 	//キャラクターのポジション
 	F_Vec2 objPos = obj->GetPosition();
-	//キャラクターのコリジョン
-	CollisionData* objCol = obj->GetNowCollisionPos();
 	//キャラクターのX方向の速度
 	float objVel_Y = obj->GetVelocity().y;
+
+	//y方向だけ移動
+	objPos.y += objVel_Y;
+
+	//キャラクターが移動した後ののコリジョン
+	CollisionData* objCol = obj->GetCollisionPos();
+	//念のため小数点を切り捨ててからint型に変更
+	CollisionData* nowobjCol = GetNowPositionColl(objCol, objPos);
 
 	//リスト内のオブジェクトのポジション
 	F_Vec2 listPos;
@@ -84,9 +102,6 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
 	CollisionData* listCol;
 
 	bool isOnGround = false;
-
-	//y方向だけ移動
-	objPos.y += objVel_Y;
 
 	for (auto it = collisionObjectList.begin(); it != collisionObjectList.end(); it++)
 	{
@@ -97,19 +112,21 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
 		if (!IsNewrDistance(listPos, objPos, HIT_CHECK_DIF))continue;
 
 		//近くならコリジョンを代入
-		listCol = (*it)->GetNowCollisionPos();
+		listCol = (*it)->GetCollisionPos();
+		//念のため小数点を切り捨ててからint型に変更
+		CollisionData* nowlistCol = GetNowPositionColl(listCol, listPos);
 
 		//ブロックと重なっているかを確認
-		if (IsInBlock(objCol, listCol))
+		if (IsInBlock(nowobjCol, nowlistCol))
 		{
 			//進行方向で押し出す向きを固定
-			if (objVel_Y < 0)					//下向きに動いていた場合
+			if (objVel_Y > 0)					//下向きに動いていた場合
 			{
-				objPos.y = listCol->GetTop() + listPos.y;
+				objPos.y = nowlistCol->GetTop() - objCol->GetUnder();
 			}
 			else								//上向きに動いていた場合
 			{
-				objPos.y = listCol->GetUnder() + listPos.y;
+				objPos.y = nowlistCol->GetUnder() - objCol->GetTop();
 			}
 		}
 	}
@@ -131,10 +148,23 @@ bool CollisionProcessing::IsInBlock(CollisionData* objcol, CollisionData* listco
 	//それぞれのポジションを計算に含める必要がある
 	return (
 		//ブロックの横に居るか
-		listcol->GetTop()  <= objcol->GetUnder() && objcol->GetUnder() <= listcol->GetUnder() ||
-		listcol->GetTop()  <= objcol->GetTop()   && objcol->GetTop()   <= listcol->GetUnder() &&
+		(listcol->GetTop()  <= objcol->GetUnder() && objcol->GetUnder() <= listcol->GetUnder() ||
+		listcol->GetTop()  <= objcol->GetTop()   && objcol->GetTop()   <= listcol->GetUnder()) &&
 		//ブロックの縦に居るか
-		listcol->GetLeft() <= objcol->GetLeft()  && objcol->GetLeft()  <= listcol->GetRight() ||
-		listcol->GetLeft() <= objcol->GetRight() && objcol->GetRight() <= listcol->GetRight()
+		(listcol->GetLeft() <= objcol->GetLeft()  && objcol->GetLeft()  <= listcol->GetRight() ||
+		listcol->GetLeft() <= objcol->GetRight() && objcol->GetRight() <= listcol->GetRight())
 		);
+}
+
+CollisionData* CollisionProcessing::GetNowPositionColl(CollisionData* colldata, F_Vec2 pos)
+{
+	//念のため小数点を切り捨ててからint型に変更
+	CollisionData* nowCol = new CollisionData
+	{
+		colldata->GetTop()	+ (int)floor(pos.y),
+		colldata->GetUnder()+ (int)floor(pos.y),
+		colldata->GetLeft()	+ (int)floor(pos.x),
+		colldata->GetRight()+ (int)floor(pos.x)
+	};
+	return nowCol;
 }

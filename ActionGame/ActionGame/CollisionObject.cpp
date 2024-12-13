@@ -19,3 +19,21 @@ CollisionObject::CollisionObject(BaseScene* baseScene, F_Vec2 pos, F_Vec2 vel,
 CollisionObject::~CollisionObject()
 {
 }
+
+void CollisionObject::Update()
+{
+}
+
+void CollisionObject::Draw()
+{
+	F_Vec2 drawpos = GetPosition();
+	DrawBox
+	(
+		drawpos.x + ColData->GetLeft(),
+		drawpos.y + ColData->GetTop(),
+		drawpos.x + ColData->GetRight(),
+		drawpos.y + ColData->GetUnder(),
+		GetColor(100, 255, 255),
+		true
+	);
+}

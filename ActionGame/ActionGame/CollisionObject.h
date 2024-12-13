@@ -33,6 +33,10 @@ public:
 
 	~CollisionObject();
 
+	void Update()override;
+	void Draw()override;
+
+
 	/// <summary>
 	/// ‚·‚è”²‚¯°‚©‚Ç‚¤‚©‚ğ•Ô‚·
 	/// </summary>
