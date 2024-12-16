@@ -1,5 +1,12 @@
 #include "Player.h"
 
+namespace
+{
+	static const int STATE_IDLE = 0;
+	static const int STATE_RUN = 1;
+	static const int STATE_JUMP = 2;
+}
+
 Player::Player(BaseScene* baseScene)
 	:Chara{baseScene,-32,32,-32,32,BaseObject::E_TAG::PLAYER}
 	, isInvincible{ false }
@@ -8,6 +15,8 @@ Player::Player(BaseScene* baseScene)
 	GetBaseScene()->SetOneObjectList(this);
 
 	state->SetAllStateMember("Idle");
+	state->SetAllStateMember("Run");
+	state->SetAllStateMember("Jump");
 }
 
 Player::~Player()
@@ -20,10 +29,35 @@ void Player::Start()
 
 void Player::Update()
 {
+	gravity->AddGravity(velocity.y);
+	state->ChangeState();
+
+	switch (state->GetNowState())
+	{
+	case STATE_IDLE:			UpdateIdle();			break;
+
+	case STATE_RUN:				UpdateRun();			break;
+
+	case STATE_JUMP:			UpdateJump();			break;
+	}
+
+	positionSetter->UpdatePos(this, collisionManager, fall);
 }
 
 void Player::Draw()
 {
+	F_Vec2 drawpos = GetPosition();
+	DrawBox
+	(
+		drawpos.x + ColData->GetLeft(),
+		drawpos.y + ColData->GetTop(),
+		drawpos.x + ColData->GetRight(),
+		drawpos.y + ColData->GetUnder(),
+		GetColor(255, 255, 255),
+		true
+	);
+	DrawFormatString(50, 50, GetColor(255, 255, 255),
+		"velocity:%f,%f", GetVelocity().x, GetVelocity().y);
 }
 
 void Player::DrawUI()
@@ -114,31 +148,3 @@ void Player::SetStatus()
 void Player::GetNowSceneManager()
 {
 }
-
-
-/// <summary>
-/// -------------------------------ƒeƒXƒg
-/// </summary>
-void Player::TestUpdate()
-{
-	state->ChangeState();
-	gravity->AddGravity(velocity.y);
-
-	positionSetter->UpdatePos(this,collisionManager,fall);
-
-	F_Vec2 drawpos = GetPosition();
-	DrawBox
-	(
-		drawpos.x + ColData->GetLeft(),
-		drawpos.y + ColData->GetTop(),
-		drawpos.x + ColData->GetRight(),
-		drawpos.y + ColData->GetUnder(),
-		GetColor(255, 255, 255),
-		true
-	);
-	DrawFormatString(50, 50, GetColor(255, 255, 255),
-		"velocity:%f,%f", GetVelocity().x, GetVelocity().y);
-}
-
-
-

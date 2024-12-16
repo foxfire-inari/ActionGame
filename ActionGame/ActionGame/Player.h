@@ -154,16 +154,4 @@ private:
 	/// 今のシーンのマネージャーを取得
 	/// </summary>
 	void GetNowSceneManager();
-
-
-
-
-	//---------------------------------------テスト
-public:
-	/// <summary>
-	/// 実装した機能のテスト用
-	/// </summary>
-	void TestUpdate();
-
-
 };

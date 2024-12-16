@@ -15,7 +15,7 @@ GameScene::~GameScene()
 
 bool GameScene::Update()
 {
-	common->GetPlayer()->TestUpdate();
+	common->GetPlayer()->Update();
 	common->GetBlockManager()->Update();
 
 	return false;
@@ -23,6 +23,7 @@ bool GameScene::Update()
 
 void GameScene::Draw()
 {
+	common->GetPlayer()->Draw();
 	common->GetBlockManager()->Draw();
 }
 
