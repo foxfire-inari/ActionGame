@@ -30,6 +30,9 @@ GameMaster::~GameMaster()
 
 void GameMaster::Update()
 {
+
+	KeyControlle::GetInstance()->Update();
+
 	if (scene.empty())return;
 	if ((*scene.begin())->Update())return;
 	(*scene.begin())->Draw();

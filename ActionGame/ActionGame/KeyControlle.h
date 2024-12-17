@@ -1,57 +1,72 @@
 #pragma once
-#include"Common.h"
-#include"Vector"
+#include"Singleton.h"
 
-class KeyControlle
+/// <summary>
+/// ゲームで扱うキー
+/// </summary>
+enum E_KEY
+{
+	UP = 0,		//0で固定
+	DOWN,
+	LEFT,
+	RIGHT,
+	JUMP,
+	ATTACK,
+	START,
+	E_KEY_MAX
+};
+
+class KeyControlle : public Singleton<KeyControlle>
 {
 public:
 
-	/// <summary>
-	/// KeyLogに対象のキーがあるかの確認
-	/// </summary>
-	/// <param name="KEY_INPUT">対象とするキー</param>
-	/// <returns>あるならTrue</returns>
-	bool FindKeyLog(int KEY_INPUT);
+	KeyControlle();
+	~KeyControlle();
+	void Update();
 
 	/// <summary>
-	/// KeyLogにある対象のキーログがあれば削除
+	/// 押されているフレーム数を取得
 	/// </summary>
-	/// <param name="KEY_INPUT">対象とするキー</param>
-	void DeletKeyLog(int KEY_INPUT);
+	/// <param name="keyCode">E_KEY</param>
+	/// <returns></returns>
+	int GetPressingFrame(int keyCode);
 
 	/// <summary>
-	/// 対象のキーが押された瞬間
+	/// このフレームで押しているかの判定
 	/// </summary>
-	/// <param name="KEY_INPUT">対象とするキー</param>
-	/// <returns>押された瞬間ならTrue</returns>
-	bool GetKeyDown(int KEY_INPUT);
+	/// <param name="keyCode">E_KEY</param>
+	/// <returns></returns>
+	bool GetNowPressing(int keyCode);
 
 	/// <summary>
-	/// 対象のキーが押され続けているか
+	/// このフレームで離しているかの判定
 	/// </summary>
-	/// <param name="KEY_INPUT">対象とするキー</param>
-	/// <returns>押され続けているならTrue</returns>
-	bool GetKeyPressed(int KEY_INPUT);
+	/// <param name="keyCode">E_KEY</param>
+	/// <returns></returns>
+	bool GetNowReleasing(int keyCode);
 
-	//全てのファイルで同じものを取得させる
-	static  KeyControlle* GetInstance()
-	{
-		return instance;
-	}
-
-	/// <summary>
-	/// 生成（instanceに中身を入れて動くようにする）
-	/// </summary>
-	static void Create();
-
-	/// <summary>
-	/// 削除（instanceの中身をnullptrにして動かないようにする）
-	/// </summary>
-	static void Destroy();
 private:
-	//KeyCOntrolleのインスタンス
-	static KeyControlle* instance;
+	/// <summary>
+	/// 入力されているキーとそのフレーム数
+	/// </summary>
+	std::array<int, E_KEY_MAX> reInputValue;
+	/// <summary>
+	/// 1フレーム前に入力されていたキーとそのフレーム数
+	/// </summary>
+	std::array<int, E_KEY_MAX> oldReInputValue;
 
-	//キーの動的配列
-	std::vector<int> KeyLog;
+	/// <summary>
+	/// GetHitKeyStateAllで使うから256
+	/// </summary>
+	static const int KEY_NUM = 256;
+	/// <summary>
+	/// キーボードの状態
+	/// </summary>
+	std::array<int, KEY_NUM> keyboard = {};
+	/// <summary>
+	/// キーコンフィグで割り当てられたキーを保存
+	/// </summary>
+	std::array<int, E_KEY_MAX> keyboardID = {};
+
+
 };

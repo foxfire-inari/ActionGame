@@ -28,15 +28,15 @@
     <Filter Include="Object\Parts">
       <UniqueIdentifier>{14c73806-5f57-4fa3-8edf-d385e3ffbdfb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Singleton">
+      <UniqueIdentifier>{28f0d2eb-ea91-4fb3-80b7-8178cdf6a008}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ソース.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameMaster.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyControlle.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="PositionSetter.cpp">
@@ -90,12 +90,12 @@
     <ClCompile Include="BlockManager.cpp">
       <Filter>Manager</Filter>
     </ClCompile>
+    <ClCompile Include="KeyControlle.cpp">
+      <Filter>Singleton</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMaster.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyControlle.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Common.h">
@@ -151,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="BlockManager.h">
       <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyControlle.h">
+      <Filter>Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Singleton</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

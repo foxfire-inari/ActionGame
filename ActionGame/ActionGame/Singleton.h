@@ -1,0 +1,44 @@
+#pragma once
+#include"Common.h"
+
+template<typename T>
+class Singleton
+{
+private:
+	static T* instance;
+
+protected:
+	Singleton() = default;
+	virtual ~Singleton() = default;
+
+public:
+	Singleton(const Singleton&) = delete;
+	Singleton& operator=(const Singleton&) = delete;
+	Singleton(Singleton&&) = delete;
+	Singleton& operator=(Singleton&&) = delete;
+
+	/// <summary>
+	/// É|ÉCÉìÉ^Çï‘Ç∑
+	/// </summary>
+	/// <returns></returns>
+	static T* GetInstance() {
+		return instance;
+	};
+
+	/// <summary>
+	/// ê∂ê¨
+	/// </summary>
+	static void Create()
+	{
+		if (instance == nullptr)instance = new T;
+	}
+
+	/// <summary>
+	/// çÌèú
+	/// </summary>
+	static void Destroy()
+	{
+		if (instance != nullptr)delete instance;
+		instance = nullptr;
+	}
+};

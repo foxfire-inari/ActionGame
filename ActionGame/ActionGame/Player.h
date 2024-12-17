@@ -40,6 +40,13 @@ public:
 
 private:
 
+	int inputRight;	//右方向への入力量
+	int inputDown;	//下方向への入力量
+
+	float inputAngle;	//入力角度
+	float moveSpeed;	//移動速度
+	int moveAngle;		//進行方向
+
 	/// <summary>
 	/// 無敵か
 	/// </summary>
@@ -81,6 +88,8 @@ private:
 	/// 死亡状態
 	/// </summary>
 	void UpdateDeath();
+
+	// --------ステートごとのスタート
 
 	/// <summary>
 	/// ジャンプ開始

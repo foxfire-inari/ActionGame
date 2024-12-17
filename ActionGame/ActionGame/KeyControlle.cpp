@@ -1,79 +1,75 @@
 #include "KeyControlle.h"
 
-KeyControlle* KeyControlle::instance = nullptr;
+KeyControlle* KeyControlle::Singleton::instance = nullptr;
 
-bool KeyControlle::FindKeyLog(int KEY_INPUT)
+KeyControlle::KeyControlle()
 {
-	return std::find(KeyLog.begin(), KeyLog.end(), KEY_INPUT) != KeyLog.end();
-}
-
-void KeyControlle::DeletKeyLog(int KEY_INPUT)
-{
-	if (FindKeyLog(KEY_INPUT))
+	//方向キーのキー配置をセット
+	keyboardID[UP]		= KEY_INPUT_W;	//17
+	keyboardID[DOWN]	= KEY_INPUT_S;	//31
+	keyboardID[LEFT]	= KEY_INPUT_A;	//30
+	keyboardID[RIGHT]	= KEY_INPUT_D;	//32
+	//入力の初期化
+	for (int i = 0; i < E_KEY_MAX; i++)
 	{
-		KeyLog.erase(std::remove(KeyLog.begin(), KeyLog.end(), KEY_INPUT), KeyLog.end());
+		oldReInputValue.at(i) = 0;
+		reInputValue.at(i) = 0;
 	}
 }
 
-bool KeyControlle::GetKeyDown(int KEY_INPUT)
+KeyControlle::~KeyControlle()
 {
-	if (CheckHitKey(KEY_INPUT))
+}
+
+void KeyControlle::Update()
+{
+	//GetHitKeyStateAllのために変数宣言
+	char key[KEY_NUM];
+	GetHitKeyStateAll(key);
+	for (int i = 0; i < KEY_NUM; i++)
 	{
-		if (!FindKeyLog(KEY_INPUT))
+		if (key[i] != 0)
 		{
-			//存在しなかった場合
-			KeyLog.push_back(KEY_INPUT);
+			keyboard[i]++;
+		}
+		else keyboard[i] = 0;
+	}
+
+	//キーの状態を更新
+	for (int i = 0; i < E_KEY_MAX; i++)
+	{
+		oldReInputValue.at(i) = reInputValue.at(i);
+		reInputValue.at(i) = keyboard[keyboardID[i]];
+	}
+}
+
+int KeyControlle::GetPressingFrame(int keyCode)
+{
+	if (keyCode >= 0 && keyCode < E_KEY_MAX)
+	{
+		return reInputValue[keyCode];
+	}
+	return -1;
+}
+
+bool KeyControlle::GetNowPressing(int keyCode)
+{
+	if (keyCode >= 0 && keyCode < E_KEY_MAX)
+	{
+		if (GetPressingFrame(keyCode) == 1)
 			return true;
-		}
-		else
-		{
-			return false;
-		}
 	}
-	else
-	{
-		DeletKeyLog(KEY_INPUT);
-		return false;
-	}
+
+	return false;
 }
 
-bool KeyControlle::GetKeyPressed(int KEY_INPUT)
+bool KeyControlle::GetNowReleasing(int keyCode)
 {
-	if (CheckHitKey(KEY_INPUT))
+	if (keyCode >= 0 && keyCode < E_KEY_MAX)
 	{
-		if (FindKeyLog(KEY_INPUT))
-		{
-			//存在した場合
+		if (reInputValue.at(keyCode) == 0 && oldReInputValue.at(keyCode) != 0)
 			return true;
-		}
-		else
-		{
-			//存在しなくても保存
-			KeyLog.push_back(KEY_INPUT);
-			return false;
-		}
 	}
-	else
-	{
-		DeletKeyLog(KEY_INPUT);
-		return false;
-	}
-}
 
-void KeyControlle::Create()
-{
-	if (instance == nullptr)
-	{
-		instance = new KeyControlle;
-	}
+	return false;
 }
-
-void KeyControlle::Destroy()
-{
-	if (instance != nullptr)
-	{
-		delete instance;
-		instance = nullptr;
-	}
-}
-
