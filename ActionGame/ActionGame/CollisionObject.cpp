@@ -8,7 +8,7 @@ CollisionObject::CollisionObject(BaseScene* baseScene, bool _isThrough, int tag)
 }
 
 CollisionObject::CollisionObject(BaseScene* baseScene, F_Vec2 pos, F_Vec2 vel, 
-								 int top, int under, int left, int right, bool _isThrough, int tag)
+								 float top, float under, float left, float right, bool _isThrough, int tag)
 	:BaseObject{baseScene,pos,vel,top,under,left,right,tag}
 	, isThrough{ _isThrough }
 {

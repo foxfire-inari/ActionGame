@@ -3,11 +3,21 @@
 
 
 BlockManager::BlockManager(BaseScene* baseScene)
-	:BaseManager{baseScene,BaseManager::E_MANAGER_TAG::BLOCK}
+	:BaseManager{ baseScene,BaseManager::E_MANAGER_TAG::BLOCK }
 {
-	CollisionObject* block = new CollisionObject{ GetBaseScene(),F_Vec2{150,400},F_Vec2{0,0},
-												-32,32,-32,32,false,BaseObject::E_TAG::BLOCK};
+	CollisionObject* block = new CollisionObject{ GetBaseScene(),F_Vec2{150,500},F_Vec2{0,0},
+												-32,32,-32,32,false,BaseObject::E_TAG::BLOCK };
 	BlockList.emplace_back(block);
+	for (int i = 0; i < 5; i++)
+	{
+		block = new CollisionObject{ GetBaseScene(),F_Vec2{(float)(214+64*i),436},F_Vec2{0,0},
+													-32,32,-32,32,false,BaseObject::E_TAG::BLOCK };
+		BlockList.emplace_back(block);
+	}
+	block = new CollisionObject{ GetBaseScene(),F_Vec2{(float)(214 + 64 * 5),500},F_Vec2{0,0},
+											-32,32,-32,32,false,BaseObject::E_TAG::BLOCK };
+	BlockList.emplace_back(block);
+
 }
 
 BlockManager::~BlockManager()

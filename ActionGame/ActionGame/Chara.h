@@ -14,7 +14,7 @@ class Chara : public BaseObject
 {
 public:
 	Chara(BaseScene* baseScene,
-		int top, int under, int left, int right,
+		float top, float under, float left, float right,
 		int tag);
 	~Chara();
 	virtual void Update()override {}

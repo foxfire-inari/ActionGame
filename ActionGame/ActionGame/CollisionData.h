@@ -2,34 +2,34 @@
 class CollisionData
 {
 public:
-	CollisionData(int top, int under, int left, int right);
+	CollisionData(float top, float under, float left, float right);
 	~CollisionData();
 
 	/// <summary>
 	/// コリジョンの上面を返す
 	/// </summary>
 	/// <returns></returns>
-	int GetTop() { return Top; }
+	float GetTop() { return Top; }
 	/// <summary>
 	/// コリジョンの底面を返す
 	/// </summary>
 	/// <returns></returns>
-	int GetUnder() { return Under; }
+	float GetUnder() { return Under; }
 	/// <summary>
 	/// コリジョンの左面を返す
 	/// </summary>
 	/// <returns></returns>
-	int GetLeft() { return Left; }
+	float GetLeft() { return Left; }
 	/// <summary>
 	/// コリジョンの右面を返す
 	/// </summary>
 	/// <returns></returns>
-	int GetRight() { return Right; }
+	float GetRight() { return Right; }
 
 private:
-	int Top;
-	int Under;
-	int Left;
-	int Right;
+	float Top;
+	float Under;
+	float Left;
+	float Right;
 };
 

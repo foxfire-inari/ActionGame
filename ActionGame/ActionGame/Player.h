@@ -40,6 +40,8 @@ public:
 
 private:
 
+	int jumpCount; //ジャンプを押し続けているフレーム数
+
 	int inputRight;	//右方向への入力量
 	int inputDown;	//下方向への入力量
 

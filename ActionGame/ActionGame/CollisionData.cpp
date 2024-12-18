@@ -1,6 +1,6 @@
 #include "CollisionData.h"
 
-CollisionData::CollisionData(int top, int under, int left, int right)
+CollisionData::CollisionData(float top, float under, float left, float right)
 	:Top{top}
 	,Under{under}
 	,Left{left}

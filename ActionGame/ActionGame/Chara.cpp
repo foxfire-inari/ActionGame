@@ -3,7 +3,7 @@
 
 
 Chara::Chara(BaseScene* baseScene,
-	int top, int under, int left, int right,
+	float top, float under, float left, float right,
 	int tag)
 	:BaseObject{ baseScene, F_Vec2{0,0},F_Vec2{0,0},top,under,left,right ,tag}
 {

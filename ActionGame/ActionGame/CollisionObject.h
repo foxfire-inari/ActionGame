@@ -29,7 +29,7 @@ public:
 	/// <param name="_isThrough">Ç∑ÇËî≤ÇØè∞Ç©Ç«Ç§Ç©</param>
 	/// <param name="tag">É^ÉO</param>
 	CollisionObject(BaseScene* baseScene, F_Vec2 pos, F_Vec2 vel,
-		int top, int under, int left, int right, bool _isThrough,int tag);
+		float top, float under, float left, float right, bool _isThrough,int tag);
 
 	~CollisionObject();
 

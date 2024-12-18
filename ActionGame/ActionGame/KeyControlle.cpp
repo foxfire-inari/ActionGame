@@ -5,10 +5,13 @@ KeyControlle* KeyControlle::Singleton::instance = nullptr;
 KeyControlle::KeyControlle()
 {
 	//方向キーのキー配置をセット
-	keyboardID[UP]		= KEY_INPUT_W;	//17
-	keyboardID[DOWN]	= KEY_INPUT_S;	//31
-	keyboardID[LEFT]	= KEY_INPUT_A;	//30
-	keyboardID[RIGHT]	= KEY_INPUT_D;	//32
+	keyboardID[UP]		= KEY_INPUT_W;		//17
+	keyboardID[DOWN]	= KEY_INPUT_S;		//31
+	keyboardID[LEFT]	= KEY_INPUT_A;		//30
+	keyboardID[RIGHT]	= KEY_INPUT_D;		//32
+
+	keyboardID[JUMP]	= KEY_INPUT_SPACE;	//57
+
 	//入力の初期化
 	for (int i = 0; i < E_KEY_MAX; i++)
 	{

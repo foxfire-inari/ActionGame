@@ -4,7 +4,7 @@
 /// <summary>
 /// 重力による落下速度の最大値
 /// </summary>
-const float Gravity::MAX_GRAVITY = 12.0f;
+const float Gravity::MAX_GRAVITY = -12.0f;
 
 /// <summary>
 /// 1フレームごとの重力加速度（60フレームで最大速度）
@@ -24,5 +24,5 @@ Gravity::~Gravity()
 void Gravity::AddGravity(float& velocityY)
 {
 	velocityY += GRAVITY;
-	velocityY = min(velocityY, MAX_GRAVITY);
+	velocityY = max(velocityY, MAX_GRAVITY);
 }
