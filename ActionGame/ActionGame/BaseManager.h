@@ -14,7 +14,7 @@ public:
 	virtual ~BaseManager() {};
 	virtual void Start();
 	virtual void Update() {};
-	virtual void Draw() {};
+	virtual void Draw(F_Vec2 _camDif) {};
 
 	/// <summary>
 	/// ©g‚Ìƒ^ƒO‚Ì”Ô†‚ğ•Ô‚·

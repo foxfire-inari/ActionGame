@@ -50,11 +50,11 @@ void BlockManager::Update()
 	}
 }
 
-void BlockManager::Draw()
+void BlockManager::Draw(F_Vec2 _camDif)
 {
 	for (auto it = BlockList.begin(); it != BlockList.end(); it++)
 	{
-		(*it)->Draw();
+		(*it)->Draw(_camDif);
 	}
 }
 

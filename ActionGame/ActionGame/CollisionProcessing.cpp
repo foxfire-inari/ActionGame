@@ -21,7 +21,7 @@ CollisionProcessing::~CollisionProcessing()
 	collisionObjectList.clear();
 }
 
-F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj)
+F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj,CollisionData* objCol)
 {
 	//キャラクターのポジション
 	F_Vec2 objPos = obj->GetPosition();
@@ -30,9 +30,6 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj)
 
 	//x方向だけ移動
 	objPos.x += objVel_X;
-
-	//キャラクターのコリジョン
-	CollisionData* objCol = obj->GetCollisionPos();
 
 	CollisionData* nowobjCol = GetNowPositionColl(objCol, objPos);
 
@@ -49,7 +46,7 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj)
 		listPos = (*it)->GetPosition();
 
 		//キャラの近くないなら判定しない
-		if (!IsNewrDistance(listPos, objPos, HIT_CHECK_DIF))continue;
+		if (!IsNearDistance(listPos, objPos, HIT_CHECK_DIF))continue;
 
 		//近くならコリジョンを代入
 		listCol = (*it)->GetCollisionPos();
@@ -66,7 +63,7 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj)
 			//進行方向で押し出す向きを固定
 			if (objVel_X < 0)					//左向きに動いていた場合
 			{
-				objPos.x = nowlistCol->GetRight() - objCol->GetLeft();
+ 				objPos.x = nowlistCol->GetRight() - objCol->GetLeft();
 			}
 			else if (objVel_X > 0)				//右向きに動いていた場合
 			{
@@ -79,7 +76,7 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj)
 	return objPos;
 }
 
-F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
+F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, CollisionData* objCol, Fall* fall)
 {
 	//キャラクターのポジション
 	F_Vec2 objPos = obj->GetPosition();
@@ -89,8 +86,6 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
 	//y方向だけ移動
 	objPos.y -= objVel_Y;
 
-	//キャラクターが移動する前のコリジョン
-	CollisionData* objCol = obj->GetCollisionPos();
 	//念のため小数点を切り捨ててからint型に変更
 	CollisionData* nowobjCol = GetNowPositionColl(objCol, objPos);
 
@@ -99,6 +94,7 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
 	//リスト内のオブジェクトのコリジョン
 	CollisionData* listCol;
 
+	//地面に経っているかを記録
 	bool isOnGround = false;
 
 	for (auto it = collisionObjectList.begin(); it != collisionObjectList.end(); it++)
@@ -107,7 +103,7 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
 		listPos = (*it)->GetPosition();
 
 		//キャラの近くないなら判定しない
-		if (!IsNewrDistance(listPos, objPos, HIT_CHECK_DIF))continue;
+		if (!IsNearDistance(listPos, objPos, HIT_CHECK_DIF))continue;
 
 		//近くならコリジョンを代入
 		listCol = (*it)->GetCollisionPos();
@@ -135,6 +131,7 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
 
 	if (fall != nullptr)
 	{
+		//地面に立っているかを保存
 		fall->SetIsOnGround(isOnGround);
 	}
 
@@ -143,7 +140,7 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, Fall* fall)
 
 
 
-bool CollisionProcessing::IsNewrDistance(F_Vec2 colpos,F_Vec2 objpos, float dif)
+bool CollisionProcessing::IsNearDistance(F_Vec2 colpos,F_Vec2 objpos, float dif)
 {
 	if (F_Vec2::VSize(colpos - objpos) < dif)
 		return true;
@@ -167,7 +164,6 @@ bool CollisionProcessing::IsInBlock(CollisionData* objcol, CollisionData* listco
 
 CollisionData* CollisionProcessing::GetNowPositionColl(CollisionData* colldata, F_Vec2 pos)
 {
-	//念のため小数点を切り捨ててからint型に変更
 	CollisionData* nowCol = new CollisionData
 	{
 		colldata->GetTop()	+ pos.y,

@@ -1,6 +1,8 @@
 #pragma once
 #include"BaseObject.h"
 
+#include"CollisionData.h"
+
 /// <summary>
 /// 当たり判定を持つキャラクター以外のクラス
 /// </summary>
@@ -34,8 +36,13 @@ public:
 	~CollisionObject();
 
 	void Update()override;
-	void Draw()override;
+	void Draw(F_Vec2 _camDif)override;
 
+	/// <summary>
+	/// コリジョンデータを渡す
+	/// </summary>
+	/// <returns></returns>
+	CollisionData* GetCollisionPos() { return collisionData; }
 
 	/// <summary>
 	/// すり抜け床かどうかを返す
@@ -44,6 +51,11 @@ public:
 	bool GetIsThrough() { return isThrough; }
 
 private:
+
+	/// <summary>
+	/// 当たり判定の情報
+	/// </summary>
+	CollisionData* collisionData;
 
 	/*
 	一応すり抜け床の定義

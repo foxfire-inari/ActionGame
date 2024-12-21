@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "KeyControlle.h"
+#include "Camera.h"
 
 namespace
 {
@@ -19,6 +20,8 @@ namespace
 
 Player::Player(BaseScene* baseScene)
 	:Chara{ baseScene,-32,32,-32,32,BaseObject::E_TAG::PLAYER }
+	, camPos{}
+	, jumpCount{ 0 }
 	, inputRight{ 0 }
 	, inputDown{ 0 }
 	, inputAngle{ 0 }
@@ -29,6 +32,13 @@ Player::Player(BaseScene* baseScene)
 
 {
 	GetBaseScene()->SetOneObjectList(this);
+
+	oldPos = position;
+
+	camera = GetBaseScene()->GetOneObjectPtr<Camera>(BaseObject::E_TAG::CAMERA);
+	assert(camera != nullptr);
+	camPos = position;
+
 
 	state->SetAllStateMember("Idle");
 	state->SetAllStateMember("Run");
@@ -57,18 +67,20 @@ void Player::Update()
 	case STATE_JUMP:			UpdateJump();			break;
 	}
 
-	positionSetter->UpdatePos(this, collisionManager, fall);
+	positionSetter->UpdatePos(this,collisionData, collisionManager, fall);
+
+	SetCameraPositionAndTarget();
 }
 
-void Player::Draw()
+void Player::Draw(F_Vec2 _camDif)
 {
 	F_Vec2 drawpos = GetPosition();
 	DrawBox
 	(
-		drawpos.x + ColData->GetLeft(),
-		drawpos.y + ColData->GetTop(),
-		drawpos.x + ColData->GetRight(),
-		drawpos.y + ColData->GetUnder(),
+		drawpos.x - _camDif.x + collisionData->GetLeft(),
+		drawpos.y - _camDif.y + collisionData->GetTop(),
+		drawpos.x - _camDif.x + collisionData->GetRight(),
+		drawpos.y - _camDif.y + collisionData->GetUnder(),
 		GetColor(255, 255, 255),
 		true
 	);
@@ -82,6 +94,13 @@ void Player::DrawUI()
 
 void Player::DrawData()
 {
+}
+
+void Player::SetCameraPositionAndTarget()
+{
+	camera->SetTarget(position);
+
+
 }
 
 void Player::UpdateIdle()

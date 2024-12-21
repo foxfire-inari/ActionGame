@@ -1,13 +1,12 @@
-﻿  CollisionProcessing.cpp
-C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(128,17): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'CollisionProcessing.cpp' をコンパイルしています)
-  C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(128,17):
-  テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
-  	C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\BaseObject.h(92,9):
-  	コンパイル対象の クラス テンプレート インスタンス化 'Vector2<float>' のリファレンスを確認してください
-  	C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(125,15):
-  	クラス テンプレート メンバー関数 'float Vector2<float>::VSize(Vector2<float>)' のコンパイル中
-  		C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\CollisionProcessing.cpp(148,2):
-  		'CollisionProcessing::IsNewrDistance' の 'Vector2<float>::VSize' への最初の参照を参照してください
-  
+﻿  CollisionObject.cpp
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\CollisionObject.cpp(38,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\CollisionObject.cpp(37,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\CollisionObject.cpp(36,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\CollisionObject.cpp(35,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Player.cpp
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(83,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(82,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(81,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(80,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  コードを生成中...
   ActionGame.vcxproj -> C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\x64\Debug\ActionGame.exe

@@ -1,18 +1,21 @@
 #include "CollisionObject.h"
 
 CollisionObject::CollisionObject(BaseScene* baseScene, bool _isThrough, int tag)
-	:BaseObject{ baseScene, F_Vec2{0,0},F_Vec2{0,0},-32,32,-32,32,tag }
+	:BaseObject{ baseScene,tag }
 	, isThrough{ _isThrough }
 {
 	//CollisionObjectのコンストラクタ
+	collisionData = new CollisionData{ -32,32,-32,32 };
 }
 
 CollisionObject::CollisionObject(BaseScene* baseScene, F_Vec2 pos, F_Vec2 vel, 
 								 float top, float under, float left, float right, bool _isThrough, int tag)
-	:BaseObject{baseScene,pos,vel,top,under,left,right,tag}
+	:BaseObject{baseScene,pos,vel,tag}
 	, isThrough{ _isThrough }
 {
 	//CollisionObjectのコンストラクタ
+	collisionData = new CollisionData{ top,under,left,right };
+
 }
 
 
@@ -24,15 +27,15 @@ void CollisionObject::Update()
 {
 }
 
-void CollisionObject::Draw()
+void CollisionObject::Draw(F_Vec2 _camDif)
 {
 	F_Vec2 drawpos = GetPosition();
 	DrawBox
 	(
-		drawpos.x + ColData->GetLeft(),
-		drawpos.y + ColData->GetTop(),
-		drawpos.x + ColData->GetRight(),
-		drawpos.y + ColData->GetUnder(),
+		drawpos.x - _camDif.x + collisionData->GetLeft(),
+		drawpos.y - _camDif.y + collisionData->GetTop(),
+		drawpos.x - _camDif.x + collisionData->GetRight(),
+		drawpos.y - _camDif.y + collisionData->GetUnder(),
 		GetColor(100, 255, 255),
 		true
 	);

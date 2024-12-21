@@ -5,9 +5,10 @@
 Chara::Chara(BaseScene* baseScene,
 	float top, float under, float left, float right,
 	int tag)
-	:BaseObject{ baseScene, F_Vec2{0,0},F_Vec2{0,0},top,under,left,right ,tag}
+	:BaseObject{ baseScene, F_Vec2{0,0},F_Vec2{0,0},tag}
 {
 	//Charaのコンストラクタ
+	collisionData = new CollisionData{ top,under,left,right };
 	fall = new Fall{};
 	gravity = new Gravity{};
 	positionSetter = new PositionSetter{};

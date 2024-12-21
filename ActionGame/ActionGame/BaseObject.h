@@ -2,21 +2,19 @@
 #include"Common.h"
 #include"BaseScene.h"
 
-#include"CollisionData.h"
-
 /// <summary>
 /// 全てのオブジェクトの継承元
 /// </summary>
 class BaseObject
 {
 public:
-	BaseObject(BaseScene* _baseScene,F_Vec2 _pos, F_Vec2 _vel,
-		float _top,float _under,float _left,float _right,
-		int _tag);
+	BaseObject(BaseScene* _baseScene, int _tag) :baseScene{ _baseScene }
+		, position{ 0,0 }, velocity{ 0,0 }, tag{ _tag } {};
+	BaseObject(BaseScene* _baseScene,F_Vec2 _pos, F_Vec2 _vel, int _tag);
 	~BaseObject();
 	virtual void Start() {}
 	virtual void Update() {};
-	virtual void Draw() {};
+	virtual void Draw(F_Vec2 _camDif) {};
 
 	/// <summary>
 	/// 自分の座標を返す
@@ -55,7 +53,6 @@ public:
 	/// <returns></returns>
 	int GetTag()const { return tag; }
 
-	CollisionData* GetCollisionPos() { return ColData; }
 
 	/// <summary>
 	/// ゲーム内に1つだけのオブジェクトを
@@ -71,6 +68,7 @@ public:
 	enum E_TAG
 	{
 		PLAYER,				//プレイヤー
+		CAMERA,				//カメラ
 		BLOCK,				//ブロック
 		ENEMY,				//敵
 		ITEM,				//アイテム
@@ -85,9 +83,8 @@ protected:
 	/// <returns>BaseSceneクラスのポインタ</returns>
 	BaseScene* GetBaseScene()const { return baseScene; }
 
-
 	/// <summary>
-	/// オブジェクトの中心座標
+	/// 座標の中心
 	/// </summary>
 	F_Vec2 position;
 
@@ -95,11 +92,6 @@ protected:
 	/// 速度
 	/// </summary>
 	F_Vec2 velocity;
-
-	/// <summary>
-	/// 当たり判定の情報
-	/// </summary>
-	CollisionData* ColData;
 
 	/// <summary>
 	/// オブジェクト判別用のタグ

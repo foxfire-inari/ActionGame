@@ -13,7 +13,7 @@ public:
 	~BlockManager();
 	void Start()override;
 	void Update()override;
-	void Draw()override;
+	void Draw(F_Vec2 _camDif)override;
 
 	const std::list<CollisionObject*> GetCollisionObjList() const;
 

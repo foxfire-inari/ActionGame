@@ -1,12 +1,14 @@
 #pragma once
 #include<vector>
 #include<string>
-class BaseScene;
-
-class CollisionManager;
 class BlockManager;
 
 class Player;
+class Camera;
+
+class CollisionManager;
+
+class BaseScene;
 
 //使うクラスはここで前方宣言しとく
 
@@ -23,6 +25,12 @@ public:
 	Player* GetPlayer()& { return player; }
 
 	/// <summary>
+	/// カメラを返す
+	/// </summary>
+	/// <returns></returns>
+	Camera* GetCamera()& { return camera; }
+
+	/// <summary>
 	/// ブロックマネージャーを返す
 	/// </summary>
 	/// <returns></returns>
@@ -36,6 +44,7 @@ public:
 
 private:
 	Player* player;
+	Camera* camera;
 
 	CollisionManager* collisionManager;
 	BlockManager* blockManager;

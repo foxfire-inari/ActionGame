@@ -1,6 +1,6 @@
 #pragma once
 #include "Chara.h"
-
+class Camera;
 
 /// <summary>
 /// プレイヤークラス
@@ -24,7 +24,7 @@ public:
 	/// <summary>
 	/// ゲームシーンでの描画
 	/// </summary>
-	void Draw()override;
+	void Draw(F_Vec2 _camDif)override;
 
 	/// <summary>
 	/// ゲームシーンでのUI描画
@@ -39,6 +39,13 @@ public:
 	bool GetIsGameOver()const { return isGameOver; }
 
 private:
+	Camera* camera;
+
+	//カメラの座標
+	F_Vec2 camPos;
+
+	//1フレーム前の座標
+	F_Vec2 oldPos;
 
 	int jumpCount; //ジャンプを押し続けているフレーム数
 
@@ -58,6 +65,12 @@ private:
 	/// ゲームオーバーかどうか
 	/// </summary>
 	bool isGameOver;
+
+	/// <summary>
+	/// カメラの座標、中支店のセット
+	/// </summary>
+	void SetCameraPositionAndTarget();
+
 
 	// --------ステートごとのアップデート
 

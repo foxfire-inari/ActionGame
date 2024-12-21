@@ -2,6 +2,8 @@
 #include"Common.h"
 class BaseObject;
 class Fall;
+class CollisionData;
+
 class CollisionManager;
 
 
@@ -13,6 +15,6 @@ class PositionSetter
 public:
 	PositionSetter();
 	~PositionSetter();
-	void UpdatePos(BaseObject* me, CollisionManager* collisionManager, Fall* fall);
+	void UpdatePos(BaseObject* me, CollisionData* colData, CollisionManager* collisionManager, Fall* fall);
 };
 

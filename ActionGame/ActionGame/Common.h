@@ -11,9 +11,9 @@
 #include <typeinfo>
 
 //ウィンドウサイズ横
-static const int Window_X = 800;
+static const int WINDOW_X = 800;
 //ウィンドウサイズ縦
-static const int Window_Y = 600;
+static const int WINDOW_Y = 600;
 
 template <class Type>
 struct Vector2//Vector2型を作成

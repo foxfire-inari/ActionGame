@@ -1,6 +1,7 @@
 #pragma once
 #include"BaseObject.h"
 
+#include"CollisionData.h"
 #include"Fall.h"
 #include"Gravity.h"
 #include"PositionSetter.h"
@@ -18,9 +19,14 @@ public:
 		int tag);
 	~Chara();
 	virtual void Update()override {}
-	virtual void Draw()override {}
+	virtual void Draw(F_Vec2 _camDif)override {}
 
 protected:
+
+	/// <summary>
+	/// “–‚½‚è”»’è‚Ìî•ñ
+	/// </summary>
+	CollisionData* collisionData;
 
 	/// <summary>
 	/// ’n–Ê‚Éæ‚Á‚Ä‚é‚©

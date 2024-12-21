@@ -1,15 +1,12 @@
 #include "BaseObject.h"
 
 
-BaseObject::BaseObject(BaseScene* _baseScene, F_Vec2 _pos, F_Vec2 _vel,
-	float _top, float _under, float _left, float _right,
-	int _tag)
-	:position{ _pos }
-	, baseScene{ _baseScene }
+BaseObject::BaseObject(BaseScene* _baseScene, F_Vec2 _pos, F_Vec2 _vel, int _tag)
+	:baseScene{ _baseScene }
+	, position{ _pos }
 	, velocity{ _vel }
 	, tag{ _tag }
 {
-	ColData = new CollisionData{ _top,_under,_left,_right };
 }
 
 BaseObject::~BaseObject()

@@ -31,6 +31,9 @@
     <Filter Include="Singleton">
       <UniqueIdentifier>{28f0d2eb-ea91-4fb3-80b7-8178cdf6a008}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\CollisionObject">
+      <UniqueIdentifier>{283edc72-7fb4-478e-8742-ee6a1929745a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ソース.cpp">
@@ -49,9 +52,6 @@
       <Filter>Object\Character</Filter>
     </ClCompile>
     <ClCompile Include="BaseObject.cpp">
-      <Filter>Object</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionObject.cpp">
       <Filter>Object</Filter>
     </ClCompile>
     <ClCompile Include="SceneChange.cpp">
@@ -93,6 +93,12 @@
     <ClCompile Include="KeyControlle.cpp">
       <Filter>Singleton</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionObject.cpp">
+      <Filter>Object\CollisionObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMaster.h">
@@ -111,9 +117,6 @@
       <Filter>Object\Character</Filter>
     </ClInclude>
     <ClInclude Include="BaseObject.h">
-      <Filter>Object</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionObject.h">
       <Filter>Object</Filter>
     </ClInclude>
     <ClInclude Include="SceneChange.h">
@@ -157,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="Singleton.h">
       <Filter>Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionObject.h">
+      <Filter>Object\CollisionObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

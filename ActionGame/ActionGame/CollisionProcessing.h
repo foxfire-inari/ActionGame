@@ -16,17 +16,19 @@ public:
 	/// オブジェクトとブロックの横方向のめり込み補正
 	/// </summary>
 	/// <param name="obj">判定するオブジェクト</param>
+	/// <param name="objCol">オブジェクトのコリジョンデータ</param>
 	/// <returns></returns>
-	F_Vec2 GetSideBlockPosition(BaseObject* obj);
+	F_Vec2 GetSideBlockPosition(BaseObject* obj, CollisionData* objCol);
 
 	/// <summary>
 	/// 縦方向の移動処理と
 	/// オブジェクトがブロックの上にいるかとめり込み補正
 	/// </summary>
 	/// <param name="obj">判定するオブジェクト</param>
+	/// <param name="objCol">オブジェクトのコリジョンデータ</param>
 	/// <param name="fall">落ちているかをセット</param>
 	/// <returns></returns>
-	F_Vec2 GetOnBlockPosition(BaseObject* obj, Fall* fall = nullptr);
+	F_Vec2 GetOnBlockPosition(BaseObject* obj, CollisionData* objCol, Fall* fall = nullptr);
 
 private:
 	std::list<CollisionObject*> collisionObjectList;
@@ -38,7 +40,7 @@ private:
 	/// <param name="chara">キャラ</param>
 	/// <param name="dif">距離</param>
 	/// <returns></returns>
-	bool IsNewrDistance(F_Vec2 colpos, F_Vec2 objpos, float dif);
+	bool IsNearDistance(F_Vec2 colpos, F_Vec2 objpos, float dif);
 
 	/// <summary>
 	/// ブロックと重なっているか

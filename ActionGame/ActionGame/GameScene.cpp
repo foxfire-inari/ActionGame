@@ -1,5 +1,6 @@
 #include "GameScene.h"
 #include"Player.h"
+#include"Camera.h"
 #include"BlockManager.h"
 
 GameScene::GameScene(SceneChange* sceneChange, std::string _nowMapName)
@@ -23,8 +24,9 @@ bool GameScene::Update()
 
 void GameScene::Draw()
 {
-	common->GetPlayer()->Draw();
-	common->GetBlockManager()->Draw();
+	F_Vec2 camDif = common->GetCamera()->GetTarget();
+	common->GetPlayer()->Draw(camDif);
+	common->GetBlockManager()->Draw(camDif);
 }
 
 bool GameScene::GameOverProcessing()

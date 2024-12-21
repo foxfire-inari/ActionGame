@@ -1,6 +1,6 @@
 #include "BaseScene.h"
 #include "Player.h"
-
+#include "Camera.h"
 template<class T>
 T* BaseScene::GetOneObjectPtr(int _tag)
 {
@@ -29,3 +29,4 @@ T* BaseScene::GetOneObjectPtr(int _tag)
 // cppファイルに関数を移した上で明示的インスタンス化をした。
 // なぜか認識するようになったしエラーも起きていない
 template BaseObject* BaseScene::GetOneObjectPtr(int _tag);
+template Camera* BaseScene::GetOneObjectPtr(int _tag);
