@@ -69,7 +69,7 @@ void Player::Update()
 
 	positionSetter->UpdatePos(this,collisionData, collisionManager, fall);
 
-	SetCameraPositionAndTarget();
+	SetCameraTarget();
 }
 
 void Player::Draw(F_Vec2 _camDif)
@@ -96,9 +96,16 @@ void Player::DrawData()
 {
 }
 
-void Player::SetCameraPositionAndTarget()
+void Player::SetCameraTarget()
 {
-	camera->SetTarget(position);
+	F_Vec2 camPos = position;
+
+	camPos.x = max(camPos.x, camera->GetMinPosX());
+	camPos.x = min(camPos.x, camera->GetMaxPosX());
+	camPos.y = max(camPos.y, camera->GetMinPosY());
+	camPos.y = min(camPos.y, camera->GetMaxPosY());
+
+	camera->SetTarget(camPos);
 
 
 }

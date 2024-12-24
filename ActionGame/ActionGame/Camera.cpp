@@ -11,7 +11,12 @@ Camera::Camera(BaseScene* baseScene)
 	GetBaseScene()->SetOneObjectList(this);
 
 
+	//ƒJƒƒ‰‚Ìs‚¯‚é”ÍˆÍ‚ð‰¼‚ÅÝ’è
+	maxPosX = 132 + WINDOW_X / 2;
+	minPosX = -250 + WINDOW_X / 2;
 
+	maxPosY = 40 + WINDOW_Y / 2;
+	minPosY = 40 + WINDOW_Y / 2;
 
 }
 

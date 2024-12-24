@@ -69,7 +69,7 @@ private:
 	/// <summary>
 	/// カメラの座標、中支店のセット
 	/// </summary>
-	void SetCameraPositionAndTarget();
+	void SetCameraTarget();
 
 
 	// --------ステートごとのアップデート

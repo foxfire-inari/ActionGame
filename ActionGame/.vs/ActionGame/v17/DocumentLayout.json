@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BaseManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\BaseManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BaseManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\BaseManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CollisionManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -31,20 +51,8 @@
       "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\CollisionManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BaseManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\BaseManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BaseManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\BaseManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Gravity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\Gravity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\SceneChange.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -65,14 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CommonObjectAndManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\CommonObjectAndManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Fall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -177,7 +177,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 965,
-          "SelectedChildIndex": 25,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Document",
@@ -190,8 +190,7 @@
               "ViewState": "AQIAAAIAAAAAAAAAAAAAwA8AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-10T10:52:26.638Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -204,8 +203,7 @@
               "ViewState": "AQIAAAYAAAAAAAAAAAAqwCAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-17T07:49:04.489Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -231,8 +229,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-21T12:19:36.462Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -245,8 +242,7 @@
               "ViewState": "AQIAABsAAAAAAAAAAAAAACQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-21T12:05:53.993Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -259,8 +255,7 @@
               "ViewState": "AQIAABgAAAAAAAAAAAAAACAAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-21T12:01:36.081Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -273,8 +268,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-21T12:29:17.932Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -287,12 +281,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-21T12:18:42.007Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "GameScene.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\GameScene.cpp",
               "RelativeDocumentMoniker": "ActionGame\\GameScene.cpp",
@@ -301,12 +294,11 @@
               "ViewState": "AQIAABAAAAAAAAAAAAAiwBwAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-21T12:18:42.887Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "BaseObject.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BaseObject.h",
               "RelativeDocumentMoniker": "ActionGame\\BaseObject.h",
@@ -315,8 +307,7 @@
               "ViewState": "AQIAAAQAAAAAAAAAAAAiwAcAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-21T12:14:09.623Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -329,8 +320,7 @@
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-26T09:27:10.892Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -343,8 +333,7 @@
               "ViewState": "AQIAAAkAAAAAAAAAAAAiwBUAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-10T10:48:20.241Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -357,12 +346,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-26T09:22:57.425Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 5,
               "Title": "Player.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Player.h",
               "RelativeDocumentMoniker": "ActionGame\\Player.h",
@@ -376,13 +364,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 0,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Player.cpp",
               "RelativeDocumentMoniker": "ActionGame\\Player.cpp",
               "ToolTip": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Player.cpp",
               "RelativeToolTip": "ActionGame\\Player.cpp",
-              "ViewState": "AQIAABcAAAAAAAAAAAAiwEoAAAAhAAAA",
+              "ViewState": "AQIAAFoAAAAAAAAAAADwv2YAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-21T12:05:57.219Z",
               "IsPinned": true,
@@ -399,8 +387,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-26T11:47:43.915Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -417,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "CollisionProcessing.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CollisionProcessing.h",
               "RelativeDocumentMoniker": "ActionGame\\CollisionProcessing.h",
@@ -426,12 +413,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-26T11:38:43.427Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "CollisionProcessing.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CollisionProcessing.cpp",
               "RelativeDocumentMoniker": "ActionGame\\CollisionProcessing.cpp",
@@ -440,12 +426,11 @@
               "ViewState": "AQIAAGIAAAAAAAAAAAD4v2kAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-05T11:18:05.833Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "CollisionManager.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CollisionManager.h",
               "RelativeDocumentMoniker": "ActionGame\\CollisionManager.h",
@@ -454,12 +439,11 @@
               "ViewState": "AQIAABIAAAAAAAAAAAAAAAkAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-26T11:23:11.699Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "CollisionManager.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CollisionManager.cpp",
               "RelativeDocumentMoniker": "ActionGame\\CollisionManager.cpp",
@@ -468,12 +452,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-05T11:28:26.672Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "CommonObjectAndManager.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CommonObjectAndManager.h",
               "RelativeDocumentMoniker": "ActionGame\\CommonObjectAndManager.h",
@@ -482,12 +465,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-08T11:23:40.225Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "CommonObjectAndManager.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CommonObjectAndManager.cpp",
               "RelativeDocumentMoniker": "ActionGame\\CommonObjectAndManager.cpp",
@@ -496,12 +478,11 @@
               "ViewState": "AQIAABUAAAAAAAAAAAAAAA8AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-08T11:23:43.93Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "BaseManager.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BaseManager.h",
               "RelativeDocumentMoniker": "ActionGame\\BaseManager.h",
@@ -515,7 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "BaseManager.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BaseManager.cpp",
               "RelativeDocumentMoniker": "ActionGame\\BaseManager.cpp",
@@ -529,13 +510,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Camera.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Camera.h",
               "RelativeDocumentMoniker": "ActionGame\\Camera.h",
               "ToolTip": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Camera.h",
               "RelativeToolTip": "ActionGame\\Camera.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAjAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-21T02:30:38.384Z",
               "IsPinned": true,
@@ -543,13 +524,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "Camera.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Camera.cpp",
               "RelativeDocumentMoniker": "ActionGame\\Camera.cpp",
               "ToolTip": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Camera.cpp",
               "RelativeToolTip": "ActionGame\\Camera.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAlAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAADwvw8AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-21T02:33:06.876Z",
               "IsPinned": true,
@@ -557,7 +538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "CollisionObject.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CollisionObject.h",
               "RelativeDocumentMoniker": "ActionGame\\CollisionObject.h",
@@ -566,8 +547,7 @@
               "ViewState": "AQIAABoAAAAAAAAAAAAiwCYAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-26T11:30:03.69Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -580,8 +560,7 @@
               "ViewState": "AQIAAA8AAAAAAAAAAAAAwCUAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-18T06:58:05.652Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -621,7 +600,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Gravity.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Gravity.h",
               "RelativeDocumentMoniker": "ActionGame\\Gravity.h",
@@ -629,12 +608,11 @@
               "RelativeToolTip": "ActionGame\\Gravity.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-26T12:02:09.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T12:02:09.13Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "SceneChange.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\SceneChange.h",
               "RelativeDocumentMoniker": "ActionGame\\SceneChange.h",
@@ -642,12 +620,11 @@
               "RelativeToolTip": "ActionGame\\SceneChange.h",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-10T10:52:28.886Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-10T10:52:28.886Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "BlockManager.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BlockManager.cpp",
               "RelativeDocumentMoniker": "ActionGame\\BlockManager.cpp",
@@ -655,8 +632,7 @@
               "RelativeToolTip": "ActionGame\\BlockManager.cpp",
               "ViewState": "AQIAACQAAAAAAAAAAAAAwDgAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-18T04:46:16.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T04:46:16.064Z"
             },
             {
               "$type": "Document",
@@ -668,8 +644,7 @@
               "RelativeToolTip": "ActionGame\\BlockManager.h",
               "ViewState": "AQIAAAQAAAAAAAAAAAAAwA8AAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-18T04:46:12.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T04:46:12.668Z"
             },
             {
               "$type": "Document",
@@ -693,8 +668,7 @@
               "RelativeToolTip": "ActionGame\\PositionSetter.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-26T11:28:16.321Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T11:28:16.321Z"
             },
             {
               "$type": "Document",
@@ -706,8 +680,7 @@
               "RelativeToolTip": "ActionGame\\PositionSetter.cpp",
               "ViewState": "AQIAAAQAAAAAAAAAAAAhwBEAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-05T11:22:19.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-05T11:22:19.382Z"
             },
             {
               "$type": "Document",
@@ -719,8 +692,7 @@
               "RelativeToolTip": "ActionGame\\CollisionData.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-26T11:39:48.97Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T11:39:48.97Z"
             },
             {
               "$type": "Document",
@@ -732,8 +704,7 @@
               "RelativeToolTip": "ActionGame\\CollisionData.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-18T06:56:34.824Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T06:56:34.824Z"
             },
             {
               "$type": "Document",
@@ -756,10 +727,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3822e751-eb69-4b0e-b301-595a9e4c74d5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
             },
             {
               "$type": "Bookmark",
