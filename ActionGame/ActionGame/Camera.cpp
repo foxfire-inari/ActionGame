@@ -12,7 +12,7 @@ Camera::Camera(BaseScene* baseScene)
 
 
 	//ƒJƒƒ‰‚Ìs‚¯‚é”ÍˆÍ‚ğ‰¼‚Åİ’è
-	maxPosX = 132 + WINDOW_X / 2;
+	maxPosX = 1000 + WINDOW_X / 2;
 	minPosX = -250 + WINDOW_X / 2;
 
 	maxPosY = 40 + WINDOW_Y / 2;

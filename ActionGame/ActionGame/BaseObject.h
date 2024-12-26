@@ -73,6 +73,7 @@ public:
 		ENEMY,				//敵
 		ITEM,				//アイテム
 		EFFECT,				//エフェクト
+		BULLET,				//弾
 	};
 
 protected:

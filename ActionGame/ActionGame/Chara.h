@@ -48,6 +48,9 @@ protected:
 	/// </summary>
 	State* state;
 
+	/// <summary>
+	/// 当たり判定のマネージャー
+	/// </summary>
 	CollisionManager* collisionManager;
 
 };

@@ -8,13 +8,14 @@ BlockManager::BlockManager(BaseScene* baseScene)
 	CollisionObject* block = new CollisionObject{ GetBaseScene(),F_Vec2{150,500},F_Vec2{0,0},
 												-32,32,-32,32,false,BaseObject::E_TAG::BLOCK };
 	BlockList.emplace_back(block);
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 20; i++)
 	{
 		block = new CollisionObject{ GetBaseScene(),F_Vec2{(float)(214+64*i),436},F_Vec2{0,0},
 													-32,32,-32,32,false,BaseObject::E_TAG::BLOCK };
 		BlockList.emplace_back(block);
 	}
-	block = new CollisionObject{ GetBaseScene(),F_Vec2{(float)(214 + 64 * 5),500},F_Vec2{0,0},
+
+	block = new CollisionObject{ GetBaseScene(),F_Vec2{300,200},F_Vec2{0,0},
 											-32,32,-32,32,false,BaseObject::E_TAG::BLOCK };
 	BlockList.emplace_back(block);
 

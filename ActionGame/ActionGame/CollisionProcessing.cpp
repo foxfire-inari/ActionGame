@@ -81,10 +81,10 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, CollisionData* o
 	//キャラクターのポジション
 	F_Vec2 objPos = obj->GetPosition();
 	//キャラクターのX方向の速度
-	float objVel_Y = obj->GetVelocity().y;
+	F_Vec2 objVel = obj->GetVelocity();
 
 	//y方向だけ移動
-	objPos.y -= objVel_Y;
+	objPos.y -= objVel.y;
 
 	//念のため小数点を切り捨ててからint型に変更
 	CollisionData* nowobjCol = GetNowPositionColl(objCol, objPos);
@@ -114,10 +114,10 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, CollisionData* o
 		if (IsInBlock(nowobjCol, nowlistCol))
 		{
 
-			assert(objVel_Y != 0);
+			assert(objVel.y != 0);
 
 			//進行方向で押し出す向きを固定
-			if (objVel_Y < 0)					//下向きに動いていた場合
+			if (objVel.y < 0)					//下向きに動いていた場合
 			{
 				objPos.y = nowlistCol->GetTop() - objCol->GetUnder();
 				isOnGround = true;
@@ -125,6 +125,7 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, CollisionData* o
 			else								//上向きに動いていた場合
 			{
 				objPos.y = nowlistCol->GetUnder() - objCol->GetTop();
+				obj->SetVelocity(F_Vec2{ objVel.x,0 });
 			}
 		}
 	}

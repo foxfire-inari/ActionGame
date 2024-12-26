@@ -34,6 +34,9 @@
     <Filter Include="Object\CollisionObject">
       <UniqueIdentifier>{283edc72-7fb4-478e-8742-ee6a1929745a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\Bullet">
+      <UniqueIdentifier>{c22268e3-0db1-403d-97bb-42f2dc46ecab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ソース.cpp">
@@ -98,6 +101,9 @@
     </ClCompile>
     <ClCompile Include="CollisionObject.cpp">
       <Filter>Object\CollisionObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Object\Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="CollisionObject.h">
       <Filter>Object\CollisionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Object\Bullet</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
