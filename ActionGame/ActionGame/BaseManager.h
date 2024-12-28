@@ -39,6 +39,7 @@ public:
 		EFFECT,				//エフェクト
 		ITEM,				//アイテム
 		COLLISION,			//コリジョン
+		BULLET,				//弾
 
 		E_MANAGER_TAG_MAX	//タグの最大値
 	};

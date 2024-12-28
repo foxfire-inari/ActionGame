@@ -6,22 +6,10 @@ Bullet::Bullet(BaseScene* _baseScene, float top, float under, float left, float 
 	, flag{ false }
 {
 	collisionData = new CollisionData{ top,under,left,right };
-	collisionManager = GetBaseScene()->GetManagerPtr<CollisionManager>(BaseManager::E_MANAGER_TAG::COLLISION);
 }
 
 
 Bullet::~Bullet()
 {
-}
-
-void Bullet::Start()
-{
-}
-
-void Bullet::Update()
-{
-}
-
-void Bullet::Draw(F_Vec2 _camDif)
-{
+	if (collisionData != nullptr)delete collisionData;
 }

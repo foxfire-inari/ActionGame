@@ -148,6 +148,7 @@
     <ClCompile Include="BaseScene.cpp" />
     <ClCompile Include="BlockManager.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="BulletManager.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CollisionObject.cpp" />
     <ClCompile Include="Chara.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Gravity.cpp" />
     <ClCompile Include="KeyControlle.cpp" />
+    <ClCompile Include="NormalBullet.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PositionSetter.cpp" />
     <ClCompile Include="SceneChange.cpp" />
@@ -172,6 +174,7 @@
     <ClInclude Include="BaseScene.h" />
     <ClInclude Include="BlockManager.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="BulletManager.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CollisionObject.h" />
     <ClInclude Include="Chara.h" />
@@ -185,6 +188,7 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Gravity.h" />
     <ClInclude Include="KeyControlle.h" />
+    <ClInclude Include="NormalBullet.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PositionSetter.h" />
     <ClInclude Include="SceneChange.h" />

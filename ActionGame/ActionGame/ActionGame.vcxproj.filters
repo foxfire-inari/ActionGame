@@ -105,6 +105,12 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>Object\Bullet</Filter>
     </ClCompile>
+    <ClCompile Include="NormalBullet.cpp">
+      <Filter>Object\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMaster.h">
@@ -175,6 +181,12 @@
     </ClInclude>
     <ClInclude Include="Bullet.h">
       <Filter>Object\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalBullet.h">
+      <Filter>Object\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletManager.h">
+      <Filter>Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

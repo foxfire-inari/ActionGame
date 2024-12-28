@@ -9,12 +9,45 @@
 /// </summary>
 class Bullet : public BaseObject
 {
+public:
 	Bullet(BaseScene* _baseScene, float top, float under, float left, float right );
 	~Bullet();
 
-	void Start()override;
-	void Update()override;
-	void Draw(F_Vec2 _camDif);
+	virtual void Update()override {}
+	virtual void Draw(F_Vec2 _camDif)override {}
+
+	/// <summary>
+	/// 弾の要素を設定する
+	/// </summary>
+	/// <param name="pos">発射地点</param>
+	/// <param name="vec">発射方向</param>
+	/// <param name="_power">ダメージ量</param>
+	virtual void SetState(F_Vec2 pos,F_Vec2 vec,int _power) {};
+
+	/// <summary>
+	/// フラグが立っているか返す
+	/// </summary>
+	/// <returns></returns>
+	bool GetFlag()const { return flag; }
+
+	/// <summary>
+	/// フラグをセット
+	/// </summary>
+	/// <param name="_flag"></param>
+	void SetFlag(bool _flag) { flag = _flag; }
+
+	/// <summary>
+	/// コリジョンを返す
+	/// HitCheckEnemy用
+	/// </summary>
+	/// <returns></returns>
+	CollisionData* GetCollisionData()const { return collisionData; }
+
+	/// <summary>
+	/// ダメージを返す
+	/// </summary>
+	/// <returns></returns>
+	int GetPower()const { return power; }
 
 protected:
 
@@ -32,11 +65,5 @@ protected:
 	/// 当たり判定の情報
 	/// </summary>
 	CollisionData* collisionData;
-
-	/// <summary>
-	/// 地面との当たり判定用
-	/// </summary>
-	CollisionManager* collisionManager;
-
 };
 

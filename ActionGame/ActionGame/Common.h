@@ -116,6 +116,15 @@ struct Vector2//Vector2型を作成
 		this->y -= _vec.y;
 	}
 
+	//乗算(float)
+	Vector2 operator *(float _scale)
+	{
+		Vector2 vec;
+		vec.x = this->x - _scale;
+		vec.y = this->y - _scale;
+		return vec;
+	}
+
 	/// <summary>
 	/// ベクトルのサイズをfloat型で返す
 	/// float型以外で使ったら止まる
