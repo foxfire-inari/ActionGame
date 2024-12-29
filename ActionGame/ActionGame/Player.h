@@ -1,6 +1,7 @@
 #pragma once
 #include "Chara.h"
 class Camera;
+class BulletManager;
 
 /// <summary>
 /// プレイヤークラス
@@ -40,6 +41,8 @@ public:
 
 private:
 	Camera* camera;
+	BulletManager* bulletManager;
+
 
 	//カメラの座標
 	F_Vec2 camPos;
@@ -48,11 +51,12 @@ private:
 	F_Vec2 oldPos;
 
 	int jumpCount; //ジャンプを押し続けているフレーム数
+	int shotCount; //攻撃までのカウンター
 
 	int inputRight;	//右方向への入力量
 	int inputDown;	//下方向への入力量
 
-	float inputAngle;	//入力角度
+	float shotAngle;	//入力角度
 	float moveSpeed;	//移動速度
 	int moveAngle;		//進行方向
 

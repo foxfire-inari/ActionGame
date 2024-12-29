@@ -6,6 +6,7 @@ class BlockManager;
 class Player;
 class Camera;
 
+class BulletManager;
 class CollisionManager;
 
 class BaseScene;
@@ -31,10 +32,10 @@ public:
 	Camera* GetCamera()& { return camera; }
 
 	/// <summary>
-	/// ブロックマネージャーを返す
+	/// バレットマネージャーを返す
 	/// </summary>
 	/// <returns></returns>
-	BlockManager* GetBlockManager()& { return blockManager; }
+	BulletManager* GetBulletManager()& { return bulletManager; }
 
 	/// <summary>
 	/// コリジョンマネージャーを返す
@@ -42,10 +43,18 @@ public:
 	/// <returns></returns>
 	CollisionManager* GetCollisoinManager()& { return collisionManager; }
 
+	/// <summary>
+	/// ブロックマネージャーを返す
+	/// </summary>
+	/// <returns></returns>
+	BlockManager* GetBlockManager()& { return blockManager; }
+
+
 private:
 	Player* player;
 	Camera* camera;
 
+	BulletManager* bulletManager;
 	CollisionManager* collisionManager;
 	BlockManager* blockManager;
 

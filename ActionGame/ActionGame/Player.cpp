@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "KeyControlle.h"
 #include "Camera.h"
+#include "BulletManager.h"
 
 namespace
 {
@@ -16,33 +17,40 @@ namespace
 	static const int STATE_IDLE = 0;
 	static const int STATE_RUN = 1;
 	static const int STATE_JUMP = 2;
+	static const int STATE_ATTACK = 3;
 }
 
 Player::Player(BaseScene* baseScene)
 	:Chara{ baseScene,-32,32,-32,32,BaseObject::E_TAG::PLAYER }
 	, camPos{}
 	, jumpCount{ 0 }
+	, shotCount{ 0 }
 	, inputRight{ 0 }
 	, inputDown{ 0 }
-	, inputAngle{ 0 }
+	, shotAngle{ PI / 2 }
 	, moveSpeed{ 0 }
 	, moveAngle{ 0 }
 	, isInvincible{ false }
 	, isGameOver{ false }
 
 {
+	//自身を登録
 	GetBaseScene()->SetOneObjectList(this);
 
 	oldPos = position;
 
+	//カメラを登録
 	camera = GetBaseScene()->GetOneObjectPtr<Camera>(BaseObject::E_TAG::CAMERA);
 	assert(camera != nullptr);
 	camPos = position;
 
+	//今のシーンのマネージャー取得
+	GetNowSceneManager();
 
 	state->SetAllStateMember("Idle");
 	state->SetAllStateMember("Run");
 	state->SetAllStateMember("Jump");
+	state->SetAllStateMember("Attack");
 }
 
 Player::~Player()
@@ -65,6 +73,8 @@ void Player::Update()
 	case STATE_RUN:				UpdateRun();			break;
 
 	case STATE_JUMP:			UpdateJump();			break;
+
+	case STATE_ATTACK:			UpdateAttack();			break;
 	}
 
 	positionSetter->UpdatePos(this,collisionData, collisionManager, fall);
@@ -139,6 +149,7 @@ void Player::UpdateRun()
 		MoveDeceletation();
 		if (moveSpeed >= 0)state->SetNextState("Idle");
 	}
+
 	JumpStart();
 	AttackStart();
 	FallStart();
@@ -168,6 +179,56 @@ void Player::UpdateJump()
 
 void Player::UpdateAttack()
 {
+	shotCount++;
+
+	//攻撃を終了するフレーム
+	static const int MAX_SHOT_FRAME = 30;
+
+	if (shotCount >= MAX_SHOT_FRAME)
+	{
+		//shotCountはリセット
+		shotCount = 0;
+
+		//攻撃ボタンが押されていたらステートは攻撃のまま
+		if (KeyControlle::GetInstance()->GetPressingFrame(E_KEY::ATTACK) != 0)return;
+
+		//もし空中にいたらステートはジャンプ
+		if (!fall->GetIsOnGround())
+		{
+			state->SetNextState("Jump");
+			return;
+		}
+
+		//velocityが0じゃないならステートはラン
+		if (static_cast<int>(velocity.x) != 0)
+		{
+			StartRun();
+			return;
+		}
+		//velocityが0ならステートはアイドル
+		else
+		{
+			state->SetNextState("Idle");
+			return;
+		}
+	}
+
+	//入力方向のセット
+	SetInputAngle();
+
+	//攻撃中も動けるようにし、方向キーの入力があるかを取得
+	bool isRun = Move(WALK_SPEED);
+	//入力がなければ止まる
+	if (!isRun)
+		MoveDeceletation();
+
+	if (shotCount == 1)
+	{
+		Attack();
+	}
+
+	JumpStart();
+	FallStart();
 }
 
 void Player::UpdateDamage()
@@ -245,6 +306,11 @@ void Player::StartRun()
 
 void Player::AttackStart()
 {
+	if (KeyControlle::GetInstance()->GetPressingFrame(E_KEY::ATTACK) != 0)
+	{
+		state->SetNextState("Attack");
+		shotCount = 0;
+	}
 }
 
 void Player::SetInputAngle()
@@ -255,11 +321,14 @@ void Player::SetInputAngle()
 	if (KeyControlle::GetInstance()->GetPressingFrame(E_KEY::LEFT))		inputRight = -1;
 	if (KeyControlle::GetInstance()->GetPressingFrame(E_KEY::RIGHT))	inputRight = 1;
 
-	inputAngle = 0;
 	if (inputRight != 0 || inputDown != 0)
 	{
 		//座標から傾きθを求める
-		inputAngle = atan2f(static_cast<float>(-inputRight), static_cast<float>(inputDown));
+		shotAngle = atan2f(static_cast<float>(inputRight), static_cast<float>(inputDown));
+	}
+	else
+	{
+		//shotAngleの正負で右か左かを判断する
 	}
 }
 
@@ -300,6 +369,20 @@ void Player::GetItem()
 
 void Player::Attack()
 {
+	F_Vec2 genPos = F_Vec2
+	{
+		position.x + (collisionData->GetRight() * inputRight),
+		position.y
+	};
+
+	F_Vec2 genVec = F_Vec2
+	{
+		sinf(shotAngle),
+		//NormalBulletは左右にのみ移動するのでYは0にしておく
+		0//cosf(inputAngle)
+	};
+
+	bulletManager->SetState(genPos, genVec);
 }
 
 void Player::SetStatus()
@@ -308,4 +391,7 @@ void Player::SetStatus()
 
 void Player::GetNowSceneManager()
 {
+	bulletManager = GetBaseScene()->GetManagerPtr<BulletManager>(BaseManager::E_MANAGER_TAG::BULLET);
+	assert(bulletManager != nullptr);
+
 }

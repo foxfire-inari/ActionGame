@@ -14,6 +14,8 @@
 static const int WINDOW_X = 800;
 //ウィンドウサイズ縦
 static const int WINDOW_Y = 600;
+//円周率
+static const float PI = 3.141592f;
 
 template <class Type>
 struct Vector2//Vector2型を作成
@@ -120,8 +122,8 @@ struct Vector2//Vector2型を作成
 	Vector2 operator *(float _scale)
 	{
 		Vector2 vec;
-		vec.x = this->x - _scale;
-		vec.y = this->y - _scale;
+		vec.x = this->x * _scale;
+		vec.y = this->y * _scale;
 		return vec;
 	}
 

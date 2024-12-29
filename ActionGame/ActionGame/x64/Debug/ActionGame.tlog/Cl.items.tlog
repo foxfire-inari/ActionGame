@@ -3,6 +3,7 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Ba
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseScene.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\BaseScene.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BlockManager.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\BlockManager.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Bullet.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\Bullet.obj
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BulletManager.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\BulletManager.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Camera.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\Camera.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\CollisionObject.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\CollisionObject.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Chara.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\Chara.obj
@@ -15,6 +16,7 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Ga
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\GameScene.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\GameScene.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Gravity.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\Gravity.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\KeyControlle.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\KeyControlle.obj
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\NormalBullet.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\NormalBullet.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Player.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\Player.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\PositionSetter.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\PositionSetter.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\SceneChange.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\SceneChange.obj

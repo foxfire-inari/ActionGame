@@ -54,12 +54,68 @@ void BulletManager::Draw(F_Vec2 _camDif)
 		if (!(*it)->GetFlag())continue;
 
 		//ƒJƒƒ‰‚ÌŠO‚Éo‚Ä‚¢‚½‚çƒtƒ‰ƒO‚ð“|‚·
-		//if (CheckCameraViewClip((*it)->GetPosition()) == TRUE)
-		//{
-		//	(*it)->SetFlag(false);
-		//	continue;
-		//}
+		//Draw‚Ì’†‚È‚Ì‚ÍƒJƒƒ‰‚ÌÀ•W‚ðˆµ‚¦‚é‚©‚ç
+		if (IsInCamera(_camDif, (*it)))
+		{
+			(*it)->SetFlag(false);
+			continue;
+		}
 
 		(*it)->Draw(_camDif);
+	}
+}
+
+void BulletManager::SetState(F_Vec2 pos, F_Vec2 vec)
+{
+	for (auto it = bulletList.begin(); it != bulletList.end(); it++)
+	{
+		//ƒtƒ‰ƒO‚ª—§‚Á‚Ä‚éê‡‚Í“®‚¢‚Ä‚é‚Ì‚ÅŽg‚¦‚È‚¢
+		if ((*it)->GetFlag())continue;
+
+		(*it)->SetState(pos, vec);
+	}
+}
+
+bool BulletManager::IsInCamera(F_Vec2 _camDif, Bullet* _listObj)
+{
+	//À•W‚ðl—¶‚µ‚½“–‚½‚è”»’è‚ð“o˜^
+	CollisionData* nowListCol = GetNowPositionCol(_listObj->GetCollisionData(), _listObj->GetPosition());
+
+	//•`‰æ”ÍˆÍ‚ð“–‚½‚è”»’è‚Æ‚µ‚Ä“o˜^
+	CollisionData* camCol = new CollisionData
+	{
+		_camDif.y + WINDOW_Y / 2,
+		_camDif.y - WINDOW_Y / 2,
+		_camDif.x + WINDOW_X / 2,
+		_camDif.x - WINDOW_X / 2
+	};
+
+	return (
+		//‰æ–Ê‚Ì‰¡‚É‹‚é‚©
+		(nowListCol->GetTop() <= camCol->GetUnder()  && camCol->GetUnder() <= nowListCol->GetUnder() ||
+		 nowListCol->GetTop() <= camCol->GetTop()	 && camCol->GetTop()   <= nowListCol->GetUnder()) &&
+		//‰æ–Ê‚Ì‚Ìc‚É‹‚é‚©
+		(nowListCol->GetLeft() <= camCol->GetLeft()	 && camCol->GetLeft()  <= nowListCol->GetRight() ||
+		 nowListCol->GetLeft() <= camCol->GetRight() && camCol->GetRight() <= nowListCol->GetRight())
+		);
+}
+
+CollisionData* BulletManager::GetNowPositionCol(CollisionData* colData, F_Vec2 pos)
+{
+	CollisionData* nowCol = new CollisionData
+	{
+		colData->GetTop()	+ pos.y,
+		colData->GetUnder() + pos.y,
+		colData->GetLeft()	+ pos.x,
+		colData->GetRight() + pos.x
+	};
+	return nowCol;
+}
+
+void BulletManager::SetObjectNewScene(BaseScene* _baseScene)
+{
+	for (auto it = bulletList.begin(); it != bulletList.end(); it++)
+	{
+		(*it)->SetNewScene(_baseScene);
 	}
 }

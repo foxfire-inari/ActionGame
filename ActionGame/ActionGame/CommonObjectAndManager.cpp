@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "Camera.h"
 
+#include "BulletManager.h"
 #include "CollisionManager.h"
 
 
@@ -12,6 +13,7 @@
 
 CommonObjectAndManager::CommonObjectAndManager(BaseScene* nowScene)
 {
+	bulletManager = new BulletManager{nowScene};
 	collisionManager = new CollisionManager{ nowScene };
 	blockManager = new BlockManager{ nowScene };
 
@@ -19,7 +21,7 @@ CommonObjectAndManager::CommonObjectAndManager(BaseScene* nowScene)
 	player = new Player{ nowScene };
 
 
-
+	bulletManager->Start();
 	collisionManager->Start();
 	blockManager->Start();
 

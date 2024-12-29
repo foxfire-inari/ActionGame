@@ -4,11 +4,14 @@ namespace
 {
 	//’e‘¬
 	static const float BULLET_SPEED = 5.f;
+
+	//’e‚Ì‰Î—Í
+	static const int BULLET_POWER = 1;
 }
 
 
 NormalBullet::NormalBullet(BaseScene* baseScene)
-	:Bullet{baseScene,5,5,10,10}
+	:Bullet{baseScene,BULLET_POWER,-5,5,-10,10}
 {
 }
 
@@ -35,10 +38,9 @@ void NormalBullet::Draw(F_Vec2 _camDif)
 	);
 }
 
-void NormalBullet::SetState(F_Vec2 pos, F_Vec2 vec, int _power)
+void NormalBullet::SetState(F_Vec2 pos, F_Vec2 vec)
 {
 	flag = true;
 	SetPosition(pos);
 	SetVelocity(vec * BULLET_SPEED);
-	power = _power;
 }

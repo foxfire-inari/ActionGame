@@ -7,23 +7,23 @@ BlockManager::BlockManager(BaseScene* baseScene)
 {
 	CollisionObject* block = new CollisionObject{ GetBaseScene(),F_Vec2{150,500},F_Vec2{0,0},
 												-32,32,-32,32,false,BaseObject::E_TAG::BLOCK };
-	BlockList.emplace_back(block);
+	blockList.emplace_back(block);
 	for (int i = 0; i < 20; i++)
 	{
 		block = new CollisionObject{ GetBaseScene(),F_Vec2{(float)(214+64*i),436},F_Vec2{0,0},
 													-32,32,-32,32,false,BaseObject::E_TAG::BLOCK };
-		BlockList.emplace_back(block);
+		blockList.emplace_back(block);
 	}
 
 	block = new CollisionObject{ GetBaseScene(),F_Vec2{300,200},F_Vec2{0,0},
 											-32,32,-32,32,false,BaseObject::E_TAG::BLOCK };
-	BlockList.emplace_back(block);
+	blockList.emplace_back(block);
 
 }
 
 BlockManager::~BlockManager()
 {
-	for (auto it = BlockList.begin(); it != BlockList.end();)
+	for (auto it = blockList.begin(); it != blockList.end();)
 	{
 		//nullptr‚¶‚á‚È‚¯‚ê‚ÎÁ‚·
 		if (*it != nullptr)
@@ -31,7 +31,7 @@ BlockManager::~BlockManager()
 			delete* it;
 			*it = nullptr;
 			//‚±‚±‚Å—v‘f‚ðÁ‚µ‚Ä‚é‚©‚ç‘O‹l‚ß‚³‚ê‚é
-			it = BlockList.erase(it);
+			it = blockList.erase(it);
 		}
 		else it++;//—v‘f‚ª‚È‚¯‚ê‚ÎƒCƒ“ƒNƒŠƒƒ“ƒg‚Åend‚É‚·‚é
 	}
@@ -45,7 +45,7 @@ void BlockManager::Start()
 
 void BlockManager::Update()
 {
-	for (auto it = BlockList.begin(); it != BlockList.end(); it++)
+	for (auto it = blockList.begin(); it != blockList.end(); it++)
 	{
 		(*it)->Update();
 	}
@@ -53,7 +53,7 @@ void BlockManager::Update()
 
 void BlockManager::Draw(F_Vec2 _camDif)
 {
-	for (auto it = BlockList.begin(); it != BlockList.end(); it++)
+	for (auto it = blockList.begin(); it != blockList.end(); it++)
 	{
 		(*it)->Draw(_camDif);
 	}
@@ -63,7 +63,7 @@ const std::list<CollisionObject*> BlockManager::GetCollisionObjList() const
 {
 	std::list<CollisionObject*> collObjList;
 
-	for (auto it = BlockList.begin(); it != BlockList.end(); it++)
+	for (auto it = blockList.begin(); it != blockList.end(); it++)
 	{
 		collObjList.emplace_back(*it);
 	}
@@ -73,7 +73,7 @@ const std::list<CollisionObject*> BlockManager::GetCollisionObjList() const
 
 void BlockManager::SetObjectNewScene(BaseScene* _baseScene)
 {
-	for (auto it = BlockList.begin(); it != BlockList.end(); it++)
+	for (auto it = blockList.begin(); it != blockList.end(); it++)
 	{
 		(*it)->SetNewScene(_baseScene);
 	}

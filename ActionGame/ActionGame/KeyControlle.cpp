@@ -12,6 +12,8 @@ KeyControlle::KeyControlle()
 
 	keyboardID[JUMP]	= KEY_INPUT_SPACE;	//57
 
+	keyboardID[ATTACK]  = KEY_INPUT_RETURN;	//28
+
 	//“ü—Í‚Ì‰Šú‰»
 	for (int i = 0; i < E_KEY_MAX; i++)
 	{

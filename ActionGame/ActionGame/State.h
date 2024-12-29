@@ -61,7 +61,7 @@ private:
 	/// <summary>
 	/// ステートの連想配列
 	/// </summary>
-	std::unordered_map<std::string, int>allState;
+	std::unordered_map<std::string, int> allState;
 
 	/// <summary>
 	/// 配列に登録する番号

@@ -1,8 +1,8 @@
 #include "Bullet.h"
 
-Bullet::Bullet(BaseScene* _baseScene, float top, float under, float left, float right)
+Bullet::Bullet(BaseScene* _baseScene, int _power, float top, float under, float left, float right)
 	:BaseObject{ _baseScene ,BaseObject::E_TAG::BULLET }
-	, power{ 0 }
+	, power{ _power }
 	, flag{ false }
 {
 	collisionData = new CollisionData{ top,under,left,right };

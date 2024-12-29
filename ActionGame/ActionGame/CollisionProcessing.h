@@ -8,7 +8,7 @@ class Fall;
 class CollisionProcessing
 {
 public:
-	CollisionProcessing(std::list<CollisionObject*>& _collObjectList);
+	CollisionProcessing(std::list<CollisionObject*>& _colObjectList);
 	~CollisionProcessing();
 
 	/// <summary>
@@ -36,27 +36,27 @@ private:
 	/// <summary>
 	/// 近くにあるかの判定
 	/// </summary>
-	/// <param name="obj">対象のオブジェクト</param>
-	/// <param name="chara">キャラ</param>
-	/// <param name="dif">距離</param>
+	/// <param name="objPos">判定の中心になる座標</param>
+	/// <param name="listPos">リスト内の判定する座標</param>
+	/// <param name="dif"></param>
 	/// <returns></returns>
-	bool IsNearDistance(F_Vec2 colpos, F_Vec2 objpos, float dif);
+	bool IsNearDistance( F_Vec2 objPos, F_Vec2 listPos, float dif);
 
 	/// <summary>
 	/// ブロックと重なっているか
 	/// </summary>
-	/// <param name="objcol">判定するオブジェクトのデータ</param>
-	/// <param name="listcol">リスト内のデータ</param>
+	/// <param name="objcol">判定するオブジェクトのコリジョンデータ</param>
+	/// <param name="listcol">リスト内のコリジョンデータ</param>
 	/// <returns></returns>
-	bool IsInBlock(CollisionData* objcol,CollisionData* listcol);
+	bool IsInBlock(CollisionData* objCol,CollisionData* listCol);
 
 	/// <summary>
 	/// コリジョンの現在の座標を取得
 	/// </summary>
-	/// <param name="colldata">コリジョンの大きさ</param>
+	/// <param name="colData">コリジョンデータ</param>
 	/// <param name="pos">持ち主の座標</param>
 	/// <returns></returns>
-	CollisionData* GetNowPositionColl(CollisionData* colldata, F_Vec2 pos);
+	CollisionData* GetNowPositionCol(CollisionData* colData, F_Vec2 pos);
 
 };
 

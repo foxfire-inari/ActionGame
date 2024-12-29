@@ -10,7 +10,7 @@
 class Bullet : public BaseObject
 {
 public:
-	Bullet(BaseScene* _baseScene, float top, float under, float left, float right );
+	Bullet(BaseScene* _baseScene, int _power, float top, float under, float left, float right );
 	~Bullet();
 
 	virtual void Update()override {}
@@ -22,7 +22,7 @@ public:
 	/// <param name="pos">発射地点</param>
 	/// <param name="vec">発射方向</param>
 	/// <param name="_power">ダメージ量</param>
-	virtual void SetState(F_Vec2 pos,F_Vec2 vec,int _power) {};
+	virtual void SetState(F_Vec2 pos,F_Vec2 vec) {};
 
 	/// <summary>
 	/// フラグが立っているか返す

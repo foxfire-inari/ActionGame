@@ -10,6 +10,6 @@ public:
 	void Update()override;
 	void Draw(F_Vec2 _camDif)override;
 
-	void SetState(F_Vec2 pos, F_Vec2 vec, int _power)override;
+	void SetState(F_Vec2 pos, F_Vec2 vec)override;
 };
 

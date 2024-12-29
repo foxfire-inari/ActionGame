@@ -18,7 +18,7 @@ public:
 	const std::list<CollisionObject*> GetCollisionObjList() const;
 
 private:
-	std::list<CollisionObject*> BlockList;
+	std::list<CollisionObject*> blockList;
 
 	void SetObjectNewScene(BaseScene* _baseScene)override;
 };

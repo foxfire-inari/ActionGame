@@ -11,8 +11,8 @@ namespace
 	static const float HIT_CHECK_DIF = 100.0f;
 }
 
-CollisionProcessing::CollisionProcessing(std::list<CollisionObject*>& _collisionObjectList)
-	:collisionObjectList{ _collisionObjectList }
+CollisionProcessing::CollisionProcessing(std::list<CollisionObject*>& _colObjectList)
+	:collisionObjectList{ _colObjectList }
 {
 }
 
@@ -31,7 +31,8 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj,CollisionData* 
 	//x方向だけ移動
 	objPos.x += objVel_X;
 
-	CollisionData* nowobjCol = GetNowPositionColl(objCol, objPos);
+	//座標を考慮した当たり判定に変更
+	CollisionData* nowObjCol = GetNowPositionCol(objCol, objPos);
 
 	//リスト内のオブジェクトのポジション
 	F_Vec2 listPos;
@@ -52,10 +53,10 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj,CollisionData* 
 		listCol = (*it)->GetCollisionPos();
 		
 		//座標を足してコリジョンが存在する座標にする
-		CollisionData* nowlistCol = GetNowPositionColl(listCol, listPos);
+		CollisionData* nowlistCol = GetNowPositionCol(listCol, listPos);
 
 		//ブロックと重なっているかを確認
-		if (IsInBlock(nowobjCol, nowlistCol))
+		if (IsInBlock(nowObjCol, nowlistCol))
 		{
 
 			assert(objVel_X != 0);
@@ -86,8 +87,8 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, CollisionData* o
 	//y方向だけ移動
 	objPos.y -= objVel.y;
 
-	//念のため小数点を切り捨ててからint型に変更
-	CollisionData* nowobjCol = GetNowPositionColl(objCol, objPos);
+	//座標を考慮した当たり判定に変更
+	CollisionData* nowobjCol = GetNowPositionCol(objCol, objPos);
 
 	//リスト内のオブジェクトのポジション
 	F_Vec2 listPos;
@@ -108,7 +109,7 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, CollisionData* o
 		//近くならコリジョンを代入
 		listCol = (*it)->GetCollisionPos();
 		//念のため小数点を切り捨ててからint型に変更
-		CollisionData* nowlistCol = GetNowPositionColl(listCol, listPos);
+		CollisionData* nowlistCol = GetNowPositionCol(listCol, listPos);
 
 		//ブロックと重なっているかを確認
 		if (IsInBlock(nowobjCol, nowlistCol))
@@ -125,6 +126,7 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, CollisionData* o
 			else								//上向きに動いていた場合
 			{
 				objPos.y = nowlistCol->GetUnder() - objCol->GetTop();
+				//Y方向の速度を0にする
 				obj->SetVelocity(F_Vec2{ objVel.x,0 });
 			}
 		}
@@ -141,36 +143,36 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, CollisionData* o
 
 
 
-bool CollisionProcessing::IsNearDistance(F_Vec2 colpos,F_Vec2 objpos, float dif)
+bool CollisionProcessing::IsNearDistance(F_Vec2 objPos, F_Vec2 listPos, float dif)
 {
-	if (F_Vec2::VSize(colpos - objpos) < dif)
+	if (F_Vec2::VSize(listPos - objPos) < dif)
 		return true;
 	return false;
 }
 
-bool CollisionProcessing::IsInBlock(CollisionData* objcol, CollisionData* listcol)
+bool CollisionProcessing::IsInBlock(CollisionData* objCol, CollisionData* listCol)
 {
 	//めり込み補正
 	static const float IN_DIF = 0.5f;
 	//それぞれのポジションを計算に含める必要がある
 	return (
 		//ブロックの横に居るか
-		(listcol->GetTop()+IN_DIF	<= objcol->GetUnder() && objcol->GetUnder() <= listcol->GetUnder() ||
-		 listcol->GetTop()			<= objcol->GetTop()   && objcol->GetTop()   <= listcol->GetUnder()-IN_DIF) &&
+		(listCol->GetTop()+IN_DIF	<= objCol->GetUnder() && objCol->GetUnder() <= listCol->GetUnder() ||
+		 listCol->GetTop()			<= objCol->GetTop()   && objCol->GetTop()   <= listCol->GetUnder()-IN_DIF) &&
 		//ブロックの縦に居るか
-		(listcol->GetLeft()			<= objcol->GetLeft()  && objcol->GetLeft()  <= listcol->GetRight()-IN_DIF ||
-		 listcol->GetLeft()+IN_DIF	<= objcol->GetRight() && objcol->GetRight() <= listcol->GetRight())
+		(listCol->GetLeft()			<= objCol->GetLeft()  && objCol->GetLeft()  <= listCol->GetRight()-IN_DIF ||
+		 listCol->GetLeft()+IN_DIF	<= objCol->GetRight() && objCol->GetRight() <= listCol->GetRight())
 		);
 }
 
-CollisionData* CollisionProcessing::GetNowPositionColl(CollisionData* colldata, F_Vec2 pos)
+CollisionData* CollisionProcessing::GetNowPositionCol(CollisionData* colData, F_Vec2 pos)
 {
 	CollisionData* nowCol = new CollisionData
 	{
-		colldata->GetTop()	+ pos.y,
-		colldata->GetUnder()+ pos.y,
-		colldata->GetLeft()	+ pos.x,
-		colldata->GetRight()+ pos.x
+		colData->GetTop()	+ pos.y,
+		colData->GetUnder()+ pos.y,
+		colData->GetLeft()	+ pos.x,
+		colData->GetRight()+ pos.x
 	};
 	return nowCol;
 }
