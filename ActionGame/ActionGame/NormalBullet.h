@@ -1,6 +1,9 @@
 #pragma once
 #include "Bullet.h"
 
+/// <summary>
+/// デフォルトの弾クラス
+/// </summary>
 class NormalBullet : public Bullet
 {
 public:

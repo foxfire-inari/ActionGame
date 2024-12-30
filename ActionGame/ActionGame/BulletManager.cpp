@@ -55,7 +55,7 @@ void BulletManager::Draw(F_Vec2 _camDif)
 
 		//ƒJƒƒ‰‚ÌŠO‚Éo‚Ä‚¢‚½‚çƒtƒ‰ƒO‚ð“|‚·
 		//Draw‚Ì’†‚È‚Ì‚ÍƒJƒƒ‰‚ÌÀ•W‚ðˆµ‚¦‚é‚©‚ç
-		if (IsInCamera(_camDif, (*it)))
+		if (!IsInCamera(_camDif, (*it)))
 		{
 			(*it)->SetFlag(false);
 			continue;
@@ -73,6 +73,7 @@ void BulletManager::SetState(F_Vec2 pos, F_Vec2 vec)
 		if ((*it)->GetFlag())continue;
 
 		(*it)->SetState(pos, vec);
+		break;
 	}
 }
 
@@ -84,19 +85,19 @@ bool BulletManager::IsInCamera(F_Vec2 _camDif, Bullet* _listObj)
 	//•`‰æ”ÍˆÍ‚ð“–‚½‚è”»’è‚Æ‚µ‚Ä“o˜^
 	CollisionData* camCol = new CollisionData
 	{
-		_camDif.y + WINDOW_Y / 2,
-		_camDif.y - WINDOW_Y / 2,
-		_camDif.x + WINDOW_X / 2,
-		_camDif.x - WINDOW_X / 2
+		_camDif.y,
+		_camDif.y + WINDOW_Y,
+		_camDif.x,
+		_camDif.x + WINDOW_X
 	};
 
 	return (
 		//‰æ–Ê‚Ì‰¡‚É‹‚é‚©
-		(nowListCol->GetTop() <= camCol->GetUnder()  && camCol->GetUnder() <= nowListCol->GetUnder() ||
-		 nowListCol->GetTop() <= camCol->GetTop()	 && camCol->GetTop()   <= nowListCol->GetUnder()) &&
+		(camCol->GetTop() <= nowListCol->GetUnder()  && nowListCol->GetUnder() <= camCol->GetUnder() ||
+		 camCol->GetTop() <= nowListCol->GetTop()	 && nowListCol->GetTop()   <= camCol->GetUnder()) &&
 		//‰æ–Ê‚Ì‚Ìc‚É‹‚é‚©
-		(nowListCol->GetLeft() <= camCol->GetLeft()	 && camCol->GetLeft()  <= nowListCol->GetRight() ||
-		 nowListCol->GetLeft() <= camCol->GetRight() && camCol->GetRight() <= nowListCol->GetRight())
+		(camCol->GetLeft() <= nowListCol->GetLeft()	 && nowListCol->GetLeft()  <= camCol->GetRight() ||
+		 camCol->GetLeft() <= nowListCol->GetRight() && nowListCol->GetRight() <= camCol->GetRight())
 		);
 }
 

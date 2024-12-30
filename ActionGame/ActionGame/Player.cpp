@@ -27,7 +27,8 @@ Player::Player(BaseScene* baseScene)
 	, shotCount{ 0 }
 	, inputRight{ 0 }
 	, inputDown{ 0 }
-	, shotAngle{ PI / 2 }
+	, sideShotAngle{ 1 }//プレイヤーの最初の向きに準ずる
+	, allShotAngle{ PI / 2 }
 	, moveSpeed{ 0 }
 	, moveAngle{ 0 }
 	, isInvincible{ false }
@@ -182,7 +183,7 @@ void Player::UpdateAttack()
 	shotCount++;
 
 	//攻撃を終了するフレーム
-	static const int MAX_SHOT_FRAME = 30;
+	static const int MAX_SHOT_FRAME = 12;
 
 	if (shotCount >= MAX_SHOT_FRAME)
 	{
@@ -321,15 +322,21 @@ void Player::SetInputAngle()
 	if (KeyControlle::GetInstance()->GetPressingFrame(E_KEY::LEFT))		inputRight = -1;
 	if (KeyControlle::GetInstance()->GetPressingFrame(E_KEY::RIGHT))	inputRight = 1;
 
+	//allShotAngleを更新
 	if (inputRight != 0 || inputDown != 0)
 	{
 		//座標から傾きθを求める
-		shotAngle = atan2f(static_cast<float>(inputRight), static_cast<float>(inputDown));
+		allShotAngle = atan2f(static_cast<float>(inputRight), static_cast<float>(inputDown));
 	}
 	else
 	{
-		//shotAngleの正負で右か左かを判断する
+		allShotAngle = allShotAngle > 0 ? PI / 2 : -PI / 2;
 	}
+
+	//sideShotAngleを更新
+	sideShotAngle = inputRight != 0 ? static_cast<float>(inputRight) : sideShotAngle;
+
+
 }
 
 bool Player::Move(float speed)
@@ -377,7 +384,7 @@ void Player::Attack()
 
 	F_Vec2 genVec = F_Vec2
 	{
-		sinf(shotAngle),
+		static_cast<float>(sideShotAngle),
 		//NormalBulletは左右にのみ移動するのでYは0にしておく
 		0//cosf(inputAngle)
 	};
