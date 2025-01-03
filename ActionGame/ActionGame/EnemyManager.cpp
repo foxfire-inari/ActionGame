@@ -45,6 +45,11 @@ void EnemyManager::Start()
 	Terry* terry = new Terry{ GetBaseScene(),bulletManager,playerBase,F_Vec2{400,100},0 };
 	enemyList.emplace_back(terry);
 
+	Terry* terry1 = new Terry{ GetBaseScene(),bulletManager,playerBase,F_Vec2{500,100},0 };
+	enemyList.emplace_back(terry1);
+
+	Terry* terry2 = new Terry{ GetBaseScene(),bulletManager,playerBase,F_Vec2{600,500},0 };
+	enemyList.emplace_back(terry2);
 
 }
 

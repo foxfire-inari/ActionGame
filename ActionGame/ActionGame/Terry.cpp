@@ -4,7 +4,7 @@
 namespace
 {
 	//‘Ì—Í
-	static const int START_HP = 10;
+	static const int START_HP = 1;
 
 	//ˆÚ“®‘¬“x
 	static const float MOVE_SPEED = 0.5f;
@@ -25,6 +25,7 @@ Terry::Terry(BaseScene* baseScene, BulletManager* bulletManager,
 	BaseObject* plBase, F_Vec2 pos, int knd)
 	:Enemy{baseScene,bulletManager,plBase,pos,knd,START_HP,COL_TOP,COL_UNDER,COL_LEFT,COL_RIGHT }
 	, MoveAngle{ 0 }
+	, damageCount{ 0 }
 {
 	bodyPower = 2;
 
@@ -114,7 +115,7 @@ void Terry::UpdateDeath()
 
 void Terry::StartRun()
 {
-	state->SetNextState("Damage");
+	state->SetNextState("Run");
 }
 
 void Terry::StartDamage()

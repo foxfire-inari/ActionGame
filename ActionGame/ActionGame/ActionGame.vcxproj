@@ -156,6 +156,7 @@
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="CollisionProcessing.cpp" />
     <ClCompile Include="CommonObjectAndManager.cpp" />
+    <ClCompile Include="CsvFile.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="Fall.cpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="CollisionProcessing.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="CommonObjectAndManager.h" />
+    <ClInclude Include="CsvFile.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyManager.h" />
     <ClInclude Include="Fall.h" />
