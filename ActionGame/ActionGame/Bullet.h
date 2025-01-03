@@ -38,7 +38,6 @@ public:
 
 	/// <summary>
 	/// ƒRƒŠƒWƒ‡ƒ“‚ğ•Ô‚·
-	/// HitCheckEnemy—p
 	/// </summary>
 	/// <returns></returns>
 	CollisionData* GetCollisionData()const { return collisionData; }

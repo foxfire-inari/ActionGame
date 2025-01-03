@@ -2,6 +2,7 @@
 #include"Player.h"
 #include"Camera.h"
 #include "BulletManager.h"
+#include "EnemyManager.h"
 #include"BlockManager.h"
 
 GameScene::GameScene(SceneChange* sceneChange, std::string _nowMapName)
@@ -20,6 +21,7 @@ bool GameScene::Update()
 	common->GetPlayer()->Update();
 	common->GetBlockManager()->Update();
 	common->GetBulletManager()->Update();
+	common->GetEnemyManager()->Update();
 
 	return false;
 }
@@ -30,6 +32,8 @@ void GameScene::Draw()
 	common->GetPlayer()->Draw(camDif);
 	common->GetBlockManager()->Draw(camDif);
 	common->GetBulletManager()->Draw(camDif);
+	common->GetEnemyManager()->Draw(camDif);
+
 }
 
 bool GameScene::GameOverProcessing()

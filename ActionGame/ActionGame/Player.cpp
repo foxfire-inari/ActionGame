@@ -2,9 +2,12 @@
 #include "KeyControlle.h"
 #include "Camera.h"
 #include "BulletManager.h"
+#include "EnemyManager.h"
 
 namespace
 {
+	//HP
+	static const int MAX_HP = 100;
 	//ジャンプ力
 	static const float JUMP_POWER = 8.f;
 
@@ -12,16 +15,22 @@ namespace
 	static const float WALK_SPEED = -3.f;
 	static const float DECELERATION_SPEED = 0.5f;
 
+	//コリジョン
+	static const int COL_TOP = -32;
+	static const int COL_UNDER = 32;
+	static const int COL_LEFT = -32;
+	static const int COL_RIGHT = 32;
 
 	//ステート
 	static const int STATE_IDLE = 0;
 	static const int STATE_RUN = 1;
 	static const int STATE_JUMP = 2;
 	static const int STATE_ATTACK = 3;
+	static const int STATE_DAMAGE = 4;
 }
 
 Player::Player(BaseScene* baseScene)
-	:Chara{ baseScene,-32,32,-32,32,BaseObject::E_TAG::PLAYER }
+	:Chara{ baseScene,MAX_HP,COL_TOP,COL_UNDER,COL_LEFT,COL_RIGHT,BaseObject::E_TAG::PLAYER }
 	, camPos{}
 	, jumpCount{ 0 }
 	, shotCount{ 0 }
@@ -52,6 +61,7 @@ Player::Player(BaseScene* baseScene)
 	state->SetAllStateMember("Run");
 	state->SetAllStateMember("Jump");
 	state->SetAllStateMember("Attack");
+	state->SetAllStateMember("Damage");
 }
 
 Player::~Player()
@@ -67,6 +77,8 @@ void Player::Update()
 	gravity->AddGravity(velocity.y);
 	state->ChangeState();
 
+	Invincible();
+
 	switch (state->GetNowState())
 	{
 	case STATE_IDLE:			UpdateIdle();			break;
@@ -76,6 +88,8 @@ void Player::Update()
 	case STATE_JUMP:			UpdateJump();			break;
 
 	case STATE_ATTACK:			UpdateAttack();			break;
+
+	case STATE_DAMAGE:			UpdateDamage();			break;
 	}
 
 	positionSetter->UpdatePos(this,collisionData, collisionManager, fall);
@@ -85,6 +99,11 @@ void Player::Update()
 
 void Player::Draw(F_Vec2 _camDif)
 {
+	//無敵なら点滅
+	if (isInvincible && damageCount % 10 <= 3)
+		return;
+
+
 	F_Vec2 drawpos = GetPosition();
 	DrawBox
 	(
@@ -234,6 +253,22 @@ void Player::UpdateAttack()
 
 void Player::UpdateDamage()
 {
+	static const int MAX_DAMAGE_FRAME = 60;
+
+	//地面につくかMAX_DAMAGE_FRAMEたったらステートをIdleにする
+	if (damageCount >= MAX_DAMAGE_FRAME)
+	{
+		//hpが0以下なら死
+		if (life->GetHp() <= 0)
+		{
+			DeathStart();
+			return;
+		}
+		//それ以外ならIdleへ
+		state->SetNextState("Idle");
+		//Idle移行後飛ばないようjumpCountを0にする
+		jumpCount = 0;
+	}
 }
 
 void Player::UpdateDeath()
@@ -282,14 +317,55 @@ void Player::JumpStart()
 
 void Player::DamageStart()
 {
+	static const float DAMAGE_VEL_SIZE = 1.f;
+
+	//無敵なら判定をしない
+	if (isInvincible)return;
+
+	//参照で渡して飛ばす方向を貰う
+	int vel;
+
+	int damage = enemyManager->CheckPlayerHit(collisionData, vel);
+
+	//当たっていなかったらreturn
+	if (damage <= 0)return;
+
+	//移動速度を0にする
+	moveSpeed = 0;
+
+	//受け取った方向をDAMAGE_VEL_SIZE倍にする
+	vel *= DAMAGE_VEL_SIZE;
+
+	//ダメージを受ける
+	life->DecHp(damage);
+
+	velocity = { static_cast<float>(vel),0 };
+	damageCount = 0;
+	jumpCount = 0;
+	isInvincible = true;
+	state->SetNextState("Damage");
+
 }
 
 void Player::DeathStart()
 {
+	isInvincible = false;
+	damageCount = 0;
+	life->SetIsDeath(true);
+	state->SetNextState("Death");
+
 }
 
 void Player::Invincible()
 {
+	static const int MAX_INVINCIBLE_FRAME = 120;
+
+	if (isInvincible)
+	{
+		damageCount++;
+		if (damageCount > MAX_INVINCIBLE_FRAME)
+			isInvincible = false;
+	}
 }
 
 void Player::FallStart()
@@ -400,5 +476,8 @@ void Player::GetNowSceneManager()
 {
 	bulletManager = GetBaseScene()->GetManagerPtr<BulletManager>(BaseManager::E_MANAGER_TAG::BULLET);
 	assert(bulletManager != nullptr);
+
+	enemyManager = GetBaseScene()->GetManagerPtr<EnemyManager>(BaseManager::E_MANAGER_TAG::ENEMY);
+	assert(enemyManager != nullptr);
 
 }

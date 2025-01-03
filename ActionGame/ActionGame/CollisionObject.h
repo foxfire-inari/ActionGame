@@ -42,7 +42,7 @@ public:
 	/// コリジョンデータを渡す
 	/// </summary>
 	/// <returns></returns>
-	CollisionData* GetCollisionPos() { return collisionData; }
+	CollisionData* GetCollisionData() { return collisionData; }
 
 	/// <summary>
 	/// すり抜け床かどうかを返す

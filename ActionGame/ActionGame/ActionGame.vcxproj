@@ -156,16 +156,20 @@
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="CollisionProcessing.cpp" />
     <ClCompile Include="CommonObjectAndManager.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="Fall.cpp" />
     <ClCompile Include="GameMaster.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Gravity.cpp" />
     <ClCompile Include="KeyControlle.cpp" />
+    <ClCompile Include="Life.cpp" />
     <ClCompile Include="NormalBullet.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PositionSetter.cpp" />
     <ClCompile Include="SceneChange.cpp" />
     <ClCompile Include="State.cpp" />
+    <ClCompile Include="Terry.cpp" />
     <ClCompile Include="ソース.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -183,17 +187,21 @@
     <ClInclude Include="CollisionProcessing.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="CommonObjectAndManager.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyManager.h" />
     <ClInclude Include="Fall.h" />
     <ClInclude Include="GameMaster.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Gravity.h" />
     <ClInclude Include="KeyControlle.h" />
+    <ClInclude Include="Life.h" />
     <ClInclude Include="NormalBullet.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PositionSetter.h" />
     <ClInclude Include="SceneChange.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="Terry.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

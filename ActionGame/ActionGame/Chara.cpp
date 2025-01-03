@@ -2,7 +2,7 @@
 
 
 
-Chara::Chara(BaseScene* baseScene,
+Chara::Chara(BaseScene* baseScene,int hp,
 	float top, float under, float left, float right,
 	int tag)
 	:BaseObject{ baseScene, F_Vec2{0,0},F_Vec2{0,0},tag}
@@ -10,6 +10,7 @@ Chara::Chara(BaseScene* baseScene,
 	//Charaのコンストラクタ
 	collisionData = new CollisionData{ top,under,left,right };
 	fall = new Fall{};
+	life = new Life{ hp };
 	gravity = new Gravity{};
 	positionSetter = new PositionSetter{};
 	state = new State{};

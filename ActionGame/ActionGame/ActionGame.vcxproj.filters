@@ -37,6 +37,9 @@
     <Filter Include="Object\Bullet">
       <UniqueIdentifier>{c22268e3-0db1-403d-97bb-42f2dc46ecab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\Enemy">
+      <UniqueIdentifier>{c3db9767-b252-46b4-99f8-fe186edae911}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ソース.cpp">
@@ -109,6 +112,18 @@
       <Filter>Object\Bullet</Filter>
     </ClCompile>
     <ClCompile Include="BulletManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Life.cpp">
+      <Filter>Object\Parts</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Terry.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyManager.cpp">
       <Filter>Manager</Filter>
     </ClCompile>
   </ItemGroup>
@@ -186,6 +201,18 @@
       <Filter>Object\Bullet</Filter>
     </ClInclude>
     <ClInclude Include="BulletManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Life.h">
+      <Filter>Object\Parts</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Terry.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyManager.h">
       <Filter>Manager</Filter>
     </ClInclude>
   </ItemGroup>

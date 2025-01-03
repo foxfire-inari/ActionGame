@@ -42,7 +42,7 @@ public:
 private:
 	Camera* camera;
 	BulletManager* bulletManager;
-
+	EnemyManager* enemyManager;
 
 	//カメラの座標
 	F_Vec2 camPos;
@@ -52,6 +52,7 @@ private:
 
 	int jumpCount; //ジャンプを押し続けているフレーム数
 	int shotCount; //攻撃までのカウンター
+	int damageCount;//ダメージを受けてからのカウンター
 
 	int inputRight;	//右方向への入力量
 	int inputDown;	//下方向への入力量

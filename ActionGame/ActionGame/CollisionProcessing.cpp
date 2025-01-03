@@ -50,7 +50,7 @@ F_Vec2 CollisionProcessing::GetSideBlockPosition(BaseObject* obj,CollisionData* 
 		if (!IsNearDistance(listPos, objPos, HIT_CHECK_DIF))continue;
 
 		//近くならコリジョンを代入
-		listCol = (*it)->GetCollisionPos();
+		listCol = (*it)->GetCollisionData();
 		
 		//座標を足してコリジョンが存在する座標にする
 		CollisionData* nowlistCol = GetNowPositionCol(listCol, listPos);
@@ -88,7 +88,7 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, CollisionData* o
 	objPos.y -= objVel.y;
 
 	//座標を考慮した当たり判定に変更
-	CollisionData* nowobjCol = GetNowPositionCol(objCol, objPos);
+	CollisionData* nowObjCol = GetNowPositionCol(objCol, objPos);
 
 	//リスト内のオブジェクトのポジション
 	F_Vec2 listPos;
@@ -107,12 +107,12 @@ F_Vec2 CollisionProcessing::GetOnBlockPosition(BaseObject* obj, CollisionData* o
 		if (!IsNearDistance(listPos, objPos, HIT_CHECK_DIF))continue;
 
 		//近くならコリジョンを代入
-		listCol = (*it)->GetCollisionPos();
+		listCol = (*it)->GetCollisionData();
 		//念のため小数点を切り捨ててからint型に変更
 		CollisionData* nowlistCol = GetNowPositionCol(listCol, listPos);
 
 		//ブロックと重なっているかを確認
-		if (IsInBlock(nowobjCol, nowlistCol))
+		if (IsInBlock(nowObjCol, nowlistCol))
 		{
 
 			assert(objVel.y != 0);

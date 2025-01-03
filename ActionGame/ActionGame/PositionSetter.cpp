@@ -27,3 +27,8 @@ void PositionSetter::UpdatePos(BaseObject* me, CollisionData* colData, Collision
 	me->SetPosition(collisionManager->GetCollisionProcessing()->GetOnBlockPosition(me,colData, fall));
 	
 }
+
+void PositionSetter::UpdateNonInterPos(BaseObject* me)
+{
+	me->AddPosition(me->GetVelocity());
+}

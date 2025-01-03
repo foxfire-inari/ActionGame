@@ -8,6 +8,7 @@ class Camera;
 
 class BulletManager;
 class CollisionManager;
+class EnemyManager;
 
 class BaseScene;
 
@@ -44,6 +45,12 @@ public:
 	CollisionManager* GetCollisoinManager()& { return collisionManager; }
 
 	/// <summary>
+	/// エネミーマネージャーを返す
+	/// </summary>
+	/// <returns></returns>
+	EnemyManager* GetEnemyManager()& { return enemyManager; }
+
+	/// <summary>
 	/// ブロックマネージャーを返す
 	/// </summary>
 	/// <returns></returns>
@@ -56,6 +63,7 @@ private:
 
 	BulletManager* bulletManager;
 	CollisionManager* collisionManager;
+	EnemyManager* enemyManager;
 	BlockManager* blockManager;
 
 

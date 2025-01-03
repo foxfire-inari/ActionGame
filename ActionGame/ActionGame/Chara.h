@@ -3,6 +3,7 @@
 
 #include"CollisionData.h"
 #include"Fall.h"
+#include"Life.h"
 #include"Gravity.h"
 #include"PositionSetter.h"
 #include"State.h"
@@ -14,7 +15,7 @@
 class Chara : public BaseObject
 {
 public:
-	Chara(BaseScene* baseScene,
+	Chara(BaseScene* baseScene, int hp,
 		float top, float under, float left, float right,
 		int tag);
 	~Chara();
@@ -32,6 +33,11 @@ protected:
 	/// 地面に乗ってるか
 	/// </summary>
 	Fall* fall;
+
+	/// <summary>
+	/// HPと死
+	/// </summary>
+	Life* life;
 
 	/// <summary>
 	/// 重力
@@ -56,10 +62,5 @@ protected:
 };
 
 /// ＜必要な要素＞
-/// 
-/// 
-/// 体力
-/// 
-/// 
 /// (画像は各キャラクターで実装する)
 ///

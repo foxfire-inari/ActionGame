@@ -7,6 +7,7 @@
 
 #include "BulletManager.h"
 #include "CollisionManager.h"
+#include "EnemyManager.h"
 
 
 //ヘッダーで前方宣言したクラスはここでインクルードする
@@ -15,6 +16,7 @@ CommonObjectAndManager::CommonObjectAndManager(BaseScene* nowScene)
 {
 	bulletManager = new BulletManager{nowScene};
 	collisionManager = new CollisionManager{ nowScene };
+	enemyManager = new EnemyManager{ nowScene };
 	blockManager = new BlockManager{ nowScene };
 
 	camera = new Camera{ nowScene };
@@ -23,6 +25,7 @@ CommonObjectAndManager::CommonObjectAndManager(BaseScene* nowScene)
 
 	bulletManager->Start();
 	collisionManager->Start();
+	enemyManager->Start();
 	blockManager->Start();
 
 	player->Start();

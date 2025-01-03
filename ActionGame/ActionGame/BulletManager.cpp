@@ -1,10 +1,17 @@
 #include "BulletManager.h"
 #include "NormalBullet.h"
+#include "Enemy.h"
+#include "Life.h"
+#include "CollisionData.h"
 #include "CollisionManager.h"
+#include "EnemyManager.h"
+
 namespace
 {
 	//弾の最大量
 	static const int MAX_BULLET = 3;
+	// 判定する距離
+	static const float HIT_CHECK_DIF = 100.0f;
 }
 
 BulletManager::BulletManager(BaseScene* baseScene)
@@ -75,6 +82,71 @@ void BulletManager::SetState(F_Vec2 pos, F_Vec2 vec)
 		(*it)->SetState(pos, vec);
 		break;
 	}
+}
+
+int BulletManager::HitCheckEnemy(Enemy* enemyPtr, CollisionData* colData)
+{
+	int damage = 0;
+
+	F_Vec2 enePos = enemyPtr->GetPosition();
+
+	//座標を考慮した当たり判定に変更
+	CollisionData* nowObjCol = GetNowPositionCol(colData, enePos);
+
+	//リスト内のオブジェクトのポジション
+	F_Vec2 listPos;
+	//リスト内のオブジェクトのコリジョン
+	CollisionData* listCol;
+
+
+	for (auto it = bulletList.begin(); it != bulletList.end(); it++)
+	{		
+		//フラグが立っていなかったら次へ
+		if (!(*it)->GetFlag())continue;
+
+		//リストのオブジェクトの座標を代入
+		listPos = (*it)->GetPosition();
+
+		//600以上離れていたら次へ
+		if (!IsNearDistance(listPos,enePos, HIT_CHECK_DIF))
+			continue;
+
+		//近くならコリジョンを代入
+		listCol = (*it)->GetCollisionData();
+
+		//座標を足してコリジョンが存在する座標にする
+		CollisionData* nowlistCol = GetNowPositionCol(listCol, listPos);
+
+		//対象に当たったかを確認
+		if (IsHitObject(nowObjCol, nowlistCol))
+		{
+			//当たっていたらフラグを倒しダメージを与える
+			(*it)->SetFlag(false);
+			damage += (*it)->GetPower();
+
+		}
+	}
+
+	return damage;
+}
+bool BulletManager::IsNearDistance(F_Vec2 objPos, F_Vec2 listPos, float dif)
+{
+	if (F_Vec2::VSize(listPos - objPos) < dif)
+		return true;
+	return false;
+}
+
+bool BulletManager::IsHitObject(CollisionData* objCol, CollisionData* listCol)
+{
+	//それぞれのポジションを計算に含める必要がある
+	return (
+		//対象の横に居るか
+		(objCol->GetTop() <= listCol->GetUnder() && listCol->GetUnder() <= objCol->GetUnder() ||
+			objCol->GetTop() <= listCol->GetTop() && listCol->GetTop() <= objCol->GetUnder()) &&
+		//対象の縦に居るか
+		(objCol->GetLeft() <= listCol->GetLeft() && listCol->GetLeft() <= objCol->GetRight() ||
+			objCol->GetLeft() <= listCol->GetRight() && listCol->GetRight() <= objCol->GetRight())
+		);
 }
 
 bool BulletManager::IsInCamera(F_Vec2 _camDif, Bullet* _listObj)
