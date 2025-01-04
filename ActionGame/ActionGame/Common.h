@@ -11,9 +11,9 @@
 #include <typeinfo>
 
 //ウィンドウサイズ横
-static const int WINDOW_X = 800;
+static const int WINDOW_X = 832;
 //ウィンドウサイズ縦
-static const int WINDOW_Y = 600;
+static const int WINDOW_Y = 640;
 //円周率
 static const float PI = 3.141592f;
 

@@ -17,7 +17,8 @@ class BaseScene;
 class CommonObjectAndManager
 {
 public:
-	CommonObjectAndManager(BaseScene* nowScene);
+	CommonObjectAndManager(BaseScene* nowScene
+		, std::vector<std::vector<std::string>> information);
 	~CommonObjectAndManager();
 
 	/// <summary>

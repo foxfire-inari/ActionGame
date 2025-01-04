@@ -7,7 +7,7 @@ class CollisionData;
 class EnemyManager : public BaseManager
 {
 public:
-	EnemyManager(BaseScene* baseScene);
+	EnemyManager(BaseScene* baseScene, std::vector<std::vector<std::string>> _info);
 	~EnemyManager();
 	void Start()override;
 	void Update()override;
@@ -24,6 +24,7 @@ public:
 
 private:
 	std::list<Enemy*> enemyList;
+	std::vector<std::vector<std::string>> information;//¶¬î•ñ‚ğŠi”[
 
 	/// <summary>
 	/// ƒvƒŒƒCƒ„[‚É“–‚½‚Á‚½‚©

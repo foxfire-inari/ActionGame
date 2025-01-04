@@ -13,9 +13,10 @@ namespace
 	static const float HIT_CHECK_DIF = 100.0f;
 }
 
-EnemyManager::EnemyManager(BaseScene* baseScene)
+EnemyManager::EnemyManager(BaseScene* baseScene, std::vector<std::vector<std::string>> _info)
 	:BaseManager{baseScene,BaseManager::E_MANAGER_TAG::ENEMY}
 {
+	information = _info;
 }
 
 EnemyManager::~EnemyManager()
@@ -42,15 +43,26 @@ void EnemyManager::Start()
 
 	Init();
 
-	Terry* terry = new Terry{ GetBaseScene(),bulletManager,playerBase,F_Vec2{400,100},0 };
-	enemyList.emplace_back(terry);
+	F_Vec2 pos = {};
 
-	Terry* terry1 = new Terry{ GetBaseScene(),bulletManager,playerBase,F_Vec2{500,100},0 };
-	enemyList.emplace_back(terry1);
+	//読み込んだデータでブロックを生成する
+	int knd = 0;
+	for (int y = 0; y < information.size(); y++)
+	{
+		for (int x = 0; x < information.at(y).size(); x++)
+		{
+			knd = std::stoi(information.at(y).at(x));
 
-	Terry* terry2 = new Terry{ GetBaseScene(),bulletManager,playerBase,F_Vec2{600,500},0 };
-	enemyList.emplace_back(terry2);
-
+			if (knd == E_CSV_KND::CSV_ENEMY_TERRY)
+			{
+				pos = { static_cast<float>(x),static_cast<float>(y) };
+				SetObject(pos, information.at(y));
+				Terry* enemy = new Terry{ GetBaseScene(),bulletManager,playerBase,pos, Enemy::E_ENEMY_KND::TERRY};
+				enemyList.emplace_back(enemy);
+				continue;
+			}
+		}
+	}
 }
 
 void EnemyManager::Update()

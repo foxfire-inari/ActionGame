@@ -44,6 +44,19 @@ public:
 		E_MANAGER_TAG_MAX	//タグの最大値
 	};
 
+	/// <summary>
+	/// csvファイルで読み込んだデータの判別タグ
+	/// </summary>
+	enum E_CSV_KND
+	{
+		CSV_SKY = 0,
+		CSV_BLOCK,
+		CSV_PLAYER,
+		CSV_ENEMY_TERRY,
+
+
+	};
+
 
 protected:
 	/// <summary>
@@ -62,8 +75,12 @@ protected:
 	/// <returns></returns>
 	bool IsNearDistance(BaseObject* obj, float dif = DRAW_DIF);
 
-	//座標、角度をcsvから読み込んでセット
-	//void SetObject(VECTOR& pos, VECTOR& rot, std::vector<std::string> info);
+	/// <summary>
+	/// csvから座標等の情報をセット
+	/// </summary>
+	/// <param name="pos">csvの行と列</param>
+	/// <param name="info">データ</param>
+	void SetObject(F_Vec2& pos, std::vector<std::string> info);
 
 	/// <summary>
 	/// プレイヤーをシーンに格納

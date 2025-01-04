@@ -9,7 +9,7 @@ class CollisionObject;
 class BlockManager :public BaseManager
 {
 public:
-	BlockManager(BaseScene* baseScene);
+	BlockManager(BaseScene* baseScene, std::vector<std::vector<std::string>> _info);
 	~BlockManager();
 	void Start()override;
 	void Update()override;

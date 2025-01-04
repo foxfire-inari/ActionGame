@@ -1,6 +1,8 @@
-﻿  Terry.cpp
-C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Terry.cpp(72,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Terry.cpp(71,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Terry.cpp(70,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Terry.cpp(69,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+﻿  Player.cpp
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(137,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(136,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(135,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(134,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(344,39): warning C4244: '*=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Player.cpp(437,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
   ActionGame.vcxproj -> C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\x64\Debug\ActionGame.exe

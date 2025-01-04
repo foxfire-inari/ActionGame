@@ -37,6 +37,12 @@ bool BaseManager::IsNearDistance(BaseObject* obj, float dif)
 	return false;
 }
 
+void BaseManager::SetObject(F_Vec2& pos, std::vector<std::string> info)
+{
+	pos.x *= 64;
+	pos.y *= 64;
+}
+
 void BaseManager::Init()
 {
 	playerBase = GetBaseScene()->GetOneObjectPtr<BaseObject>(BaseObject::E_TAG::PLAYER);

@@ -1,4 +1,5 @@
 #include "GameScene.h"
+#include"CsvFile.h"
 #include"Player.h"
 #include"Camera.h"
 #include "BulletManager.h"
@@ -9,7 +10,11 @@ GameScene::GameScene(SceneChange* sceneChange, std::string _nowMapName)
 	:BaseScene{sceneChange}
 	,nowMapName{_nowMapName}
 {
-	common = new CommonObjectAndManager{ this };
+	//É}ÉbÉvÇÃê∂ê¨èÓïÒ
+	std::vector<std::vector<std::string>> information =
+		CsvFile::GetInstance()->Input("Data/Csv/Map01.csv");
+
+	common = new CommonObjectAndManager{ this ,information };
 }
 
 GameScene::~GameScene()

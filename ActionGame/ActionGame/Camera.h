@@ -4,7 +4,7 @@
 class Camera : public BaseObject
 {
 public:
-	Camera(BaseScene* baseScene);
+	Camera(BaseScene* baseScene, std::vector<std::vector<std::string>> _info);
 	~Camera();
 
 	/// <summary>

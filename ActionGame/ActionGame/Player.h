@@ -9,7 +9,7 @@ class BulletManager;
 class Player :public Chara
 {
 public:
-	Player(BaseScene* baseScene);
+	Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info);
 	~Player();
 
 	 /// <summary>

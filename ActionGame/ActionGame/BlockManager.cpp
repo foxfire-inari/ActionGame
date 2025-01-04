@@ -2,22 +2,31 @@
 #include "CollisionObject.h"
 
 
-BlockManager::BlockManager(BaseScene* baseScene)
+BlockManager::BlockManager(BaseScene* baseScene, std::vector<std::vector<std::string>> _info)
 	:BaseManager{ baseScene,BaseManager::E_MANAGER_TAG::BLOCK }
 {
-	CollisionObject* block = new CollisionObject{ GetBaseScene(),F_Vec2{150,500},F_Vec2{0,0},
-												-32,32,-32,32,false,BaseObject::E_TAG::BLOCK };
-	blockList.emplace_back(block);
-	for (int i = 0; i < 20; i++)
-	{
-		block = new CollisionObject{ GetBaseScene(),F_Vec2{(float)(214+64*i),436},F_Vec2{0,0},
-													-32,32,-32,32,false,BaseObject::E_TAG::BLOCK };
-		blockList.emplace_back(block);
-	}
 
-	block = new CollisionObject{ GetBaseScene(),F_Vec2{300,200},F_Vec2{0,0},
-											-32,32,-32,32,false,BaseObject::E_TAG::BLOCK };
-	blockList.emplace_back(block);
+	F_Vec2 pos = {};
+
+	//読み込んだデータでブロックを生成する
+	int knd = 0;
+	for (int y = 0; y < _info.size(); y++)
+	{
+		for (int x = 0; x < _info.at(y).size(); x++)
+		{
+			knd = std::stoi(_info.at(y).at(x));
+
+			if (knd == E_CSV_KND::CSV_BLOCK)
+			{
+				pos = { static_cast<float>(x),static_cast<float>(y) };
+				SetObject(pos, _info.at(y));
+				CollisionObject* block = new CollisionObject{ GetBaseScene(), pos ,F_Vec2{0,0},
+													-32,32,-32,32,false,BaseObject::E_TAG::BLOCK };
+				blockList.emplace_back(block);
+				continue;
+			}
+		}
+	}
 
 }
 

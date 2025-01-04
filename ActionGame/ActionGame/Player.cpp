@@ -9,7 +9,7 @@ namespace
 	//HP
 	static const int MAX_HP = 100;
 	//ジャンプ力
-	static const float JUMP_POWER = 8.f;
+	static const float JUMP_POWER = 9.f;
 
 	//スピード
 	static const float WALK_SPEED = -3.f;
@@ -29,7 +29,7 @@ namespace
 	static const int STATE_DAMAGE = 4;
 }
 
-Player::Player(BaseScene* baseScene)
+Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info)
 	:Chara{ baseScene,MAX_HP,COL_TOP,COL_UNDER,COL_LEFT,COL_RIGHT,BaseObject::E_TAG::PLAYER }
 	, camPos{}
 	, jumpCount{ 0 }
@@ -46,6 +46,30 @@ Player::Player(BaseScene* baseScene)
 {
 	//自身を登録
 	GetBaseScene()->SetOneObjectList(this);
+
+	F_Vec2 pos = {};
+
+	//座標をセット済みか
+	bool isSet = false;
+	//読み込んだデータで座標をセットする
+	int knd = 0;
+	for (int y = 0; y < _info.size(); y++)
+	{
+		for (int x = 0; x < _info.at(y).size(); x++)
+		{
+			knd = std::stoi(_info.at(y).at(x));
+
+			if (knd == BaseManager::E_CSV_KND::CSV_PLAYER)
+			{
+				assert(!isSet);//ここで止まった場合はCsvに２が2こ以上ある
+				pos = { static_cast<float>(x * 64),static_cast<float>(y * 64) };
+				SetPosition(pos);
+				isSet = true;
+				continue;
+			}
+		}
+	}
+
 
 	oldPos = position;
 

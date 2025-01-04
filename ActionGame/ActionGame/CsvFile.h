@@ -6,6 +6,7 @@
 /// </summary>
 class CsvFile : public Singleton<CsvFile>
 {
+public:
 	CsvFile();
 	~CsvFile();
 	
@@ -33,5 +34,6 @@ private:
 //取得する文字列の要素(左から)
 // 種類(ブロックか敵か等)
 // 詳細な種類(敵やブロックの種類)
-// 初期座標
+// 初期座標(Csvの行と列で管理)
+// 
 //

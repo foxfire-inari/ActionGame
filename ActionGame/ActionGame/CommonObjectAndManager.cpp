@@ -12,15 +12,15 @@
 
 //ヘッダーで前方宣言したクラスはここでインクルードする
 
-CommonObjectAndManager::CommonObjectAndManager(BaseScene* nowScene)
+CommonObjectAndManager::CommonObjectAndManager(BaseScene* nowScene, std::vector<std::vector<std::string>> information)
 {
 	bulletManager = new BulletManager{nowScene};
 	collisionManager = new CollisionManager{ nowScene };
-	enemyManager = new EnemyManager{ nowScene };
-	blockManager = new BlockManager{ nowScene };
+	blockManager = new BlockManager{ nowScene , information };
+	enemyManager = new EnemyManager{ nowScene , information };
 
-	camera = new Camera{ nowScene };
-	player = new Player{ nowScene };
+	camera = new Camera{ nowScene , information };
+	player = new Player{ nowScene , information };
 
 
 	bulletManager->Start();
