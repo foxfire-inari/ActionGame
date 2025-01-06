@@ -10,10 +10,10 @@ namespace
 	static const float MOVE_SPEED = 0.5f;
 
 	//コリジョン
-	static const int COL_TOP = -32;
-	static const int COL_UNDER = 32;
-	static const int COL_LEFT = -32;
-	static const int COL_RIGHT = 32;
+	static const int COL_TOP = -BLOCK_SIZE/2;
+	static const int COL_UNDER = BLOCK_SIZE / 2;
+	static const int COL_LEFT = -BLOCK_SIZE/2;
+	static const int COL_RIGHT = BLOCK_SIZE/2;
 
 	//ステート
 	static const int STATE_RUN = 0;

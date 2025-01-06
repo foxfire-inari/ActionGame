@@ -39,8 +39,8 @@ bool BaseManager::IsNearDistance(BaseObject* obj, float dif)
 
 void BaseManager::SetObject(F_Vec2& pos, std::vector<std::string> info)
 {
-	pos.x *= 64;
-	pos.y *= 64;
+	pos.x *= BLOCK_SIZE;
+	pos.y *= BLOCK_SIZE;
 }
 
 void BaseManager::Init()

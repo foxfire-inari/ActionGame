@@ -9,17 +9,17 @@ namespace
 	//HP
 	static const int MAX_HP = 100;
 	//ジャンプ力
-	static const float JUMP_POWER = 9.f;
+	static const float JUMP_POWER = 8.f;
 
 	//スピード
-	static const float WALK_SPEED = -3.f;
+	static const float WALK_SPEED = -2.f;
 	static const float DECELERATION_SPEED = 0.5f;
 
 	//コリジョン
-	static const int COL_TOP = -32;
-	static const int COL_UNDER = 32;
-	static const int COL_LEFT = -32;
-	static const int COL_RIGHT = 32;
+	static const int COL_TOP	= -BLOCK_SIZE / 2;
+	static const int COL_UNDER	=  BLOCK_SIZE / 2;
+	static const int COL_LEFT	= -BLOCK_SIZE / 2;
+	static const int COL_RIGHT	=  BLOCK_SIZE / 2;
 
 	//ステート
 	static const int STATE_IDLE = 0;
@@ -62,7 +62,7 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 			if (knd == BaseManager::E_CSV_KND::CSV_PLAYER)
 			{
 				assert(!isSet);//ここで止まった場合はCsvに2が2こ以上ある
-				pos = { static_cast<float>(x * 64),static_cast<float>(y * 64) };
+				pos = { static_cast<float>(x * BLOCK_SIZE),static_cast<float>(y * BLOCK_SIZE) };
 				SetPosition(pos);
 				isSet = true;
 				continue;

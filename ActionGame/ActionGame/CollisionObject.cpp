@@ -5,7 +5,7 @@ CollisionObject::CollisionObject(BaseScene* baseScene, bool _isThrough, int tag)
 	, isThrough{ _isThrough }
 {
 	//CollisionObjectのコンストラクタ
-	collisionData = new CollisionData{ -32,32,-32,32 };
+	collisionData = new CollisionData{ -BLOCK_SIZE/2,BLOCK_SIZE / 2,-BLOCK_SIZE / 2,BLOCK_SIZE / 2 };
 }
 
 CollisionObject::CollisionObject(BaseScene* baseScene, F_Vec2 pos, F_Vec2 vel, 

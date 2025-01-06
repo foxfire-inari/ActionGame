@@ -10,10 +10,13 @@
 #include<math.h>
 #include <typeinfo>
 
+//ブロック1つのサイズ
+static const int BLOCK_SIZE = 42;
+
 //ウィンドウサイズ横
-static const int WINDOW_X = 832;
+static const int WINDOW_X = BLOCK_SIZE * 16;
 //ウィンドウサイズ縦
-static const int WINDOW_Y = 640;
+static const int WINDOW_Y = BLOCK_SIZE * 13;
 //円周率
 static const float PI = 3.141592f;
 

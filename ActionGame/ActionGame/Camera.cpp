@@ -13,15 +13,15 @@ Camera::Camera(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 	//最大値を一時保存
 	F_Vec2 maxPos = {};
 
-	maxPos.x = _info.at(0).size() * 64;
-	maxPos.y = _info.size() * 64;
+	maxPos.x = _info.at(0).size() * BLOCK_SIZE;
+	maxPos.y = _info.size() * BLOCK_SIZE;
 
-	maxPosX = maxPos.x - WINDOW_X / 2 - 32;
-	maxPosY = maxPos.y - WINDOW_Y / 2 - 32;
+	maxPosX = maxPos.x - WINDOW_X / 2 - BLOCK_SIZE / 2;
+	maxPosY = maxPos.y - WINDOW_Y / 2 - BLOCK_SIZE / 2;
 
 	//最小値はマップによらず全て固定
-	minPosX = WINDOW_X / 2 - 32;
-	minPosY = WINDOW_Y / 2 - 32;
+	minPosX = WINDOW_X / 2 - BLOCK_SIZE/2;
+	minPosY = WINDOW_Y / 2 - BLOCK_SIZE/2;
 
 }
 
