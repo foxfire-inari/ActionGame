@@ -61,7 +61,7 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 
 			if (knd == BaseManager::E_CSV_KND::CSV_PLAYER)
 			{
-				assert(!isSet);//‚±‚±‚Å~‚Ü‚Á‚½ê‡‚ÍCsv‚É‚Q‚ª2‚±ˆÈã‚ ‚é
+				assert(!isSet);//‚±‚±‚Å~‚Ü‚Á‚½ê‡‚ÍCsv‚É2‚ª2‚±ˆÈã‚ ‚é
 				pos = { static_cast<float>(x * 64),static_cast<float>(y * 64) };
 				SetPosition(pos);
 				isSet = true;
@@ -69,7 +69,6 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 			}
 		}
 	}
-
 
 	oldPos = position;
 
