@@ -154,14 +154,16 @@ bool CollisionProcessing::IsInBlock(CollisionData* objCol, CollisionData* listCo
 {
 	//めり込み補正
 	static const float IN_DIF = 0.5f;
-	//それぞれのポジションを計算に含める必要がある
+	//各辺の判定を取る
 	return (
-		//ブロックの横に居るか
-		(listCol->GetTop()+IN_DIF	<= objCol->GetUnder() && objCol->GetUnder() <= listCol->GetUnder() ||
-		 listCol->GetTop()			<= objCol->GetTop()   && objCol->GetTop()   <= listCol->GetUnder()-IN_DIF) &&
-		//ブロックの縦に居るか
-		(listCol->GetLeft()			<= objCol->GetLeft()  && objCol->GetLeft()  <= listCol->GetRight()-IN_DIF ||
-		 listCol->GetLeft()+IN_DIF	<= objCol->GetRight() && objCol->GetRight() <= listCol->GetRight())
+		//list上辺<=obj底辺
+		listCol->GetTop()	+ IN_DIF <= objCol->GetUnder()	&& 
+		//list底辺>=obj上辺
+		listCol->GetUnder()	- IN_DIF >= objCol->GetTop()	&&
+		//list左辺<=obj右辺
+		listCol->GetLeft()	+ IN_DIF <= objCol->GetRight()	&&
+		//list右辺>=obj左辺
+		listCol->GetRight() - IN_DIF >= objCol->GetLeft()
 		);
 }
 
@@ -170,9 +172,9 @@ CollisionData* CollisionProcessing::GetNowPositionCol(CollisionData* colData, F_
 	CollisionData* nowCol = new CollisionData
 	{
 		colData->GetTop()	+ pos.y,
-		colData->GetUnder()+ pos.y,
+		colData->GetUnder()	+ pos.y,
 		colData->GetLeft()	+ pos.x,
-		colData->GetRight()+ pos.x
+		colData->GetRight()	+ pos.x
 	};
 	return nowCol;
 }

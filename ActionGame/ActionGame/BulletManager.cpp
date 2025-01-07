@@ -123,7 +123,6 @@ int BulletManager::HitCheckEnemy(Enemy* enemyPtr, CollisionData* colData)
 			//当たっていたらフラグを倒しダメージを与える
 			(*it)->SetFlag(false);
 			damage += (*it)->GetPower();
-
 		}
 	}
 
@@ -138,14 +137,16 @@ bool BulletManager::IsNearDistance(F_Vec2 objPos, F_Vec2 listPos, float dif)
 
 bool BulletManager::IsHitObject(CollisionData* objCol, CollisionData* listCol)
 {
-	//それぞれのポジションを計算に含める必要がある
+	//各辺の判定を取る
 	return (
-		//対象の横に居るか
-		(objCol->GetTop() <= listCol->GetUnder() && listCol->GetUnder() <= objCol->GetUnder() ||
-			objCol->GetTop() <= listCol->GetTop() && listCol->GetTop() <= objCol->GetUnder()) &&
-		//対象の縦に居るか
-		(objCol->GetLeft() <= listCol->GetLeft() && listCol->GetLeft() <= objCol->GetRight() ||
-			objCol->GetLeft() <= listCol->GetRight() && listCol->GetRight() <= objCol->GetRight())
+		//list上辺<=obj底辺
+		listCol->GetTop()	<= objCol->GetUnder()	&&
+		//list底辺>=obj上辺
+		listCol->GetUnder()	>= objCol->GetTop()		&&
+		//list左辺<=obj右辺
+		listCol->GetLeft()	<= objCol->GetRight()	&&
+		//list右辺>=obj左辺
+		listCol->GetRight()	>= objCol->GetLeft()
 		);
 }
 

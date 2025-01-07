@@ -151,13 +151,16 @@ int EnemyManager::CheckPlayerHit(CollisionData* colData, int& damageVel)
 bool EnemyManager::IsHitPlayer(CollisionData* objCol, CollisionData* listCol)
 {
 	//それぞれのポジションを計算に含める必要がある
+	//各辺の判定を取る
 	return (
-		//プレイヤーの横に居るか
-		(listCol->GetTop()<= objCol->GetUnder() && objCol->GetUnder() <= listCol->GetUnder() ||
-			listCol->GetTop() <= objCol->GetTop() && objCol->GetTop() <= listCol->GetUnder() ) &&
-		//プレイヤーの縦に居るか
-		(listCol->GetLeft() <= objCol->GetLeft() && objCol->GetLeft() <= listCol->GetRight() ||
-			listCol->GetLeft() <= objCol->GetRight() && objCol->GetRight() <= listCol->GetRight())
+		//list上辺<=obj底辺
+		listCol->GetTop()	<= objCol->GetUnder()	&&
+		//list底辺>=obj上辺
+		listCol->GetUnder()	>= objCol->GetTop()		&&
+		//list左辺<=obj右辺
+		listCol->GetLeft()	<= objCol->GetRight()	&&
+		//list右辺>=obj左辺
+		listCol->GetRight()	>= objCol->GetLeft()
 		);
 }
 
@@ -175,13 +178,16 @@ bool EnemyManager::IsInCamera(F_Vec2 _camDif, Enemy* _listObj)
 		_camDif.x + WINDOW_X
 	};
 
+	//各辺の判定を取る
 	return (
-		//画面の横に居るか
-		(camCol->GetTop() <= nowListCol->GetUnder() && nowListCol->GetUnder() <= camCol->GetUnder() ||
-			camCol->GetTop() <= nowListCol->GetTop() && nowListCol->GetTop() <= camCol->GetUnder()) &&
-		//画面のの縦に居るか
-		(camCol->GetLeft() <= nowListCol->GetLeft() && nowListCol->GetLeft() <= camCol->GetRight() ||
-			camCol->GetLeft() <= nowListCol->GetRight() && nowListCol->GetRight() <= camCol->GetRight())
+		//list上辺<=obj底辺
+		camCol->GetTop()	<= nowListCol->GetUnder() &&
+		//list底辺>=obj上辺
+		camCol->GetUnder()	>= nowListCol->GetTop() &&
+		//list左辺<=obj右辺
+		camCol->GetLeft()	<= nowListCol->GetRight() &&
+		//list右辺>=obj左辺
+		camCol->GetRight()	>= nowListCol->GetLeft()
 		);
 }
 

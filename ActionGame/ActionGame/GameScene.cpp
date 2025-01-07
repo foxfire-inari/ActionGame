@@ -12,7 +12,7 @@ GameScene::GameScene(SceneChange* sceneChange, std::string _nowMapName)
 {
 	//ƒ}ƒbƒv‚Ì¶¬î•ñ
 	std::vector<std::vector<std::string>> information =
-		CsvFile::GetInstance()->Input("Data/Csv/Map01_01.csv");
+		CsvFile::GetInstance()->Input("Data/Csv/Map01.csv");
 
 	common = new CommonObjectAndManager{ this ,information };
 }

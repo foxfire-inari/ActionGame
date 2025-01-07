@@ -16,10 +16,10 @@ namespace
 	static const float DECELERATION_SPEED = 0.5f;
 
 	//コリジョン
-	static const int COL_TOP	= -BLOCK_SIZE / 2;
-	static const int COL_UNDER	=  BLOCK_SIZE / 2;
-	static const int COL_LEFT	= -BLOCK_SIZE / 2;
-	static const int COL_RIGHT	=  BLOCK_SIZE / 2;
+	static const float COL_TOP		= -BLOCK_SIZE;
+	static const float COL_UNDER	=  BLOCK_SIZE / 2;
+	static const float COL_LEFT		= -BLOCK_SIZE / 2;
+	static const float COL_RIGHT	=  BLOCK_SIZE / 2;
 
 	//ステート
 	static const int STATE_IDLE = 0;

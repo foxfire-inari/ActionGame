@@ -4,7 +4,7 @@
 
 GameMaster::GameMaster()
 {
-	GameScene* gameScene = new GameScene{ this,"Map_1"};
+	GameScene* gameScene = new GameScene{ this,"Map_01"};
 	scene.emplace_back(gameScene);
 
 	KeyControlle::Create();
