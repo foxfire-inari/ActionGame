@@ -1,3 +1,4 @@
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\Animation.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseManager.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\BaseManager.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseObject.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\BaseObject.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\BaseScene.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\BaseScene.obj
@@ -18,6 +19,7 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Fa
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\GameMaster.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\GameMaster.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\GameScene.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\GameScene.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Gravity.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\Gravity.obj
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Image.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\Image.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\KeyControlle.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\KeyControlle.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Life.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\Life.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\NormalBullet.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\NormalBullet.obj
@@ -26,4 +28,6 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Po
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\SceneChange.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\SceneChange.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\State.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\State.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Terry.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\Terry.obj
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\WarpManager.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\WarpManager.obj
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\WarpObject.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\WarpObject.obj
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\ソース.cpp;C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\x64\Debug\ソース.obj

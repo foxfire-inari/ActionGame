@@ -15,7 +15,7 @@ public:
 	/// 座標を(0,0)かつ
 	/// 速度を(0,0)で生成
 	/// </summary>
-	CollisionObject(BaseScene* baseScene, bool _isThrough, int tag);
+	CollisionObject(BaseScene* baseScene, int tag);
 
 
 	/// <summary>
@@ -28,10 +28,9 @@ public:
 	/// <param name="under">当たり判定＿下</param>
 	/// <param name="left">	当たり判定＿左</param>
 	/// <param name="right">当たり判定＿右</param>
-	/// <param name="_isThrough">すり抜け床かどうか</param>
 	/// <param name="tag">タグ</param>
 	CollisionObject(BaseScene* baseScene, F_Vec2 pos, F_Vec2 vel,
-		float top, float under, float left, float right, bool _isThrough,int tag);
+		float top, float under, float left, float right,int tag);
 
 	~CollisionObject();
 
@@ -43,12 +42,6 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	CollisionData* GetCollisionData() { return collisionData; }
-
-	/// <summary>
-	/// すり抜け床かどうかを返す
-	/// </summary>
-	/// <returns></returns>
-	bool GetIsThrough() { return isThrough; }
 
 private:
 
@@ -63,10 +56,5 @@ private:
 	・左右と下からの判定はしない
 	・オブジェクトの下から上に乗ることができる
 	*/
-
-	/// <summary>
-	/// すり抜け床かどうか
-	/// </summary>
-	bool isThrough;
 };
 

@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Image.h"
 #include "KeyControlle.h"
 #include "Camera.h"
 #include "BulletManager.h"
@@ -36,6 +37,7 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 	, shotCount{ 0 }
 	, inputRight{ 0 }
 	, inputDown{ 0 }
+	, imageH{ 0 }
 	, sideShotAngle{ 1 }//ƒvƒŒƒCƒ„[‚ÌÅ‰‚ÌŒü‚«‚É€‚¸‚é
 	, allShotAngle{ PI / 2 }
 	, moveSpeed{ 0 }
@@ -97,6 +99,8 @@ void Player::Start()
 
 void Player::Update()
 {
+	oldPos = position;
+	animation->AddAnimCount(1);
 	gravity->AddGravity(velocity.y);
 	state->ChangeState();
 
@@ -126,8 +130,20 @@ void Player::Draw(F_Vec2 _camDif)
 	if (isInvincible && damageCount % 10 <= 3)
 		return;
 
-
 	F_Vec2 drawpos = GetPosition();
+
+	imageH = Image::GetInstance()->GetPlayerIdleH(0);
+
+	DrawExtendGraph
+	(
+		drawpos.x - _camDif.x + 32,
+		drawpos.y - _camDif.y + collisionData->GetTop(),
+		drawpos.x - _camDif.x - 32,
+		drawpos.y - _camDif.y + collisionData->GetUnder(),
+		imageH,
+		true
+	);
+
 	DrawBox
 	(
 		drawpos.x - _camDif.x + collisionData->GetLeft(),
@@ -135,8 +151,9 @@ void Player::Draw(F_Vec2 _camDif)
 		drawpos.x - _camDif.x + collisionData->GetRight(),
 		drawpos.y - _camDif.y + collisionData->GetUnder(),
 		GetColor(255, 255, 255),
-		true
+		false
 	);
+
 	DrawFormatString(50, 50, GetColor(255, 255, 255),
 		"velocity:%f,%f", GetVelocity().x, GetVelocity().y);
 }

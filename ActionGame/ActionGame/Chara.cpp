@@ -14,6 +14,7 @@ Chara::Chara(BaseScene* baseScene,int hp,
 	gravity = new Gravity{};
 	positionSetter = new PositionSetter{};
 	state = new State{};
+	animation = new Animation{};
 
 	collisionManager = GetBaseScene()->GetManagerPtr<CollisionManager>(BaseManager::E_MANAGER_TAG::COLLISION);
 
@@ -21,6 +22,14 @@ Chara::Chara(BaseScene* baseScene,int hp,
 
 Chara::~Chara()
 {
+	if (collisionData != nullptr)delete collisionData;
+	if (fall != nullptr)delete fall;
+	if (life != nullptr)delete life;
+	if (gravity != nullptr)delete gravity;
+	if (positionSetter != nullptr)delete positionSetter;
+	if (state != nullptr)delete state;
+	if (animation != nullptr)delete animation;
+
 }
 
 

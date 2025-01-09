@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="BaseManager.cpp" />
     <ClCompile Include="BaseObject.cpp" />
     <ClCompile Include="BaseScene.cpp" />
@@ -163,6 +164,7 @@
     <ClCompile Include="GameMaster.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Gravity.cpp" />
+    <ClCompile Include="Image.cpp" />
     <ClCompile Include="KeyControlle.cpp" />
     <ClCompile Include="Life.cpp" />
     <ClCompile Include="NormalBullet.cpp" />
@@ -171,9 +173,12 @@
     <ClCompile Include="SceneChange.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Terry.cpp" />
+    <ClCompile Include="WarpManager.cpp" />
+    <ClCompile Include="WarpObject.cpp" />
     <ClCompile Include="ソース.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="BaseManager.h" />
     <ClInclude Include="BaseObject.h" />
     <ClInclude Include="BaseScene.h" />
@@ -195,6 +200,7 @@
     <ClInclude Include="GameMaster.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Gravity.h" />
+    <ClInclude Include="Image.h" />
     <ClInclude Include="KeyControlle.h" />
     <ClInclude Include="Life.h" />
     <ClInclude Include="NormalBullet.h" />
@@ -204,6 +210,8 @@
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Terry.h" />
+    <ClInclude Include="WarpManager.h" />
+    <ClInclude Include="WarpObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

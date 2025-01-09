@@ -127,6 +127,18 @@
       <Filter>Object\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="CsvFile.cpp">
+      <Filter>Singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="WarpObject.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="WarpManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -219,6 +231,18 @@
       <Filter>Object\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="CsvFile.h">
+      <Filter>Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="WarpObject.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="WarpManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

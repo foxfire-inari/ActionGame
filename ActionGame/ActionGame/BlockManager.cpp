@@ -21,7 +21,7 @@ BlockManager::BlockManager(BaseScene* baseScene, std::vector<std::vector<std::st
 				pos = { static_cast<float>(x),static_cast<float>(y) };
 				SetObject(pos, _info.at(y));
 				CollisionObject* block = new CollisionObject{ GetBaseScene(), pos ,F_Vec2{0,0},
-													-BLOCK_SIZE / 2,BLOCK_SIZE / 2,-BLOCK_SIZE / 2,BLOCK_SIZE / 2,false,BaseObject::E_TAG::BLOCK };
+													-BLOCK_SIZE / 2,BLOCK_SIZE / 2,-BLOCK_SIZE / 2,BLOCK_SIZE / 2,BaseObject::E_TAG::BLOCK };
 				blockList.emplace_back(block);
 				continue;
 			}

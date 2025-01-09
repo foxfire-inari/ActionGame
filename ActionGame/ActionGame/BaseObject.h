@@ -74,6 +74,7 @@ public:
 		ITEM,				//アイテム
 		EFFECT,				//エフェクト
 		BULLET,				//弾
+		WARP,				//ワープ
 	};
 
 protected:

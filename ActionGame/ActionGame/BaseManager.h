@@ -40,6 +40,7 @@ public:
 		ITEM,				//アイテム
 		COLLISION,			//コリジョン
 		BULLET,				//弾
+		WARP,				//ワープ
 
 		E_MANAGER_TAG_MAX	//タグの最大値
 	};

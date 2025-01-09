@@ -1,5 +1,7 @@
 #include "GameMaster.h"
 #include "KeyControlle.h"
+#include "Image.h"
+
 #include"GameScene.h"
 
 GameMaster::GameMaster()
@@ -8,6 +10,7 @@ GameMaster::GameMaster()
 	scene.emplace_back(gameScene);
 
 	KeyControlle::Create();
+	Image::Create();
 }
 
 GameMaster::~GameMaster()
@@ -25,6 +28,7 @@ GameMaster::~GameMaster()
 	}
 
 	KeyControlle::Destroy();
+	Image::Destroy();
 }
 
 

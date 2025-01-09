@@ -8,6 +8,7 @@
 #include"PositionSetter.h"
 #include"State.h"
 #include"CollisionManager.h"
+#include"Animation.h"
 
 /// <summary>
 /// 全てのキャラの継承元
@@ -59,8 +60,9 @@ protected:
 	/// </summary>
 	CollisionManager* collisionManager;
 
-};
+	/// <summary>
+	/// アニメーションのマネージャー
+	/// </summary>
+	Animation* animation;
 
-/// ＜必要な要素＞
-/// (画像は各キャラクターで実装する)
-///
+};
