@@ -4,8 +4,8 @@ Image* Image::Singleton::instance = nullptr;
 
 Image::Image()
 {
-	playerIdleH.at(0) = LoadGraph("Data/Image/Player/right.png");
-	playerIdleH.at(1) = LoadGraph("Data/Image/Player/left.png");
+	playerIdleH.at(0) = LoadGraph("Data/Image/Player/Idle/right.png");
+	playerIdleH.at(1) = LoadGraph("Data/Image/Player/Idle/left.png");
 }
 
 Image::~Image()

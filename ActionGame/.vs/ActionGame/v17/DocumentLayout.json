@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\Image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Image.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\Image.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DF21A174-B16E-4AC6-893E-37E10617005A}|ActionGame\\ActionGame.vcxproj|solutionrelative:ActionGame\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -152,11 +160,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 999,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 28,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Common.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Common.h",
               "RelativeDocumentMoniker": "ActionGame\\Common.h",
@@ -165,12 +173,11 @@
               "ViewState": "AQIAAAMAAAAAAAAAAAAYwBAAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-10T10:52:26.638Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "KeyControlle.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\KeyControlle.h",
               "RelativeDocumentMoniker": "ActionGame\\KeyControlle.h",
@@ -179,12 +186,11 @@
               "ViewState": "AQIAAA8AAAAAAAAAAAAAACAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-17T07:49:04.489Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "KeyControlle.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\KeyControlle.cpp",
               "RelativeDocumentMoniker": "ActionGame\\KeyControlle.cpp",
@@ -197,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "GameMaster.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\GameMaster.h",
               "RelativeDocumentMoniker": "ActionGame\\GameMaster.h",
@@ -206,12 +212,11 @@
               "ViewState": "AQIAAAkAAAAAAAAAAAAAAAEAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-21T12:19:36.462Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "GameMaster.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\GameMaster.cpp",
               "RelativeDocumentMoniker": "ActionGame\\GameMaster.cpp",
@@ -220,12 +225,11 @@
               "ViewState": "AQIAABgAAAAAAAAAAAAAACQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-21T12:05:53.993Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "GameScene.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\GameScene.h",
               "RelativeDocumentMoniker": "ActionGame\\GameScene.h",
@@ -234,12 +238,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-21T12:18:42.007Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "GameScene.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\GameScene.cpp",
               "RelativeDocumentMoniker": "ActionGame\\GameScene.cpp",
@@ -248,12 +251,11 @@
               "ViewState": "AQIAAAUAAAAAAAAAAAAjwBAAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-21T12:18:42.887Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "BaseObject.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BaseObject.h",
               "RelativeDocumentMoniker": "ActionGame\\BaseObject.h",
@@ -262,12 +264,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAFkAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-21T12:14:09.623Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "BaseObject.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BaseObject.cpp",
               "RelativeDocumentMoniker": "ActionGame\\BaseObject.cpp",
@@ -276,12 +277,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-26T09:27:10.892Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Player.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Player.h",
               "RelativeDocumentMoniker": "ActionGame\\Player.h",
@@ -290,18 +290,17 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-26T09:23:39.529Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Player.cpp",
               "RelativeDocumentMoniker": "ActionGame\\Player.cpp",
               "ToolTip": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Player.cpp",
               "RelativeToolTip": "ActionGame\\Player.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAjAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAIwBQAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-21T12:05:57.219Z",
               "IsPinned": true,
@@ -309,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "CommonObjectAndManager.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CommonObjectAndManager.h",
               "RelativeDocumentMoniker": "ActionGame\\CommonObjectAndManager.h",
@@ -318,12 +317,11 @@
               "ViewState": "AQIAACoAAAAAAAAAAAAiwD4AAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-08T11:23:40.225Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "CommonObjectAndManager.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CommonObjectAndManager.cpp",
               "RelativeDocumentMoniker": "ActionGame\\CommonObjectAndManager.cpp",
@@ -332,12 +330,11 @@
               "ViewState": "AQIAAAcAAAAAAAAAAAAjwBMAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-08T11:23:43.93Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "Bullet.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Bullet.h",
               "RelativeDocumentMoniker": "ActionGame\\Bullet.h",
@@ -350,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "Bullet.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Bullet.cpp",
               "RelativeDocumentMoniker": "ActionGame\\Bullet.cpp",
@@ -363,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "Enemy.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Enemy.h",
               "RelativeDocumentMoniker": "ActionGame\\Enemy.h",
@@ -376,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "Enemy.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Enemy.cpp",
               "RelativeDocumentMoniker": "ActionGame\\Enemy.cpp",
@@ -389,7 +386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "Terry.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Terry.h",
               "RelativeDocumentMoniker": "ActionGame\\Terry.h",
@@ -402,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Terry.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Terry.cpp",
               "RelativeDocumentMoniker": "ActionGame\\Terry.cpp",
@@ -411,12 +408,11 @@
               "ViewState": "AQIAAAIAAAAAAAAAAAAiwA8AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-02T17:29:14.218Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "EnemyManager.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\EnemyManager.h",
               "RelativeDocumentMoniker": "ActionGame\\EnemyManager.h",
@@ -429,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "EnemyManager.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\EnemyManager.cpp",
               "RelativeDocumentMoniker": "ActionGame\\EnemyManager.cpp",
@@ -438,12 +434,11 @@
               "ViewState": "AQIAACcAAAAAAAAAAAAiwDsAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-03T04:17:05.916Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "BaseManager.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BaseManager.h",
               "RelativeDocumentMoniker": "ActionGame\\BaseManager.h",
@@ -456,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "BaseManager.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BaseManager.cpp",
               "RelativeDocumentMoniker": "ActionGame\\BaseManager.cpp",
@@ -465,12 +460,11 @@
               "ViewState": "AQIAABgAAAAAAAAAAAAiwCoAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-10T10:32:27.238Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "BulletManager.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BulletManager.h",
               "RelativeDocumentMoniker": "ActionGame\\BulletManager.h",
@@ -483,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "BulletManager.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BulletManager.cpp",
               "RelativeDocumentMoniker": "ActionGame\\BulletManager.cpp",
@@ -496,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "CsvFile.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CsvFile.h",
               "RelativeDocumentMoniker": "ActionGame\\CsvFile.h",
@@ -509,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "CsvFile.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CsvFile.cpp",
               "RelativeDocumentMoniker": "ActionGame\\CsvFile.cpp",
@@ -522,7 +516,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "Image.cpp",
+              "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Image.cpp",
+              "RelativeDocumentMoniker": "ActionGame\\Image.cpp",
+              "ToolTip": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Image.cpp",
+              "RelativeToolTip": "ActionGame\\Image.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-09T14:00:49.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Image.h",
+              "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Image.h",
+              "RelativeDocumentMoniker": "ActionGame\\Image.h",
+              "ToolTip": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Image.h",
+              "RelativeToolTip": "ActionGame\\Image.h",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAAkAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-09T13:59:38.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "assert.cpp",
               "DocumentMoniker": "C:\\Program Files (x86)\\Windows Kits\\10\\Source\\10.0.19041.0\\ucrt\\startup\\assert.cpp",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Source\\10.0.19041.0\\ucrt\\startup\\assert.cpp",
@@ -530,12 +550,11 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Source\\10.0.19041.0\\ucrt\\startup\\assert.cpp",
               "ViewState": "AQIAAHYBAAAAAAAAAADgv4MBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-06T12:18:37.383Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-06T12:18:37.383Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "CollisionObject.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CollisionObject.cpp",
               "RelativeDocumentMoniker": "ActionGame\\CollisionObject.cpp",
@@ -543,12 +562,11 @@
               "RelativeToolTip": "ActionGame\\CollisionObject.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-06T12:10:49.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-06T12:10:49.794Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "CollisionObject.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\CollisionObject.h",
               "RelativeDocumentMoniker": "ActionGame\\CollisionObject.h",
@@ -556,12 +574,11 @@
               "RelativeToolTip": "ActionGame\\CollisionObject.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-06T12:10:47.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-06T12:10:47.904Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "xthrow.cpp",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\stl\\xthrow.cpp",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\stl\\xthrow.cpp",
@@ -569,12 +586,11 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\stl\\xthrow.cpp",
               "ViewState": "AQIAAAQAAAAAAAAAAADgvxEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-06T12:03:54.773Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-06T12:03:54.773Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "Chara.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Chara.cpp",
               "RelativeDocumentMoniker": "ActionGame\\Chara.cpp",
@@ -586,7 +602,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Camera.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Camera.h",
               "RelativeDocumentMoniker": "ActionGame\\Camera.h",
@@ -594,12 +610,11 @@
               "RelativeToolTip": "ActionGame\\Camera.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-04T05:24:01.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T05:24:01.124Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Camera.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\Camera.cpp",
               "RelativeDocumentMoniker": "ActionGame\\Camera.cpp",
@@ -607,12 +622,11 @@
               "RelativeToolTip": "ActionGame\\Camera.cpp",
               "ViewState": "AQIAAA8AAAAAAAAAAAAkwBcAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-04T05:18:38.129Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T05:18:38.129Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "BlockManager.h",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BlockManager.h",
               "RelativeDocumentMoniker": "ActionGame\\BlockManager.h",
@@ -620,12 +634,11 @@
               "RelativeToolTip": "ActionGame\\BlockManager.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-04T04:42:35.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T04:42:35.828Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "BlockManager.cpp",
               "DocumentMoniker": "C:\\Users\\yurin\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Visual\\ActionGame\\ActionGame\\ActionGame\\BlockManager.cpp",
               "RelativeDocumentMoniker": "ActionGame\\BlockManager.cpp",
@@ -633,8 +646,7 @@
               "RelativeToolTip": "ActionGame\\BlockManager.cpp",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-04T04:41:55.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T04:41:55.019Z"
             }
           ]
         },
