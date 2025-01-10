@@ -29,13 +29,12 @@ public:
 	/// <param name="left">	当たり判定＿左</param>
 	/// <param name="right">当たり判定＿右</param>
 	/// <param name="tag">タグ</param>
-	CollisionObject(BaseScene* baseScene, F_Vec2 pos, F_Vec2 vel,
-		float top, float under, float left, float right,int tag);
+	CollisionObject(BaseScene* baseScene, F_Vec2 pos,int tag);
 
 	~CollisionObject();
 
-	void Update()override;
-	void Draw(F_Vec2 _camDif)override;
+	virtual void Update()override {}
+	virtual void Draw(F_Vec2 _camDif)override {}
 
 	/// <summary>
 	/// コリジョンデータを渡す

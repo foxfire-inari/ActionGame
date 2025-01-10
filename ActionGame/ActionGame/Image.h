@@ -25,18 +25,18 @@ public:
 	int GetPlayerWalkH(int index)const;
 
 	/// <summary>
-	/// プレイヤーが攻撃するときの画像を返す
+	/// プレイヤーが空中にいるときの画像を返す
 	/// </summary>
 	/// <param name="index">インデックス</param>
 	/// <returns></returns>
-	int GetPlayerAttackH(int index)const;
+	int GetPlayerFallH(int index)const;
 
 	/// <summary>
-	/// プレイヤーが空中にいるときの画像を変えす
+	/// プレイヤーがダメージを受けた時の画像を返す
 	/// </summary>
 	/// <param name="index">インデックス</param>
 	/// <returns></returns>
-	int GetplayerFallH(int index)const;
+	int GetPlayerDamageH(int index)const;
 
 
 	/// <summary>
@@ -61,10 +61,10 @@ private:
 	std::array<int, 2> playerIdleH;
 	//歩行用
 	std::array<int, 8> playerWalkH;
-	//攻撃用
-	std::array<int, 8> playerAttackH;
 	//空中にいるとき用
 	std::array<int, 2> playerFallH;
+	//ダメージ用
+	std::array<int, 2> playerDamageH;
 
 	//テリーの画像
 	//テリーは回転するだけなのでこれだけ
@@ -72,7 +72,7 @@ private:
 
 	//ブロックの画像
 	//ブロックの数だけ保存
-	std::array<int, 64> BlockH;
+	std::array<int, 2> blockH;
 
 };
 

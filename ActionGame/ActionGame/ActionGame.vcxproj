@@ -147,6 +147,7 @@
     <ClCompile Include="BaseManager.cpp" />
     <ClCompile Include="BaseObject.cpp" />
     <ClCompile Include="BaseScene.cpp" />
+    <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlockManager.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletManager.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="BaseManager.h" />
     <ClInclude Include="BaseObject.h" />
     <ClInclude Include="BaseScene.h" />
+    <ClInclude Include="Block.h" />
     <ClInclude Include="BlockManager.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletManager.h" />

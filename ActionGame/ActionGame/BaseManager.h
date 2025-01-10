@@ -50,10 +50,13 @@ public:
 	/// </summary>
 	enum E_CSV_KND
 	{
-		CSV_SKY = 0,
-		CSV_BLOCK,
-		CSV_PLAYER,
-		CSV_ENEMY_TERRY,
+		CSV_SKY = 0,		//何も置かない(背景)
+		
+		CSV_BLOCK,			//壁等のブロック
+		CSV_GRASS,			//足場になるブロック
+
+		CSV_PLAYER,			//プレイヤー
+		CSV_ENEMY_TERRY,	//敵(テリー)
 
 
 	};

@@ -4,8 +4,32 @@ Image* Image::Singleton::instance = nullptr;
 
 Image::Image()
 {
-	playerIdleH.at(0) = LoadGraph("Data/Image/Player/Idle/right.png");
+
+	//プレイヤー
+
+	playerIdleH.at(0) = LoadGraph("Data/Image/Player/Idle/right.png"); 
 	playerIdleH.at(1) = LoadGraph("Data/Image/Player/Idle/left.png");
+
+	playerWalkH.at(0) = LoadGraph("Data/Image/Player/Walk/right_1.png");
+	playerWalkH.at(1) = LoadGraph("Data/Image/Player/Walk/right_2.png");
+	playerWalkH.at(2) = LoadGraph("Data/Image/Player/Walk/right_3.png");
+	playerWalkH.at(3) = LoadGraph("Data/Image/Player/Walk/right_2.png");
+	playerWalkH.at(4) = LoadGraph("Data/Image/Player/Walk/left_1.png");
+	playerWalkH.at(5) = LoadGraph("Data/Image/Player/Walk/left_2.png");
+	playerWalkH.at(6) = LoadGraph("Data/Image/Player/Walk/left_3.png");
+	playerWalkH.at(7) = LoadGraph("Data/Image/Player/Walk/left_2.png");
+
+	playerFallH.at(0) = LoadGraph("Data/Image/Player/Fall/right.png");
+	playerFallH.at(1) = LoadGraph("Data/Image/Player/Fall/left.png");
+
+	playerDamageH.at(0) = LoadGraph("Data/Image/Player/Damage/right.png");
+	playerDamageH.at(1) = LoadGraph("Data/Image/Player/Damage/left.png");
+
+
+	//ブロック
+	blockH.at(0) = LoadGraph("Data/Image/Blocks/ground.png");
+	blockH.at(1) = LoadGraph("Data/Image/Blocks/grass.png");
+
 }
 
 Image::~Image()
@@ -27,18 +51,18 @@ int Image::GetPlayerWalkH(int index) const
 	return playerWalkH.at(index);
 }
 
-int Image::GetPlayerAttackH(int index) const
-{
-	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= playerAttackH.size())return -1;
-	return playerAttackH.at(index);
-}
-
-int Image::GetplayerFallH(int index) const
+int Image::GetPlayerFallH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
 	if (index < 0 || index >= playerFallH.size())return -1;
 	return playerFallH.at(index);
+}
+
+int Image::GetPlayerDamageH(int index) const
+{
+	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
+	if (index < 0 || index >= playerDamageH.size())return -1;
+	return playerDamageH.at(index);
 }
 
 int Image::GetTerryH(int index) const
@@ -51,6 +75,6 @@ int Image::GetTerryH(int index) const
 int Image::GetBlockH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= BlockH.size())return -1;
-	return BlockH.at(index);
+	if (index < 0 || index >= blockH.size())return -1;
+	return blockH.at(index);
 }

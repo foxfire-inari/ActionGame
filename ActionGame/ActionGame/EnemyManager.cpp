@@ -106,7 +106,7 @@ void EnemyManager::Draw(F_Vec2 _camDif)
 	}
 }
 
-int EnemyManager::CheckPlayerHit(CollisionData* colData, int& damageVel)
+int EnemyManager::CheckPlayerHit(CollisionData* colData)
 {
 	F_Vec2 plPos = playerBase->GetPosition();
 
@@ -139,8 +139,6 @@ int EnemyManager::CheckPlayerHit(CollisionData* colData, int& damageVel)
 		//プレイヤーに当たったかを確認
 		if (IsHitPlayer(nowObjCol, nowlistCol))
 		{
-			//座標から右に飛ばすか左に飛ばすかを返す
-			damageVel = plPos.x - listPos.x >= 0 ? 1 : -1;
 			return (*it)->GetPower();
 		}
 	}

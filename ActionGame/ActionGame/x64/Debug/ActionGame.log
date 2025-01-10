@@ -1,2 +1,6 @@
-﻿  Image.cpp
-  ActionGame.vcxproj -> C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\x64\Debug\ActionGame.exe
+﻿  Block.cpp
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Block.cpp(31,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Block.cpp(30,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Block.cpp(29,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Block.cpp(28,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ActionGame.vcxproj -> C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\x64\Debug\ActionGame.exe

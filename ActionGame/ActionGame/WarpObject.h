@@ -1,5 +1,6 @@
 #pragma once
 #include "BaseObject.h"
+#include "Animation.h"
 
 /// <summary>
 /// マップ移動をするオブジェクト

@@ -141,6 +141,9 @@
     <ClCompile Include="Animation.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>Object\CollisionObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMaster.h">
@@ -244,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Object\CollisionObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

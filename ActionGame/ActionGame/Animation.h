@@ -9,11 +9,11 @@ public:
 	/// <summary>
 	/// アニメーションを始める位置を向きによって決める関数
 	/// </summary>
-	/// <param name="left">左向きの時の開始位置</param>
 	/// <param name="right">右向きの時の開始位置</param>
+	/// <param name="left">左向きの時の開始位置</param>
 	/// <param name="moveAngle">向いている向き</param>
 	/// <returns></returns>
-	int GetAngleImage(int left, int right, int moveAngle);
+	int GetAngleImage(int right, int left, int moveAngle);
 
 	/// <summary>
 	/// アニメーションの現在のフレーム数を返す

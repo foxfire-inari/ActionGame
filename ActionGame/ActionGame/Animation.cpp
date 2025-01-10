@@ -9,13 +9,11 @@ Animation::~Animation()
 {
 }
 
-int Animation::GetAngleImage(int left, int right, int moveAngle)
+int Animation::GetAngleImage(int right, int left, int moveAngle)
 {
-	int angleNum = 0;
-	//moveAngle‚ª0‚æ‚è¬‚³‚¢‚È‚ç¶‚ğŒü‚¢‚Ä‚é‚½‚ßleft‚ğ‘ã“ü‚·‚é
-	angleNum = moveAngle < 0 ? left : right;
+	//moveAngle‚ª0‚æ‚è¬‚³‚¢‚È‚ç‰E‚ğŒü‚¢‚Ä‚é‚½‚ßright‚ğ‘ã“ü‚·‚é
 
-	return angleNum;
+	return moveAngle < 0 ? right : left;
 }
 
 int Animation::GetAnimation(int allFrame, int oneFrame)

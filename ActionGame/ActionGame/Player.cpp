@@ -22,6 +22,13 @@ namespace
 	static const float COL_LEFT		= -BLOCK_SIZE / 2;
 	static const float COL_RIGHT	=  BLOCK_SIZE / 2;
 
+	//画像
+	static const float IMG_TOP		= COL_TOP;
+	static const float IMG_UNDER	= COL_UNDER;
+	static const float IMG_LEFT		= -32;
+	static const float IMG_RIGHT	= 32;
+
+
 	//ステート
 	static const int STATE_IDLE = 0;
 	static const int STATE_RUN = 1;
@@ -37,7 +44,7 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 	, shotCount{ 0 }
 	, inputRight{ 0 }
 	, inputDown{ 0 }
-	, imageH{ 0 }
+	, imageH{ -1 }
 	, sideShotAngle{ 1 }//プレイヤーの最初の向きに準ずる
 	, allShotAngle{ PI / 2 }
 	, moveSpeed{ 0 }
@@ -132,14 +139,12 @@ void Player::Draw(F_Vec2 _camDif)
 
 	F_Vec2 drawpos = GetPosition();
 
-	imageH = Image::GetInstance()->GetPlayerIdleH(0);
-
 	DrawExtendGraph
 	(
-		drawpos.x - _camDif.x + 32,
-		drawpos.y - _camDif.y + collisionData->GetTop(),
-		drawpos.x - _camDif.x - 32,
-		drawpos.y - _camDif.y + collisionData->GetUnder(),
+		drawpos.x - _camDif.x + IMG_LEFT,
+		drawpos.y - _camDif.y + IMG_TOP,
+		drawpos.x - _camDif.x + IMG_RIGHT,
+		drawpos.y - _camDif.y + IMG_UNDER,
 		imageH,
 		true
 	);
@@ -184,6 +189,12 @@ void Player::UpdateIdle()
 {
 	velocity = F_Vec2{ 0,velocity.y };
 
+	//アニメーションの設定
+	{
+		int angImage = animation->GetAngleImage(0,1,moveAngle);
+		imageH = Image::GetInstance()->GetPlayerIdleH(angImage);
+	}
+
 	//何らかの方向キーが押されていたら歩き始める
 	for (int i = 0; i < 4; i++)
 	{
@@ -210,6 +221,14 @@ void Player::UpdateRun()
 		if (moveSpeed >= 0)state->SetNextState("Idle");
 	}
 
+	//アニメーションの設定
+	{
+		static const int ANIM = 48;
+		int angImage = animation->GetAngleImage(0, 4, moveAngle);
+		int animNum = animation->GetAnimation(ANIM, ANIM / 4);
+		imageH = Image::GetInstance()->GetPlayerWalkH(animNum + angImage);
+	}
+
 	JumpStart();
 	AttackStart();
 	FallStart();
@@ -221,6 +240,8 @@ void Player::UpdateJump()
 {
 	SetInputAngle();
 
+	static const float FAST_FALL = -5.f;
+
 	bool isMove = Move(WALK_SPEED);
 	if (!isMove)MoveDeceletation();
 
@@ -229,6 +250,18 @@ void Player::UpdateJump()
 	{
 		if (moveSpeed != 0)	StartRun();
 		else state->SetNextState("Idle");
+	}
+
+	//アニメーションの設定
+	if (velocity.y > FAST_FALL && !fall->GetIsOnGround())
+	{
+		int angImage = animation->GetAngleImage(1, 4, moveAngle);
+		imageH = Image::GetInstance()->GetPlayerWalkH(angImage);
+	}
+	else
+	{
+		int angImage = animation->GetAngleImage(0, 1, moveAngle);
+		imageH = Image::GetInstance()->GetPlayerFallH(angImage);
 	}
 
 	AttackStart();
@@ -249,8 +282,6 @@ void Player::UpdateAttack()
 		//shotCountはリセット
 		shotCount = 0;
 
-		//攻撃ボタンが押されていたらステートは攻撃のまま
-		if (KeyControlle::GetInstance()->GetPressingFrame(E_KEY::ATTACK) != 0)return;
 
 		//もし空中にいたらステートはジャンプ
 		if (!fall->GetIsOnGround())
@@ -309,6 +340,11 @@ void Player::UpdateDamage()
 		//Idle移行後飛ばないようjumpCountを0にする
 		jumpCount = 0;
 	}
+	//アニメーションの設定
+	{
+		int angImage = animation->GetAngleImage(0, 1, moveAngle);
+		imageH = Image::GetInstance()->GetPlayerDamageH(angImage);
+	}
 }
 
 void Player::UpdateDeath()
@@ -365,7 +401,8 @@ void Player::DamageStart()
 	//参照で渡して飛ばす方向を貰う
 	int vel;
 
-	int damage = enemyManager->CheckPlayerHit(collisionData, vel);
+	//ダメージを受けたかとノックバックの方向を受け取る
+	int damage = enemyManager->CheckPlayerHit(collisionData);
 
 	//当たっていなかったらreturn
 	if (damage <= 0)return;
@@ -374,7 +411,7 @@ void Player::DamageStart()
 	moveSpeed = 0;
 
 	//受け取った方向をDAMAGE_VEL_SIZE倍にする
-	vel *= DAMAGE_VEL_SIZE;
+	vel = moveAngle * DAMAGE_VEL_SIZE;
 
 	//ダメージを受ける
 	life->DecHp(damage);
@@ -480,7 +517,7 @@ void Player::MoveDeceletation()
 	if (moveSpeed > 0)
 	{
 		moveSpeed = 0;
-		moveAngle = 0;
+		//moveAngle = 0;
 	}
 	F_Vec2 move = F_Vec2{ moveSpeed * moveAngle, velocity.y };
 	velocity = move;

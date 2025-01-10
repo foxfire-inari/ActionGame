@@ -6,11 +6,11 @@
 
 GameMaster::GameMaster()
 {
-	GameScene* gameScene = new GameScene{ this,"Map_01"};
-	scene.emplace_back(gameScene);
-
 	KeyControlle::Create();
 	Image::Create();
+
+	GameScene* gameScene = new GameScene{ this,"Map_01"};
+	scene.emplace_back(gameScene);
 }
 
 GameMaster::~GameMaster()

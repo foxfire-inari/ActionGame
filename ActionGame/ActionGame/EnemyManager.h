@@ -15,12 +15,12 @@ public:
 
 	/// <summary>
 	/// プレイヤーと敵が当たっていたらダメージを返す
-	/// 当たっていなかったら－1
+	/// 当たっていなかったら－1を返す velは0で返る
 	/// </summary>
 	/// <param name="collInfo">プレイヤーの当たり判定情報</param>
 	/// <param name="damageVel">ダメージで飛ぶ方向</param>
 	/// <returns></returns>
-	int CheckPlayerHit(CollisionData* colData, int& damageVel);
+	int CheckPlayerHit(CollisionData* colData);
 
 private:
 	std::list<Enemy*> enemyList;

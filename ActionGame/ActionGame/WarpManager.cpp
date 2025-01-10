@@ -1,6 +1,9 @@
 #include "WarpManager.h"
 #include "WarpObject.h"
 
+
+
+
 WarpManager::WarpManager(BaseScene* baseScene, std::vector<std::vector<std::string>> _info)
 	:BaseManager{ baseScene ,BaseManager::E_MANAGER_TAG::WARP}
 {

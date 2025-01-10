@@ -1,12 +1,18 @@
 #include "BlockManager.h"
-#include "CollisionObject.h"
+#include "Image.h"
+#include "Block.h"
 
 
 BlockManager::BlockManager(BaseScene* baseScene, std::vector<std::vector<std::string>> _info)
 	:BaseManager{ baseScene,BaseManager::E_MANAGER_TAG::BLOCK }
 {
+	//ブロック用の配列にずれが生じないように定数で減らす
+	//画像を0から始めるためにCSV_BLOCK
+	static const int IMAGE_DIF = BaseManager::E_CSV_KND::CSV_BLOCK;
 
 	F_Vec2 pos = {};
+
+	int imageH = -1;
 
 	//読み込んだデータでブロックを生成する
 	int knd = 0;
@@ -16,14 +22,18 @@ BlockManager::BlockManager(BaseScene* baseScene, std::vector<std::vector<std::st
 		{
 			knd = std::stoi(_info.at(y).at(x));
 
-			if (knd == E_CSV_KND::CSV_BLOCK)
+			switch (knd)
 			{
+			case E_CSV_KND::CSV_BLOCK:
+			case E_CSV_KND::CSV_GRASS:
 				pos = { static_cast<float>(x),static_cast<float>(y) };
 				SetObject(pos, _info.at(y));
-				CollisionObject* block = new CollisionObject{ GetBaseScene(), pos ,F_Vec2{0,0},
-													-BLOCK_SIZE / 2,BLOCK_SIZE / 2,-BLOCK_SIZE / 2,BLOCK_SIZE / 2,BaseObject::E_TAG::BLOCK };
+
+				imageH = Image::GetInstance()->GetBlockH(knd - IMAGE_DIF);
+				Block* block = new Block{ GetBaseScene(), pos ,imageH };
 				blockList.emplace_back(block);
 				continue;
+				break;
 			}
 		}
 	}
