@@ -36,6 +36,9 @@ namespace
 	static const int STATE_JUMP = 2;
 	static const int STATE_ATTACK = 3;
 	static const int STATE_DAMAGE = 4;
+	static const int STATE_DEATH = 5;
+	static const int STATE_NEXT_MAP_WAIT = 6;
+	
 }
 
 Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info)
@@ -94,6 +97,8 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 	state->SetAllStateMember("Jump");
 	state->SetAllStateMember("Attack");
 	state->SetAllStateMember("Damage");
+	state->SetAllStateMember("Death");
+	state->SetAllStateMember("NextMapWait");
 }
 
 Player::~Player()
@@ -124,6 +129,12 @@ void Player::Update()
 	case STATE_ATTACK:			UpdateAttack();			break;
 
 	case STATE_DAMAGE:			UpdateDamage();			break;
+
+	case STATE_DEATH:			UpdateDeath();			break;
+
+	case STATE_NEXT_MAP_WAIT:	UpdateNextMapWait();	break;
+
+	default:					assert(false);			break;
 	}
 
 	positionSetter->UpdatePos(this,collisionData, collisionManager, fall);
@@ -172,6 +183,20 @@ void Player::DrawUI()
 
 void Player::DrawData()
 {
+}
+
+std::string Player::GoNextMap()
+{
+	//次のマップの名前を取得する
+	std::string nextMapName = warpManager->GetNextMapName(this, collisionData);
+
+	if (nextMapName != "")
+	{
+		state->SetNextState("NextMapWait");
+	}
+
+	//次のマップ名を返す
+	return nextMapName;
 }
 
 void Player::SetCameraTarget()
@@ -352,6 +377,18 @@ void Player::UpdateDamage()
 
 void Player::UpdateDeath()
 {
+}
+
+void Player::UpdateNextMapWait()
+{
+	//移動ベクトルを重力以外無くす
+	velocity = F_Vec2{ 0,velocity.y };
+
+	//アニメーションの設定
+	{
+		int angImage = animation->GetAngleImage(0, 1, moveAngle);
+		imageH = Image::GetInstance()->GetPlayerIdleH(angImage);
+	}
 }
 
 void Player::JumpStart()

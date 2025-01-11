@@ -21,7 +21,7 @@ public:
 	/// 次のマップの名前を返す
 	/// そうでない場合は""を返す
 	/// </summary>
-	/// <param name="obj">プレイヤ―の</param>
+	/// <param name="obj">プレイヤ―のポインター</param>
 	/// <param name="objCol"></param>
 	/// <returns></returns>
 	std::string GetNextMapName(BaseObject* obj, CollisionData* objCol);

@@ -35,6 +35,13 @@ public:
 	void DrawData();
 
 	/// <summary>
+	/// 次のマップに行くかどうか
+	/// </summary>
+	/// <returns></returns>
+	std::string GoNextMap();
+
+
+	/// <summary>
 	/// ゲームオーバーかどうか
 	/// </summary>
 	/// <returns></returns>
@@ -76,10 +83,9 @@ private:
 	bool isGameOver;
 
 	/// <summary>
-	/// カメラの座標、中支店のセット
+	/// カメラの座標、注視点のセット
 	/// </summary>
 	void SetCameraTarget();
-
 
 	// --------ステートごとのアップデート
 
@@ -112,6 +118,11 @@ private:
 	/// 死亡状態
 	/// </summary>
 	void UpdateDeath();
+
+	/// <summary>
+	/// 次のマップに行くまでの処理
+	/// </summary>
+	void UpdateNextMapWait();
 
 	// --------ステートごとのスタート
 

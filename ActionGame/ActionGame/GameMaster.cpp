@@ -42,9 +42,35 @@ void GameMaster::Update()
 	(*scene.begin())->Draw();
 }
 
-bool GameMaster::Change(int nextscenenum, std::string nextmapname, std::string oldmapname)
+bool GameMaster::Change(int nextSceneNum, std::string nextMapName, std::string oldMapName)
 {
+	//今までのシーン全てをリストから消す
+	for (auto it = scene.begin(); it != scene.end();)
+	{
+		if (*it != nullptr)
+		{
+			delete* it;
+			*it = nullptr;
+			it = scene.erase(it);
+		}
+		else it++;
+	}
 
+	switch (nextSceneNum)
+	{
+
+	case E_SCENE::GAME:
+	{
+		GameScene* game = new GameScene{ this,nextMapName };
+		scene.emplace_front(game);
+		(*scene.begin())->Start();
+	}
+	return true;
+
+	default:
+		assert(false);
+		break;
+	}
 
 	return false;
 }

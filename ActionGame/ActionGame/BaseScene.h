@@ -95,7 +95,13 @@ protected:
 	/// </summary>
 	std::string nextMapName;
 
-
+	/// <summary>
+	/// プレイヤーがワープオブジェクトに当たった時に
+	/// 別のマップに移動する処理
+	/// </summary>
+	/// <param name="nextMapName">次のマップ名を格納するため参照渡し</param>
+	/// <returns></returns>
+	bool NextMapPlayer(std::string& nextMapName);
 
 private:
 	/// <summary>

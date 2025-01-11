@@ -30,6 +30,11 @@ Image::Image()
 	blockH.at(0) = LoadGraph("Data/Image/Blocks/ground.png");
 	blockH.at(1) = LoadGraph("Data/Image/Blocks/grass.png");
 
+	//ワープ
+	warpH.at(0) = LoadGraph("Data/Image/Blocks/Warp/warp_1.png");
+	warpH.at(1) = LoadGraph("Data/Image/Blocks/Warp/warp_2.png");
+	warpH.at(2) = LoadGraph("Data/Image/Blocks/Warp/warp_3.png");
+	warpH.at(3) = LoadGraph("Data/Image/Blocks/Warp/warp_4.png");
 }
 
 Image::~Image()
@@ -77,4 +82,11 @@ int Image::GetBlockH(int index) const
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
 	if (index < 0 || index >= blockH.size())return -1;
 	return blockH.at(index);
+}
+
+int Image::GetWarpH(int index) const
+{
+	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
+	if (index < 0 || index >= warpH.size())return -1;
+	return warpH.at(index);
 }

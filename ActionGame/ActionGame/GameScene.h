@@ -13,6 +13,9 @@ public:
 	void Draw()override;
 
 private:
+	/// <summary>
+	/// 現在のマップの名前
+	/// </summary>
 	std::string nowMapName;
 	
 	/// <summary>
@@ -20,6 +23,12 @@ private:
 	/// ゲームオーバーアニメのカウント
 	/// </summary>
 	//int gameOverCount;
+
+	/// <summary>
+	/// 次のマップへ行く処理
+	/// </summary>
+	/// <returns></returns>
+	bool GoToNextMap();
 
 	bool GameOverProcessing();
 

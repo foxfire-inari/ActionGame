@@ -14,6 +14,18 @@ namespace
 WarpManager::WarpManager(BaseScene* baseScene, std::vector<std::vector<std::string>> _info)
 	:BaseManager{ baseScene ,BaseManager::E_MANAGER_TAG::WARP}
 {
+	F_Vec2 pos = {};
+	int knd = 0;
+	for (int i = 0; i < _info.size(); i++)
+	{
+		knd = std::stoi(_info.at(i).at(0));
+		if (knd == E_CSV_KND::CSV_WARP)
+		{
+			SetObject(pos, _info.at(i));
+			WarpObject* warp = new WarpObject{ GetBaseScene(),pos,_info.at(i).at(3) };
+			warpList.emplace_back(warp);
+		}
+	}
 }
 
 WarpManager::~WarpManager()
@@ -74,6 +86,8 @@ std::string WarpManager::GetNextMapName(BaseObject* obj, CollisionData* objCol)
 			nextMapName =(*it)->GetNextMapName();
 		}
 	}
+
+	//ŽŸ‚Ìƒ}ƒbƒv–¼‚ð•Ô‚·
 	return nextMapName;
 }
 

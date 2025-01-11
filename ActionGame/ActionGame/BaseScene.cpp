@@ -30,3 +30,20 @@ T* BaseScene::GetOneObjectPtr(int _tag)
 // なぜか認識するようになったしエラーも起きていない
 template BaseObject* BaseScene::GetOneObjectPtr(int _tag);
 template Camera* BaseScene::GetOneObjectPtr(int _tag);
+
+bool BaseScene::NextMapPlayer(std::string& nextMapName)
+{
+	if (common == nullptr)return false;
+
+	if (nextMapName == "")
+		nextMapName = common->GetPlayer()->GoNextMap();
+
+	if (nextMapName != "")
+	{
+		//ワープ用の演出を入れる
+
+		return true;
+	}
+
+	return false;
+}

@@ -5,6 +5,7 @@
 #include "BulletManager.h"
 #include "EnemyManager.h"
 #include"BlockManager.h"
+#include"WarpManager.h"
 
 GameScene::GameScene(SceneChange* sceneChange, std::string _nowMapName)
 	:BaseScene{sceneChange}
@@ -27,6 +28,10 @@ bool GameScene::Update()
 	common->GetBlockManager()->Update();
 	common->GetBulletManager()->Update();
 	common->GetEnemyManager()->Update();
+	common->GetWarpManager()->Update();
+
+	//次のマップに行くならtrue
+	if (GoToNextMap())return true;
 
 	return false;
 }
@@ -38,7 +43,18 @@ void GameScene::Draw()
 	common->GetBlockManager()->Draw(camDif);
 	common->GetBulletManager()->Draw(camDif);
 	common->GetEnemyManager()->Draw(camDif);
+	common->GetWarpManager()->Draw(camDif);
+}
 
+bool GameScene::GoToNextMap()
+{
+	if (NextMapPlayer(nextMapName))
+	{
+		GetSceneChange()->Change(E_SCENE::GAME, nextMapName, nowMapName);
+		return true;
+	}
+
+	return false;
 }
 
 bool GameScene::GameOverProcessing()

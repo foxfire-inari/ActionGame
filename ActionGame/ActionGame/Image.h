@@ -53,6 +53,13 @@ public:
 	/// <returns></returns>
 	int GetBlockH(int index)const;
 
+	/// <summary>
+	/// ワープの画像を返す
+	/// </summary>
+	/// <param name="index">インデックス</param>
+	/// <returns></returns>
+	int GetWarpH(int index)const;
+
 private:
 	
 	//プレイヤーの画像
@@ -73,6 +80,9 @@ private:
 	//ブロックの画像
 	//ブロックの数だけ保存
 	std::array<int, 2> blockH;
+
+	//ワープの画像
+	std::array<int, 4> warpH;
 
 };
 

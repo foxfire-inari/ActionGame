@@ -22,7 +22,7 @@ public:
 	/// <param name="nextmapname">次のマップの名前</param>
 	/// <param name="oldmapname">元々いたマップの名前</param>
 	/// <returns>切り替えに成功したらtrue</returns>
-	bool Change(int nextscenenum, std::string nextmapname, std::string oldmapname)override;
+	bool Change(int nextSceneNum, std::string nextMapName, std::string oldMapName)override;
 
 private:
 	std::list<BaseScene*> scene;

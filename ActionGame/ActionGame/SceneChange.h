@@ -2,11 +2,14 @@
 #include<string>
 #include<vector>
 
-enum SCENETAG
+/// <summary>
+/// 全てのシーン判別タグ
+/// </summary>
+enum E_SCENE
 {
 	TITLE,
+	GAME,
 	STAGE_SELECT,
-	METAL_STAGE,
 
 	SCENETAG_MAX
 

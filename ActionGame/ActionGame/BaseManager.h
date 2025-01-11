@@ -59,6 +59,7 @@ public:
 		CSV_CAMERA_MIN_X,	//カメラのX座標の最小値
 		CSV_CAMERA_MAX_Y,	//カメラのY座標の最大値
 		CSV_CAMERA_MIN_Y,	//カメラのY座標の最小値
+		CSV_WARP,			//ワープオブジェクト
 	};
 
 protected:
