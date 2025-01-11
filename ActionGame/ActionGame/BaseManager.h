@@ -51,16 +51,15 @@ public:
 	enum E_CSV_KND
 	{
 		CSV_SKY = 0,		//何も置かない(背景)
-		
-		CSV_BLOCK,			//壁等のブロック
-		CSV_GRASS,			//足場になるブロック
-
+		CSV_BLOCK_WALL,		//壁等のブロック
+		CSV_BLOCK_GRASS,	//足場になるブロック
 		CSV_PLAYER,			//プレイヤー
 		CSV_ENEMY_TERRY,	//敵(テリー)
-
-
+		CSV_CAMERA_MAX_X,	//カメラのX座標の最大値
+		CSV_CAMERA_MIN_X,	//カメラのX座標の最小値
+		CSV_CAMERA_MAX_Y,	//カメラのY座標の最大値
+		CSV_CAMERA_MIN_Y,	//カメラのY座標の最小値
 	};
-
 
 protected:
 	/// <summary>

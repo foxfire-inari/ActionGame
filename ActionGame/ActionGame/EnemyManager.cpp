@@ -47,20 +47,16 @@ void EnemyManager::Start()
 
 	//読み込んだデータでブロックを生成する
 	int knd = 0;
-	for (int y = 0; y < information.size(); y++)
+	for (int i = 0; i < information.size(); i++)
 	{
-		for (int x = 0; x < information.at(y).size(); x++)
-		{
-			knd = std::stoi(information.at(y).at(x));
+		knd = std::stoi(information.at(i).at(0));
 
-			if (knd == E_CSV_KND::CSV_ENEMY_TERRY)
-			{
-				pos = { static_cast<float>(x),static_cast<float>(y) };
-				SetObject(pos, information.at(y));
-				Terry* enemy = new Terry{ GetBaseScene(),bulletManager,playerBase,pos, Enemy::E_ENEMY_KND::TERRY};
-				enemyList.emplace_back(enemy);
-				continue;
-			}
+		if (knd == E_CSV_KND::CSV_ENEMY_TERRY)
+		{
+			SetObject(pos, information.at(i));
+			Terry* enemy = new Terry{ GetBaseScene(),bulletManager,playerBase,pos, Enemy::E_ENEMY_KND::TERRY };
+			enemyList.emplace_back(enemy);
+			continue;
 		}
 	}
 }

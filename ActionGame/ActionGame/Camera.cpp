@@ -10,18 +10,35 @@ Camera::Camera(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 {
 	GetBaseScene()->SetOneObjectList(this);
 
-	//最大値を一時保存
-	F_Vec2 maxPos = {};
+	//カメラの行ける最大座標、最小座標を読み込む
+	int knd;
+	VECTOR pos = {};
+	for (int i = 0; i < _info.size(); i++)
+	{
+		knd = std::stoi(_info.at(i).at(0));
 
-	maxPos.x = _info.at(0).size() * BLOCK_SIZE;
-	maxPos.y = _info.size() * BLOCK_SIZE;
-
-	maxPosX = maxPos.x - WINDOW_X / 2 - BLOCK_SIZE / 2;
-	maxPosY = maxPos.y - WINDOW_Y / 2 - BLOCK_SIZE / 2;
-
-	//最小値はマップによらず全て固定
-	minPosX = WINDOW_X / 2 - BLOCK_SIZE/2;
-	minPosY = WINDOW_Y / 2 - BLOCK_SIZE/2;
+		//少しでも取得した物がわかりやすいようにE_CSV_KNDを分けている
+		if (knd == BaseManager::E_CSV_KND::CSV_CAMERA_MAX_X)
+		{
+			maxPosX = std::stoi(_info.at(i).at(1));
+			continue;
+		}
+		if (knd == BaseManager::E_CSV_KND::CSV_CAMERA_MIN_X)
+		{
+			minPosX = std::stoi(_info.at(i).at(1));
+			continue;
+		}
+		if (knd == BaseManager::E_CSV_KND::CSV_CAMERA_MAX_Y)
+		{
+			maxPosY = std::stoi(_info.at(i).at(2));
+			continue;
+		}
+		if (knd == BaseManager::E_CSV_KND::CSV_CAMERA_MIN_Y)
+		{
+			minPosY = std::stoi(_info.at(i).at(2));
+			continue;
+		}
+	}
 
 }
 

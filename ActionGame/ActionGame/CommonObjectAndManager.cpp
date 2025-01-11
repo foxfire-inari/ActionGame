@@ -8,7 +8,7 @@
 #include "BulletManager.h"
 #include "CollisionManager.h"
 #include "EnemyManager.h"
-
+#include "WarpManager.h"
 
 //ヘッダーで前方宣言したクラスはここでインクルードする
 
@@ -18,6 +18,7 @@ CommonObjectAndManager::CommonObjectAndManager(BaseScene* nowScene, std::vector<
 	collisionManager = new CollisionManager{ nowScene };
 	blockManager = new BlockManager{ nowScene , information };
 	enemyManager = new EnemyManager{ nowScene , information };
+	warpManager = new WarpManager{ nowScene,information };
 
 	camera = new Camera{ nowScene , information };
 	player = new Player{ nowScene , information };
@@ -27,6 +28,7 @@ CommonObjectAndManager::CommonObjectAndManager(BaseScene* nowScene, std::vector<
 	collisionManager->Start();
 	enemyManager->Start();
 	blockManager->Start();
+	warpManager->Start();
 
 	player->Start();
 

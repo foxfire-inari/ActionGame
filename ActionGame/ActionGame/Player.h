@@ -2,6 +2,7 @@
 #include "Chara.h"
 class Camera;
 class BulletManager;
+class WarpManager;
 
 /// <summary>
 /// プレイヤークラス
@@ -43,6 +44,7 @@ private:
 	Camera* camera;
 	BulletManager* bulletManager;
 	EnemyManager* enemyManager;
+	WarpManager* warpManager;
 
 	//カメラの座標
 	F_Vec2 camPos;

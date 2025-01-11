@@ -4,6 +4,7 @@
 #include "Camera.h"
 #include "BulletManager.h"
 #include "EnemyManager.h"
+#include "WarpManager.h"
 
 namespace
 {
@@ -60,22 +61,21 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 
 	//座標をセット済みか
 	bool isSet = false;
-	//読み込んだデータで座標をセットする
+	//読み込んだデータでブロックを生成する
 	int knd = 0;
-	for (int y = 0; y < _info.size(); y++)
+	for (int i = 0; i < _info.size(); i++)
 	{
-		for (int x = 0; x < _info.at(y).size(); x++)
-		{
-			knd = std::stoi(_info.at(y).at(x));
+		knd = std::stoi(_info.at(i).at(0));
 
-			if (knd == BaseManager::E_CSV_KND::CSV_PLAYER)
-			{
-				assert(!isSet);//ここで止まった場合はCsvに2が2こ以上ある
-				pos = { static_cast<float>(x * BLOCK_SIZE),static_cast<float>(y * BLOCK_SIZE) };
-				SetPosition(pos);
-				isSet = true;
-				continue;
-			}
+		if (knd == BaseManager::E_CSV_KND::CSV_PLAYER)
+		{
+			assert(!isSet);//ここで止まった場合はCsvに3が2こ以上ある
+			pos.x = std::stoi(_info.at(i).at(1)) * BLOCK_SIZE;
+			pos.y = std::stoi(_info.at(i).at(2)) * BLOCK_SIZE;
+
+			SetPosition(pos);
+			isSet = true;
+			continue;
 		}
 	}
 
@@ -149,6 +149,8 @@ void Player::Draw(F_Vec2 _camDif)
 		true
 	);
 
+	///デバッグ用
+	//判定の可視化
 	DrawBox
 	(
 		drawpos.x - _camDif.x + collisionData->GetLeft(),
@@ -159,6 +161,7 @@ void Player::Draw(F_Vec2 _camDif)
 		false
 	);
 
+	//ステータスの可視化
 	DrawFormatString(50, 50, GetColor(255, 255, 255),
 		"velocity:%f,%f", GetVelocity().x, GetVelocity().y);
 }
@@ -353,7 +356,7 @@ void Player::UpdateDeath()
 
 void Player::JumpStart()
 {
-	static const int MAX_LITTLE_JUMP_FRAME = 4;
+	static const int MAX_LITTLE_JUMP_FRAME = 6;
 
 	if (!fall->GetIsOnGround())
 	{
@@ -557,4 +560,6 @@ void Player::GetNowSceneManager()
 	enemyManager = GetBaseScene()->GetManagerPtr<EnemyManager>(BaseManager::E_MANAGER_TAG::ENEMY);
 	assert(enemyManager != nullptr);
 
+	warpManager = GetBaseScene()->GetManagerPtr<WarpManager>(BaseManager::E_MANAGER_TAG::WARP);
+	assert(warpManager != nullptr);
 }

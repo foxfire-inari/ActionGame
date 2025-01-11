@@ -2,7 +2,7 @@
 class CollisionData
 {
 public:
-	CollisionData(float top, float under, float left, float right);
+	CollisionData(float _top, float _under, float _left, float _right);
 	~CollisionData();
 
 	/// <summary>

@@ -10,26 +10,36 @@ class CollisionObject :public BaseObject
 {
 public:
 	/// <summary>
-	/// オブジェクトを
-	/// 基本サイズ（1ｘ1）かつ
+	/// オブジェクトの
+	/// 当たり判定を基本サイズ（1ｘ1）かつ
 	/// 座標を(0,0)かつ
 	/// 速度を(0,0)で生成
 	/// </summary>
 	CollisionObject(BaseScene* baseScene, int tag);
 
-
 	/// <summary>
-	/// オブジェクトのステータスをセットしながら生成
+	/// オブジェクトの
+	/// 当たり判定を基本サイズ（1ｘ1）かつ
+	/// 座標を指定して生成
 	/// </summary>
 	/// <param name="baseScene">ベースシーン</param>
 	/// <param name="pos">座標</param>
-	/// <param name="vel">速度</param>
-	/// <param name="top">	当たり判定＿上</param>
-	/// <param name="under">当たり判定＿下</param>
-	/// <param name="left">	当たり判定＿左</param>
-	/// <param name="right">当たり判定＿右</param>
 	/// <param name="tag">タグ</param>
 	CollisionObject(BaseScene* baseScene, F_Vec2 pos,int tag);
+
+	/// <summary>
+	/// オフジェクトの当たり判定のサイズと座標を指定して生成
+	/// </summary>
+	/// <param name="baseScene"></param>
+	/// <param name="pos"></param>
+	/// <param name="top"></param>
+	/// <param name="under"></param>
+	/// <param name="left"></param>
+	/// <param name="right"></param>
+	/// <param name="tag"></param>
+	CollisionObject(BaseScene* baseScene, F_Vec2 pos
+		, float top, float under, float left, float right, int tag);
+
 
 	~CollisionObject();
 
@@ -42,7 +52,7 @@ public:
 	/// <returns></returns>
 	CollisionData* GetCollisionData() { return collisionData; }
 
-private:
+protected:
 
 	/// <summary>
 	/// 当たり判定の情報
