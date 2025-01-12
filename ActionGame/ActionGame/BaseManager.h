@@ -60,6 +60,7 @@ public:
 		CSV_CAMERA_MAX_Y,	//カメラのY座標の最大値
 		CSV_CAMERA_MIN_Y,	//カメラのY座標の最小値
 		CSV_WARP,			//ワープオブジェクト
+		CSV_ENEMY_METALL,	//敵(メットール)
 	};
 
 protected:

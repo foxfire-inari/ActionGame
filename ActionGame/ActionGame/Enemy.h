@@ -19,6 +19,7 @@ public:
 	enum E_ENEMY_KND
 	{
 		TERRY = 0,
+		METALL,
 
 	};
 

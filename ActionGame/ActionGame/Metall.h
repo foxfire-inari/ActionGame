@@ -1,7 +1,6 @@
 #pragma once
 #include "Enemy.h"
 
-
 class Metall : public Enemy
 {
 public:
@@ -17,12 +16,17 @@ private:
 	/// 弾を撃つ方向
 	/// 左右どっちを向いてるか
 	/// </summary>
-	int shotAngle;
+	int moveAngle;
 
 	/// <summary>
 	/// 状態を切り替えるカウンター
 	/// </summary>
 	int moveCount;
+
+	/// <summary>
+	/// ダメージを受けてからのカウンター
+	/// </summary>
+	int damageCount;
 
 	/// <summary>
 	/// 無敵かどうか

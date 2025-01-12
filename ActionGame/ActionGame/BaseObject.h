@@ -68,9 +68,9 @@ public:
 	enum E_TAG
 	{
 		PLAYER,				//プレイヤー
+		ENEMY,				//敵
 		CAMERA,				//カメラ
 		BLOCK,				//ブロック
-		ENEMY,				//敵
 		ITEM,				//アイテム
 		EFFECT,				//エフェクト
 		BULLET,				//弾

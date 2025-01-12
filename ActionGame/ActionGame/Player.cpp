@@ -5,7 +5,6 @@
 #include "BulletManager.h"
 #include "EnemyManager.h"
 #include "WarpManager.h"
-#include "BallBullet.h"
 
 namespace
 {
@@ -101,7 +100,6 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 	state->SetAllStateMember("Damage");
 	state->SetAllStateMember("Death");
 	state->SetAllStateMember("NextMapWait");
-
 }
 
 Player::~Player()
@@ -446,8 +444,11 @@ void Player::DamageStart()
 	//参照で渡して飛ばす方向を貰う
 	int vel;
 
-	//ダメージを受けたかとノックバックの方向を受け取る
+	//ダメージを受けたかを受け取る(敵本体)
 	int damage = enemyManager->CheckPlayerHit(collisionData);
+
+	damage = bulletManager->HitCheckChara(this, collisionData);
+
 
 	//当たっていなかったらreturn
 	if (damage <= 0)return;
@@ -478,18 +479,6 @@ void Player::DeathStart()
 
 }
 
-void Player::Invincible()
-{
-	static const int MAX_INVINCIBLE_FRAME = 120;
-
-	if (isInvincible)
-	{
-		damageCount++;
-		if (damageCount > MAX_INVINCIBLE_FRAME)
-			isInvincible = false;
-	}
-}
-
 void Player::FallStart()
 {
 	//地面にいなく、1フレーム前に地面にいるなら
@@ -509,6 +498,18 @@ void Player::AttackStart()
 	{
 		state->SetNextState("Attack");
 		shotCount = 0;
+	}
+}
+
+void Player::Invincible()
+{
+	static const int MAX_INVINCIBLE_FRAME = 120;
+
+	if (isInvincible)
+	{
+		damageCount++;
+		if (damageCount > MAX_INVINCIBLE_FRAME)
+			isInvincible = false;
 	}
 }
 

@@ -141,13 +141,6 @@ private:
 	/// </summary>
 	void DeathStart();
 
-
-
-	/// <summary>
-	/// 無敵常態を一定時間で解除
-	/// </summary>
-	void Invincible();
-
 	/// <summary>
 	/// 地面から飛び出して落ちていたら
 	/// velocity.yを0にしてジャンプに移行
@@ -163,6 +156,13 @@ private:
 	/// 攻撃開始
 	/// </summary>
 	void AttackStart();
+
+
+
+	/// <summary>
+	/// 無敵常態を一定時間で解除
+	/// </summary>
+	void Invincible();
 
 	/// <summary>
 	/// 入力方向とプレイヤーの向きのセット

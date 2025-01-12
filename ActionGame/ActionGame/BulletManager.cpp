@@ -1,7 +1,7 @@
 #include "BulletManager.h"
 #include "NormalBullet.h"
 #include "BallBullet.h"
-#include "Enemy.h"
+#include "Chara.h"
 #include "Life.h"
 #include "CollisionData.h"
 #include "CollisionManager.h"
@@ -73,12 +73,45 @@ void BulletManager::Draw(F_Vec2 _camDif)
 	}
 }
 
-void BulletManager::SetState(F_Vec2 pos, F_Vec2 vec, int type, int owner)
+void BulletManager::AddBullet(int knd)
 {
+	switch (knd)
+	{
+		case BULLET_KND::NORMAL:	CreateBullet<NormalBullet>(knd);	break;
+		case BULLET_KND::BALL:		CreateBullet<BallBullet>(knd);		break;
+		//case BULLET_KND::METAL:		CreateBullet<>(knd);			break;
+		default:					assert(false);						break;
+			
+	}
+
+}
+
+bool BulletManager::GetCanShot(int knd, int minBullet)
+{
+	int canShotCount = 0;
 	for (auto it = bulletList.begin(); it != bulletList.end(); it++)
 	{
 		//タイプが違う場合はやり直し
-		if ((*it)->GetKnd() != type)continue;
+		if ((*it)->GetKnd() != knd)continue;
+		//フラグが立ってる場合は動いてるので使えない
+		if ((*it)->GetFlag())continue;
+		//撃てる弾が合ったらインクリメント
+		canShotCount++;
+	}
+	//minBullet以上あるか
+	if (canShotCount >= minBullet)
+	{
+		return true;
+	}
+	return false;
+}
+
+void BulletManager::SetState(F_Vec2 pos, F_Vec2 vec, int knd, int owner)
+{
+	for (auto it = bulletList.begin(); it != bulletList.end(); it++)
+	{
+		//種類が違う場合はやり直し
+		if ((*it)->GetKnd() != knd)continue;
 
 		//フラグが立ってる場合は動いてるので使えない
 		if ((*it)->GetFlag())continue;
@@ -88,11 +121,11 @@ void BulletManager::SetState(F_Vec2 pos, F_Vec2 vec, int type, int owner)
 	}
 }
 
-int BulletManager::HitCheckEnemy(Enemy* enemyPtr, CollisionData* colData)
+int BulletManager::HitCheckChara(Chara* charaPtr, CollisionData* colData)
 {
 	int damage = 0;
 
-	F_Vec2 enePos = enemyPtr->GetPosition();
+	F_Vec2 enePos = charaPtr->GetPosition();
 
 	//座標を考慮した当たり判定に変更
 	CollisionData* nowObjCol = GetNowPositionCol(colData, enePos);
@@ -104,7 +137,10 @@ int BulletManager::HitCheckEnemy(Enemy* enemyPtr, CollisionData* colData)
 
 
 	for (auto it = bulletList.begin(); it != bulletList.end(); it++)
-	{		
+	{
+		//持ち主と判定の対象が同じならやり直し
+		if ((*it)->GetOwner() == charaPtr->GetTag())continue;
+
 		//フラグが立っていなかったら次へ
 		if (!(*it)->GetFlag())continue;
 

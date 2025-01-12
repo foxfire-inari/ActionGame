@@ -9,10 +9,10 @@ namespace
 	static const int BULLET_POWER = 2;
 
 	//ƒRƒŠƒWƒ‡ƒ“
-	static const int COL_TOP	= -10;
-	static const int COL_UNDER	=  10;
-	static const int COL_LEFT	= -10;
-	static const int COL_RIGHT	=  10;
+	static const int COL_TOP	= -5;
+	static const int COL_UNDER	=  5;
+	static const int COL_LEFT	= -5;
+	static const int COL_RIGHT	=  5;
 }
 
 

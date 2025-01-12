@@ -7,6 +7,7 @@ Enemy::Enemy(BaseScene* baseScene, BulletManager* _bulletManager, BaseObject* _p
 	,plBase{_plBase}
 	,bodyPower{0}
 	,knd{_knd}
+	, deathCount{ 0 }
 	,flag{false}
 {
 	position = pos;

@@ -124,7 +124,7 @@ void Terry::StartRun()
 void Terry::StartDamage()
 {
 	if (life->GetHp() <= 0)return;
-	int bulletDamage = bulletManager->HitCheckEnemy(this, collisionData);
+	int bulletDamage = bulletManager->HitCheckChara(this, collisionData);
 	if (bulletDamage != 0)
 	{
 		//ƒ_ƒ[ƒWˆ—

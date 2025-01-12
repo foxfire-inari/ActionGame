@@ -1,5 +1,6 @@
 #include "EnemyManager.h"
 #include "Terry.h"
+#include "Metall.h"
 #include "BulletManager.h"
 #include "Life.h"
 #include "CollisionData.h"
@@ -57,6 +58,14 @@ void EnemyManager::Start()
 			Terry* enemy = new Terry{ GetBaseScene(),bulletManager,playerBase,pos, Enemy::E_ENEMY_KND::TERRY };
 			enemyList.emplace_back(enemy);
 			continue;
+		}
+		if (knd == E_CSV_KND::CSV_ENEMY_METALL)
+		{
+			SetObject(pos, information.at(i));
+			Metall* enemy = new Metall{ GetBaseScene(),bulletManager,playerBase,pos, Enemy::E_ENEMY_KND::METALL };
+			enemyList.emplace_back(enemy);
+			continue;
+
 		}
 	}
 }

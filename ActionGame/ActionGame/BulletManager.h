@@ -1,7 +1,7 @@
 #pragma once
 #include"BaseManager.h"
 class Bullet;
-class Enemy;
+class Chara;
 class CollisionData;
 
 namespace
@@ -21,21 +21,22 @@ public:
 	void Draw(F_Vec2 _camDif)override;
 
 	/// <summary>
-	/// bulletListに弾を追加する
+	/// BulletManagerに弾を追加する
 	/// </summary>
-	template<class T>
-	void AddBulletList(int knd)
-	{
-		//テンプレートで好きなクラスを追加できるようにした
-		for (int i = 0; i < MAX_BULLET; i++)
-		{
-			Bullet* bullet = new T(GetBaseScene(), knd);
-			bulletList.emplace_back(bullet);
-		}
-	}
+	/// <param name="knd"></param>
+	void AddBullet(int knd);
 
 	/// <summary>
-	/// 弾を生成
+	/// 弾のフラグが必要数空いているか
+	/// 主に敵などの絶対に弾を撃ってほしいときに使う
+	/// </summary>
+	/// <param name="knd">弾の種類</param>
+	/// <param name="minBullet">必要な数</param>
+	/// <returns></returns>
+	bool GetCanShot(int knd, int minBullet);
+
+	/// <summary>
+	/// 弾にステータスを入れて起動
 	/// </summary>
 	/// <param name="pos">発射地点</param>
 	/// <param name="vec">発射方向</param>
@@ -46,11 +47,10 @@ public:
 	/// <summary>
 	/// 敵に当たっているか
 	/// </summary>
-	/// <param name="enemyPtr">敵のポインタ</param>
+	/// <param name="charaPtr">敵のポインタ</param>
 	/// <param name="colData">敵の当たり判定情報</param>
 	/// <returns>与えるダメージ</returns>
-	int HitCheckEnemy(Enemy* enemyPtr,
-		CollisionData* colData);
+	int HitCheckChara(Chara* charaPtr,CollisionData* colData);
 
 	/// <summary>
 	/// 近くにあるかの判定
@@ -63,6 +63,7 @@ public:
 
 	/// <summary>
 	/// 弾の持ち主の判別用
+	/// BaseObject::E_TAGと同じ並びにしてint型で比較できるようにした
 	/// </summary>
 	enum BULLET_OWNER
 	{
@@ -85,6 +86,20 @@ public:
 	};
 
 private:
+
+	/// <summary>
+	/// bulletListに弾を追加する
+	/// </summary>
+	template<class T>
+	void CreateBullet(int knd)
+	{
+		//テンプレートで好きなクラスを追加できるようにした
+		for (int i = 0; i < MAX_BULLET; i++)
+		{
+			Bullet* bullet = new T(GetBaseScene(), knd);
+			bulletList.emplace_back(bullet);
+		}
+	}
 
 	/// <summary>
 	/// 対象に当たったか
