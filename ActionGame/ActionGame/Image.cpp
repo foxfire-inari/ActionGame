@@ -35,6 +35,12 @@ Image::Image()
 	warpH.at(1) = LoadGraph("Data/Image/Blocks/Warp/warp_2.png");
 	warpH.at(2) = LoadGraph("Data/Image/Blocks/Warp/warp_3.png");
 	warpH.at(3) = LoadGraph("Data/Image/Blocks/Warp/warp_4.png");
+
+	//ワープ中
+	waveH.at(0) = LoadGraph("Data/Image/Wave/wave_1.png");
+	waveH.at(1) = LoadGraph("Data/Image/Wave/wave_2.png");
+	waveH.at(2) = LoadGraph("Data/Image/Wave/wave_3.png");
+	waveH.at(3) = LoadGraph("Data/Image/Wave/wave_4.png");
 }
 
 Image::~Image()
@@ -89,4 +95,11 @@ int Image::GetWarpH(int index) const
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
 	if (index < 0 || index >= warpH.size())return -1;
 	return warpH.at(index);
+}
+
+int Image::GetWaveH(int index) const
+{
+	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
+	if (index < 0 || index >= warpH.size())return -1;
+	return waveH.at(index);
 }

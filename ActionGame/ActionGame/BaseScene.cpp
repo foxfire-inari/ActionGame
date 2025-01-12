@@ -1,6 +1,12 @@
 #include "BaseScene.h"
 #include "Player.h"
 #include "Camera.h"
+
+BaseScene::~BaseScene()
+{
+	if (waveout != nullptr)delete waveout;
+}
+
 template<class T>
 T* BaseScene::GetOneObjectPtr(int _tag)
 {
@@ -40,9 +46,21 @@ bool BaseScene::NextMapPlayer(std::string& nextMapName)
 
 	if (nextMapName != "")
 	{
-		//ワープ用の演出を入れる
+		if (waveout == nullptr)
+		{
+			//黒い画面で待つ時間
+			static const float BLACK_WAIT_SECOND = 1.2f;
+			//黒い画面にしていく値
+			static const float BLACK_ADD_VALUE = 7.f;
 
-		return true;
+			waveout = new Waveout{ BLACK_WAIT_SECOND,BLACK_ADD_VALUE };
+		}
+		else
+		{
+			waveout->Update();
+			if (waveout->GetIsWaveFinish())
+				return true;
+		}
 	}
 
 	return false;

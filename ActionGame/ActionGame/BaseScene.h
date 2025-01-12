@@ -3,6 +3,7 @@
 #include"SceneChange.h"
 #include"BaseManager.h" 
 #include"CommonObjectAndManager.h"
+#include"Waveout.h"
 
 class BaseObject;	// 前方宣言
 
@@ -13,9 +14,10 @@ class BaseScene
 {
 public:
 	BaseScene(SceneChange* _scenechange)
-		:sceneChange{ _scenechange }, common{ nullptr }, nextMapName{ "" } {}
+		:sceneChange{ _scenechange }, common{ nullptr }, waveout{ nullptr }
+		, nextMapName{ "" } {}
 
-	virtual ~BaseScene() {};
+	virtual ~BaseScene();
 	virtual void Start() {};
 	virtual bool Update() { return false; }
 	virtual void Draw() {};
@@ -89,6 +91,10 @@ protected:
 	/// </summary>
 	CommonObjectAndManager* common;
 
+	/// <summary>
+	/// シーン切替演出
+	/// </summary>
+	Waveout* waveout;
 
 	/// <summary>
 	/// 次のマップの名前

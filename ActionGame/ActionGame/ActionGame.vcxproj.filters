@@ -144,6 +144,9 @@
     <ClCompile Include="Block.cpp">
       <Filter>Object\CollisionObject</Filter>
     </ClCompile>
+    <ClCompile Include="Waveout.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMaster.h">
@@ -250,6 +253,9 @@
     </ClInclude>
     <ClInclude Include="Block.h">
       <Filter>Object\CollisionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Waveout.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

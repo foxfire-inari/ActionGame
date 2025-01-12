@@ -44,6 +44,8 @@ void GameScene::Draw()
 	common->GetBulletManager()->Draw(camDif);
 	common->GetEnemyManager()->Draw(camDif);
 	common->GetWarpManager()->Draw(camDif);
+	if (waveout != nullptr)
+		waveout->Draw();
 }
 
 bool GameScene::GoToNextMap()

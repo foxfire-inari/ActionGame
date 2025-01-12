@@ -17,8 +17,12 @@ static const int BLOCK_SIZE = 42;
 static const int WINDOW_X = BLOCK_SIZE * 16;
 //ウィンドウサイズ縦
 static const int WINDOW_Y = BLOCK_SIZE * 13;
+//フレームレート
+static const float FPS = 60.f;
+
 //円周率
 static const float PI = 3.141592f;
+
 
 template <class Type>
 struct Vector2//Vector2型を作成

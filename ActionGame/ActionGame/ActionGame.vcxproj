@@ -176,6 +176,7 @@
     <ClCompile Include="Terry.cpp" />
     <ClCompile Include="WarpManager.cpp" />
     <ClCompile Include="WarpObject.cpp" />
+    <ClCompile Include="Waveout.cpp" />
     <ClCompile Include="ソース.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +215,7 @@
     <ClInclude Include="Terry.h" />
     <ClInclude Include="WarpManager.h" />
     <ClInclude Include="WarpObject.h" />
+    <ClInclude Include="Waveout.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
