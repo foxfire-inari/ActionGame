@@ -147,6 +147,12 @@
     <ClCompile Include="Waveout.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Metall.cpp">
+      <Filter>Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="BallBullet.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMaster.h">
@@ -256,6 +262,12 @@
     </ClInclude>
     <ClInclude Include="Waveout.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Metall.h">
+      <Filter>Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="BallBullet.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

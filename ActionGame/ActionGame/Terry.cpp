@@ -19,6 +19,9 @@ namespace
 	static const int STATE_RUN = 0;
 	static const int STATE_DAMAGE = 1;
 	static const int STATE_DEATH = 2;
+
+	//ƒpƒ[
+	static const int POWER_BODY = 2;
 }
 
 Terry::Terry(BaseScene* baseScene, BulletManager* bulletManager,
@@ -27,7 +30,7 @@ Terry::Terry(BaseScene* baseScene, BulletManager* bulletManager,
 	, MoveAngle{ 0 }
 	, damageCount{ 0 }
 {
-	bodyPower = 2;
+	bodyPower = POWER_BODY;
 
 	state->SetAllStateMember("Run");
 	state->SetAllStateMember("Damage");

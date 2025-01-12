@@ -4,6 +4,12 @@ class Bullet;
 class Enemy;
 class CollisionData;
 
+namespace
+{
+	//各弾の最大数(それぞれ生成されるたびに追加される)
+	static const int MAX_BULLET = 3;
+}
+
 class BulletManager : public BaseManager
 {
 public:
@@ -15,12 +21,27 @@ public:
 	void Draw(F_Vec2 _camDif)override;
 
 	/// <summary>
+	/// bulletListに弾を追加する
+	/// </summary>
+	template<class T>
+	void AddBulletList(int knd)
+	{
+		//テンプレートで好きなクラスを追加できるようにした
+		for (int i = 0; i < MAX_BULLET; i++)
+		{
+			Bullet* bullet = new T(GetBaseScene(), knd);
+			bulletList.emplace_back(bullet);
+		}
+	}
+
+	/// <summary>
 	/// 弾を生成
 	/// </summary>
 	/// <param name="pos">発射地点</param>
 	/// <param name="vec">発射方向</param>
-	/// <param name="_power">ダメージ量</param>
-	void SetState(F_Vec2 pos, F_Vec2 vec);
+	/// <param name="knd">弾の種類</param>
+	/// <param name="owner">持ち主</param>
+	void SetState(F_Vec2 pos, F_Vec2 vec, int knd, int owner);
 
 	/// <summary>
 	/// 敵に当たっているか
@@ -39,6 +60,29 @@ public:
 	/// <param name="dif"></param>
 	/// <returns></returns>
 	bool IsNearDistance(F_Vec2 objPos, F_Vec2 listPos, float dif);
+
+	/// <summary>
+	/// 弾の持ち主の判別用
+	/// </summary>
+	enum BULLET_OWNER
+	{
+		PLAYER,
+		ENEMY,
+
+		OWNER_MAX
+	};
+
+	/// <summary>
+	// 弾の種類
+	/// </summary>
+	enum BULLET_KND
+	{
+		NORMAL,		//通常弾
+		BALL,		//敵の丸い弾
+		METAL,		//メタルブレード
+
+		TYPE_MAX
+	};
 
 private:
 

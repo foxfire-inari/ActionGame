@@ -5,11 +5,13 @@
 #include "BulletManager.h"
 #include "EnemyManager.h"
 #include "WarpManager.h"
+#include "BallBullet.h"
 
 namespace
 {
 	//HP
 	static const int MAX_HP = 100;
+
 	//ƒWƒƒƒ“ƒv—Í
 	static const float JUMP_POWER = 8.f;
 
@@ -99,6 +101,7 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 	state->SetAllStateMember("Damage");
 	state->SetAllStateMember("Death");
 	state->SetAllStateMember("NextMapWait");
+
 }
 
 Player::~Player()
@@ -304,6 +307,8 @@ void Player::UpdateAttack()
 
 	//UŒ‚‚ðI—¹‚·‚éƒtƒŒ[ƒ€
 	static const int MAX_SHOT_FRAME = 12;
+	//’e‚ðŒ‚‚Â‚Ü‚Å‚Ì’x‰„
+	static const int SHOT_DELAY = 1;
 
 	if (shotCount >= MAX_SHOT_FRAME)
 	{
@@ -341,7 +346,7 @@ void Player::UpdateAttack()
 	if (!isRun)
 		MoveDeceletation();
 
-	if (shotCount == 1)
+	if (shotCount == SHOT_DELAY)
 	{
 		Attack();
 	}
@@ -582,7 +587,8 @@ void Player::Attack()
 		0//cosf(inputAngle)
 	};
 
-	bulletManager->SetState(genPos, genVec);
+	bulletManager->SetState(genPos, genVec,
+		BulletManager::BULLET_KND::NORMAL ,BulletManager::BULLET_OWNER::PLAYER);
 }
 
 void Player::SetStatus()

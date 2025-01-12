@@ -47,7 +47,7 @@ public:
 	/// ƒpƒ[‚ğ•Ô‚·
 	/// </summary>
 	/// <returns></returns>
-	int GetPower()const { return bodyPower; }
+	int GetBodyPower()const { return bodyPower; }
 
 	/// <summary>
 	/// ©g‚Ìí—Ş‚ğ•Ô‚·

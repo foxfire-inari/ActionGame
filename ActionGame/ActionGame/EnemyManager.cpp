@@ -135,7 +135,7 @@ int EnemyManager::CheckPlayerHit(CollisionData* colData)
 		//プレイヤーに当たったかを確認
 		if (IsHitPlayer(nowObjCol, nowlistCol))
 		{
-			return (*it)->GetPower();
+			return (*it)->GetBodyPower();
 		}
 	}
 

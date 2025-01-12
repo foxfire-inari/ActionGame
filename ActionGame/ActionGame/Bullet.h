@@ -10,7 +10,7 @@
 class Bullet : public BaseObject
 {
 public:
-	Bullet(BaseScene* _baseScene, int _power, float top, float under, float left, float right );
+	Bullet(BaseScene* _baseScene, int _power, float top, float under, float left, float right,int _knd );
 	~Bullet();
 
 	virtual void Update()override {}
@@ -21,8 +21,8 @@ public:
 	/// </summary>
 	/// <param name="pos">発射地点</param>
 	/// <param name="vec">発射方向</param>
-	/// <param name="_power">ダメージ量</param>
-	virtual void SetState(F_Vec2 pos,F_Vec2 vec) {};
+	/// <param name="_owner">持ち主</param>
+	virtual void SetState(F_Vec2 pos,F_Vec2 vec,int _owner) {};
 
 	/// <summary>
 	/// フラグが立っているか返す
@@ -48,6 +48,26 @@ public:
 	/// <returns></returns>
 	int GetPower()const { return power; }
 
+	/// <summary>
+	/// 持ち主を返す
+	/// </summary>
+	/// <returns></returns>
+	int GetOwner()const { return owner; }
+
+	/// <summary>
+	/// 持ち主をセットする
+	/// 弾を跳ね返す時に使う
+	/// </summary>
+	/// <param name="_owner"></param>
+	/// <returns></returns>
+	void SetOwner(int _owner) { owner = _owner; }
+
+	/// <summary>
+	/// 弾の種類を返す
+	/// </summary>
+	/// <returns></returns>
+	int GetKnd()const { return knd; }
+
 protected:
 
 	/// <summary>
@@ -59,6 +79,16 @@ protected:
 	/// この弾が動いてるかどうか
 	/// </summary>
 	bool flag;
+
+	/// <summary>
+	/// 弾の持ち主（プレイヤーか敵か）
+	/// </summary>
+	int owner;
+
+	/// <summary>
+	/// この弾がどの種類か
+	/// </summary>
+	int knd;
 
 	/// <summary>
 	/// 当たり判定の情報

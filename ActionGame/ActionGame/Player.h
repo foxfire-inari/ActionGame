@@ -141,6 +141,8 @@ private:
 	/// </summary>
 	void DeathStart();
 
+
+
 	/// <summary>
 	/// –³“Gí‘Ô‚ğˆê’èŠÔ‚Å‰ğœ
 	/// </summary>

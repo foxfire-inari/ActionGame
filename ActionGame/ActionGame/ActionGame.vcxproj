@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="BallBullet.cpp" />
     <ClCompile Include="BaseManager.cpp" />
     <ClCompile Include="BaseObject.cpp" />
     <ClCompile Include="BaseScene.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="KeyControlle.cpp" />
     <ClCompile Include="Life.cpp" />
+    <ClCompile Include="Metall.cpp" />
     <ClCompile Include="NormalBullet.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PositionSetter.cpp" />
@@ -181,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="BallBullet.h" />
     <ClInclude Include="BaseManager.h" />
     <ClInclude Include="BaseObject.h" />
     <ClInclude Include="BaseScene.h" />
@@ -206,6 +209,7 @@
     <ClInclude Include="Image.h" />
     <ClInclude Include="KeyControlle.h" />
     <ClInclude Include="Life.h" />
+    <ClInclude Include="Metall.h" />
     <ClInclude Include="NormalBullet.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PositionSetter.h" />

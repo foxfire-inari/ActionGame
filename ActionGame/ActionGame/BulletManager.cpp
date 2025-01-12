@@ -1,5 +1,6 @@
 #include "BulletManager.h"
 #include "NormalBullet.h"
+#include "BallBullet.h"
 #include "Enemy.h"
 #include "Life.h"
 #include "CollisionData.h"
@@ -8,10 +9,9 @@
 
 namespace
 {
-	//弾の最大量
-	static const int MAX_BULLET = 3;
 	// 判定する距離
 	static const float HIT_CHECK_DIF = 100.0f;
+
 }
 
 BulletManager::BulletManager(BaseScene* baseScene)
@@ -38,9 +38,10 @@ void BulletManager::Start()
 {
 	Init();
 
+	//最低でもプレイヤーはいるので通常弾だけ登録
 	for (int i = 0; i < MAX_BULLET; i++)
 	{
-		NormalBullet* bullet = new NormalBullet(GetBaseScene());
+		Bullet* bullet = new NormalBullet(GetBaseScene(), BULLET_KND::NORMAL);
 		bulletList.emplace_back(bullet);
 	}
 }
@@ -72,14 +73,17 @@ void BulletManager::Draw(F_Vec2 _camDif)
 	}
 }
 
-void BulletManager::SetState(F_Vec2 pos, F_Vec2 vec)
+void BulletManager::SetState(F_Vec2 pos, F_Vec2 vec, int type, int owner)
 {
 	for (auto it = bulletList.begin(); it != bulletList.end(); it++)
 	{
+		//タイプが違う場合はやり直し
+		if ((*it)->GetKnd() != type)continue;
+
 		//フラグが立ってる場合は動いてるので使えない
 		if ((*it)->GetFlag())continue;
 
-		(*it)->SetState(pos, vec);
+		(*it)->SetState(pos, vec, owner);
 		break;
 	}
 }
