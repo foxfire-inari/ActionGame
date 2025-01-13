@@ -1,7 +1,9 @@
 #include "EnemyManager.h"
 #include "Terry.h"
 #include "Metall.h"
+#include "MetalMan.h"
 #include "BulletManager.h"
+#include "EffectManager.h"
 #include "Life.h"
 #include "CollisionData.h"
 #include "CollisionManager.h"
@@ -42,6 +44,9 @@ void EnemyManager::Start()
 	BulletManager* bulletManager = GetBaseScene()->GetManagerPtr<BulletManager>(BaseManager::E_MANAGER_TAG::BULLET);
 	assert(bulletManager != nullptr);
 
+	EffectManager* effectManager = GetBaseScene()->GetManagerPtr<EffectManager>(BaseManager::E_MANAGER_TAG::EFFECT);
+	assert(effectManager != nullptr);
+
 	Init();
 
 	F_Vec2 pos = {};
@@ -55,17 +60,24 @@ void EnemyManager::Start()
 		if (knd == E_CSV_KND::CSV_ENEMY_TERRY)
 		{
 			SetObject(pos, information.at(i));
-			Terry* enemy = new Terry{ GetBaseScene(),bulletManager,playerBase,pos, Enemy::E_ENEMY_KND::TERRY };
+			Terry* enemy = new Terry{ GetBaseScene(),bulletManager,effectManager,playerBase,pos, Enemy::E_ENEMY_KND::TERRY };
 			enemyList.emplace_back(enemy);
 			continue;
 		}
 		if (knd == E_CSV_KND::CSV_ENEMY_METALL)
 		{
 			SetObject(pos, information.at(i));
-			Metall* enemy = new Metall{ GetBaseScene(),bulletManager,playerBase,pos, Enemy::E_ENEMY_KND::METALL };
+			Metall* enemy = new Metall{ GetBaseScene(),bulletManager,effectManager,playerBase,pos, Enemy::E_ENEMY_KND::METALL };
 			enemyList.emplace_back(enemy);
 			continue;
+		}
 
+		if (knd == E_CSV_KND::CSV_BOSS_METALMAN)
+		{
+			SetObject(pos, information.at(i));
+			MetalMan* enemy = new MetalMan{ GetBaseScene(),bulletManager,effectManager,playerBase,pos, Enemy::E_BOSS_KND::METAL_MAN };
+			enemyList.emplace_back(enemy);
+			continue;
 		}
 	}
 }
@@ -149,6 +161,20 @@ int EnemyManager::CheckPlayerHit(CollisionData* colData)
 	}
 
 	return -1;
+}
+
+bool EnemyManager::IsBossButtle()
+{
+	for (auto it = enemyList.begin(); it != enemyList.end(); it++)
+	{
+		//Ží—Þ‚ªƒ{ƒX‚È‚ç
+		if ((*it)->GetKnd() >= Enemy::E_BOSS_KND::METAL_MAN)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 
 bool EnemyManager::IsHitPlayer(CollisionData* objCol, CollisionData* listCol)

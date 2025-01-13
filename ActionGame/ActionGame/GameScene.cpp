@@ -3,6 +3,7 @@
 #include"Player.h"
 #include"Camera.h"
 #include "BulletManager.h"
+#include "EffectManager.h"
 #include "EnemyManager.h"
 #include"BlockManager.h"
 #include"WarpManager.h"
@@ -31,6 +32,7 @@ bool GameScene::Update()
 	common->GetBulletManager()->Update();
 	common->GetEnemyManager()->Update();
 	common->GetWarpManager()->Update();
+	common->GetEffectManager()->Update();
 
 	//次のマップに行くならtrue
 	if (GoToNextMap())return true;
@@ -46,6 +48,8 @@ void GameScene::Draw()
 	common->GetBulletManager()->Draw(camDif);
 	common->GetEnemyManager()->Draw(camDif);
 	common->GetWarpManager()->Draw(camDif);
+	common->GetEffectManager()->Draw(camDif);
+
 	if (waveout != nullptr)
 		waveout->Draw();
 }

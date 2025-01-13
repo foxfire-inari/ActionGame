@@ -1,5 +1,7 @@
 #pragma once
 #include "Chara.h"
+class BulletManager;
+class EffectManager;
 
 /// <summary>
 /// 敵の継承元
@@ -7,7 +9,8 @@
 class Enemy : public Chara
 {
 public:
-	Enemy(BaseScene* baseScene, BulletManager* _bulletManager, BaseObject* _plBase,
+	Enemy(BaseScene* baseScene,
+		BulletManager* _bulletManager, EffectManager* _effectManager, BaseObject* _plBase,
 		F_Vec2 pos, int _knd, int hp, float top, float under, float left, float right);
 	~Enemy();
 	virtual void Update()override {};
@@ -28,7 +31,7 @@ public:
 	/// </summary>
 	enum E_BOSS_KND
 	{
-		BIG_CHICKEN = 10000,
+		METAL_MAN = 10000,
 	};
 
 	/// <summary>
@@ -75,6 +78,11 @@ protected:
 	/// 弾との当たり判定
 	/// </summary>
 	BulletManager* bulletManager;
+
+	/// <summary>
+	/// エフェクトを発生させる
+	/// </summary>
+	EffectManager* effectManager;
 
 	/// <summary>
 	/// プレイヤーのBaseObject型のポインタ

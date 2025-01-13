@@ -6,7 +6,8 @@
 class Terry : public Enemy
 {
 public:
-	Terry(BaseScene* baseScene, BulletManager* bulletManager,
+	Terry(BaseScene* baseScene,
+		BulletManager* bulletManager, EffectManager* _effectManager,
 		BaseObject* plBase, F_Vec2 pos, int knd);
 	~Terry();
 	void Update()override;
@@ -14,15 +15,15 @@ public:
 
 private:
 
-	float MoveAngle;
+	float moveAngle;
 	int damageCount;//ダメージを受けてからのカウンター
 
 	void UpdateRun();
 	void UpdateDamage();
 	void UpdateDeath();
 
-	void StartRun();
-	void StartDamage();
+	void RunStart();
+	void DamageStart();
 
 };
 

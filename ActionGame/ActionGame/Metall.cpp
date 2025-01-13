@@ -1,7 +1,6 @@
 #include "Metall.h"
 #include "BulletManager.h"
-#include "BallBullet.h"
-
+#include "EffectManager.h"
 namespace
 {
 	//体力
@@ -34,8 +33,9 @@ namespace
 	static const float START_ATTACK_SIZE = 250.f;
 }
 
-Metall::Metall(BaseScene* baseScene, BulletManager* bulletManager, BaseObject* plBase, F_Vec2 pos, int knd)
-	:Enemy{ baseScene,bulletManager,plBase,pos,knd,START_HP,COL_TOP,COL_UNDER,COL_LEFT,COL_RIGHT }
+Metall::Metall(BaseScene* baseScene, BulletManager* bulletManager, EffectManager* _effectManager, BaseObject* plBase, F_Vec2 pos, int knd)
+	:Enemy{ baseScene,bulletManager,_effectManager,plBase,pos,knd,START_HP,COL_TOP,COL_UNDER,COL_LEFT,COL_RIGHT }
+	, imageH{ -1 }
 	, moveAngle{ -1 }
 	, moveCount{ 0 }
 	, damageCount{ 0 }
@@ -119,9 +119,10 @@ void Metall::UpdateIdle()
 	if (moveCount >= MAX_IDLE_FRAME)
 	{
 		//プレイヤーが特定の距離以下かつ、弾がBULLET_NUM個あるか
-		if (F_Vec2::VSize(plBase->GetPosition() - position) < START_ATTACK_SIZE &&
-			bulletManager->GetCanShot(BulletManager::BULLET_KND::BALL, BULLET_NUM))StartAttack();
-
+		if (IsNearDistance() && IsCanShot())
+		{
+			AttackStart();
+		}
 	}
 }
 
@@ -134,7 +135,7 @@ void Metall::UpdateAttack()
 
 	if (moveCount >= MAX_SHOT_FRAME)
 	{
-		StartRun();
+		RunStart();
 	}
 
 	if (moveCount == SHOT_DELAY)
@@ -142,7 +143,7 @@ void Metall::UpdateAttack()
 		Attack();
 	}
 
-	StartDamage();
+	DamageStart();
 }
 
 void Metall::UpdateRun()
@@ -154,11 +155,11 @@ void Metall::UpdateRun()
 	{
 		//移動を停止する
 		velocity.x = 0;
-		StartIdle();
+		IdleStart();
 	}
 	//地面に乗ってなければFallに行く
-	if (!fall->GetIsOnGround())StartFall();
-	StartDamage();
+	if (!fall->GetIsOnGround())FallStart();
+	DamageStart();
 
 }
 
@@ -171,7 +172,7 @@ void Metall::UpdateFall()
 
 		state->SetNextState("Run");
 	}
-	StartDamage();
+	DamageStart();
 
 }
 
@@ -187,19 +188,23 @@ void Metall::UpdateDamage()
 			state->SetNextState("Death");
 			return;
 		}
-		StartRun();
+		RunStart();
 	}
-	StartDamage();
+	DamageStart();
 }
 
 void Metall::UpdateDeath()
 {
 	deathCount++;
 	if (deathCount > Life::DEATH_FRAME)life->SetIsDeath(true);
-
+	if (deathCount == Life::DEATH_EFFECT_FRAME)
+	{
+		effectManager->SetState(position, F_Vec2{ 0,0 });
+		//SoundEffect::GetInstance()->PlaySoundEffect(SoundEffect::E_SOUND_KND::DISAPPEAR);
+	}
 }
 
-void Metall::StartIdle()
+void Metall::IdleStart()
 {
 	//無敵状態を開始
 	isInvincible = true;
@@ -209,38 +214,34 @@ void Metall::StartIdle()
 	state->SetNextState("Idle");
 }
 
-void Metall::StartAttack()
+void Metall::AttackStart()
 {
 	//無敵状態を解除
 	isInvincible = false;
 	//ステートを移行するからmoveCountを初期化
 	moveCount = 0;
 
-	//プレイヤー座標を取得
-	F_Vec2 plPos = plBase->GetPosition();
-	//自身より右か左か　左なら-1
-	moveAngle = position.x - plPos.x > 0 ? -1 : 1;
+	//moveAngleをセット
+	SetMoveAngle();
 
 	state->SetNextState("Attack");
 
 }
 
-void Metall::StartRun()
+void Metall::RunStart()
 {
 	//ステートを移行するからmoveCountを初期化
 	moveCount = 0;
 
-	//プレイヤー座標を取得
-	F_Vec2 plPos = plBase->GetPosition();
-	//自身より右か左か　左なら-1
-	moveAngle = position.x - plPos.x > 0 ? -1 : 1;
+	//moveAngleをセット
+	SetMoveAngle();
 
 	velocity.x = moveAngle * RUN_SPEED;
 
 	state->SetNextState("Run");
 }
 
-void Metall::StartFall()
+void Metall::FallStart()
 {
 	//移動中だからステートを移行してもmoveCountは初期化しない
 	//moveCount = 0;
@@ -250,7 +251,7 @@ void Metall::StartFall()
 	state->SetNextState("Fall");
 }
 
-void Metall::StartDamage()
+void Metall::DamageStart()
 {
 	if (life->GetHp() <= 0)return;
 	int bulletDamage = bulletManager->HitCheckChara(this, collisionData);
@@ -265,8 +266,14 @@ void Metall::StartDamage()
 	}
 }
 
-void Metall::StartDeath()
+bool Metall::IsNearDistance()
 {
+	return F_Vec2::VSize(plBase->GetPosition() - position) < START_ATTACK_SIZE;
+}
+
+bool Metall::IsCanShot()
+{
+	return bulletManager->GetCanShot(BulletManager::BULLET_KND::BALL, BULLET_NUM);
 }
 
 void Metall::Attack()
@@ -309,4 +316,12 @@ void Metall::SetGenVec(F_Vec2& genVec, float rad)
 	//sinfとcosfを入れ替えることで、左右で-+の違いが出る
 	genVec.x = sinf(rad);
 	genVec.y = cosf(rad);
+}
+
+void Metall::SetMoveAngle()
+{
+	//プレイヤー座標を取得
+	F_Vec2 plPos = plBase->GetPosition();
+	//自身より右か左か　左なら-1
+	moveAngle = position.x - plPos.x > 0 ? -1 : 1;
 }

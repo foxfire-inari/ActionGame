@@ -36,12 +36,35 @@ public:
 	/// <param name="setCount">固定する値</param>
 	void SetAnimCount(float setCount);
 
+	/// <summary>
+	/// animCountを返す
+	/// </summary>
+	/// <returns></returns>
+	float GetAnimCount()const { return animCount; }
+
+	/// <summary>
+	/// animNumをsetNumにする
+	/// </summary>
+	/// <param name="setNum">セットする値</param>
+	void SetAnimNum(int setNum);
+
+	/// <summary>
+	/// animNumを返す
+	/// </summary>
+	/// <returns></returns>
+	int GetAnimNum()const { return animNum; }
+
 private:
 
 	/// <summary>
 	/// アニメーションのカウンター
 	/// </summary>
 	float animCount;
+
+	/// <summary>
+	/// アニメーションの現在の番号を保存
+	/// </summary>
+	float animNum;
 
 };
 

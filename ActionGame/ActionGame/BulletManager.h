@@ -6,7 +6,7 @@ class CollisionData;
 
 namespace
 {
-	//各弾の最大数(それぞれ生成されるたびに追加される)
+	//各弾の最大数
 	static const int MAX_BULLET = 3;
 }
 
@@ -28,7 +28,7 @@ public:
 
 	/// <summary>
 	/// 弾のフラグが必要数空いているか
-	/// 主に敵などの絶対に弾を撃ってほしいときに使う
+	/// 主に敵などの絶対に弾を撃ってほしいオブジェクトが使う
 	/// </summary>
 	/// <param name="knd">弾の種類</param>
 	/// <param name="minBullet">必要な数</param>
@@ -93,7 +93,7 @@ private:
 	template<class T>
 	void CreateBullet(int knd)
 	{
-		//テンプレートで好きなクラスを追加できるようにした
+		//テンプレートで好きなBulletクラスを追加できるようにした
 		for (int i = 0; i < MAX_BULLET; i++)
 		{
 			Bullet* bullet = new T(GetBaseScene(), knd);

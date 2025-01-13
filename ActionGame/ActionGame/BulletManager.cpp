@@ -1,6 +1,7 @@
 #include "BulletManager.h"
 #include "NormalBullet.h"
 #include "BallBullet.h"
+#include "MetalBullet.h"
 #include "Chara.h"
 #include "Life.h"
 #include "CollisionData.h"
@@ -79,7 +80,7 @@ void BulletManager::AddBullet(int knd)
 	{
 		case BULLET_KND::NORMAL:	CreateBullet<NormalBullet>(knd);	break;
 		case BULLET_KND::BALL:		CreateBullet<BallBullet>(knd);		break;
-		//case BULLET_KND::METAL:		CreateBullet<>(knd);			break;
+		case BULLET_KND::METAL:		CreateBullet<MetalBullet>(knd);		break;
 		default:					assert(false);						break;
 			
 	}

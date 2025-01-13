@@ -31,9 +31,6 @@ T* BaseScene::GetOneObjectPtr(int _tag)
 	return nullptr;
 }
 
-// hファイルに関数を置くととBaseObjectを認識してくれないので
-// cppファイルに関数を移した上で明示的インスタンス化をした。
-// なぜか認識するようになったしエラーも起きていない
 template BaseObject* BaseScene::GetOneObjectPtr(int _tag);
 template Camera* BaseScene::GetOneObjectPtr(int _tag);
 

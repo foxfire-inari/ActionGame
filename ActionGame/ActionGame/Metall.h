@@ -4,13 +4,19 @@
 class Metall : public Enemy
 {
 public:
-	Metall(BaseScene* baseScene, BulletManager* bulletManager,
+	Metall(BaseScene* baseScene, 
+		BulletManager* bulletManager, EffectManager* _effectManager,
 		BaseObject* plBase, F_Vec2 pos, int knd);
 	~Metall();
 	void Update()override;
 	void Draw(F_Vec2 _camDif)override;
 
 private:
+
+	/// <summary>
+	/// 画像
+	/// </summary>
+	int imageH;
 
 	/// <summary>
 	/// 弾を撃つ方向
@@ -44,12 +50,23 @@ private:
 
 	// --------ステートごとのスタート
 
-	void StartIdle();
-	void StartAttack();
-	void StartRun();
-	void StartFall();
-	void StartDamage();
-	void StartDeath();
+	void IdleStart();
+	void AttackStart();
+	void RunStart();
+	void FallStart();
+	void DamageStart();
+
+	/// <summary>
+	/// プレイヤーとの距離が探知範囲以内ならtrue
+	/// </summary>
+	/// <returns></returns>
+	bool IsNearDistance();
+
+	/// <summary>
+	/// 弾を撃てるか
+	/// </summary>
+	/// <returns></returns>
+	bool IsCanShot();
 
 	/// <summary>
 	/// 攻撃
@@ -62,5 +79,10 @@ private:
 	/// <param name="genVec">弾の生成速度（参照渡し）</param>
 	/// <param name="rad">発射角度</param>
 	void SetGenVec(F_Vec2& genVec, float rad);
+
+	/// <summary>
+	/// moveAngleセットする
+	/// </summary>
+	void SetMoveAngle();
 };
 

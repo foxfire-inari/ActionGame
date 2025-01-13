@@ -6,6 +6,7 @@
 #include "Camera.h"
 
 #include "BulletManager.h"
+#include "EffectManager.h"
 #include "CollisionManager.h"
 #include "EnemyManager.h"
 #include "WarpManager.h"
@@ -15,6 +16,7 @@
 CommonObjectAndManager::CommonObjectAndManager(BaseScene* nowScene, std::vector<std::vector<std::string>> information)
 {
 	bulletManager = new BulletManager{nowScene};
+	effectManager = new EffectManager{ nowScene };
 	collisionManager = new CollisionManager{ nowScene };
 	blockManager = new BlockManager{ nowScene , information };
 	enemyManager = new EnemyManager{ nowScene , information };
@@ -25,6 +27,7 @@ CommonObjectAndManager::CommonObjectAndManager(BaseScene* nowScene, std::vector<
 
 
 	bulletManager->Start();
+	effectManager->Start();
 	collisionManager->Start();
 	enemyManager->Start();
 	blockManager->Start();

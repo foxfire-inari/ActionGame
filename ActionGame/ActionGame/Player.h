@@ -40,7 +40,6 @@ public:
 	/// <returns></returns>
 	std::string GoNextMap();
 
-
 	/// <summary>
 	/// ゲームオーバーかどうか
 	/// </summary>
@@ -67,8 +66,9 @@ private:
 	int inputDown;	//下方向への入力量
 	int imageH;		//画像
 
-	float moveSpeed;	//移動速度
 	int moveAngle;		//進行方向
+	float moveSpeed;	//移動速度
+	
 	int sideShotAngle;	//武器の発射方向
 	float allShotAngle;	//入力角度(打ち分け武器用)
 
@@ -81,6 +81,11 @@ private:
 	/// ゲームオーバーかどうか
 	/// </summary>
 	bool isGameOver;
+
+	/// <summary>
+	/// ボス戦かどうか
+	/// </summary>
+	bool isBossButtle;
 
 	/// <summary>
 	/// カメラの座標、注視点のセット

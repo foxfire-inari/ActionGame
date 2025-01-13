@@ -9,7 +9,7 @@ GameMaster::GameMaster()
 	KeyControlle::Create();
 	Image::Create();
 
-	GameScene* gameScene = new GameScene{ this,"Map01"};
+	GameScene* gameScene = new GameScene{ this,"Map02"};
 	scene.emplace_back(gameScene);
 }
 

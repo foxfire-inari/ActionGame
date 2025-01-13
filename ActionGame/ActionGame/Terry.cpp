@@ -1,5 +1,7 @@
 #include "Terry.h"
+#include"Image.h"
 #include "BulletManager.h"
+#include"EffectManager.h"
 
 namespace
 {
@@ -24,10 +26,10 @@ namespace
 	static const int POWER_BODY = 2;
 }
 
-Terry::Terry(BaseScene* baseScene, BulletManager* bulletManager,
+Terry::Terry(BaseScene* baseScene, BulletManager* bulletManager, EffectManager* _effectManager,
 	BaseObject* plBase, F_Vec2 pos, int knd)
-	:Enemy{baseScene,bulletManager,plBase,pos,knd,START_HP,COL_TOP,COL_UNDER,COL_LEFT,COL_RIGHT }
-	, MoveAngle{ 0 }
+	:Enemy{baseScene,bulletManager,_effectManager,plBase,pos,knd,START_HP,COL_TOP,COL_UNDER,COL_LEFT,COL_RIGHT }
+	, moveAngle{ 0 }
 	, damageCount{ 0 }
 {
 	bodyPower = POWER_BODY;
@@ -83,13 +85,13 @@ void Terry::UpdateRun()
 	//プレイヤー座標を取得
 	F_Vec2 plPos = plBase->GetPosition();
 	//相対角度を計算
-	MoveAngle = atan2f(plPos.y - position.y, plPos.x - position.x);
+	moveAngle = atan2f(plPos.y - position.y, plPos.x - position.x);
 	//進む方向を計算
-	F_Vec2 vel = F_Vec2{ MOVE_SPEED * cos(MoveAngle), MOVE_SPEED * sin(MoveAngle) };
+	F_Vec2 vel = F_Vec2{ MOVE_SPEED * cos(moveAngle), MOVE_SPEED * sin(moveAngle) };
 	//velocityをセット
 	SetVelocity(vel);
 
-	StartDamage();
+	DamageStart();
 }
 
 void Terry::UpdateDamage()
@@ -104,24 +106,28 @@ void Terry::UpdateDamage()
 			state->SetNextState("Death");
 			return;
 		}
-		StartRun();
+		RunStart();
 	}
-	StartDamage();
+	DamageStart();
 }
 
 void Terry::UpdateDeath()
 {
 	deathCount++;
 	if (deathCount > Life::DEATH_FRAME)life->SetIsDeath(true);
-
+	if (deathCount == Life::DEATH_EFFECT_FRAME)
+	{
+ 		effectManager->SetState(position, F_Vec2{ 0,0 });
+		//SoundEffect::GetInstance()->PlaySoundEffect(SoundEffect::E_SOUND_KND::DISAPPEAR);
+	}
 }
 
-void Terry::StartRun()
+void Terry::RunStart()
 {
 	state->SetNextState("Run");
 }
 
-void Terry::StartDamage()
+void Terry::DamageStart()
 {
 	if (life->GetHp() <= 0)return;
 	int bulletDamage = bulletManager->HitCheckChara(this, collisionData);

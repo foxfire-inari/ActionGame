@@ -9,6 +9,10 @@ Image::Image()
 
 	playerIdleH.at(0) = LoadGraph("Data/Image/Player/Idle/right.png"); 
 	playerIdleH.at(1) = LoadGraph("Data/Image/Player/Idle/left.png");
+	for (int i = 0; i < playerIdleH.size(); i++)
+	{
+		assert(playerIdleH.at(i) > 0);
+	}
 
 	playerWalkH.at(0) = LoadGraph("Data/Image/Player/Walk/right_1.png");
 	playerWalkH.at(1) = LoadGraph("Data/Image/Player/Walk/right_2.png");
@@ -18,29 +22,62 @@ Image::Image()
 	playerWalkH.at(5) = LoadGraph("Data/Image/Player/Walk/left_2.png");
 	playerWalkH.at(6) = LoadGraph("Data/Image/Player/Walk/left_3.png");
 	playerWalkH.at(7) = LoadGraph("Data/Image/Player/Walk/left_2.png");
+	for (int i = 0; i < playerWalkH.size(); i++)
+	{
+		assert(playerWalkH.at(i) > 0);
+	}
 
 	playerFallH.at(0) = LoadGraph("Data/Image/Player/Fall/right.png");
 	playerFallH.at(1) = LoadGraph("Data/Image/Player/Fall/left.png");
+	for (int i = 0; i < playerFallH.size(); i++)
+	{
+		assert(playerFallH.at(i) > 0);
+	}
 
 	playerDamageH.at(0) = LoadGraph("Data/Image/Player/Damage/right.png");
 	playerDamageH.at(1) = LoadGraph("Data/Image/Player/Damage/left.png");
-
+	for (int i = 0; i < playerDamageH.size(); i++)
+	{
+		assert(playerDamageH.at(i) > 0);
+	}
 
 	//ブロック
 	blockH.at(0) = LoadGraph("Data/Image/Blocks/ground.png");
 	blockH.at(1) = LoadGraph("Data/Image/Blocks/grass.png");
+	for (int i = 0; i < blockH.size(); i++)
+	{
+		assert(blockH.at(i) > 0);
+	}
 
 	//ワープ
 	warpH.at(0) = LoadGraph("Data/Image/Blocks/Warp/warp_1.png");
 	warpH.at(1) = LoadGraph("Data/Image/Blocks/Warp/warp_2.png");
 	warpH.at(2) = LoadGraph("Data/Image/Blocks/Warp/warp_3.png");
 	warpH.at(3) = LoadGraph("Data/Image/Blocks/Warp/warp_4.png");
+	for (int i = 0; i < warpH.size(); i++)
+	{
+		assert(warpH.at(i) > 0);
+	}
 
 	//ワープ中
 	waveH.at(0) = LoadGraph("Data/Image/Wave/wave_1.png");
 	waveH.at(1) = LoadGraph("Data/Image/Wave/wave_2.png");
 	waveH.at(2) = LoadGraph("Data/Image/Wave/wave_3.png");
 	waveH.at(3) = LoadGraph("Data/Image/Wave/wave_4.png");
+	for (int i = 0; i < waveH.size(); i++)
+	{
+		assert(waveH.at(i) > 0);
+	}
+
+	//エフェクト
+	effectH.at(0) = LoadGraph("Data/Image/Effect/effect_1.png");
+	effectH.at(1) = LoadGraph("Data/Image/Effect/effect_2.png");
+	effectH.at(2) = LoadGraph("Data/Image/Effect/effect_3.png");
+	effectH.at(3) = LoadGraph("Data/Image/Effect/effect_4.png");
+	for (int i = 0; i < effectH.size(); i++)
+	{
+		assert(effectH.at(i) > 0);
+	}
 }
 
 Image::~Image()
@@ -102,4 +139,11 @@ int Image::GetWaveH(int index) const
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
 	if (index < 0 || index >= warpH.size())return -1;
 	return waveH.at(index);
+}
+
+int Image::GetEffectH(int index) const
+{
+	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
+	if (index < 0 || index >= warpH.size())return -1;
+	return effectH.at(index);
 }

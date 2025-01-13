@@ -61,6 +61,7 @@ public:
 		CSV_CAMERA_MIN_Y,	//カメラのY座標の最小値
 		CSV_WARP,			//ワープオブジェクト
 		CSV_ENEMY_METALL,	//敵(メットール)
+		CSV_BOSS_METALMAN	//ボス(メタルマン)
 	};
 
 protected:

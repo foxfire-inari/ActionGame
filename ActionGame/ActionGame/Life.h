@@ -46,6 +46,7 @@ public:
 	bool GetIsDeath()const { return isDeath; }
 
 	static const int DEATH_FRAME;//消滅までのフレーム
+	static const int DEATH_EFFECT_FRAME;//消滅エフェクトを出すフレーム
 
 private:
 	int hp;

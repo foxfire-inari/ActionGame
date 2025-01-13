@@ -67,6 +67,13 @@ public:
 	/// <returns></returns>
 	int GetWaveH(int index)const;
 
+	/// <summary>
+	/// エフェクトの画像を返す
+	/// </summary>
+	/// <param name="index">インデックス</param>
+	/// <returns></returns>
+	int GetEffectH(int index)const;
+
 private:
 	
 	//プレイヤーの画像
@@ -93,5 +100,8 @@ private:
 
 	//ワープ中の画像
 	std::array<int, 4> waveH;
+
+	//汎用エフェクト
+	std::array<int, 4> effectH;
 };
 

@@ -3,7 +3,7 @@
 namespace
 {
 	//’e‘¬
-	static const float BULLET_SPEED = 10.f;
+	static const float BULLET_SPEED = 6.f;
 
 	//’e‚Ì‰Î—Í
 	static const int BULLET_POWER = 1;

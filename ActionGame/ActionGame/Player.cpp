@@ -9,7 +9,7 @@
 namespace
 {
 	//HP
-	static const int MAX_HP = 100;
+	static const int MAX_HP = 28;
 
 	//ジャンプ力
 	static const float JUMP_POWER = 8.f;
@@ -56,6 +56,7 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 	, moveAngle{ 0 }
 	, isInvincible{ false }
 	, isGameOver{ false }
+	, isBossButtle{ false }
 
 {
 	//自身を登録
@@ -108,6 +109,8 @@ Player::~Player()
 
 void Player::Start()
 {
+	//ボス戦かを取得する
+	isBossButtle = enemyManager->IsBossButtle();
 }
 
 void Player::Update()
@@ -346,6 +349,7 @@ void Player::UpdateAttack()
 
 	if (shotCount == SHOT_DELAY)
 	{
+
 		Attack();
 	}
 
@@ -447,8 +451,13 @@ void Player::DamageStart()
 	//ダメージを受けたかを受け取る(敵本体)
 	int damage = enemyManager->CheckPlayerHit(collisionData);
 
-	damage = bulletManager->HitCheckChara(this, collisionData);
+	//ダメージを受けたかを受け取る(敵の弾)
+	int bulletDamage = bulletManager->HitCheckChara(this, collisionData);
 
+	if (bulletDamage > 0) //ダメージを受けていたら上書き
+	{
+		damage = bulletDamage;
+	}
 
 	//当たっていなかったらreturn
 	if (damage <= 0)return;

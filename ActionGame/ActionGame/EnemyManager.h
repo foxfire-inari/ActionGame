@@ -22,6 +22,12 @@ public:
 	/// <returns></returns>
 	int CheckPlayerHit(CollisionData* colData);
 
+	/// <summary>
+	/// ボスバトルかどうかを返す
+	/// </summary>
+	/// <returns></returns>
+	bool IsBossButtle();
+
 private:
 	std::list<Enemy*> enemyList;
 	std::vector<std::vector<std::string>> information;//生成情報を格納

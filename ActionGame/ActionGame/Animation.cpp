@@ -32,3 +32,9 @@ void Animation::SetAnimCount(float setCount)
 {
 	animCount = setCount;
 }
+
+void Animation::SetAnimNum(int setNum)
+{
+	animNum = setNum;
+
+}

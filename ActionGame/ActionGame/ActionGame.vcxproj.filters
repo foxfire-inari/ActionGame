@@ -40,6 +40,12 @@
     <Filter Include="Object\Enemy">
       <UniqueIdentifier>{c3db9767-b252-46b4-99f8-fe186edae911}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\Boss">
+      <UniqueIdentifier>{a102cc50-0e9b-49b9-8cb7-6b65211b48e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Effect">
+      <UniqueIdentifier>{808b7e56-32e1-4f7a-93e4-cb8aa5307ff3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ソース.cpp">
@@ -138,9 +144,6 @@
     <ClCompile Include="Image.cpp">
       <Filter>Singleton</Filter>
     </ClCompile>
-    <ClCompile Include="Animation.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Block.cpp">
       <Filter>Object\CollisionObject</Filter>
     </ClCompile>
@@ -150,8 +153,23 @@
     <ClCompile Include="Metall.cpp">
       <Filter>Object\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="MetalMan.cpp">
+      <Filter>Object\Boss</Filter>
+    </ClCompile>
     <ClCompile Include="BallBullet.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Object\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="MetalBullet.cpp">
+      <Filter>Object\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Object\Parts</Filter>
+    </ClCompile>
+    <ClCompile Include="Effect.cpp">
+      <Filter>Object\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectManager.cpp">
+      <Filter>Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -254,9 +272,6 @@
     <ClInclude Include="Image.h">
       <Filter>Singleton</Filter>
     </ClInclude>
-    <ClInclude Include="Animation.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Block.h">
       <Filter>Object\CollisionObject</Filter>
     </ClInclude>
@@ -266,8 +281,23 @@
     <ClInclude Include="Metall.h">
       <Filter>Object\Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="MetalMan.h">
+      <Filter>Object\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="MetalBullet.h">
+      <Filter>Object\Bullet</Filter>
+    </ClInclude>
     <ClInclude Include="BallBullet.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>Object\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Object\Parts</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>Object\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectManager.h">
+      <Filter>Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
