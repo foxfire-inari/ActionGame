@@ -50,7 +50,5 @@ void Camera::SetTarget(F_Vec2 _target)
 {
 	target.x = _target.x - WINDOW_X / 2;
 	target.y = _target.y - WINDOW_Y / 2;
-	DrawFormatString(50, 100, GetColor(255, 255, 255),
-		"camPos:%f,%f", target.x, target.y);
 }
 
