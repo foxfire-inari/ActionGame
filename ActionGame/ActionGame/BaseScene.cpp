@@ -45,12 +45,12 @@ bool BaseScene::NextMapPlayer(std::string& nextMapName)
 	{
 		if (waveout == nullptr)
 		{
-			//•‚¢‰æ–Ê‚Å‘Ò‚ÂŠÔ
-			static const float BLACK_WAIT_SECOND = 1.2f;
-			//•‚¢‰æ–Ê‚É‚µ‚Ä‚¢‚­’l
-			static const float BLACK_ADD_VALUE = 7.f;
+			//”g‚ÅŠÔ
+			static const float WAVE_WAIT_SECOND = 1.2f;
+			//”g‚É‚µ‚Ä‚¢‚­’l
+			static const float WAVE_ADD_VALUE = 7.f;
 
-			waveout = new Waveout{ BLACK_WAIT_SECOND,BLACK_ADD_VALUE };
+			waveout = new Waveout{ WAVE_WAIT_SECOND,WAVE_ADD_VALUE };
 		}
 		else
 		{

@@ -1,16 +1,16 @@
 #include "GameMaster.h"
 #include "KeyControlle.h"
 #include "Image.h"
-
-#include"GameScene.h"
+#include "TitleScene.h"
+#include "GameScene.h"
 
 GameMaster::GameMaster()
 {
 	KeyControlle::Create();
 	Image::Create();
 
-	GameScene* gameScene = new GameScene{ this,"Map02"};
-	scene.emplace_back(gameScene);
+	TitleScene* title = new TitleScene{ this};
+	scene.emplace_back(title);
 }
 
 GameMaster::~GameMaster()
@@ -58,10 +58,17 @@ bool GameMaster::Change(int nextSceneNum, std::string nextMapName, std::string o
 
 	switch (nextSceneNum)
 	{
+	case E_SCENE::TITLE:
+	{
+		TitleScene* title = new TitleScene{ this };
+		scene.emplace_front(title);
+		(*scene.begin())->Start();
+	}
+	return true;
 
 	case E_SCENE::GAME:
 	{
-		GameScene* game = new GameScene{ this,nextMapName };
+		GameScene* game = new GameScene{ this,nextMapName ,oldMapName };
 		scene.emplace_front(game);
 		(*scene.begin())->Start();
 	}

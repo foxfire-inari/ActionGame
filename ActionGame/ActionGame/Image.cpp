@@ -78,6 +78,17 @@ Image::Image()
 	{
 		assert(effectH.at(i) > 0);
 	}
+
+	//タイトル
+	titleH = LoadGraph("Data/Image/Title/title.png");
+	assert(titleH > 0);
+
+	titleGroundH = LoadGraph("Data/Image/Title/ground.png");
+	assert(titleGroundH > 0);
+
+	//ゲームオーバー
+	gameOverH = LoadGraph("Data/Image/GameOver/gameover.png");
+	assert(gameOverH > 0);
 }
 
 Image::~Image()

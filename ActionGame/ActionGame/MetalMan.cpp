@@ -6,7 +6,7 @@
 namespace
 {
 	//HP
-	static const int START_HP = 1;
+	static const int START_HP = 28;
 
 	//ƒWƒƒƒ“ƒv—Í
 	static const float JUMP_LARGE	= 10.f;

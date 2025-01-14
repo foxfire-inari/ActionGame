@@ -12,7 +12,6 @@ Camera::Camera(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 
 	//カメラの行ける最大座標、最小座標を読み込む
 	int knd;
-	VECTOR pos = {};
 	for (int i = 0; i < _info.size(); i++)
 	{
 		knd = std::stoi(_info.at(i).at(0));
@@ -38,6 +37,7 @@ Camera::Camera(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 			minPosY = std::stoi(_info.at(i).at(2));
 			continue;
 		}
+
 	}
 
 }

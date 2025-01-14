@@ -171,6 +171,9 @@
     <ClCompile Include="EffectManager.cpp">
       <Filter>Manager</Filter>
     </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMaster.h">
@@ -298,6 +301,9 @@
     </ClInclude>
     <ClInclude Include="EffectManager.h">
       <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

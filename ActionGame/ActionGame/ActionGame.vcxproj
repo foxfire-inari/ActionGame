@@ -180,6 +180,7 @@
     <ClCompile Include="SceneChange.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Terry.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="WarpManager.cpp" />
     <ClCompile Include="WarpObject.cpp" />
     <ClCompile Include="Waveout.cpp" />
@@ -225,6 +226,7 @@
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Terry.h" />
+    <ClInclude Include="TitleScene.h" />
     <ClInclude Include="WarpManager.h" />
     <ClInclude Include="WarpObject.h" />
     <ClInclude Include="Waveout.h" />

@@ -74,6 +74,24 @@ public:
 	/// <returns></returns>
 	int GetEffectH(int index)const;
 
+	/// <summary>
+	/// タイトル画像を返す
+	/// </summary>
+	/// <returns></returns>
+	int GetTitleH()const { return titleH; }
+
+	/// <summary>
+	/// タイトル画面の地面を返す
+	/// </summary>
+	/// <returns></returns>
+	int GetTitleGroundH()const { return titleGroundH; }
+
+	/// <summary>
+	/// ゲームオーバー画像を返す
+	/// </summary>
+	/// <returns></returns>
+	int GetGameOverH()const { return gameOverH; }
+
 private:
 	
 	//プレイヤーの画像
@@ -103,5 +121,12 @@ private:
 
 	//汎用エフェクト
 	std::array<int, 4> effectH;
+
+	//タイトル画面
+	int titleH;
+	//タイトル画面の地面
+	int titleGroundH;
+	//ゲームオーバー（一枚だけなのでint型）
+	int gameOverH;
 };
 

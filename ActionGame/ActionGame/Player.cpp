@@ -3,8 +3,10 @@
 #include "KeyControlle.h"
 #include "Camera.h"
 #include "BulletManager.h"
+#include "EffectManager.h"
 #include "EnemyManager.h"
 #include "WarpManager.h"
+#include "Waveout.h"
 
 namespace
 {
@@ -47,6 +49,8 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 	, camPos{}
 	, jumpCount{ 0 }
 	, shotCount{ 0 }
+	, damageCount{ 0 }
+	, deathCount{ 0 }
 	, inputRight{ 0 }
 	, inputDown{ 0 }
 	, imageH{ -1 }
@@ -105,6 +109,7 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 
 Player::~Player()
 {
+	if (waveout != nullptr)delete waveout;
 }
 
 void Player::Start()
@@ -152,6 +157,9 @@ void Player::Draw(F_Vec2 _camDif)
 	if (isInvincible && damageCount % 10 <= 3)
 		return;
 
+	//死んだら映さない
+	if (deathCount > Life::DEATH_FRAME)return;
+
 	F_Vec2 drawpos = GetPosition();
 
 	DrawExtendGraph
@@ -164,6 +172,7 @@ void Player::Draw(F_Vec2 _camDif)
 		true
 	);
 
+#ifdef _DEBUG
 	///デバッグ用
 	//判定の可視化
 	DrawBox
@@ -179,6 +188,16 @@ void Player::Draw(F_Vec2 _camDif)
 	//ステータスの可視化
 	DrawFormatString(50, 50, GetColor(255, 255, 255),
 		"velocity:%f,%f", GetVelocity().x, GetVelocity().y);
+#endif  _DEBUG
+
+}
+
+void Player::DrawWaveout()
+{
+	if (waveout == nullptr)return;
+
+	//暗転描画
+	waveout->Draw();
 }
 
 void Player::DrawUI()
@@ -364,12 +383,6 @@ void Player::UpdateDamage()
 	//地面につくかMAX_DAMAGE_FRAMEたったらステートをIdleにする
 	if (damageCount >= MAX_DAMAGE_FRAME)
 	{
-		//hpが0以下なら死
-		if (life->GetHp() <= 0)
-		{
-			DeathStart();
-			return;
-		}
 		//それ以外ならIdleへ
 		state->SetNextState("Idle");
 		//Idle移行後飛ばないようjumpCountを0にする
@@ -384,6 +397,38 @@ void Player::UpdateDamage()
 
 void Player::UpdateDeath()
 {
+	static const int GAME_OVER_FRAME = Life::DEATH_EFFECT_FRAME + 120;
+	static const float WAIT_TIME = 1.f;
+	static const float BLACKOUT_SPEED = 4.f;
+
+	deathCount++;
+
+	//死亡カウントがDEATH_EFFECT_FRAMEになったらエフェクト生成
+	if (deathCount == Life::DEATH_EFFECT_FRAME)
+	{
+		effectManager->SetDeffusion(position);
+		//SoundEffect::GetInstance()->PlaySoundEffect(SoundEffect::E_SOUND_KND::GAME_OVER);
+	}
+
+	//死亡カウントがGAME_OVER_FRAMEになったら画面を埋め始める
+	if (deathCount >= GAME_OVER_FRAME && waveout == nullptr)
+	{
+		waveout = new Waveout{ WAIT_TIME,BLACKOUT_SPEED };
+	}
+
+	//画面が埋まったらisGameOverをtrueにする
+	if (waveout != nullptr)
+	{
+		waveout->Update();
+
+		if (waveout->GetIsWaveFinish())
+		{
+			isGameOver = true;
+		}
+	}
+
+	//移動ベクトルを重力以外無くす
+	velocity = F_Vec2{ 0, velocity.y };
 }
 
 void Player::UpdateNextMapWait()
@@ -471,6 +516,12 @@ void Player::DamageStart()
 	//ダメージを受ける
 	life->DecHp(damage);
 
+	//hpが0以下なら死
+	if (life->GetHp() <= 0)
+	{
+		DeathStart();
+		return;
+	}
 	velocity = { static_cast<float>(vel),0 };
 	damageCount = 0;
 	jumpCount = 0;
@@ -609,6 +660,9 @@ void Player::GetNowSceneManager()
 {
 	bulletManager = GetBaseScene()->GetManagerPtr<BulletManager>(BaseManager::E_MANAGER_TAG::BULLET);
 	assert(bulletManager != nullptr);
+
+	effectManager = GetBaseScene()->GetManagerPtr<EffectManager>(BaseManager::E_MANAGER_TAG::EFFECT);
+	assert(effectManager != nullptr);
 
 	enemyManager = GetBaseScene()->GetManagerPtr<EnemyManager>(BaseManager::E_MANAGER_TAG::ENEMY);
 	assert(enemyManager != nullptr);

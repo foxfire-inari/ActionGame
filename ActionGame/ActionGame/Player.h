@@ -2,7 +2,9 @@
 #include "Chara.h"
 class Camera;
 class BulletManager;
+class EffectManager;
 class WarpManager;
+class Waveout;
 
 /// <summary>
 /// プレイヤークラス
@@ -29,6 +31,11 @@ public:
 	void Draw(F_Vec2 _camDif)override;
 
 	/// <summary>
+	/// GameOver等で使われる波
+	/// </summary>
+	void DrawWaveout();
+
+	/// <summary>
 	/// ゲームシーンでのUI描画
 	/// </summary>
 	void DrawUI();
@@ -49,8 +56,10 @@ public:
 private:
 	Camera* camera;
 	BulletManager* bulletManager;
+	EffectManager* effectManager;
 	EnemyManager* enemyManager;
 	WarpManager* warpManager;
+	Waveout* waveout;
 
 	//カメラの座標
 	F_Vec2 camPos;
@@ -61,6 +70,7 @@ private:
 	int jumpCount; //ジャンプを押し続けているフレーム数
 	int shotCount; //攻撃までのカウンター
 	int damageCount;//ダメージを受けてからのカウンター
+	int deathCount;//死までのカウンター
 
 	int inputRight;	//右方向への入力量
 	int inputDown;	//下方向への入力量

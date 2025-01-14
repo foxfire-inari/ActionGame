@@ -29,6 +29,6 @@ public:
 	/// <param name="nextmapname">次のマップの名前</param>
 	/// <param name="oldmapname">元々いたマップの名前</param>
 	/// <returns>切り替えに成功したらtrue</returns>
-	virtual bool Change(int nextscenenum, std::string nextmapname, std::string oldmapname) =0;
+	virtual bool Change(int nextscenenum, std::string nextmapname ="", std::string oldmapname="") = 0;
 };
 
