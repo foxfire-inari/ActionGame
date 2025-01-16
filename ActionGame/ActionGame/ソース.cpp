@@ -1,4 +1,4 @@
-
+#include"Common.h"
 #include"GameMaster.h"
 
 // ƒvƒƒOƒ‰ƒ€‚Í WinMain ‚©‚çn‚Ü‚è‚Ü‚·

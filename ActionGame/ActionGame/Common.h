@@ -8,7 +8,6 @@
 #include<float.h>
 #include <cmath>
 #include<math.h>
-#include <typeinfo>
 
 //ブロック1つのサイズ
 static const int BLOCK_SIZE = 42;

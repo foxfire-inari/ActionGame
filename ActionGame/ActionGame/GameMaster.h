@@ -1,6 +1,6 @@
 #pragma once
-#include "Common.h"
 #include"SceneChange.h"
+#include<list>
 class BaseScene;
 
 class GameMaster : public SceneChange

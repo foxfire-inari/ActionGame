@@ -1,5 +1,5 @@
 #pragma once
-//今回は配列の順番を気にしないためunordered_mapを使う
+//配列に名前を付けられるためunordered_mapを使う
 #include<unordered_map>
 #include<string>
 
