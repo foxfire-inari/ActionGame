@@ -1,5 +1,6 @@
 #pragma once
 #include<vector>
+#include<list>
 #include<string>
 class BlockManager;
 
@@ -12,6 +13,8 @@ class CollisionManager;
 class EnemyManager;
 class WarpManager;
 
+class BaseObject;
+class BaseManager;
 class BaseScene;
 
 //使うクラスはここで前方宣言しとく
@@ -72,6 +75,10 @@ public:
 	WarpManager* GetWarpManager()& { return warpManager; }
 
 private:
+
+	std::list<BaseManager*> managerList;
+	std::list<BaseObject*> oneObjectList;
+
 	Player* player;
 	Camera* camera;
 

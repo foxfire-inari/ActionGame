@@ -1,6 +1,11 @@
 #pragma once
 #include"Common.h"
 
+/// <summary>
+/// シングルトンクラスの継承元
+/// class ●●● : public Singleton<●●●>
+/// </summary>
+/// <typeparam name="T">子クラスの名前</typeparam>
 template<typename T>
 class Singleton
 {

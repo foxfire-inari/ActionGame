@@ -1,6 +1,9 @@
 #pragma once
 #include "Bullet.h"
 
+/// <summary>
+/// ƒƒ^ƒ‹‚È’e‚ÌƒNƒ‰ƒX
+/// </summary>
 class MetalBullet : public Bullet
 {
 public:

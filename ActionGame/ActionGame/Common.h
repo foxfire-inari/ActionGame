@@ -1,4 +1,5 @@
 #pragma once
+<<<<<<< Updated upstream
 #include<Dxlib.h>
 #include<assert.h>
 #include<vector>
@@ -8,6 +9,17 @@
 #include<float.h>
 #include <cmath>
 #include<math.h>
+=======
+#include<Dxlib.h>	//Dxlib
+#include<assert.h>	//既定の値が入っているかの確認
+#include<vector>	//CSVファイルから読み取った文字を保存する
+#include<list>		//主にクラスをまとめる配列
+#include<array>		//要素数が固定されている配列に使う
+#include<string>	//文字列を扱う
+#include<float.h>	//フロート型の比較などで使えるマクロ
+#include<cmath>		//std::atanなどの計算
+#include<math.h>	//sinなどの数学的な計算
+>>>>>>> Stashed changes
 
 //ブロック1つのサイズ
 static const int BLOCK_SIZE = 42;
@@ -22,7 +34,7 @@ static const float FPS = 60.f;
 //円周率
 static const float PI = 3.141592f;
 
-
+//テンプレート構造体
 template <class Type>
 struct Vector2//Vector2型を作成
 {

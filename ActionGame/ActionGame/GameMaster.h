@@ -1,4 +1,8 @@
 #pragma once
+<<<<<<< Updated upstream
+=======
+#include"Common.h"
+>>>>>>> Stashed changes
 #include"SceneChange.h"
 #include<list>
 class BaseScene;
