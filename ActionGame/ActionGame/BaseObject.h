@@ -1,6 +1,6 @@
 #pragma once
-#include"Common.h"
-#include"BaseScene.h"
+#include"Common.h"		//Vector2を使うため
+#include"BaseScene.h"	//現在のシーンを取得するため
 
 /// <summary>
 /// 全てのオブジェクトの継承元

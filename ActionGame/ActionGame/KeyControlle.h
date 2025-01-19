@@ -16,6 +16,9 @@ enum E_KEY
 	E_KEY_MAX
 };
 
+/// <summary>
+/// キー入力を処理するシングルトンクラス
+/// </summary>
 class KeyControlle : public Singleton<KeyControlle>
 {
 public:

@@ -349,5 +349,5 @@ void MetalMan::SetMoveAngle()
 
 bool MetalMan::GetAttackKey()
 {
-	return KeyControlle::GetInstance()->GetPressingFrame(E_KEY::ATTACK) > 1;
+	return KeyControlle::GetInstance()->GetNowPressing(E_KEY::ATTACK);
 }

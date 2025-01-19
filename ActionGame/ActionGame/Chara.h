@@ -1,14 +1,14 @@
 #pragma once
 #include"BaseObject.h"
 
-#include"CollisionData.h"
 #include"Fall.h"
-#include"Life.h"
-#include"Gravity.h"
-#include"PositionSetter.h"
 #include"State.h"
-#include"CollisionManager.h"
+#include"Life.h"
+#include"PositionSetter.h"
+#include"CollisionData.h"
+#include"Gravity.h"
 #include"Animation.h"
+#include"CollisionManager.h"
 
 /// <summary>
 /// ‘S‚Ä‚ÌƒLƒƒƒ‰‚ÌŒp³Œ³

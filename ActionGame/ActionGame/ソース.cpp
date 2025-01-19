@@ -1,7 +1,4 @@
-<<<<<<< Updated upstream
 #include"Common.h"
-=======
->>>>>>> Stashed changes
 #include"GameMaster.h"
 
 // ƒvƒƒOƒ‰ƒ€‚Í WinMain ‚©‚çn‚Ü‚è‚Ü‚·

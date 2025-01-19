@@ -1,10 +1,6 @@
 #pragma once
-<<<<<<< Updated upstream
-=======
-#include"Common.h"
->>>>>>> Stashed changes
+#include"Common.h"//汎用できる物をインクルードしたファイル
 #include"SceneChange.h"
-#include<list>
 class BaseScene;
 
 class GameMaster : public SceneChange

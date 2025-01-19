@@ -94,10 +94,10 @@ protected:
 	void Init();
 
 	/// <summary>
-/// このマネージャーに所属しているオブジェクト達の
-/// 所属しているシーンも設定しなおす
-/// </summary>
-/// <param name="_baseScene">新しく所属するシーン</param>
+	/// このマネージャーに所属しているオブジェクト達の
+	/// 所属しているシーンも設定しなおす
+	/// </summary>
+	/// <param name="_baseScene">新しく所属するシーン</param>
 	virtual void SetObjectNewScene(BaseScene* _baseScene) = 0;
 
 	BaseObject* playerBase;

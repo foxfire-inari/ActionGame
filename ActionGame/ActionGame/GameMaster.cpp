@@ -1,14 +1,20 @@
 #include "GameMaster.h"
+
+//シングルトンクラス
 #include "KeyControlle.h"
 #include "Image.h"
+
+//全てのシーンをインクルード
 #include "TitleScene.h"
 #include "GameScene.h"
 
 GameMaster::GameMaster()
 {
+	//シングルトンクラスを作成
 	KeyControlle::Create();
 	Image::Create();
 
+	//最初のシーンを追加
 	TitleScene* title = new TitleScene{ this};
 	scene.emplace_back(title);
 }
@@ -16,6 +22,7 @@ GameMaster::GameMaster()
 GameMaster::~GameMaster()
 {
 	if (scene.empty())return;
+	//シーンを全てデリート
 	for (auto it = scene.begin(); it != scene.end(); )
 	{
 		if (*it != nullptr)
@@ -27,6 +34,7 @@ GameMaster::~GameMaster()
 		else it++;
 	}
 
+	//シングルトンクラスをデリート
 	KeyControlle::Destroy();
 	Image::Destroy();
 }
@@ -34,9 +42,10 @@ GameMaster::~GameMaster()
 
 void GameMaster::Update()
 {
-
+	//キー入力を更新
 	KeyControlle::GetInstance()->Update();
 
+	//シーンに中身があれば更新＆描画
 	if (scene.empty())return;
 	if ((*scene.begin())->Update())return;
 	(*scene.begin())->Draw();
@@ -56,6 +65,7 @@ bool GameMaster::Change(int nextSceneNum, std::string nextMapName, std::string o
 		else it++;
 	}
 
+	//次のシーンを登録する
 	switch (nextSceneNum)
 	{
 	case E_SCENE::TITLE:

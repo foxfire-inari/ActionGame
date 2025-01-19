@@ -554,7 +554,7 @@ void Player::StartRun()
 
 void Player::AttackStart()
 {
-	if (KeyControlle::GetInstance()->GetPressingFrame(E_KEY::ATTACK) != 0)
+	if (KeyControlle::GetInstance()->GetNowPressing(E_KEY::ATTACK))
 	{
 		state->SetNextState("Attack");
 		shotCount = 0;

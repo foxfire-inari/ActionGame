@@ -1,8 +1,8 @@
 #include "CollisionManager.h"
 #include"CollisionObject.h"
+#include"BlockManager.h"
 #include"CollisionProcessing.h"
 
-#include"BlockManager.h"
 
 CollisionManager::CollisionManager(BaseScene* baseScene)
 	:BaseManager{ baseScene,BaseManager::E_MANAGER_TAG::COLLISION }

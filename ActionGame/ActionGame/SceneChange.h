@@ -15,7 +15,9 @@ enum E_SCENE
 
 };
 
-
+/// <summary>
+/// Change関数を全てのシーンで使えるように分けた
+/// </summary>
 class SceneChange
 {
 public:

@@ -1,9 +1,9 @@
 #pragma once
-#include"Common.h"
-#include"SceneChange.h"
-#include"BaseManager.h" 
-#include"CommonObjectAndManager.h"
-#include"Waveout.h"
+#include"Common.h"//汎用できる物をインクルードしたファイル
+#include"SceneChange.h"//シーンの切替を行うため
+#include"BaseManager.h" //マネージャーを渡す時に使う
+#include"CommonObjectAndManager.h"//全てのオブジェクトとマネージャーを管理するクラス
+#include"Waveout.h"//シーン切り替え等に使う
 
 class BaseObject;	// 前方宣言
 

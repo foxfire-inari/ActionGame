@@ -13,13 +13,13 @@
 namespace
 {
 	static const int DRAW_GAMEOVER_ALPHA = 200;//push shot buttonの表示を始めるaplha値
-
-	static const int WAIT_FLAME = FPS * 3;
 }
 
 GameScene::GameScene(SceneChange* sceneChange, std::string _nowMapName, std::string _oldMapName)
 	:BaseScene{sceneChange}
 	,nowMapName{_nowMapName}
+	, gameOverCount{ 0 }
+	, alpha{ 0 }
 {
 
 	//マップの生成情報
@@ -38,11 +38,8 @@ GameScene::~GameScene()
 bool GameScene::Update()
 {
 	common->GetPlayer()->Update();
-	common->GetBlockManager()->Update();
-	common->GetBulletManager()->Update();
-	common->GetEnemyManager()->Update();
-	common->GetWarpManager()->Update();
-	common->GetEffectManager()->Update();
+
+	common->Update();
 
 	//次のマップに行くならtrue
 	if (GoToNextMap())return true;
@@ -58,11 +55,8 @@ void GameScene::Draw()
 	F_Vec2 camDif = common->GetCamera()->GetTarget();
 
 	common->GetPlayer()->Draw(camDif);
-	common->GetBlockManager()->Draw(camDif);
-	common->GetBulletManager()->Draw(camDif);
-	common->GetEnemyManager()->Draw(camDif);
-	common->GetWarpManager()->Draw(camDif);
-	common->GetEffectManager()->Draw(camDif);
+
+	common->Draw(camDif);
 
 	common->GetPlayer()->DrawWaveout();
 

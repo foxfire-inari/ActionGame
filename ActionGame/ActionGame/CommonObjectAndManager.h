@@ -1,16 +1,14 @@
 #pragma once
-#include<vector>
-#include<list>
-#include<string>
+#include"Common.h"
 class BlockManager;
 
 class Player;
 class Camera;
 
 class BulletManager;
+class EnemyManager;
 class EffectManager;
 class CollisionManager;
-class EnemyManager;
 class WarpManager;
 
 class BaseObject;
@@ -25,6 +23,17 @@ public:
 	CommonObjectAndManager(BaseScene* nowScene
 		, std::vector<std::vector<std::string>> information);
 	~CommonObjectAndManager();
+
+	/// <summary>
+	/// リスト内のマネージャーをすべてUpdateする
+	/// </summary>
+	void Update();
+
+	/// <summary>
+	/// リスト内のマネージャーを全てDrawする
+	/// </summary>
+	/// <param name="camDif"></param>
+	void Draw(F_Vec2 camDif);
 
 	/// <summary>
 	/// プレイヤーを返す
@@ -77,7 +86,6 @@ public:
 private:
 
 	std::list<BaseManager*> managerList;
-	std::list<BaseObject*> oneObjectList;
 
 	Player* player;
 	Camera* camera;

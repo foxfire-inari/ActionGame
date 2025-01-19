@@ -43,7 +43,7 @@ private:
 	
 	int count;				//波の秒数
 	
-	float waveCount;			//波のカウント
+	float waveCount;		//波のカウント
 
 	float alpha;			//画像の濃さ
 	float oldAlpha;			//1フレーム前の画像の濃さ

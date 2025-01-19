@@ -17,6 +17,8 @@ protected:
 	virtual ~Singleton() = default;
 
 public:
+	// コピーコンストラクタと代入演算子を削除しておく
+	// この作業で複製されることを防ぐことができる
 	Singleton(const Singleton&) = delete;
 	Singleton& operator=(const Singleton&) = delete;
 	Singleton(Singleton&&) = delete;

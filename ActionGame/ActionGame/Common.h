@@ -1,15 +1,4 @@
 #pragma once
-<<<<<<< Updated upstream
-#include<Dxlib.h>
-#include<assert.h>
-#include<vector>
-#include<list>
-#include<array>
-#include<string>
-#include<float.h>
-#include <cmath>
-#include<math.h>
-=======
 #include<Dxlib.h>	//Dxlib
 #include<assert.h>	//既定の値が入っているかの確認
 #include<vector>	//CSVファイルから読み取った文字を保存する
@@ -19,7 +8,6 @@
 #include<float.h>	//フロート型の比較などで使えるマクロ
 #include<cmath>		//std::atanなどの計算
 #include<math.h>	//sinなどの数学的な計算
->>>>>>> Stashed changes
 
 //ブロック1つのサイズ
 static const int BLOCK_SIZE = 42;
