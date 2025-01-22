@@ -93,7 +93,7 @@ std::string WarpManager::GetNextMapName(BaseObject* obj, CollisionData* objCol)
 
 bool WarpManager::IsNearDistance(F_Vec2 objPos, F_Vec2 listPos, float dif)
 {
-	if (F_Vec2::VSize(listPos - objPos) < dif)
+	if (VSize(listPos - objPos) < dif)
 		return true;
 	return false;
 }

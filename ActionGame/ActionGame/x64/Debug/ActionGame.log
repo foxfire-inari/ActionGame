@@ -1,7 +1,13 @@
-﻿  Camera.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.h(55,33): warning C4244: 'return': 'const float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Camera.cpp(22,23): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Camera.cpp(27,23): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Camera.cpp(32,23): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Camera.cpp(37,23): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-  ActionGame.vcxproj -> C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\x64\Debug\ActionGame.exe
+﻿  Terry.cpp
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Common.h(153,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Terry.cpp' をコンパイルしています)
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Animation.h(55,33): warning C4244: 'return': 'const float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Terry.cpp' をコンパイルしています)
+  
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Terry.cpp(35,32): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Terry.cpp(88,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Terry.cpp(87,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Terry.cpp(86,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\ActionGame\Terry.cpp(85,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ActionGame.vcxproj -> C:\Users\yurin\OneDrive\デスクトップ\Visual\ActionGame\ActionGame\x64\Debug\ActionGame.exe

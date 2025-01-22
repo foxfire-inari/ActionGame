@@ -304,7 +304,7 @@ void MetalMan::Invincible()
 
 bool MetalMan::IsNearDistance()
 {
-	return F_Vec2::VSize(plBase->GetPosition() - position) < START_ATTACK_SIZE;
+	return VSize(plBase->GetPosition() - position) < START_ATTACK_SIZE;
 }
 
 void MetalMan::Attack()

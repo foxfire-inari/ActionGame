@@ -82,9 +82,7 @@ void BulletManager::AddBullet(int knd)
 		case BULLET_KND::BALL:		CreateBullet<BallBullet>(knd);		break;
 		case BULLET_KND::METAL:		CreateBullet<MetalBullet>(knd);		break;
 		default:					assert(false);						break;
-			
 	}
-
 }
 
 bool BulletManager::GetCanShot(int knd, int minBullet)
@@ -171,7 +169,7 @@ int BulletManager::HitCheckChara(Chara* charaPtr, CollisionData* colData)
 }
 bool BulletManager::IsNearDistance(F_Vec2 objPos, F_Vec2 listPos, float dif)
 {
-	if (F_Vec2::VSize(listPos - objPos) < dif)
+	if (VSize(listPos - objPos) < dif)
 		return true;
 	return false;
 }

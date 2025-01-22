@@ -8,6 +8,7 @@
 #include<float.h>	//フロート型の比較などで使えるマクロ
 #include<cmath>		//std::atanなどの計算
 #include<math.h>	//sinなどの数学的な計算
+#include<xkeycheck.h>
 
 //ブロック1つのサイズ
 static const int BLOCK_SIZE = 42;
@@ -132,20 +133,6 @@ struct Vector2//Vector2型を作成
 		vec.y = this->y * _scale;
 		return vec;
 	}
-
-	/// <summary>
-	/// ベクトルのサイズをfloat型で返す
-	/// float型以外で使ったら止まる
-	/// </summary>
-	/// <param name="_vec">ベクトル</param>
-	/// <returns>ベクトルの大きさ</returns>
-	static float VSize(Vector2 _vec)
-	{
-		assert(typeid(_vec.x) == typeid(float));
-		float abs_val = std::pow(_vec.x, 2) + std::pow(_vec.y, 2);
-
-		return sqrt(abs_val);
-	}
 };
 
 //intのVector2
@@ -154,3 +141,16 @@ using I_Vec2 = Vector2<int>;
 using F_Vec2 = Vector2<float>;
 //doubleのVector2
 using D_Vec2 = Vector2<double>;
+
+/// <summary>
+/// ベクトルのサイズをfloat型で返す
+/// F_Vec2型以外入れられない
+/// </summary>
+/// <param name="_vec">ベクトル</param>
+/// <returns>ベクトルの大きさ</returns>
+static float VSize(F_Vec2 _vec)
+{
+	float abs_val = std::pow(_vec.x, 2) + std::pow(_vec.y, 2);
+
+	return sqrt(abs_val);
+}

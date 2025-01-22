@@ -125,6 +125,9 @@ private:
 	/// <returns></returns>
 	CollisionData* GetNowPositionCol(CollisionData* colData, F_Vec2 pos);
 
+	/// <summary>
+	/// ’e‚ð‚Ü‚Æ‚ß‚éƒŠƒXƒg
+	/// </summary>
 	std::list<Bullet*> bulletList;
 
 	void SetObjectNewScene(BaseScene* _baseScene)override;

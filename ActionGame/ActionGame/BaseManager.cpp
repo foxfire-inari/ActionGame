@@ -31,7 +31,7 @@ bool BaseManager::IsNearDistance(BaseObject* obj, float dif)
 {
 
 	//ƒvƒŒƒCƒ„[‚©‚çdif‚æ‚è‹ß‚©‚Á‚½‚çtrue
-	if (F_Vec2::VSize(obj->GetPosition() - playerBase->GetPosition()) < dif)
+	if (VSize(obj->GetPosition() - playerBase->GetPosition()) < dif)
 		return true;
 
 	return false;

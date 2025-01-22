@@ -74,7 +74,6 @@ private:
 
 	int inputRight;	//右方向への入力量
 	int inputDown;	//下方向への入力量
-	int imageH;		//画像
 
 	int moveAngle;		//進行方向
 	float moveSpeed;	//移動速度

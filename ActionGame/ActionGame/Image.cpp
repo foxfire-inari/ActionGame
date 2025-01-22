@@ -7,38 +7,47 @@ Image::Image()
 
 	//プレイヤー
 
-	playerIdleH.at(0) = LoadGraph("Data/Image/Player/Idle/right.png"); 
-	playerIdleH.at(1) = LoadGraph("Data/Image/Player/Idle/left.png");
+	playerIdleH.at(0) = LoadGraph("Data/Image/Chara/Player/Idle/left.png");
+	playerIdleH.at(1) = LoadGraph("Data/Image/Chara/Player/Idle/right.png");
 	for (int i = 0; i < playerIdleH.size(); i++)
 	{
 		assert(playerIdleH.at(i) > 0);
 	}
 
-	playerWalkH.at(0) = LoadGraph("Data/Image/Player/Walk/right_1.png");
-	playerWalkH.at(1) = LoadGraph("Data/Image/Player/Walk/right_2.png");
-	playerWalkH.at(2) = LoadGraph("Data/Image/Player/Walk/right_3.png");
-	playerWalkH.at(3) = LoadGraph("Data/Image/Player/Walk/right_2.png");
-	playerWalkH.at(4) = LoadGraph("Data/Image/Player/Walk/left_1.png");
-	playerWalkH.at(5) = LoadGraph("Data/Image/Player/Walk/left_2.png");
-	playerWalkH.at(6) = LoadGraph("Data/Image/Player/Walk/left_3.png");
-	playerWalkH.at(7) = LoadGraph("Data/Image/Player/Walk/left_2.png");
+	playerWalkH.at(0) = LoadGraph("Data/Image/Chara/Player/Walk/left_1.png");
+	playerWalkH.at(1) = LoadGraph("Data/Image/Chara/Player/Walk/left_2.png");
+	playerWalkH.at(2) = LoadGraph("Data/Image/Chara/Player/Walk/left_3.png");
+	playerWalkH.at(3) = LoadGraph("Data/Image/Chara/Player/Walk/left_2.png");
+	playerWalkH.at(4) = LoadGraph("Data/Image/Chara/Player/Walk/right_1.png");
+	playerWalkH.at(5) = LoadGraph("Data/Image/Chara/Player/Walk/right_2.png");
+	playerWalkH.at(6) = LoadGraph("Data/Image/Chara/Player/Walk/right_3.png");
+	playerWalkH.at(7) = LoadGraph("Data/Image/Chara/Player/Walk/right_2.png");
 	for (int i = 0; i < playerWalkH.size(); i++)
 	{
 		assert(playerWalkH.at(i) > 0);
 	}
 
-	playerFallH.at(0) = LoadGraph("Data/Image/Player/Fall/right.png");
-	playerFallH.at(1) = LoadGraph("Data/Image/Player/Fall/left.png");
+	playerFallH.at(0) = LoadGraph("Data/Image/Chara/Player/Fall/left.png");
+	playerFallH.at(1) = LoadGraph("Data/Image/Chara/Player/Fall/right.png");
 	for (int i = 0; i < playerFallH.size(); i++)
 	{
 		assert(playerFallH.at(i) > 0);
 	}
 
-	playerDamageH.at(0) = LoadGraph("Data/Image/Player/Damage/right.png");
-	playerDamageH.at(1) = LoadGraph("Data/Image/Player/Damage/left.png");
+	playerDamageH.at(0) = LoadGraph("Data/Image/Chara/Player/Damage/left.png");
+	playerDamageH.at(1) = LoadGraph("Data/Image/Chara/Player/Damage/right.png");
 	for (int i = 0; i < playerDamageH.size(); i++)
 	{
 		assert(playerDamageH.at(i) > 0);
+	}
+
+	terryH.at(0)  = LoadGraph("Data/Image/Chara/Enemy/Terry/top.png");
+	terryH.at(1)  = LoadGraph("Data/Image/Chara/Enemy/Terry/under.png");
+	terryH.at(2)  = LoadGraph("Data/Image/Chara/Enemy/Terry/left.png");
+	terryH.at(3)  = LoadGraph("Data/Image/Chara/Enemy/Terry/right.png");
+	for (int i = 0; i < terryH.size(); i++)
+	{
+		assert(terryH.at(i) > 0);
 	}
 
 	//ブロック

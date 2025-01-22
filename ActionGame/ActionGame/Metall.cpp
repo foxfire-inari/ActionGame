@@ -268,7 +268,7 @@ void Metall::DamageStart()
 
 bool Metall::IsNearDistance()
 {
-	return F_Vec2::VSize(plBase->GetPosition() - position) < START_ATTACK_SIZE;
+	return VSize(plBase->GetPosition() - position) < START_ATTACK_SIZE;
 }
 
 bool Metall::IsCanShot()

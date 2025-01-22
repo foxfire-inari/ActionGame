@@ -12,10 +12,16 @@ namespace
 	static const float MOVE_SPEED = 0.5f;
 
 	//コリジョン
-	static const int COL_TOP = -BLOCK_SIZE/2;
+	static const int COL_TOP = -BLOCK_SIZE / 2;
 	static const int COL_UNDER = BLOCK_SIZE / 2;
-	static const int COL_LEFT = -BLOCK_SIZE/2;
-	static const int COL_RIGHT = BLOCK_SIZE/2;
+	static const int COL_LEFT = -BLOCK_SIZE / 2;
+	static const int COL_RIGHT = BLOCK_SIZE / 2;
+
+	//画像
+	static const float IMG_TOP   = COL_TOP;
+	static const float IMG_UNDER = COL_UNDER;
+	static const float IMG_LEFT  = COL_LEFT;
+	static const float IMG_RIGHT = COL_RIGHT;
 
 	//ステート
 	static const int STATE_RUN = 0;
@@ -24,6 +30,9 @@ namespace
 
 	//パワー
 	static const int POWER_BODY = 2;
+
+	//移動し続けるフレーム数
+	static const int MOVE_FRAME = FPS;
 }
 
 Terry::Terry(BaseScene* baseScene, BulletManager* bulletManager, EffectManager* _effectManager,
@@ -31,6 +40,7 @@ Terry::Terry(BaseScene* baseScene, BulletManager* bulletManager, EffectManager* 
 	:Enemy{baseScene,bulletManager,_effectManager,plBase,pos,knd,START_HP,COL_TOP,COL_UNDER,COL_LEFT,COL_RIGHT }
 	, moveAngle{ 0 }
 	, damageCount{ 0 }
+	, moveCount{ MOVE_FRAME }//画面に映った瞬間に動いてほしい
 {
 	bodyPower = POWER_BODY;
 
@@ -69,27 +79,58 @@ void Terry::Update()
 void Terry::Draw(F_Vec2 _camDif)
 {
 	F_Vec2 drawpos = GetPosition();
-	DrawBox
+
+	DrawExtendGraph
 	(
-		drawpos.x - _camDif.x + collisionData->GetLeft(),
-		drawpos.y - _camDif.y + collisionData->GetTop(),
-		drawpos.x - _camDif.x + collisionData->GetRight(),
-		drawpos.y - _camDif.y + collisionData->GetUnder(),
-		GetColor(255, 255, 255),
+		drawpos.x - _camDif.x + IMG_LEFT,
+		drawpos.y - _camDif.y + IMG_TOP,
+		drawpos.x - _camDif.x + IMG_RIGHT,
+		drawpos.y - _camDif.y + IMG_UNDER,
+		imageH,
 		true
 	);
 }
 
 void Terry::UpdateRun()
 {
-	//プレイヤー座標を取得
-	F_Vec2 plPos = plBase->GetPosition();
-	//相対角度を計算
-	moveAngle = atan2f(plPos.y - position.y, plPos.x - position.x);
-	//進む方向を計算
-	F_Vec2 vel = F_Vec2{ MOVE_SPEED * cos(moveAngle), MOVE_SPEED * sin(moveAngle) };
-	//velocityをセット
-	SetVelocity(vel);
+	//アニメーションの設定
+	{
+		static const int ANIM = 48;
+		int animNum = animation->GetAnimation(ANIM, ANIM / 4);
+		imageH = Image::GetInstance()->GetTerryH(animNum);
+	}
+
+	moveCount++;
+
+	//一定時間移動したら移動方向を更新
+	if (moveCount >= MOVE_FRAME)
+	{
+		//プレイヤー座標を取得
+		F_Vec2 plPos = plBase->GetPosition();
+		//相対角度を計算
+		moveAngle = atan2f(plPos.y - position.y, plPos.x - position.x);
+
+		//進む方向を計算
+		F_Vec2 vel = F_Vec2{ cos(moveAngle), sin(moveAngle) };
+
+		//------------------速度に違いが出ないようにベクトルの向きを上下左右の四方向に固定したい
+
+		//どっちの絶対値が大きいかを比較して大きいベクトルを優先する
+		if (fabsf(vel.x) > fabsf(vel.y))
+		{
+			vel.x *= MOVE_SPEED;
+			vel.y *= 0;
+		}
+		else
+		{
+			vel.x *= 0;
+			vel.y *= MOVE_SPEED;
+		}
+
+		//velocityをセット
+		SetVelocity(vel);
+		moveCount = 0;
+	}
 
 	DamageStart();
 }

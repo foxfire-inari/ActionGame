@@ -65,4 +65,6 @@ protected:
 	/// </summary>
 	Animation* animation;
 
+	int imageH;		//‰æ‘œ
+
 };

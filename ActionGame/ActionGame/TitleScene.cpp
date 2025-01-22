@@ -57,7 +57,7 @@ bool TitleScene::Update()
 	static const int MAX_STARTCOUNT = FPS * 3;
 
 	animation->AddAnimCount(0.5f);
-	playerH = Image::GetInstance()->GetPlayerWalkH(animNum + 4);
+	playerH = Image::GetInstance()->GetPlayerWalkH(animNum);
 
 	//入力でスタートする
 	if (KeyControlle::GetInstance()->GetNowPressing(E_KEY::ATTACK))

@@ -6,6 +6,8 @@ Chara::Chara(BaseScene* baseScene,int hp,
 	float top, float under, float left, float right,
 	int tag)
 	:BaseObject{ baseScene, F_Vec2{0,0},F_Vec2{0,0},tag}
+	, imageH{ -1 }
+
 {
 	//Charaのコンストラクタ
 	collisionData = new CollisionData{ top,under,left,right };

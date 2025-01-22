@@ -106,8 +106,7 @@ private:
 	std::array<int, 2> playerDamageH;
 
 	//テリーの画像
-	//テリーは回転するだけなのでこれだけ
-	std::array<int ,8> terryH;
+	std::array<int ,4> terryH;
 
 	//ブロックの画像
 	//ブロックの数だけ保存

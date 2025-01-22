@@ -17,6 +17,7 @@ private:
 
 	float moveAngle;
 	int damageCount;//ダメージを受けてからのカウンター
+	int moveCount;//何秒移動したかのカウンター
 
 	void UpdateRun();
 	void UpdateDamage();

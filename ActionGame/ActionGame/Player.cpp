@@ -17,8 +17,8 @@ namespace
 	static const float JUMP_POWER = 8.f;
 
 	//スピード
-	static const float WALK_SPEED = -2.f;
-	static const float DECELERATION_SPEED = 0.5f;
+	static const float WALK_SPEED = 2.f;
+	static const float DECELERATION_SPEED = -0.5f;
 
 	//コリジョン
 	static const float COL_TOP		= -BLOCK_SIZE;
@@ -53,11 +53,10 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 	, deathCount{ 0 }
 	, inputRight{ 0 }
 	, inputDown{ 0 }
-	, imageH{ -1 }
 	, sideShotAngle{ 1 }//プレイヤーの最初の向きに準ずる
 	, allShotAngle{ PI / 2 }
 	, moveSpeed{ 0 }
-	, moveAngle{ 0 }
+	, moveAngle{ 1 }//右向きで生成
 	, isInvincible{ false }
 	, isGameOver{ false }
 	, isBossButtle{ false }
@@ -269,7 +268,7 @@ void Player::UpdateRun()
 	if (!isRun)
 	{
 		MoveDeceletation();
-		if (moveSpeed >= 0)state->SetNextState("Idle");
+		if (moveSpeed <= 0)state->SetNextState("Idle");
 	}
 
 	//アニメーションの設定
@@ -510,8 +509,8 @@ void Player::DamageStart()
 	//移動速度を0にする
 	moveSpeed = 0;
 
-	//受け取った方向をDAMAGE_VEL_SIZE倍にする
-	vel = moveAngle * DAMAGE_VEL_SIZE;
+	//向いている方向と逆方向にDAMAGE_VEL_SIZE倍する
+	vel = -moveAngle * DAMAGE_VEL_SIZE;
 
 	//ダメージを受ける
 	life->DecHp(damage);
@@ -601,11 +600,11 @@ void Player::SetInputAngle()
 bool Player::Move(float speed)
 {
 	//加速度
-	static const float ACCELERATION_SPEED = -0.5f;
+	static const float ACCELERATION_SPEED = 0.5f;
 	if (inputRight != 0)
 	{
-		moveAngle = -inputRight;
-		if (moveSpeed > speed)
+		moveAngle = inputRight;
+		if (moveSpeed < speed)
 			moveSpeed += ACCELERATION_SPEED;
 		F_Vec2 move = F_Vec2{ moveSpeed * moveAngle, velocity.y };
 		velocity = move;
@@ -620,7 +619,7 @@ void Player::MoveDeceletation()
 	moveSpeed += DECELERATION_SPEED;
 
 	//0にする
-	if (moveSpeed > 0)
+	if (moveSpeed < 0)
 	{
 		moveSpeed = 0;
 		//moveAngle = 0;
