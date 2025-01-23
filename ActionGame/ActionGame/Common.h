@@ -133,6 +133,13 @@ struct Vector2//Vector2Œ^‚ðì¬
 		vec.y = this->y * _scale;
 		return vec;
 	}
+
+	//æŽZ(float)
+	void operator *=(float _scale)
+	{
+		this->x *= _scale;
+		this->y *= _scale;
+	}
 };
 
 //int‚ÌVector2

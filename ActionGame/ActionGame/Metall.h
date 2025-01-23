@@ -3,7 +3,7 @@
 
 class Metall : public Enemy
 {
-public:
+public://メットールのアニメーションに入る
 	Metall(BaseScene* baseScene, 
 		BulletManager* bulletManager, EffectManager* _effectManager,
 		BaseObject* plBase, F_Vec2 pos, int knd);

@@ -41,10 +41,10 @@ Image::Image()
 		assert(playerDamageH.at(i) > 0);
 	}
 
-	terryH.at(0)  = LoadGraph("Data/Image/Chara/Enemy/Terry/top.png");
-	terryH.at(1)  = LoadGraph("Data/Image/Chara/Enemy/Terry/under.png");
-	terryH.at(2)  = LoadGraph("Data/Image/Chara/Enemy/Terry/left.png");
-	terryH.at(3)  = LoadGraph("Data/Image/Chara/Enemy/Terry/right.png");
+	terryH.at(0) = LoadGraph("Data/Image/Chara/Enemy/Terry/top.png");
+	terryH.at(1) = LoadGraph("Data/Image/Chara/Enemy/Terry/right.png");
+	terryH.at(2) = LoadGraph("Data/Image/Chara/Enemy/Terry/under.png");
+	terryH.at(3) = LoadGraph("Data/Image/Chara/Enemy/Terry/left.png");
 	for (int i = 0; i < terryH.size(); i++)
 	{
 		assert(terryH.at(i) > 0);

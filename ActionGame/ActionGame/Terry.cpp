@@ -60,6 +60,8 @@ void Terry::Update()
 	//浮いているため重力を無視する
 	//gravity->AddGravity(velocity.y);
 
+	animation->AddAnimCount(0.5f);
+
 	state->ChangeState();
 
 	switch (state->GetNowState())
@@ -108,30 +110,35 @@ void Terry::UpdateRun()
 		//プレイヤー座標を取得
 		F_Vec2 plPos = plBase->GetPosition();
 		//相対角度を計算
-		moveAngle = atan2f(plPos.y - position.y, plPos.x - position.x);
+		moveAngle = atan2f(plPos.y - position.y, plPos.x - position.x);//Max:3.141593
+
+		//速度に違いが出ないようにベクトルの向きを上下左右の四方向に固定
+		if (fabsf(moveAngle) > 3 * PI / 4)
+		{
+			moveAngle = PI;//左
+		}
+		else if (fabsf(moveAngle) < PI / 4)
+		{
+			moveAngle = 0.f;//右
+		}
+		else if (moveAngle > 0)
+		{
+			moveAngle = PI / 2;//下
+		}
+		else
+		{
+			moveAngle = -PI / 2;//上
+		}
 
 		//進む方向を計算
 		F_Vec2 vel = F_Vec2{ cos(moveAngle), sin(moveAngle) };
 
-		//------------------速度に違いが出ないようにベクトルの向きを上下左右の四方向に固定したい
-
-		//どっちの絶対値が大きいかを比較して大きいベクトルを優先する
-		if (fabsf(vel.x) > fabsf(vel.y))
-		{
-			vel.x *= MOVE_SPEED;
-			vel.y *= 0;
-		}
-		else
-		{
-			vel.x *= 0;
-			vel.y *= MOVE_SPEED;
-		}
+		vel *= MOVE_SPEED;
 
 		//velocityをセット
 		SetVelocity(vel);
 		moveCount = 0;
 	}
-
 	DamageStart();
 }
 
