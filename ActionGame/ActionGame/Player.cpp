@@ -1,5 +1,4 @@
 #include "Player.h"
-#include "Image.h"
 #include "KeyControlle.h"
 #include "Camera.h"
 #include "BulletManager.h"

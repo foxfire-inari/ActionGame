@@ -18,6 +18,12 @@ namespace
 	static const int COL_LEFT = -BLOCK_SIZE / 2;
 	static const int COL_RIGHT = BLOCK_SIZE / 2;
 
+	//画像
+	static const float IMG_TOP = COL_TOP;
+	static const float IMG_UNDER = COL_UNDER;
+	static const float IMG_LEFT = COL_LEFT;
+	static const float IMG_RIGHT = COL_RIGHT;
+
 	//ステート
 	static const int STATE_IDLE = 0;
 	static const int STATE_ATTACK = 1;
@@ -65,6 +71,8 @@ void Metall::Update()
 
 	state->ChangeState();
 
+	animation->AddAnimCount(1.f);
+
 	//moveCountで動きを管理する
 	moveCount++;
 
@@ -86,34 +94,52 @@ void Metall::Update()
 void Metall::Draw(F_Vec2 _camDif)
 {
 	F_Vec2 drawpos = GetPosition();
+
+	DrawExtendGraph
+	(
+		drawpos.x - _camDif.x + IMG_LEFT,
+		drawpos.y - _camDif.y + IMG_TOP,
+		drawpos.x - _camDif.x + IMG_RIGHT,
+		drawpos.y - _camDif.y + IMG_UNDER,
+		imageH,
+		true
+	);
+#ifdef _DEBUG
 	if(isInvincible)
 	{ 
 		DrawBox
 		(
-			drawpos.x - _camDif.x + collisionData->GetLeft(),
-			drawpos.y - _camDif.y + collisionData->GetTop(),
-			drawpos.x - _camDif.x + collisionData->GetRight(),
-			drawpos.y - _camDif.y + collisionData->GetUnder(),
+			drawpos.x - _camDif.x + IMG_LEFT,
+			drawpos.y - _camDif.y + IMG_TOP,
+			drawpos.x - _camDif.x + IMG_RIGHT,
+			drawpos.y - _camDif.y + IMG_UNDER,
 			GetColor(100, 100, 255),
-			true
+			false
 		);
 	}
 	else
 	{
 		DrawBox
 		(
-			drawpos.x - _camDif.x + collisionData->GetLeft(),
-			drawpos.y - _camDif.y + collisionData->GetTop(),
-			drawpos.x - _camDif.x + collisionData->GetRight(),
-			drawpos.y - _camDif.y + collisionData->GetUnder(),
+			drawpos.x - _camDif.x + IMG_LEFT,
+			drawpos.y - _camDif.y + IMG_TOP,
+			drawpos.x - _camDif.x + IMG_RIGHT,
+			drawpos.y - _camDif.y + IMG_UNDER,
 			GetColor(255, 255, 255),
-			true
+			false
 		);
 	}
+#endif  _DEBUG
 }
 
 void Metall::UpdateIdle()
 {
+	//アニメーションの設定
+	{
+		int angImage = animation->GetAngleImage(0, 1, moveAngle);
+		imageH = Image::GetInstance()->GetMetallIdleH(angImage);
+	}
+
 	//待機を終了するフレーム
 	static const int MAX_IDLE_FRAME = 120;
 	if (moveCount >= MAX_IDLE_FRAME)
@@ -128,19 +154,21 @@ void Metall::UpdateIdle()
 
 void Metall::UpdateAttack()
 {
-	//攻撃を終了するフレーム
-	static const int MAX_SHOT_FRAME = 60;
-	//弾を撃つまでの遅延
-	static const int SHOT_DELAY = 4;
+	//球を打つまでのフレーム
+	static const int SHOT_FRAME = 30;
 
-	if (moveCount >= MAX_SHOT_FRAME)
+	//アニメーションの設定
 	{
-		RunStart();
+		static const int ANIM = SHOT_FRAME+2;//ループしないように値を少し増やす
+		int angImage = animation->GetAngleImage(0, 2, moveAngle);
+		int animNum = animation->GetAnimation(ANIM, ANIM / 2);
+		imageH = Image::GetInstance()->GetMetallUpH(animNum + angImage);
 	}
 
-	if (moveCount == SHOT_DELAY)
+	if (moveCount == SHOT_FRAME)
 	{
 		Attack();
+		RunStart();
 	}
 
 	DamageStart();
@@ -148,6 +176,13 @@ void Metall::UpdateAttack()
 
 void Metall::UpdateRun()
 {
+	//アニメーションの設定
+	{
+		static const int ANIM = 30;
+		int angImage = animation->GetAngleImage(0, 2, moveAngle);
+		int animNum = animation->GetAnimation(ANIM, ANIM / 2);
+		imageH = Image::GetInstance()->GetMetallRunH(animNum + angImage);
+	}
 	//移動を終了するフレーム
 	static const int MAX_RUN_FRAME = 90;
 
@@ -223,9 +258,9 @@ void Metall::AttackStart()
 
 	//moveAngleをセット
 	SetMoveAngle();
-
+	//アニメーションを初期化
+	animation->SetAnimCount(0);
 	state->SetNextState("Attack");
-
 }
 
 void Metall::RunStart()

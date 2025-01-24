@@ -41,6 +41,8 @@ Image::Image()
 		assert(playerDamageH.at(i) > 0);
 	}
 
+	//テリー
+
 	terryH.at(0) = LoadGraph("Data/Image/Chara/Enemy/Terry/top.png");
 	terryH.at(1) = LoadGraph("Data/Image/Chara/Enemy/Terry/right.png");
 	terryH.at(2) = LoadGraph("Data/Image/Chara/Enemy/Terry/under.png");
@@ -48,6 +50,33 @@ Image::Image()
 	for (int i = 0; i < terryH.size(); i++)
 	{
 		assert(terryH.at(i) > 0);
+	}
+
+	//メットール
+
+	metallIdleH.at(0) = LoadGraph("Data/Image/Chara/Enemy/Metall/Idle/left.png");
+	metallIdleH.at(1) = LoadGraph("Data/Image/Chara/Enemy/Metall/Idle/right.png");
+	for (int i = 0; i < metallIdleH.size(); i++)
+	{
+		assert(metallIdleH.at(i) > 0);
+	}
+
+	metallRunH.at(0) = LoadGraph("Data/Image/Chara/Enemy/Metall/Run/left_1.png");
+	metallRunH.at(1) = LoadGraph("Data/Image/Chara/Enemy/Metall/Run/left_2.png");
+	metallRunH.at(2) = LoadGraph("Data/Image/Chara/Enemy/Metall/Run/right_1.png");
+	metallRunH.at(3) = LoadGraph("Data/Image/Chara/Enemy/Metall/Run/right_2.png");
+	for (int i = 0; i < metallRunH.size(); i++)
+	{
+		assert(metallRunH.at(i) > 0);
+	}
+
+	metallUpH.at(0) = LoadGraph("Data/Image/Chara/Enemy/Metall/Up/left_1.png");
+	metallUpH.at(1) = LoadGraph("Data/Image/Chara/Enemy/Metall/Up/left_2.png");
+	metallUpH.at(2) = LoadGraph("Data/Image/Chara/Enemy/Metall/Up/right_1.png");
+	metallUpH.at(3) = LoadGraph("Data/Image/Chara/Enemy/Metall/Up/right_2.png");
+	for (int i = 0; i < metallUpH.size(); i++)
+	{
+		assert(metallUpH.at(i) > 0);
 	}
 
 	//ブロック
@@ -138,6 +167,27 @@ int Image::GetTerryH(int index) const
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
 	if (index < 0 || index >= terryH.size())return -1;
 	return terryH.at(index);
+}
+
+int Image::GetMetallIdleH(int index) const
+{
+	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
+	if (index < 0 || index >= metallIdleH.size())return -1;
+	return metallIdleH.at(index);
+}
+
+int Image::GetMetallRunH(int index) const
+{
+	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
+	if (index < 0 || index >= metallRunH.size())return -1;
+	return metallRunH.at(index);
+}
+
+int Image::GetMetallUpH(int index) const
+{
+	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
+	if (index < 0 || index >= metallUpH.size())return -1;
+	return metallUpH.at(index);
 }
 
 int Image::GetBlockH(int index) const

@@ -7,6 +7,7 @@
 #include"PositionSetter.h"
 #include"CollisionData.h"
 #include"Gravity.h"
+#include "Image.h"
 #include"Animation.h"
 #include"CollisionManager.h"
 

@@ -46,6 +46,29 @@ public:
 	/// <returns></returns>
 	int GetTerryH(int index)const;
 
+
+	/// <summary>
+	/// メットールの待機画像を返す
+	/// </summary>
+	/// <param name="index">インデックス</param>
+	/// <returns></returns>
+	int GetMetallIdleH(int index)const;
+
+	/// <summary>
+	/// メットールの走ってる画像を返す
+	/// </summary>
+	/// <param name="index">インデックス</param>
+	/// <returns></returns>
+	int GetMetallRunH(int index)const;
+
+	/// <summary>
+	/// メットールの攻撃開始時の画像を返す
+	/// </summary>
+	/// <param name="index">インデックス</param>
+	/// <returns></returns>
+	int GetMetallUpH(int index)const;
+
+
 	/// <summary>
 	/// ブロックの画像を返す
 	/// </summary>
@@ -95,7 +118,6 @@ public:
 private:
 	
 	//プレイヤーの画像
-
 	//待機用
 	std::array<int, 2> playerIdleH;
 	//歩行用
@@ -107,6 +129,14 @@ private:
 
 	//テリーの画像
 	std::array<int ,4> terryH;
+
+	//メットールの画像
+	//待機用
+	std::array<int, 2> metallIdleH;
+	//歩行用
+	std::array<int, 4> metallRunH;
+	//攻撃開始用
+	std::array<int, 4> metallUpH;
 
 	//ブロックの画像
 	//ブロックの数だけ保存
