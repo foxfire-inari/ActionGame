@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Common.h&#xD;&#xA;画面サイズや各種必須ファイルが入っている">
+    <Position X="1.567" Y="0.5" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Charaクラスに持たせてる必須クラス">
+    <Position X="27.473" Y="1.751" Height="0.554" Width="1.61" />
+  </Comment>
   <Class Name="GameMaster" Collapsed="true">
     <Position X="5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
@@ -31,7 +37,7 @@
   <Class Name="CommonObjectAndManager" Collapsed="true">
     <Position X="9.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAgAgAIBggAAgAABAYEAIAACEAAAAAAFAIAgAAAAAAI=</HashCode>
+      <HashCode>gAwAgAIBggAAggABAYEAIAACEAAAAAAFAIAgAAAAAAA=</HashCode>
       <FileName>CommonObjectAndManager.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,7 +72,7 @@
   <Class Name="Image" Collapsed="true">
     <Position X="3" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIBAAACQAAAAAiAAgCGIAEIAAABABoAACAAIAUABIQ=</HashCode>
+      <HashCode>AAIBAQACQQEAAAiAAgCGIAEIAAAhABoAACAAICUABIQ=</HashCode>
       <FileName>Image.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -78,112 +84,112 @@
     </TypeIdentifier>
   </Class>
   <Class Name="BaseObject" Collapsed="true">
-    <Position X="20.5" Y="0.75" Width="1.5" />
+    <Position X="20.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAQQACAEACAAAgAAAAAgYAAAAAAAAkAAEAQAAAAQQAA=</HashCode>
       <FileName>BaseObject.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Camera" Collapsed="true">
-    <Position X="13.5" Y="2.25" Width="1.5" />
+    <Position X="13.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAACAAAAAAAAMAAAYAADAAAAAAAAAIABAAAAGAAAAAI=</HashCode>
       <FileName>Camera.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WarpObject" Collapsed="true">
-    <Position X="17" Y="3.75" Width="1.5" />
+    <Position X="17" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAABAAAIAAEAAAAAAAAQAAQAAAAAA=</HashCode>
       <FileName>WarpObject.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CollisionObject" Collapsed="true">
-    <Position X="17" Y="2.25" Width="1.5" />
+    <Position X="17" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAQAAAAAAAAAAgAAAAAAAAAAQIAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>CollisionObject.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Enemy" Collapsed="true">
-    <Position X="29.25" Y="3.75" Width="1.5" />
+    <Position X="29.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ggQACgAEAAAAAgEAAIAAABAgEAACAAAAAAQAAAICAgA=</HashCode>
       <FileName>Enemy.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Chara" Collapsed="true">
-    <Position X="27.5" Y="2.25" Width="1.5" />
+    <Position X="27.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAUAAAgAAAAAggAAAAAAAIAAAQAIAAAEAAAAAAAAAMA=</HashCode>
+      <HashCode>gAUAAAgAAAAAggAAAAAAAIAAEQAIAAAEAAAAAAAAAMA=</HashCode>
       <FileName>Chara.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Block" Collapsed="true">
-    <Position X="18.75" Y="3.75" Width="1.5" />
+    <Position X="18.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQEAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>Block.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Effect" Collapsed="true">
-    <Position X="15.25" Y="2.25" Width="1.5" />
+    <Position X="15.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>hAQABAQAAAgAAgAAAIAAEIggAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Effect.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Metall" Collapsed="true">
-    <Position X="27.5" Y="5.25" Width="1.5" />
+    <Position X="27.5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>oAQAAgAAAQEQAggDAAAAAAAAEIgAAgGgKABAQIAAAAw=</HashCode>
       <FileName>Metall.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Terry" Collapsed="true">
-    <Position X="29.25" Y="5.25" Width="1.5" />
+    <Position X="29.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAQAAAAAAQAAAggAAAAAAAAAAAABAwAgIAAAAAAAAAQ=</HashCode>
+      <HashCode>oAQAAAAAAQAAAggAAAAAAAAAAAABAwAgIAAAAAAAAAQ=</HashCode>
       <FileName>Terry.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Player" Collapsed="true">
-    <Position X="25.75" Y="3.75" Width="1.5" />
+    <Position X="25.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>kgwABgICE6ElIsgDFwAAAADAUIAAAgKgICFAQQIEABA=</HashCode>
       <FileName>Player.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bullet" Collapsed="true">
-    <Position X="22.25" Y="2.25" Width="1.5" />
+    <Position X="22.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAQADAAIAIAAggAAAIAAAAAgAAECAQAEAAAAAAASAgA=</HashCode>
       <FileName>Bullet.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BallBullet" Collapsed="true">
-    <Position X="20.5" Y="3.75" Width="1.5" />
+    <Position X="20.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAQABAAAAAAgAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BallBullet.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MetalBullet" Collapsed="true">
-    <Position X="22.25" Y="3.75" Width="1.5" />
+    <Position X="22.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQABAQAAAAIAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MetalBullet.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NormalBullet" Collapsed="true">
-    <Position X="24" Y="3.75" Width="1.5" />
+    <Position X="24" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQCBAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>NormalBullet.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MetalMan" Collapsed="true">
-    <Position X="31" Y="5.25" Width="1.5" />
+    <Position X="31" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>KAQAAAAABQEUBggCAEAAAAAAEIAACAKgKCBEQIAAAAg=</HashCode>
       <FileName>MetalMan.h</FileName>
@@ -239,14 +245,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Animation" Collapsed="true">
-    <Position X="21.25" Y="10.75" Width="1.5" />
+    <Position X="22.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAgAAAAAAAwAQAAgAAAAIIAAAAgAAAQAAAAAE=</HashCode>
       <FileName>Animation.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CollisionData" Collapsed="true">
-    <Position X="21.25" Y="8.5" Width="1.5" />
+    <Position X="22.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAEAAAIAAgAAIgAAAAAAIAAQACACAAAAAAAA=</HashCode>
       <FileName>CollisionData.h</FileName>
@@ -260,44 +266,44 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Fall" Collapsed="true">
-    <Position X="23" Y="8.5" Width="1.5" />
+    <Position X="24" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAhACMAAAAAAAAAAIAQAAAA=</HashCode>
       <FileName>Fall.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gravity" Collapsed="true">
-    <Position X="23" Y="9.25" Width="1.5" />
+    <Position X="24" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAQAAAAAAIAAAAAAAAAAAAAAAAQAAAAAACAAAAAAA=</HashCode>
       <FileName>Gravity.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Life" Collapsed="true">
-    <Position X="21.25" Y="9.25" Width="1.5" />
+    <Position X="27.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gQAAAAAAAAAAAAAAAkCAAIAQEAAAAAACAABABAABAAA=</HashCode>
       <FileName>Life.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PositionSetter" Collapsed="true">
-    <Position X="21.25" Y="10" Width="1.5" />
+    <Position X="25.75" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAACAAAAAIAAAgAAAAAA=</HashCode>
       <FileName>PositionSetter.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="State" Collapsed="true">
-    <Position X="23" Y="10" Width="1.5" />
+    <Position X="25.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAABIKAAAAAAAAAAIBAAAAAIAAABBwAAAA=</HashCode>
       <FileName>State.h</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="Vector2&lt;Type&gt;" Collapsed="true">
-    <Position X="1.25" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAABgAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAABgAAAAAAA=</HashCode>
       <FileName>Common.h</FileName>
     </TypeIdentifier>
   </Struct>
