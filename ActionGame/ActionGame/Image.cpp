@@ -79,6 +79,11 @@ Image::Image()
 		assert(metallUpH.at(i) > 0);
 	}
 
+	bulletH.at(0) = LoadGraph("Data/Image/Bullet/normal.png");
+	bulletH.at(1) = LoadGraph("Data/Image/Bullet/ball.png");
+	bulletH.at(2) = LoadGraph("Data/Image/Bullet/metal.png");
+
+
 	//ブロック
 	blockH.at(0) = LoadGraph("Data/Image/Blocks/ground.png");
 	blockH.at(1) = LoadGraph("Data/Image/Blocks/grass.png");
@@ -188,6 +193,13 @@ int Image::GetMetallUpH(int index) const
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
 	if (index < 0 || index >= metallUpH.size())return -1;
 	return metallUpH.at(index);
+}
+
+int Image::GetBulletH(int index) const
+{
+	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
+	if (index < 0 || index >= bulletH.size())return -1;
+	return bulletH.at(index);
 }
 
 int Image::GetBlockH(int index) const

@@ -2,6 +2,7 @@
 #include "BaseObject.h"
 #include "CollisionData.h"
 #include "CollisionManager.h"
+#include "Image.h"
 
 
 /// <summary>
@@ -89,6 +90,9 @@ protected:
 	/// ‚±‚Ì’e‚ª‚Ç‚Ìí—Ş‚©
 	/// </summary>
 	int knd;
+
+	int imageH;		//‰æ‘œ
+
 
 	/// <summary>
 	/// “–‚½‚è”»’è‚Ìî•ñ

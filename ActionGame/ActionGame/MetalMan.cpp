@@ -166,7 +166,7 @@ void MetalMan::UpdateJump()
 void MetalMan::UpdateAttack()
 {
 	//UŒ‚ˆê‰ñ•ª‚Ì‘S‘ÌƒtƒŒ[ƒ€
-	static const int MAX_SHOT_FRAME = 30;
+	static const int MAX_SHOT_FRAME = 35;
 	//’e‚ğŒ‚‚Â‚Ü‚Å‚Ì’x‰„
 	static const int SHOT_DELAY = 10;
 

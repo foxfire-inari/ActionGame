@@ -15,12 +15,12 @@
 CommonObjectAndManager::CommonObjectAndManager(BaseScene* nowScene, std::vector<std::vector<std::string>> information)
 {
 	//各マネージャーを生成＆リストに登録
+	blockManager = new BlockManager{ nowScene , information };
+	managerList.emplace_back(blockManager);
 	bulletManager = new BulletManager{nowScene};
 	managerList.emplace_back(bulletManager);
 	effectManager = new EffectManager{ nowScene };
 	managerList.emplace_back(effectManager);
-	blockManager = new BlockManager{ nowScene , information };
-	managerList.emplace_back(blockManager);
 	enemyManager = new EnemyManager{ nowScene , information };
 	managerList.emplace_back(enemyManager);
 	warpManager = new WarpManager{ nowScene,information };

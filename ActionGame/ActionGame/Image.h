@@ -70,6 +70,14 @@ public:
 
 
 	/// <summary>
+	/// 弾の画像を返す
+	/// </summary>
+	/// <param name="index">インデックス</param>
+	/// <returns></returns>
+	int GetBulletH(int index)const;
+
+
+	/// <summary>
 	/// ブロックの画像を返す
 	/// </summary>
 	/// <param name="index">インデックス</param>
@@ -117,7 +125,7 @@ public:
 
 private:
 	
-	//プレイヤーの画像
+	//ーーーープレイヤーの画像
 	//待機用
 	std::array<int, 2> playerIdleH;
 	//歩行用
@@ -127,10 +135,10 @@ private:
 	//ダメージ用
 	std::array<int, 2> playerDamageH;
 
-	//テリーの画像
+	//ーーーーテリーの画像
 	std::array<int ,4> terryH;
 
-	//メットールの画像
+	//ーーーーメットールの画像
 	//待機用
 	std::array<int, 2> metallIdleH;
 	//歩行用
@@ -138,19 +146,26 @@ private:
 	//攻撃開始用
 	std::array<int, 4> metallUpH;
 
-	//ブロックの画像
+	//ーーーー弾の画像
+	//弾の数だけ保存
+	std::array<int, 3> bulletH;
+
+	//ーーーーブロックの画像
 	//ブロックの数だけ保存
 	std::array<int, 2> blockH;
 
-	//ワープの画像
+	//ーーーーワープの画像
+	//ワープオブジェクト用
 	std::array<int, 4> warpH;
-
 	//ワープ中の画像
 	std::array<int, 4> waveH;
 
-	//汎用エフェクト
+	//ーーーー汎用エフェクト
+	//キャラクターの消滅用
 	std::array<int, 4> effectH;
 
+
+	//ーーーー1枚絵
 	//タイトル画面
 	int titleH;
 	//タイトル画面の地面
