@@ -1,0 +1,47 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\G2217\\Desktop\\\u30D7\u30ED\u30B0\u30E9\u30E0\\Dxlib\\ActionGame\\CSVtoMAP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{524352F6-BADE-48C2-AF2A-4B47180BA6F2}|CSVtoMAP\\CSVtoMAP.vcxproj|C:\\Users\\G2217\\Desktop\\\u30D7\u30ED\u30B0\u30E9\u30E0\\Dxlib\\ActionGame\\CSVtoMAP\\CSVtoMAP\\\u30BD\u30FC\u30B9.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{524352F6-BADE-48C2-AF2A-4B47180BA6F2}|CSVtoMAP\\CSVtoMAP.vcxproj|solutionrelative:CSVtoMAP\\\u30BD\u30FC\u30B9.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 999,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\u30BD\u30FC\u30B9.cpp",
+              "DocumentMoniker": "C:\\Users\\G2217\\Desktop\\\u30D7\u30ED\u30B0\u30E9\u30E0\\Dxlib\\ActionGame\\CSVtoMAP\\CSVtoMAP\\\u30BD\u30FC\u30B9.cpp",
+              "RelativeDocumentMoniker": "CSVtoMAP\\\u30BD\u30FC\u30B9.cpp",
+              "ToolTip": "C:\\Users\\G2217\\Desktop\\\u30D7\u30ED\u30B0\u30E9\u30E0\\Dxlib\\ActionGame\\CSVtoMAP\\CSVtoMAP\\\u30BD\u30FC\u30B9.cpp",
+              "RelativeToolTip": "CSVtoMAP\\\u30BD\u30FC\u30B9.cpp",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAAAGcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-11T05:21:37.469Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 374,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

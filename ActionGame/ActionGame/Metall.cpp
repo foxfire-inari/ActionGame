@@ -192,8 +192,8 @@ void Metall::UpdateRun()
 		velocity.x = 0;
 		IdleStart();
 	}
-	//地面に乗ってなければFallに行く
-	if (!fall->GetIsOnGround())FallStart();
+
+	FallStart();
 	DamageStart();
 
 }
@@ -280,10 +280,11 @@ void Metall::FallStart()
 {
 	//移動中だからステートを移行してもmoveCountは初期化しない
 	//moveCount = 0;
-
-
-	velocity.x = 0;
-	state->SetNextState("Fall");
+	if (fall->FallStart(velocity))
+	{
+		velocity.x = 0;
+		state->SetNextState("Fall");
+	}
 }
 
 void Metall::DamageStart()

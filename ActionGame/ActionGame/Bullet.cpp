@@ -6,6 +6,7 @@ Bullet::Bullet(BaseScene* _baseScene, int _power, float top, float under, float 
 	, flag{ false }
 	, owner{ 0 }
 	, knd{ _knd }
+	, imageH{ -1 }
 {
 	collisionData = new CollisionData{ top,under,left,right };
 }
