@@ -1,21 +1,18 @@
-﻿  Metall.cpp
+﻿  MetalMan.cpp
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Metall.cpp' をコンパイルしています)
+  (ソース ファイル 'MetalMan.cpp' をコンパイルしています)
   
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.h(55,33): warning C4244: 'return': 'const float' から 'int' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Metall.cpp' をコンパイルしています)
+  (ソース ファイル 'MetalMan.cpp' をコンパイルしています)
   
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(103,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(102,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(101,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(100,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(115,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(114,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(113,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(112,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(127,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(126,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(125,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(124,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(339,25): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(123,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(122,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(121,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(120,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(136,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(135,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(134,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(133,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(146,35): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(321,46): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
   ActionGame.vcxproj -> C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\x64\Debug\ActionGame.exe

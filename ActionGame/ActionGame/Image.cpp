@@ -79,10 +79,38 @@ Image::Image()
 		assert(metallUpH.at(i) > 0);
 	}
 
+	//メタルマン
+
+	metalManIdleH.at(0) = LoadGraph("Data/Image/Chara/Enemy/MetalMan/Idle/left_1.png");
+	metalManIdleH.at(1) = LoadGraph("Data/Image/Chara/Enemy/MetalMan/Idle/left_2.png");
+	metalManIdleH.at(2) = LoadGraph("Data/Image/Chara/Enemy/MetalMan/Idle/left_3.png");
+	metalManIdleH.at(3) = LoadGraph("Data/Image/Chara/Enemy/MetalMan/Idle/left_2.png");
+	metalManIdleH.at(4) = LoadGraph("Data/Image/Chara/Enemy/MetalMan/Idle/right_1.png");
+	metalManIdleH.at(5) = LoadGraph("Data/Image/Chara/Enemy/MetalMan/Idle/right_2.png");
+	metalManIdleH.at(6) = LoadGraph("Data/Image/Chara/Enemy/MetalMan/Idle/right_3.png");
+	metalManIdleH.at(7) = LoadGraph("Data/Image/Chara/Enemy/MetalMan/Idle/right_2.png");
+	for (int i = 0; i < metalManIdleH.size(); i++)
+	{
+		assert(metalManIdleH.at(i) > 0);
+	}
+
+	metalManJumpH.at(0) = LoadGraph("Data/Image/Chara/Enemy/MetalMan/Jump/left.png");
+	metalManJumpH.at(1) = LoadGraph("Data/Image/Chara/Enemy/MetalMan/Jump/right.png");
+	for (int i = 0; i < metalManJumpH.size(); i++)
+	{
+		assert(metalManJumpH.at(i) > 0);
+	}
+
+
+	//弾
+
 	bulletH.at(0) = LoadGraph("Data/Image/Bullet/normal.png");
 	bulletH.at(1) = LoadGraph("Data/Image/Bullet/ball.png");
 	bulletH.at(2) = LoadGraph("Data/Image/Bullet/metal.png");
-
+	for (int i = 0; i < bulletH.size(); i++)
+	{
+		assert(bulletH.at(i) > 0);
+	}
 
 	//ブロック
 	blockH.at(0) = LoadGraph("Data/Image/Blocks/ground.png");
@@ -193,6 +221,20 @@ int Image::GetMetallUpH(int index) const
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
 	if (index < 0 || index >= metallUpH.size())return -1;
 	return metallUpH.at(index);
+}
+
+int Image::GetMetalManIdleH(int index) const
+{
+	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
+	if (index < 0 || index >= metalManIdleH.size())return -1;
+	return metalManIdleH.at(index);
+}
+
+int Image::GetMetalManJumpH(int index) const
+{
+	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
+	if (index < 0 || index >= metalManJumpH.size())return -1;
+	return metalManJumpH.at(index);
 }
 
 int Image::GetBulletH(int index) const

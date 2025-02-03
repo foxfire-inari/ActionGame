@@ -68,6 +68,19 @@ public:
 	/// <returns></returns>
 	int GetMetallUpH(int index)const;
 
+	/// <summary>
+	/// メタルマンの待機時の画像を返す
+	/// </summary>
+	/// <param name="index">インデックス</param>
+	/// <returns></returns>
+	int GetMetalManIdleH(int index)const;
+
+	/// <summary>
+	/// メタルマンが空中にいるときの画像を返す
+	/// </summary>
+	/// <param name="index">インデックス</param>
+	/// <returns></returns>
+	int GetMetalManJumpH(int index)const;
 
 	/// <summary>
 	/// 弾の画像を返す
@@ -145,6 +158,12 @@ private:
 	std::array<int, 4> metallRunH;
 	//攻撃開始用
 	std::array<int, 4> metallUpH;
+
+	//ーーーーメタルマンの画像
+	//待機用
+	std::array<int, 8> metalManIdleH;
+	//空中にいるとき用
+	std::array<int, 2> metalManJumpH;
 
 	//ーーーー弾の画像
 	//弾の数だけ保存

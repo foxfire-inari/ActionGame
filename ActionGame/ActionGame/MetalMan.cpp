@@ -51,7 +51,6 @@ namespace
 
 MetalMan::MetalMan(BaseScene* baseScene, BulletManager* bulletManager, EffectManager* _effectManager, BaseObject* plBase, F_Vec2 pos, int knd)
 	:Enemy{ baseScene,bulletManager,_effectManager,plBase,pos,knd,START_HP,COL_TOP,COL_UNDER,COL_LEFT,COL_RIGHT }
-	, imageH{ 0 }
 	, moveKnd{ 0 }
 	, moveAngle{ -1 }
 	, moveCount{ 0 }
@@ -60,6 +59,7 @@ MetalMan::MetalMan(BaseScene* baseScene, BulletManager* bulletManager, EffectMan
 	, attackCount{ 0 }
 	, damageCount{ 0 }
 	, isInvincible{ true }
+	, isRight{ 1 }
 {
 	bodyPower = POWER_BODY;
 
@@ -78,6 +78,8 @@ MetalMan::~MetalMan()
 void MetalMan::Update()
 {
 	if (life->GetIsDeath())return;
+
+	animation->AddAnimCount(1);
 
 	gravity->AddGravity(velocity.y);
 
@@ -104,6 +106,13 @@ void MetalMan::Update()
 
 void MetalMan::Draw(F_Vec2 _camDif)
 {
+	//無敵なら点滅
+	if (isInvincible && damageCount % 10 <= 3)
+		return;
+
+	//死んだら映さない
+	if (deathCount > Life::DEATH_FRAME)return;
+
 	F_Vec2 drawpos = GetPosition();
 
 	DrawExtendGraph
@@ -116,6 +125,7 @@ void MetalMan::Draw(F_Vec2 _camDif)
 		true
 	);
 
+#ifdef _DEBUG
 	///デバッグ用
 	//判定の可視化
 	DrawBox
@@ -127,12 +137,21 @@ void MetalMan::Draw(F_Vec2 _camDif)
 		GetColor(255, 255, 255),
 		false
 	);
+#endif  _DEBUG
 }
 
 void MetalMan::UpdateIdle()
 {
 	//三秒間待つ
 	static const int MOVE_WAIT = FPS * 3;
+
+	//アニメーションの設定
+	{
+		static const int ANIM = 48;
+		int angImage = animation->GetAngleImage(0, 4, moveAngle);
+		int animNum = animation->GetAnimation(ANIM, ANIM / 4);
+		imageH = Image::GetInstance()->GetMetalManIdleH(animNum + angImage);
+	}
 
 	//探知範囲内に入ったら逆側に行き始める
 	if (IsNearDistance())
@@ -153,6 +172,12 @@ void MetalMan::UpdateIdle()
 
 void MetalMan::UpdateJump()
 {
+	//アニメーションの設定
+	{
+		int angImage = animation->GetAngleImage(0, 1, moveAngle);
+		imageH = Image::GetInstance()->GetMetalManJumpH(angImage);
+	}
+
 	//落下し始めたら攻撃を開始する
 	if (velocity.y < 0.f)
 	{
@@ -229,8 +254,9 @@ void MetalMan::JumpStart()
 	case E_MOVE_KND::SMALL:		velocity.y = JUMP_SMALL;	break;	//小ジャンプ
 
 	case E_MOVE_KND::OVER:		//逆サイドに行くジャンプ
-		velocity.x = WALK_SPEED * -moveAngle;
-		velocity.y = JUMP_OVER;		
+		velocity.x = WALK_SPEED * isRight;
+		velocity.y = JUMP_OVER;
+		isRight = -isRight;		//左右を変更
 		break;
 
 	default:					assert(false);				break;

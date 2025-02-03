@@ -13,7 +13,6 @@ public:
 
 private:
 
-	int imageH;			// 画像
 
 	int moveKnd;		// 行動の種類
 	int moveAngle;		// 左右どっちを向いてるか
@@ -25,6 +24,8 @@ private:
 	int attackCount;	// 攻撃回数をカウント
 
 	int damageCount;	// ダメージを受けてからのカウンター
+
+	int isRight;		// 右側にいるかどうか
 
 	bool isInvincible;	// 無敵かどうか
 

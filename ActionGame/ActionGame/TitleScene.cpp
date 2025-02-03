@@ -43,7 +43,7 @@ TitleScene::TitleScene(SceneChange* sceneChange)
 
 	animation = new Animation{};
 
-	//âΩÇ‡ê∂ê¨ÇµÇ»ÇÊÇ§Ç…ìoò^
+	//âΩÇ‡ê∂ê¨ÇµÇ»Ç¢ÇÊÇ§Ç…ìoò^
 	std::vector<std::vector<std::string>> information = {};
 	common = new CommonObjectAndManager{ this ,information };
 
