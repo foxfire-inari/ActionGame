@@ -5,6 +5,7 @@
 
 #include "Player.h"
 #include "Camera.h"
+#include "Sky.h"
 
 #include "BulletManager.h"
 #include "EnemyManager.h"
@@ -31,6 +32,7 @@ CommonObjectAndManager::CommonObjectAndManager(BaseScene* nowScene, std::vector<
 
 	camera = new Camera{ nowScene , information };
 	player = new Player{ nowScene , information };
+	sky = new Sky{ nowScene, information };
 
 
 

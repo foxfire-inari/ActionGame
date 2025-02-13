@@ -68,7 +68,7 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 
 	//座標をセット済みか
 	bool isSet = false;
-	//読み込んだデータでブロックを生成する
+	//読み込んだデータで生成する
 	int knd = 0;
 	for (int i = 0; i < _info.size(); i++)
 	{

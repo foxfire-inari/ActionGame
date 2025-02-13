@@ -149,6 +149,10 @@ Image::Image()
 	{
 		assert(effectH.at(i) > 0);
 	}
+	
+	//空
+	skyH.at(0) = LoadGraph("Data/Image/Sky/グレイシア.png");
+
 
 	//タイトル
 	titleH = LoadGraph("Data/Image/Title/title.png");
@@ -270,4 +274,11 @@ int Image::GetEffectH(int index) const
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
 	if (index < 0 || index >= warpH.size())return -1;
 	return effectH.at(index);
+}
+
+int Image::GetSkyH(int index) const
+{
+	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
+	if (index < 0 || index >= skyH.size())return -1;
+	return skyH.at(index);
 }

@@ -178,6 +178,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PositionSetter.cpp" />
     <ClCompile Include="SceneChange.cpp" />
+    <ClCompile Include="Sky.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Terry.cpp" />
     <ClCompile Include="TitleScene.cpp" />
@@ -224,6 +225,7 @@
     <ClInclude Include="PositionSetter.h" />
     <ClInclude Include="SceneChange.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Sky.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Terry.h" />
     <ClInclude Include="TitleScene.h" />

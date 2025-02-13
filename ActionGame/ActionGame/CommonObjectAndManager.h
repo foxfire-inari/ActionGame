@@ -4,6 +4,7 @@ class BlockManager;
 
 class Player;
 class Camera;
+class Sky;
 
 class BulletManager;
 class EnemyManager;
@@ -48,6 +49,12 @@ public:
 	Camera* GetCamera()& { return camera; }
 
 	/// <summary>
+	/// 空を変えす
+	/// </summary>
+	/// <returns></returns>
+	Sky* GetSky()& { return sky; }
+
+	/// <summary>
 	/// バレットマネージャーを返す
 	/// </summary>
 	/// <returns></returns>
@@ -89,6 +96,7 @@ private:
 
 	Player* player;
 	Camera* camera;
+	Sky* sky;
 
 	BulletManager* bulletManager;
 	EffectManager* effectManager;

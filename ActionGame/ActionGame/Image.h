@@ -119,6 +119,13 @@ public:
 	int GetEffectH(int index)const;
 
 	/// <summary>
+	/// 空の画像を返す
+	/// </summary>
+	/// <param name="index">インデックス</param>
+	/// <returns></returns>
+	int GetSkyH(int index)const;
+
+	/// <summary>
 	/// タイトル画像を返す
 	/// </summary>
 	/// <returns></returns>
@@ -135,6 +142,8 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	int GetGameOverH()const { return gameOverH; }
+
+
 
 private:
 	
@@ -185,6 +194,8 @@ private:
 
 
 	//ーーーー1枚絵
+	// 	//空の画像
+	std::array<int, 2> skyH;
 	//タイトル画面
 	int titleH;
 	//タイトル画面の地面

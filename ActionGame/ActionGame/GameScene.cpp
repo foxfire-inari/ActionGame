@@ -3,6 +3,7 @@
 #include"CsvFile.h"
 #include"Player.h"
 #include"Camera.h"
+#include"Sky.h"
 #include "BulletManager.h"
 #include "EffectManager.h"
 #include "EnemyManager.h"
@@ -53,6 +54,8 @@ bool GameScene::Update()
 void GameScene::Draw()
 {
 	F_Vec2 camDif = common->GetCamera()->GetTarget();
+
+	common->GetSky()->Draw(camDif);
 
 	common->GetPlayer()->Draw(camDif);
 

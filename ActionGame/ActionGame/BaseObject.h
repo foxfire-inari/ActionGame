@@ -75,6 +75,7 @@ public:
 		EFFECT,				//エフェクト
 		BULLET,				//弾
 		WARP,				//ワープ
+		SKY,				//空
 	};
 
 protected:

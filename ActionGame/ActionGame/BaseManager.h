@@ -50,7 +50,7 @@ public:
 	/// </summary>
 	enum E_CSV_KND
 	{
-		CSV_SKY = 0,		//何も置かない(背景)
+		CSV_SKY = 0,		//空
 		CSV_BLOCK_WALL,		//壁等のブロック
 		CSV_BLOCK_GRASS,	//足場になるブロック
 		CSV_PLAYER,			//プレイヤー
