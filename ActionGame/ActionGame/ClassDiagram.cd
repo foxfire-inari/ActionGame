@@ -37,7 +37,7 @@
   <Class Name="CommonObjectAndManager" Collapsed="true">
     <Position X="9.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAwAgAIBggAAggABAYEAIAACEAAAAAAFAIAgAAAAAAA=</HashCode>
+      <HashCode>gAwAgQIBggAAggABAYEAIAACEAAAAAAFAIAgABAAAAA=</HashCode>
       <FileName>CommonObjectAndManager.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -72,7 +72,7 @@
   <Class Name="Image" Collapsed="true">
     <Position X="3" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIBAQACQQEAAAiAAgCGIAEIAAAhABoAACAAICUABIQ=</HashCode>
+      <HashCode>AAIBEQACUQEAAAiEAgCGIAEIAAAhABsAACAAMCUEBIQ=</HashCode>
       <FileName>Image.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -163,7 +163,7 @@
   <Class Name="Bullet" Collapsed="true">
     <Position X="22.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAQADAAIAIAAggAAAIAAAAAgAAECAQAEAAAAAAASAgA=</HashCode>
+      <HashCode>gAQADAAIAIAAggAAAIAAAAAgEAECAQAEAAAAAAASAgA=</HashCode>
       <FileName>Bullet.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -191,7 +191,7 @@
   <Class Name="MetalMan" Collapsed="true">
     <Position X="31" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>KAQAAAAABQEUBggCAEAAAAAAEIAACAKgKCBEQIAAAAg=</HashCode>
+      <HashCode>KAQAAAAABQEUBggCAEAAAAAAEIAACAKgaCBEQIAAAAg=</HashCode>
       <FileName>MetalMan.h</FileName>
     </TypeIdentifier>
   </Class>

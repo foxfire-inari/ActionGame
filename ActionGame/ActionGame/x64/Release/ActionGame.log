@@ -1,9 +1,4 @@
-﻿  Animation.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.h(55,33): warning C4244: 'return': 'const float' から 'int' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Animation.cpp' をコンパイルしています)
-  
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.cpp(38,12): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-  BallBullet.cpp
+﻿  BallBullet.cpp
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
   (ソース ファイル 'BallBullet.cpp' をコンパイルしています)
   
@@ -94,7 +89,6 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Co
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.h(55,33): warning C4244: 'return': 'const float' から 'int' への変換です。データが失われる可能性があります。
   (ソース ファイル 'Chara.cpp' をコンパイルしています)
   
-  CollisionData.cpp
   CollisionManager.cpp
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
   (ソース ファイル 'CollisionManager.cpp' をコンパイルしています)
@@ -115,10 +109,6 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Co
   
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.h(55,33): warning C4244: 'return': 'const float' から 'int' への変換です。データが失われる可能性があります。
   (ソース ファイル 'CommonObjectAndManager.cpp' をコンパイルしています)
-  
-  CsvFile.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'CsvFile.cpp' をコンパイルしています)
   
   Effect.cpp
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
@@ -146,7 +136,6 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Co
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.h(55,33): warning C4244: 'return': 'const float' から 'int' への変換です。データが失われる可能性があります。
   (ソース ファイル 'Enemy.cpp' をコンパイルしています)
   
-  コンパイル中...
   EnemyManager.cpp
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
   (ソース ファイル 'EnemyManager.cpp' をコンパイルしています)
@@ -154,11 +143,6 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Co
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.h(55,33): warning C4244: 'return': 'const float' から 'int' への変換です。データが失われる可能性があります。
   (ソース ファイル 'EnemyManager.cpp' をコンパイルしています)
   
-  Fall.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Fall.cpp' をコンパイルしています)
-  
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Fall.cpp(24,29): warning C4305: '初期化中': 'double' から 'float' へ切り詰めます。
   GameMaster.cpp
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
   (ソース ファイル 'GameMaster.cpp' をコンパイルしています)
@@ -173,20 +157,12 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Co
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.h(55,33): warning C4244: 'return': 'const float' から 'int' への変換です。データが失われる可能性があります。
   (ソース ファイル 'GameScene.cpp' をコンパイルしています)
   
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\GameScene.cpp(132,39): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  Gravity.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'Gravity.cpp' をコンパイルしています)
-  
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\GameScene.cpp(135,39): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  コンパイル中...
   Image.cpp
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
   (ソース ファイル 'Image.cpp' をコンパイルしています)
   
-  KeyControlle.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'KeyControlle.cpp' をコンパイルしています)
-  
-  Life.cpp
   MetalBullet.cpp
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
   (ソース ファイル 'MetalBullet.cpp' をコンパイルしています)
@@ -209,7 +185,7 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Me
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(102,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(101,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(100,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(338,25): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Metall.cpp(339,25): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
   MetalMan.cpp
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
   (ソース ファイル 'MetalMan.cpp' をコンパイルしています)
@@ -217,16 +193,12 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Co
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.h(55,33): warning C4244: 'return': 'const float' から 'int' への変換です。データが失われる可能性があります。
   (ソース ファイル 'MetalMan.cpp' をコンパイルしています)
   
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(114,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(113,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(112,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(111,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(126,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(125,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(124,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(123,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(135,35): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(295,46): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(122,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(121,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(120,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(146,35): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\MetalMan.cpp(321,46): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
   NormalBullet.cpp
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
   (ソース ファイル 'NormalBullet.cpp' をコンパイルしています)
@@ -260,8 +232,13 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Co
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.h(55,33): warning C4244: 'return': 'const float' から 'int' への変換です。データが失われる可能性があります。
   (ソース ファイル 'PositionSetter.cpp' をコンパイルしています)
   
-  SceneChange.cpp
-  State.cpp
+  Sky.cpp
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Sky.cpp' をコンパイルしています)
+  
+C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.h(55,33): warning C4244: 'return': 'const float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Sky.cpp' をコンパイルしています)
+  
   Terry.cpp
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
   (ソース ファイル 'Terry.cpp' をコンパイルしています)
@@ -309,7 +286,6 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Wa
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\WarpObject.cpp(64,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\WarpObject.cpp(63,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\WarpObject.cpp(62,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  コンパイル中...
   Waveout.cpp
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Animation.h(55,33): warning C4244: 'return': 'const float' から 'int' への変換です。データが失われる可能性があります。
   (ソース ファイル 'Waveout.cpp' をコンパイルしています)
@@ -318,14 +294,9 @@ C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Co
   (ソース ファイル 'Waveout.cpp' をコンパイルしています)
   
 C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Waveout.cpp(80,39): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  ソース.cpp
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\Common.h(160,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-  (ソース ファイル 'ソース.cpp' をコンパイルしています)
-  
-C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\ActionGame\ソース.cpp(8,39): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
   コード生成しています。
-  1643 of 1662 functions (98.9%) were compiled, the rest were copied from previous compilation.
-    16 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+  61 of 1670 functions ( 3.7%) were compiled, the rest were copied from previous compilation.
+    8 functions were new in current compilation
+    56 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   ActionGame.vcxproj -> C:\Users\G2217\Desktop\プログラム\Dxlib\ActionGame\ActionGame\x64\Release\ActionGame.exe
