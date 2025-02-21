@@ -18,6 +18,7 @@ private:
 	int titleH;
 	int playerH;
 	int groundH;
+	int skyH;
 
 	bool isStart;//スタートしたか
 	int startCount;//スタートしてからのカウント

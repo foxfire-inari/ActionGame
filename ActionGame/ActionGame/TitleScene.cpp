@@ -86,6 +86,16 @@ bool TitleScene::Update()
 
 void TitleScene::Draw()
 {
+	//背景範囲
+	DrawExtendGraph
+	(
+		0, 0,
+		WINDOW_X,
+		WINDOW_Y,
+		skyH,
+		true
+		);
+
 	//タイトル範囲
 	DrawExtendGraph
 	(
@@ -111,10 +121,10 @@ void TitleScene::Draw()
 	//プレイヤー
 	DrawExtendGraph
 	(
-		BLOCK_SIZE * 12		,
-		BLOCK_SIZE * 7.5f	,
+		BLOCK_SIZE * 12,
+		BLOCK_SIZE * 7.5f,
 		BLOCK_SIZE * 12 + 64,
-		BLOCK_SIZE * 9		, 
+		BLOCK_SIZE * 9,
 		playerH,
 		true
 	);
@@ -139,4 +149,5 @@ void TitleScene::SetImageH()
 
 	titleH  = Image::GetInstance()->GetTitleH();
 	groundH = Image::GetInstance()->GetTitleGroundH();
+	skyH = Image::GetInstance()->GetTitleSkyH();
 }

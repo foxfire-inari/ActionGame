@@ -151,7 +151,7 @@ Image::Image()
 	}
 	
 	//空
-	skyH.at(0) = LoadGraph("Data/Image/Sky/グレイシア.png");
+	skyH.at(0) = LoadGraph("Data/Image/Sky/title.png");
 
 
 	//タイトル
@@ -160,6 +160,9 @@ Image::Image()
 
 	titleGroundH = LoadGraph("Data/Image/Title/ground.png");
 	assert(titleGroundH > 0);
+
+	titleSkyH = LoadGraph("Data/Image/Title/sky.png");
+	assert(titleSkyH > 0);
 
 	//ゲームオーバー
 	gameOverH = LoadGraph("Data/Image/GameOver/gameover.png");

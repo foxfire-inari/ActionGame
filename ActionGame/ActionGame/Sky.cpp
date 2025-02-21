@@ -29,12 +29,10 @@ void Sky::Update()
 
 void Sky::Draw(F_Vec2 _camDif)
 {
-	DrawExtendGraph
+	DrawGraph
 	(
 		0,
 		0,
-		WINDOW_X,
-		WINDOW_Y,
 		imageH,
 		true
 	);

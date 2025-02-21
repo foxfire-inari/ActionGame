@@ -138,6 +138,12 @@ public:
 	int GetTitleGroundH()const { return titleGroundH; }
 
 	/// <summary>
+	/// タイトル画面の背景を返す
+	/// </summary>
+	/// <returns></returns>
+	int GetTitleSkyH()const { return titleSkyH; }
+
+	/// <summary>
 	/// ゲームオーバー画像を返す
 	/// </summary>
 	/// <returns></returns>
@@ -200,6 +206,8 @@ private:
 	int titleH;
 	//タイトル画面の地面
 	int titleGroundH;
+	//タイトル画面の背景
+	int titleSkyH;
 	//ゲームオーバー（一枚だけなのでint型）
 	int gameOverH;
 };
