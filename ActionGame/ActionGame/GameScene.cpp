@@ -10,6 +10,7 @@
 #include"BlockManager.h"
 #include"WarpManager.h"
 #include "Image.h"
+#include "BackGroundMusic.h"
 
 namespace
 {
@@ -25,6 +26,19 @@ GameScene::GameScene(SceneChange* sceneChange, std::string _nowMapName, std::str
 
 	//マップの生成情報
 	std::string fileName = "Data/Csv/" + nowMapName + ".csv";
+
+	//Bossという文字列が存在するならBass用のBGMを流す
+	if (nowMapName.find("Boss") != std::string::npos)
+	{
+		BackGroundMusic::GetInstance()
+			->PlayBGM(BackGroundMusic::E_BGM_KND::BOSS);
+	}
+	else   //無ければ通常のBGM
+	{
+		BackGroundMusic::GetInstance()
+			->PlayBGM(BackGroundMusic::E_BGM_KND::MAP_01);
+	}
+
 
 	std::vector<std::vector<std::string>> information =
 		CsvFile::GetInstance()->Input(fileName.c_str());

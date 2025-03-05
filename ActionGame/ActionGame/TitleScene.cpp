@@ -1,5 +1,6 @@
 #include "TitleScene.h"
 #include "Image.h"
+#include "BackGroundMusic.h"
 #include "KeyControlle.h"
 namespace
 {
@@ -47,6 +48,8 @@ TitleScene::TitleScene(SceneChange* sceneChange)
 	std::vector<std::vector<std::string>> information = {};
 	common = new CommonObjectAndManager{ this ,information };
 
+	BackGroundMusic::GetInstance()
+		->PlayBGM(BackGroundMusic::E_BGM_KND::TITLE);
 }
 TitleScene::~TitleScene()
 {
