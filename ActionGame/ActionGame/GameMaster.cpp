@@ -3,7 +3,6 @@
 //シングルトンクラス
 #include "KeyControlle.h"
 #include "Image.h"
-#include "BackGroundMusic.h"
 
 //全てのシーンをインクルード
 #include "TitleScene.h"
@@ -14,7 +13,6 @@ GameMaster::GameMaster()
 	//シングルトンクラスを作成
 	KeyControlle::Create();
 	Image::Create();
-	BackGroundMusic::Create();
 
 	//最初のシーンを追加
 	TitleScene* title = new TitleScene{ this};
@@ -39,7 +37,6 @@ GameMaster::~GameMaster()
 	//シングルトンクラスをデリート
 	KeyControlle::Destroy();
 	Image::Destroy();
-	BackGroundMusic::Destroy();
 }
 
 

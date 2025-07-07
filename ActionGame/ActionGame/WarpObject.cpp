@@ -3,6 +3,11 @@
 
 namespace
 {
+	//アニメーションの合計フレーム数
+	static const int ANIM = 48;
+	//一枚ごとのフレーム数
+	static const int ONE_FRAME = ANIM / 4;
+
 	//コリジョン
 	static const float COL_TOP   = -BLOCK_SIZE / 2;
 	static const float COL_UNDER =  BLOCK_SIZE / 2;
@@ -31,12 +36,10 @@ WarpObject::~WarpObject()
 
 void WarpObject::Update()
 {
-	static const int ANIM = 48;
-
 	//アニメーションの設定
 	{
 		animation->AddAnimCount(1);
-		int animNum = animation->GetAnimation(ANIM, ANIM / 4);
+		int animNum = animation->GetAnimation(ANIM,ONE_FRAME);
 		imageH = Image::GetInstance()->GetWarpH(animNum);
 	}
 }
@@ -54,6 +57,7 @@ void WarpObject::Draw(F_Vec2 _camDif)
 		imageH,
 		true
 	);
+#ifdef _DEBUG
 
 	///デバッグ用
 	//判定の可視化
@@ -63,9 +67,8 @@ void WarpObject::Draw(F_Vec2 _camDif)
 		drawpos.y - _camDif.y + collisionData->GetTop(),
 		drawpos.x - _camDif.x + collisionData->GetRight(),
 		drawpos.y - _camDif.y + collisionData->GetUnder(),
-		GetColor(255, 255, 255),
+		GetColor(255, 255, 255),	//デバッグ用なのでマジックナンバーのまま
 		false
 	);
-
-
+#endif  _DEBUG
 }

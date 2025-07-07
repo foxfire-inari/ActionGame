@@ -3,6 +3,14 @@
 #include"Image.h"
 #include"EffectManager.h"
 
+namespace
+{
+	//飛び散るエフェクトの生存時間
+	static const int DEFFUSION_FRAME = FPS * 5;
+	//比較する速度
+	static const float VELOCITY_DIF = 0.5f;
+}
+
 Effect::Effect(BaseScene* baseScene, EffectManager* _effectManager)
 	:BaseObject{ baseScene,BaseObject::E_TAG::EFFECT }
 	, maxFrame{ 0 }
@@ -22,11 +30,6 @@ Effect::~Effect()
 
 void Effect::Update()
 {
-	//飛び散るエフェクトの生存時間
-	static const int DEFFUSION_FRAME = FPS * 5;
-	//比較する速度
-	static const float VELOCITY_DIF = 0.5f;
-
 	animation->AddAnimCount(1);
 	int animNum = animation->GetAnimation(maxFrame, oneImageFrame);
 	animation->SetAnimNum(animNum);

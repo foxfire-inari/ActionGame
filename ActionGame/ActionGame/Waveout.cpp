@@ -12,6 +12,20 @@ namespace
 	static const float MAKE_WAVE_NUM = WINDOW_X / 2.0f;
 	//波のカウントを増やす量
 	static const float ADD_WAVE_COUNT = 1.f;
+
+	//アニメーションの合計フレーム数
+	static const int ANIM = 48;
+	//一枚ごとのフレーム数
+	static const int ONE_FRAME = ANIM / 4;
+
+	//画像の一ドット
+	static const int ONEDOT = 1;
+	//画像の左端
+	static const int LEFT_EDGE = 0;
+
+	//アルファ値の最大
+	static const int MAX_ALPHA = 255;
+
 }
 
 Waveout::Waveout(float _waitSecond, float _addVal)
@@ -36,19 +50,21 @@ Waveout::~Waveout()
 void Waveout::Update()
 {
 
-	static const int ANIM = 48;
 
 	//アニメーションの設定
 	{
 		animation->AddAnimCount(1);
-		int animNum = animation->GetAnimation(ANIM, ANIM / 4);
+		int animNum = animation->GetAnimation(ANIM, ONE_FRAME);
 		imageH = Image::GetInstance()->GetWaveH(animNum);
 	}
+
+	//波の揺れとアルファ値の変更
 
 	waveCount += ADD_WAVE_COUNT;
 
 	oldAlpha = alpha;
 
+	//どの方向にずらすか
 	if (isReversal)
 	{
 		alpha -= addVal;
@@ -76,7 +92,6 @@ void Waveout::Update()
 
 void Waveout::Draw()
 {
-
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);
 
 	for (int i = 0; i < WINDOW_Y; i++)
@@ -86,7 +101,7 @@ void Waveout::Draw()
 		area += WAVE_SIZE;
 
 		//画面内のXY座標、imageHの中のXY座標、imageHの中の描画したい範囲、imageH
-		DrawRectGraph(0, i, area, i, WINDOW_X, 1, imageH, false);
+		DrawRectGraph(LEFT_EDGE, i, area, i, WINDOW_X, ONEDOT, imageH, false);
 	}
 
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
@@ -101,9 +116,9 @@ void Waveout::SetIsReversal(bool _isReversal)
 
 bool Waveout::GetNowMaxAlpha() const
 {
-	if (alpha < 255)return false;
+	if (alpha < MAX_ALPHA)return false;
 
-	if (alpha >= 255 && oldAlpha < 255)return true;
+	if (alpha >= MAX_ALPHA && oldAlpha < MAX_ALPHA)return true;
 
 	return false;
 }

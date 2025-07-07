@@ -7,12 +7,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	ChangeWindowMode(TRUE);	//ウィンドウモードにする
 	SetGraphMode(WINDOW_X, WINDOW_Y, 32, FPS);	//ウィンドウサイズを設定する
 
-	if (DxLib_Init() == -1)		// ＤＸライブラリ初期化処理
-	{
-		return -1;			// エラーが起きたら直ちに終了
-	}
+	if (DxLib_Init() == DX_ERROR)	return DX_ERROR;	//エラーで強制終了
+
 	SetDrawScreen(DX_SCREEN_BACK);	//裏画面を描画対象へ
-	GameMaster* GM = new GameMaster;
+
+	GameMaster* GM = new GameMaster;	//GMを生成
+	
 	//メイン処理
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0) {
 		ScreenFlip();		//裏画面と表画面の入替

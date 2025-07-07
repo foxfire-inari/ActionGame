@@ -40,8 +40,42 @@ namespace
 	static const int STATE_DAMAGE = 4;
 	static const int STATE_DEATH = 5;
 	static const int STATE_NEXT_MAP_WAIT = 6;
-	
+
+	static const int ANIM = 48;
+	static const int ONE_FRAME = ANIM;
+
+	//落下速度が早いかの基準値
+	static const float FAST_FALL = -5.f;
+
+	//攻撃を終了するフレーム
+	static const int MAX_SHOT_FRAME = 12;
+	//弾を撃つまでの遅延
+	static const int SHOT_DELAY = 1;
+
+	//のけぞり時間
+	static const int MAX_DAMAGE_FRAME = 60;
+
+	//ゲームオーバー後の時間
+	static const int GAME_OVER_FRAME = Life::DEATH_EFFECT_FRAME + 120;
+	//波を描画するまでの時間
+	static const float WAIT_TIME = 1.f;
+	//波が濃くなる速度
+	static const float WAVEOUT_SPEED = 4.f;
+
+	//小ジャンプの上限時間
+	static const int MAX_LITTLE_JUMP_FRAME = 6;
+
+	//のけぞる速度
+	static const float DAMAGE_VEL_SIZE = 1.f;
+
+	//無敵時間
+	static const int MAX_INVINCIBLE_FRAME = 120;
+
+	//移動時の加速度
+	static const float ACCELERATION_SPEED = 0.5f;
+
 }
+
 
 Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info)
 	:Chara{ baseScene,MAX_HP,COL_TOP,COL_UNDER,COL_LEFT,COL_RIGHT,BaseObject::E_TAG::PLAYER }
@@ -53,7 +87,6 @@ Player::Player(BaseScene* baseScene, std::vector<std::vector<std::string>> _info
 	, inputRight{ 0 }
 	, inputDown{ 0 }
 	, sideShotAngle{ 1 }//プレイヤーの最初の向きに準ずる
-	, allShotAngle{ PI / 2 }
 	, moveSpeed{ 0 }
 	, moveAngle{ 1 }//右向きで生成
 	, isInvincible{ false }
@@ -151,15 +184,19 @@ void Player::Update()
 
 void Player::Draw(F_Vec2 _camDif)
 {
+	//ダメージを受けた時の透明化判定
+	bool DamageInv = damageCount % 10 <= 3;
 	//無敵なら点滅
-	if (isInvincible && damageCount % 10 <= 3)
+	if (isInvincible && DamageInv)
 		return;
 
 	//死んだら映さない
 	if (deathCount > Life::DEATH_FRAME)return;
 
+	//描画の座標
 	F_Vec2 drawpos = GetPosition();
 
+	//プレイヤーの描画
 	DrawExtendGraph
 	(
 		drawpos.x - _camDif.x + IMG_LEFT,
@@ -211,10 +248,10 @@ std::string Player::GoNextMap()
 	//次のマップの名前を取得する
 	std::string nextMapName = warpManager->GetNextMapName(this, collisionData);
 
-	if (nextMapName != "")
-	{
-		state->SetNextState("NextMapWait");
-	}
+	//次のステージの名前があるか
+	assert(nextMapName != "");
+
+	state->SetNextState("NextMapWait");
 
 	//次のマップ名を返す
 	return nextMapName;
@@ -230,8 +267,6 @@ void Player::SetCameraTarget()
 	camPos.y = min(camPos.y, camera->GetMaxPosY());
 
 	camera->SetTarget(camPos);
-
-
 }
 
 void Player::UpdateIdle()
@@ -244,19 +279,17 @@ void Player::UpdateIdle()
 		imageH = Image::GetInstance()->GetPlayerIdleH(angImage);
 	}
 
-	//何らかの方向キーが押されていたら歩き始める
-	for (int i = 0; i < 4; i++)
+	//左右キーが押されていたら歩き始める
+	for (int i = 2; i < 4; i++)
 	{
 		if (KeyControlle::GetInstance()->GetPressingFrame(i))
 			StartRun();
 	}
 
-
 	JumpStart();
 	AttackStart();
 	GetItem();
 	DamageStart();
-
 }
 
 void Player::UpdateRun()
@@ -272,9 +305,8 @@ void Player::UpdateRun()
 
 	//アニメーションの設定
 	{
-		static const int ANIM = 48;
 		int angImage = animation->GetAngleImage(0, 4, moveAngle);
-		int animNum = animation->GetAnimation(ANIM, ANIM / 4);
+		int animNum = animation->GetAnimation(ANIM, ONE_FRAME);
 		imageH = Image::GetInstance()->GetPlayerWalkH(animNum + angImage);
 	}
 
@@ -288,8 +320,6 @@ void Player::UpdateRun()
 void Player::UpdateJump()
 {
 	SetInputAngle();
-
-	static const float FAST_FALL = -5.f;
 
 	bool isMove = Move(WALK_SPEED);
 	if (!isMove)MoveDeceletation();
@@ -323,16 +353,10 @@ void Player::UpdateAttack()
 {
 	shotCount++;
 
-	//攻撃を終了するフレーム
-	static const int MAX_SHOT_FRAME = 12;
-	//弾を撃つまでの遅延
-	static const int SHOT_DELAY = 1;
-
 	if (shotCount >= MAX_SHOT_FRAME)
 	{
 		//shotCountはリセット
 		shotCount = 0;
-
 
 		//もし空中にいたらステートはジャンプ
 		if (!fall->GetIsOnGround())
@@ -364,9 +388,9 @@ void Player::UpdateAttack()
 	if (!isRun)
 		MoveDeceletation();
 
+	//遅延してから撃つ
 	if (shotCount == SHOT_DELAY)
 	{
-
 		Attack();
 	}
 
@@ -376,9 +400,7 @@ void Player::UpdateAttack()
 
 void Player::UpdateDamage()
 {
-	static const int MAX_DAMAGE_FRAME = 60;
-
-	//地面につくかMAX_DAMAGE_FRAMEたったらステートをIdleにする
+	//MAX_DAMAGE_FRAMEたったらステートをIdleにする
 	if (damageCount >= MAX_DAMAGE_FRAME)
 	{
 		//それ以外ならIdleへ
@@ -395,10 +417,6 @@ void Player::UpdateDamage()
 
 void Player::UpdateDeath()
 {
-	static const int GAME_OVER_FRAME = Life::DEATH_EFFECT_FRAME + 120;
-	static const float WAIT_TIME = 1.f;
-	static const float BLACKOUT_SPEED = 4.f;
-
 	deathCount++;
 
 	//死亡カウントがDEATH_EFFECT_FRAMEになったらエフェクト生成
@@ -411,7 +429,7 @@ void Player::UpdateDeath()
 	//死亡カウントがGAME_OVER_FRAMEになったら画面を埋め始める
 	if (deathCount >= GAME_OVER_FRAME && waveout == nullptr)
 	{
-		waveout = new Waveout{ WAIT_TIME,BLACKOUT_SPEED };
+		waveout = new Waveout{ WAIT_TIME,WAVEOUT_SPEED };
 	}
 
 	//画面が埋まったらisGameOverをtrueにする
@@ -443,8 +461,7 @@ void Player::UpdateNextMapWait()
 
 void Player::JumpStart()
 {
-	static const int MAX_LITTLE_JUMP_FRAME = 6;
-
+	//地面に立っているか
 	if (!fall->GetIsOnGround())
 	{
 		if (jumpCount != 0)jumpCount = 0;
@@ -477,14 +494,10 @@ void Player::JumpStart()
 		velocity.y = JUMP_POWER;
 		jumpCount = 0;
 	}
-
-
 }
 
 void Player::DamageStart()
 {
-	static const float DAMAGE_VEL_SIZE = 1.f;
-
 	//無敵なら判定をしない
 	if (isInvincible)return;
 
@@ -525,7 +538,6 @@ void Player::DamageStart()
 	jumpCount = 0;
 	isInvincible = true;
 	state->SetNextState("Damage");
-
 }
 
 void Player::DeathStart()
@@ -534,7 +546,6 @@ void Player::DeathStart()
 	damageCount = 0;
 	life->SetIsDeath(true);
 	state->SetNextState("Death");
-
 }
 
 void Player::FallStart()
@@ -561,8 +572,7 @@ void Player::AttackStart()
 
 void Player::Invincible()
 {
-	static const int MAX_INVINCIBLE_FRAME = 120;
-
+	//無敵時間を過ぎているかどうか
 	if (isInvincible)
 	{
 		damageCount++;
@@ -579,29 +589,16 @@ void Player::SetInputAngle()
 	if (KeyControlle::GetInstance()->GetPressingFrame(E_KEY::LEFT))		inputRight = -1;
 	if (KeyControlle::GetInstance()->GetPressingFrame(E_KEY::RIGHT))	inputRight = 1;
 
-	//allShotAngleを更新
-	if (inputRight != 0 || inputDown != 0)
-	{
-		//座標から傾きθを求める
-		allShotAngle = atan2f(static_cast<float>(inputRight), static_cast<float>(inputDown));
-	}
-	else
-	{
-		allShotAngle = allShotAngle > 0 ? PI / 2 : -PI / 2;
-	}
-
 	//sideShotAngleを更新
 	sideShotAngle = inputRight != 0 ? static_cast<float>(inputRight) : sideShotAngle;
-
-
 }
 
 bool Player::Move(float speed)
 {
-	//加速度
-	static const float ACCELERATION_SPEED = 0.5f;
+	//左右方向に移動が入力されているか
 	if (inputRight != 0)
 	{
+		//速度を加算後、進行方向に向ける
 		moveAngle = inputRight;
 		if (moveSpeed < speed)
 			moveSpeed += ACCELERATION_SPEED;
@@ -643,7 +640,7 @@ void Player::Attack()
 	{
 		static_cast<float>(sideShotAngle),
 		//NormalBulletは左右にのみ移動するのでYは0にしておく
-		0//cosf(inputAngle)
+		0
 	};
 
 	bulletManager->SetState(genPos, genVec,

@@ -33,6 +33,20 @@ namespace
 
 	//移動し続けるフレーム数
 	static const int MOVE_FRAME = FPS;
+
+	//アニメーションの合計フレーム数
+	static const int ANIM = 48;
+	//一枚ごとのフレーム数
+	static const int ONE_FRAME = ANIM / 4;
+
+	//進行方向
+	static const float LEFT_ANGLE = PI;
+	static const float RIGHT_ANGLE = 0.f;
+	static const float DOWN_ANGLE = PI / 2;
+	static const float UP_ANGLE = -PI / 2;
+
+	static const int DAMAGE_MAX_FRAME = 6;
+
 }
 
 Terry::Terry(BaseScene* baseScene, BulletManager* bulletManager, EffectManager* _effectManager,
@@ -97,8 +111,7 @@ void Terry::UpdateRun()
 {
 	//アニメーションの設定
 	{
-		static const int ANIM = 48;
-		int animNum = animation->GetAnimation(ANIM, ANIM / 4);
+		int animNum = animation->GetAnimation(ANIM,ONE_FRAME);
 		imageH = Image::GetInstance()->GetTerryH(animNum);
 	}
 
@@ -115,19 +128,19 @@ void Terry::UpdateRun()
 		//速度に違いが出ないようにベクトルの向きを上下左右の四方向に固定
 		if (fabsf(moveAngle) > 3 * PI / 4)
 		{
-			moveAngle = PI;//左
+			moveAngle = LEFT_ANGLE;//左
 		}
 		else if (fabsf(moveAngle) < PI / 4)
 		{
-			moveAngle = 0.f;//右
+			moveAngle = RIGHT_ANGLE;//右
 		}
 		else if (moveAngle > 0)
 		{
-			moveAngle = PI / 2;//下
+			moveAngle = DOWN_ANGLE;//下
 		}
 		else
 		{
-			moveAngle = -PI / 2;//上
+			moveAngle = UP_ANGLE;//上
 		}
 
 		//進む方向を計算
@@ -144,7 +157,6 @@ void Terry::UpdateRun()
 
 void Terry::UpdateDamage()
 {
-	static const int DAMAGE_MAX_FRAME = 6;
 	damageCount++;
 	if (damageCount >= DAMAGE_MAX_FRAME)
 	{

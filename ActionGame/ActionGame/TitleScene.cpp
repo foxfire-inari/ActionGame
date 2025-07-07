@@ -1,9 +1,16 @@
 #include "TitleScene.h"
 #include "Image.h"
-#include "BackGroundMusic.h"
 #include "KeyControlle.h"
 namespace
 {
+	static const int MAX_STARTCOUNT = FPS * 3;
+	//アニメーションの加速量
+	static const float ADD_SPEED = 0.5f;
+
+	//背景の始点
+	static const int BACKGROUND_LEFT_EDGE = 0;
+	static const int BACKGROUND_TOP_EDGE = 0;
+	
 	//タイトルサイズ
 	static const int TITLE_TOP		= 0;
 	static const int TITLE_UNDER	= BLOCK_SIZE * 8;
@@ -16,18 +23,20 @@ namespace
 	static const float GROUND_LEFT	= BLOCK_SIZE * 10;
 	static const float GROUND_RIGHT	= BLOCK_SIZE * 16;
 
-	//プレイヤーのサイズ
-	static const float PLAYER_TOP	= BLOCK_SIZE * 12;
-	static const float PLAYER_UNDER = BLOCK_SIZE * 7.5f;
-	static const float PLAYER_LEFT	= BLOCK_SIZE * 12 + 64;
-	static const float PLAYER_RIGHT = BLOCK_SIZE * 9;
+	//プレイヤーの描画座標
+	static const float PLAYER_TOP	= BLOCK_SIZE * 7.5f;
+	static const float PLAYER_UNDER = BLOCK_SIZE * 9;
+	static const float PLAYER_LEFT = BLOCK_SIZE * 12;
+	static const float PLAYER_RIGHT = BLOCK_SIZE * 12 + 64;
 
 	//テキストの座標
 	static const float TEXT_TOP = BLOCK_SIZE * 4;
-	static const float TEXT_UNDER = BLOCK_SIZE * 9;
+	static const float TEXT_LEFT = BLOCK_SIZE * 9;
 
-	//プレイヤーのアニメーションの設定
+	//アニメーションの合計フレーム数
 	static const int ANIM = 48;
+	//一枚ごとのフレーム数
+	static const int ONE_FRAME = ANIM / 4;
 
 	//点滅のフレーム
 	static const int MAX_FRAME = 4;
@@ -48,8 +57,6 @@ TitleScene::TitleScene(SceneChange* sceneChange)
 	std::vector<std::vector<std::string>> information = {};
 	common = new CommonObjectAndManager{ this ,information };
 
-	BackGroundMusic::GetInstance()
-		->PlayBGM(BackGroundMusic::E_BGM_KND::TITLE);
 }
 TitleScene::~TitleScene()
 {
@@ -57,21 +64,18 @@ TitleScene::~TitleScene()
 
 bool TitleScene::Update()
 {
-	static const int MAX_STARTCOUNT = FPS * 3;
-
-	animation->AddAnimCount(0.5f);
+	animation->AddAnimCount(ADD_SPEED);
 	playerH = Image::GetInstance()->GetPlayerWalkH(animNum);
 
 	//入力でスタートする
 	if (KeyControlle::GetInstance()->GetNowPressing(E_KEY::ATTACK))
 	{
 		isStart = true;
-		//SoundEffect::GetInstance()->PlaySoundEffect(SoundEffect::E_SOUND_KND::DECISION);
 	}
 
 	if (isStart)
 	{
-		animation->AddAnimCount(0.5f);//加速させる
+		animation->AddAnimCount(ADD_SPEED);//加速させる
 
 		startCount++;
 		if (startCount >= MAX_STARTCOUNT)
@@ -82,7 +86,7 @@ bool TitleScene::Update()
 		}
 	}
 
-	animNum = animation->GetAnimation(ANIM, ANIM / 4);
+	animNum = animation->GetAnimation(ANIM, ONE_FRAME);
 
 	return false;
 }
@@ -92,7 +96,8 @@ void TitleScene::Draw()
 	//背景範囲
 	DrawExtendGraph
 	(
-		0, 0,
+		BACKGROUND_LEFT_EDGE,
+		BACKGROUND_TOP_EDGE,
 		WINDOW_X,
 		WINDOW_Y,
 		skyH,
@@ -124,10 +129,10 @@ void TitleScene::Draw()
 	//プレイヤー
 	DrawExtendGraph
 	(
-		BLOCK_SIZE * 12,
-		BLOCK_SIZE * 7.5f,
-		BLOCK_SIZE * 12 + 64,
-		BLOCK_SIZE * 9,
+		PLAYER_LEFT,
+		PLAYER_TOP,
+		PLAYER_RIGHT,
+		PLAYER_UNDER,
 		playerH,
 		true
 	);
@@ -139,8 +144,8 @@ void TitleScene::Draw()
 
 	//点滅させる文字
 	DrawString(
-		BLOCK_SIZE * 4,
-		BLOCK_SIZE * 9,
+		TEXT_TOP,
+		TEXT_LEFT,
 		"Push Shot Button",
 		GetColor(255, 255, 255)
 	);

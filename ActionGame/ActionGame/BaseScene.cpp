@@ -2,6 +2,14 @@
 #include "Player.h"
 #include "Camera.h"
 
+namespace
+{
+	//”g‚ÅŽžŠÔ
+	static const float WAVE_WAIT_SECOND = 1.2f;
+	//”g‚É‚µ‚Ä‚¢‚­’l
+	static const float WAVE_ADD_VALUE = 7.f;
+}
+
 BaseScene::~BaseScene()
 {
 	if (waveout != nullptr)delete waveout;
@@ -45,11 +53,6 @@ bool BaseScene::NextMapPlayer(std::string& nextMapName)
 	{
 		if (waveout == nullptr)
 		{
-			//”g‚ÅŽžŠÔ
-			static const float WAVE_WAIT_SECOND = 1.2f;
-			//”g‚É‚µ‚Ä‚¢‚­’l
-			static const float WAVE_ADD_VALUE = 7.f;
-
 			waveout = new Waveout{ WAVE_WAIT_SECOND,WAVE_ADD_VALUE };
 		}
 		else

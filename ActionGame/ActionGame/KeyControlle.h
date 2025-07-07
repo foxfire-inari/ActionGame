@@ -16,6 +16,14 @@ enum E_KEY
 	E_KEY_MAX
 };
 
+namespace
+{
+	/// <summary>
+	/// GetHitKeyStateAllで使うから256
+	/// </summary>
+	static const int KEY_NUM = 256;
+}
+
 /// <summary>
 /// キー入力を処理するシングルトンクラス
 /// </summary>
@@ -58,10 +66,7 @@ private:
 	/// </summary>
 	std::array<int, E_KEY_MAX> oldReInputValue;
 
-	/// <summary>
-	/// GetHitKeyStateAllで使うから256
-	/// </summary>
-	static const int KEY_NUM = 256;
+
 	/// <summary>
 	/// キーボードの状態
 	/// </summary>

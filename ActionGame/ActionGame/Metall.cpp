@@ -37,6 +37,31 @@ namespace
 
 	//探知範囲
 	static const float START_ATTACK_SIZE = 250.f;
+
+	//待機を終了するフレーム
+	static const int MAX_IDLE_FRAME = 120;
+	//球を打つまでのフレーム
+	static const int SHOT_FRAME = 30;
+	//移動を終了するフレーム
+	static const int MAX_RUN_FRAME = 90;
+
+	//アニメーションの開始地点　右
+	static const int ANIM_START_FRAME_RIGHT = 0;
+	//アニメーションの開始地点　左
+	static const int ANIM_START_FRAME_LEFT = 2;
+	//アニメーションの開始地点　左　待機状態
+	static const int ANIM_START_FRAME_LEFT_IDLE = 1;
+
+	static const int ANIM = SHOT_FRAME + 2;//ループしないように値を少し増やす
+	static const int ONE_FRAME = ANIM;
+
+	static const int DAMAGE_MAX_FRAME = 6;
+
+	//90度を計算に使うので先に宣言
+	static const float HALF_PI = PI / 2;
+	//上下に打ち分ける時の角度
+	static const float SIDE_PI = PI / 5;
+
 }
 
 Metall::Metall(BaseScene* baseScene, BulletManager* bulletManager, EffectManager* _effectManager, BaseObject* plBase, F_Vec2 pos, int knd)
@@ -136,12 +161,10 @@ void Metall::UpdateIdle()
 {
 	//アニメーションの設定
 	{
-		int angImage = animation->GetAngleImage(0, 1, moveAngle);
+		int angImage = animation->GetAngleImage(ANIM_START_FRAME_RIGHT, ANIM_START_FRAME_LEFT_IDLE, moveAngle);
 		imageH = Image::GetInstance()->GetMetallIdleH(angImage);
 	}
 
-	//待機を終了するフレーム
-	static const int MAX_IDLE_FRAME = 120;
 	if (moveCount >= MAX_IDLE_FRAME)
 	{
 		//プレイヤーが特定の距離以下かつ、弾がBULLET_NUM個あるか
@@ -154,14 +177,11 @@ void Metall::UpdateIdle()
 
 void Metall::UpdateAttack()
 {
-	//球を打つまでのフレーム
-	static const int SHOT_FRAME = 30;
 
 	//アニメーションの設定
 	{
-		static const int ANIM = SHOT_FRAME+2;//ループしないように値を少し増やす
-		int angImage = animation->GetAngleImage(0, 2, moveAngle);
-		int animNum = animation->GetAnimation(ANIM, ANIM / 2);
+		int angImage = animation->GetAngleImage(ANIM_START_FRAME_RIGHT, ANIM_START_FRAME_LEFT, moveAngle);
+		int animNum = animation->GetAnimation(ANIM, ONE_FRAME);
 		imageH = Image::GetInstance()->GetMetallUpH(animNum + angImage);
 	}
 
@@ -178,13 +198,10 @@ void Metall::UpdateRun()
 {
 	//アニメーションの設定
 	{
-		static const int ANIM = 30;
-		int angImage = animation->GetAngleImage(0, 2, moveAngle);
-		int animNum = animation->GetAnimation(ANIM, ANIM / 2);
+		int angImage = animation->GetAngleImage(ANIM_START_FRAME_RIGHT, ANIM_START_FRAME_LEFT, moveAngle);
+		int animNum = animation->GetAnimation(ANIM, ONE_FRAME);
 		imageH = Image::GetInstance()->GetMetallRunH(animNum + angImage);
 	}
-	//移動を終了するフレーム
-	static const int MAX_RUN_FRAME = 90;
 
 	if (moveCount >= MAX_RUN_FRAME)
 	{
@@ -213,7 +230,6 @@ void Metall::UpdateFall()
 
 void Metall::UpdateDamage()
 {
-	static const int DAMAGE_MAX_FRAME = 6;
 	damageCount++;
 	if (damageCount >= DAMAGE_MAX_FRAME)
 	{
@@ -314,10 +330,6 @@ bool Metall::IsCanShot()
 
 void Metall::Attack()
 {
-	//90度を計算に使うので先に宣言
-	static const float HALF_PI = PI / 2;
-	//上下に打ち分ける時の角度
-	static const float SIDE_PI = PI / 5;
 
 	F_Vec2 genPos = F_Vec2
 	{

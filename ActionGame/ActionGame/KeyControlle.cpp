@@ -54,7 +54,7 @@ int KeyControlle::GetPressingFrame(int keyCode)
 	{
 		return reInputValue[keyCode];
 	}
-	return -1;
+	return DX_ERROR;
 }
 
 bool KeyControlle::GetNowPressing(int keyCode)

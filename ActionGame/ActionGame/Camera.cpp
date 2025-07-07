@@ -48,7 +48,7 @@ Camera::~Camera()
 
 void Camera::SetTarget(F_Vec2 _target)
 {
-	target.x = _target.x - WINDOW_X / 2;
-	target.y = _target.y - WINDOW_Y / 2;
+	target.x = _target.x - WINDOW_MID_X;
+	target.y = _target.y - WINDOW_MID_Y;
 }
 

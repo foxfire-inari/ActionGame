@@ -9,6 +9,7 @@ CollisionManager::CollisionManager(BaseScene* baseScene)
 	, collisionProcessing{ nullptr }
 {
 }
+
 CollisionManager::~CollisionManager()
 {
 	if (collisionProcessing != nullptr)delete collisionProcessing;

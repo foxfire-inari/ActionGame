@@ -177,9 +177,6 @@
     <ClCompile Include="Sky.cpp">
       <Filter>Object</Filter>
     </ClCompile>
-    <ClCompile Include="BackGroundMusic.cpp">
-      <Filter>Singleton</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMaster.h">
@@ -313,9 +310,6 @@
     </ClInclude>
     <ClInclude Include="Sky.h">
       <Filter>Object</Filter>
-    </ClInclude>
-    <ClInclude Include="BackGroundMusic.h">
-      <Filter>Singleton</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

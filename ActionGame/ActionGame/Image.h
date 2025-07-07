@@ -200,7 +200,7 @@ private:
 
 
 	//ーーーー1枚絵
-	// 	//空の画像
+	//空の画像
 	std::array<int, 2> skyH;
 	//タイトル画面
 	int titleH;

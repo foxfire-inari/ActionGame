@@ -1,5 +1,10 @@
 #include "Fall.h"
 
+namespace
+{
+	static const float VEL_Y = 0.2;
+}
+
 Fall::Fall()
 	:isOnGround{ false }
 	, oldIsOnGround{ false }
@@ -21,7 +26,6 @@ void Fall::SetIsOnGround(bool _isOnGround)
 
 bool Fall::FallStart(F_Vec2& vel)
 {
-	static const float VEL_Y = 0.2;
 	if (isOnGround || !oldIsOnGround)return false;
 
 	// オブジェクトから下りた時にかかっていた

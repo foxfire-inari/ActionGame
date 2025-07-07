@@ -17,11 +17,19 @@ static const int BLOCK_SIZE = 42;
 static const int WINDOW_X = BLOCK_SIZE * 16;
 //ウィンドウサイズ縦
 static const int WINDOW_Y = BLOCK_SIZE * 13;
+
+//ウィンドウの中心
+static const int WINDOW_MID_X = WINDOW_X/2;
+static const int WINDOW_MID_Y = WINDOW_Y/2;
+
 //フレームレート
 static const float FPS = 60.f;
 
 //円周率
 static const float PI = 3.141592f;
+
+//エラー時の返り値
+static const int DX_ERROR = -1;
 
 //テンプレート構造体
 template <class Type>
@@ -157,7 +165,8 @@ using D_Vec2 = Vector2<double>;
 /// <returns>ベクトルの大きさ</returns>
 static float VSize(F_Vec2 _vec)
 {
+	//各軸の2乗を出す
 	float abs_val = std::pow(_vec.x, 2) + std::pow(_vec.y, 2);
-
+	//返り値は平方根
 	return sqrt(abs_val);
 }

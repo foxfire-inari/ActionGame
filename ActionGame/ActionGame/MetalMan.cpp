@@ -47,6 +47,17 @@ namespace
 	//探知範囲
 	static const float START_ATTACK_SIZE = 100.f;
 
+	static const int ANIM = 48;
+	static const int ONE_FRAME = ANIM;
+
+	//攻撃一回分の全体フレーム
+	static const int MAX_SHOT_FRAME = 35;
+	//弾を撃つまでの遅延
+	static const int SHOT_DELAY = 10;
+
+	//無敵時間
+	static const int MAX_INVINCIBLE_FRAME = FPS / 2;
+
 }
 
 MetalMan::MetalMan(BaseScene* baseScene, BulletManager* bulletManager, EffectManager* _effectManager, BaseObject* plBase, F_Vec2 pos, int knd)
@@ -106,8 +117,11 @@ void MetalMan::Update()
 
 void MetalMan::Draw(F_Vec2 _camDif)
 {
+	//ダメージを受けた時の透明化判定
+	bool DamageInv = damageCount % 10 <= 3;
+
 	//無敵なら点滅
-	if (isInvincible && damageCount % 10 <= 3)
+	if (isInvincible && DamageInv)
 		return;
 
 	//死んだら映さない
@@ -147,9 +161,8 @@ void MetalMan::UpdateIdle()
 
 	//アニメーションの設定
 	{
-		static const int ANIM = 48;
 		int angImage = animation->GetAngleImage(0, 4, moveAngle);
-		int animNum = animation->GetAnimation(ANIM, ANIM / 4);
+		int animNum = animation->GetAnimation(ANIM, ONE_FRAME);
 		imageH = Image::GetInstance()->GetMetalManIdleH(animNum + angImage);
 	}
 
@@ -190,11 +203,6 @@ void MetalMan::UpdateJump()
 
 void MetalMan::UpdateAttack()
 {
-	//攻撃一回分の全体フレーム
-	static const int MAX_SHOT_FRAME = 35;
-	//弾を撃つまでの遅延
-	static const int SHOT_DELAY = 10;
-
 	//着陸したらIdleに変更
 	if (fall->GetIsOnGround())
 	{
@@ -318,8 +326,7 @@ void MetalMan::DeathStart()
 
 void MetalMan::Invincible()
 {
-	static const int MAX_INVINCIBLE_FRAME = FPS / 2;
-
+	//無敵時間を過ぎているかどうか
 	if (isInvincible)
 	{
 		damageCount++;

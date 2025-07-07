@@ -79,7 +79,6 @@ private:
 	float moveSpeed;	//ˆÚ“®‘¬“x
 	
 	int sideShotAngle;	//•Ší‚Ì”­Ë•ûŒü
-	float allShotAngle;	//“ü—ÍŠp“x(‘Å‚¿•ª‚¯•Ší—p)
 
 	/// <summary>
 	/// –³“G‚©

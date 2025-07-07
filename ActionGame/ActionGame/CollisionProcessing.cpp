@@ -9,6 +9,10 @@ namespace
 	/// ”»’è‚·‚é‹——£
 	/// </summary>
 	static const float HIT_CHECK_DIF = 100.0f;
+
+	//‚ß‚è‚İ•â³
+	static const float IN_DIF = 0.5f;
+
 }
 
 CollisionProcessing::CollisionProcessing(std::list<CollisionObject*>& _colObjectList)
@@ -152,8 +156,6 @@ bool CollisionProcessing::IsNearDistance(F_Vec2 objPos, F_Vec2 listPos, float di
 
 bool CollisionProcessing::IsInBlock(CollisionData* objCol, CollisionData* listCol)
 {
-	//‚ß‚è‚İ•â³
-	static const float IN_DIF = 0.5f;
 	//Še•Ó‚Ì”»’è‚ğæ‚é
 	return (
 		//listã•Ó<=obj’ê•Ó

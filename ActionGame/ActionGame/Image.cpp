@@ -176,7 +176,7 @@ Image::~Image()
 int Image::GetPlayerIdleH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= playerIdleH.size())return -1;
+	if (index < 0 || index >= playerIdleH.size())return DX_ERROR;
 	return playerIdleH.at(index);
 
 }
@@ -184,104 +184,104 @@ int Image::GetPlayerIdleH(int index) const
 int Image::GetPlayerWalkH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= playerWalkH.size())return -1;
+	if (index < 0 || index >= playerWalkH.size())return DX_ERROR;
 	return playerWalkH.at(index);
 }
 
 int Image::GetPlayerFallH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= playerFallH.size())return -1;
+	if (index < 0 || index >= playerFallH.size())return DX_ERROR;
 	return playerFallH.at(index);
 }
 
 int Image::GetPlayerDamageH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= playerDamageH.size())return -1;
+	if (index < 0 || index >= playerDamageH.size())return DX_ERROR;
 	return playerDamageH.at(index);
 }
 
 int Image::GetTerryH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= terryH.size())return -1;
+	if (index < 0 || index >= terryH.size())return DX_ERROR;
 	return terryH.at(index);
 }
 
 int Image::GetMetallIdleH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= metallIdleH.size())return -1;
+	if (index < 0 || index >= metallIdleH.size())return DX_ERROR;
 	return metallIdleH.at(index);
 }
 
 int Image::GetMetallRunH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= metallRunH.size())return -1;
+	if (index < 0 || index >= metallRunH.size())return DX_ERROR;
 	return metallRunH.at(index);
 }
 
 int Image::GetMetallUpH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= metallUpH.size())return -1;
+	if (index < 0 || index >= metallUpH.size())return DX_ERROR;
 	return metallUpH.at(index);
 }
 
 int Image::GetMetalManIdleH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= metalManIdleH.size())return -1;
+	if (index < 0 || index >= metalManIdleH.size())return DX_ERROR;
 	return metalManIdleH.at(index);
 }
 
 int Image::GetMetalManJumpH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= metalManJumpH.size())return -1;
+	if (index < 0 || index >= metalManJumpH.size())return DX_ERROR;
 	return metalManJumpH.at(index);
 }
 
 int Image::GetBulletH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= bulletH.size())return -1;
+	if (index < 0 || index >= bulletH.size())return DX_ERROR;
 	return bulletH.at(index);
 }
 
 int Image::GetBlockH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= blockH.size())return -1;
+	if (index < 0 || index >= blockH.size())return DX_ERROR;
 	return blockH.at(index);
 }
 
 int Image::GetWarpH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= warpH.size())return -1;
+	if (index < 0 || index >= warpH.size())return DX_ERROR;
 	return warpH.at(index);
 }
 
 int Image::GetWaveH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= warpH.size())return -1;
+	if (index < 0 || index >= warpH.size())return DX_ERROR;
 	return waveH.at(index);
 }
 
 int Image::GetEffectH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= warpH.size())return -1;
+	if (index < 0 || index >= warpH.size())return DX_ERROR;
 	return effectH.at(index);
 }
 
 int Image::GetSkyH(int index) const
 {
 	//不明な値やハンドルのサイズより大きい値が入力されたら-1（エラーさせる値）を返す
-	if (index < 0 || index >= skyH.size())return -1;
+	if (index < 0 || index >= skyH.size())return DX_ERROR;
 	return skyH.at(index);
 }

@@ -10,6 +10,10 @@ namespace
 	static const int DEFFUSION_OUTSIDE = 8;
 	static const int DEFFUSION_INSIDE = 4;
 
+	//外側の速度
+	static const float OUTSIDE_SPEED = 3.f;
+	//内側の速度
+	static const float INSIDE_SPEED = 1.5f;
 }
 
 EffectManager::EffectManager(BaseScene* baseScene)
@@ -76,10 +80,10 @@ void EffectManager::SetState(F_Vec2 pos, F_Vec2 vel)
 
 void EffectManager::SetDeffusion(F_Vec2 pos)
 {
-	static const float OUTSIDE_SPEED = 3.f;
-	static const float INSIDE_SPEED = 1.5f;
+
 	F_Vec2 genvel = F_Vec2{ 0,0 };
 
+	//死亡エフェクトを内側と外側で生成＆速度設定
 	for (int i = 0; i <= DEFFUSION_OUTSIDE; i++)
 	{
 		float rad = PI / (DEFFUSION_OUTSIDE / 2) * i;
@@ -92,7 +96,6 @@ void EffectManager::SetDeffusion(F_Vec2 pos)
 		SetGenVel(genvel, rad,INSIDE_SPEED);
 		SetState(pos, genvel);
 	}
-
 }
 
 void EffectManager::SetFlagFalse(int _knd)
